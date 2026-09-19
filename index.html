@@ -814,6 +814,456 @@ const DEFAULT_QUESTIONS = [
     ],
     "explanation": "The technician is implementing the trusted platform module (TPM), which, during the boot process, compares hashes of key system state data to ensure they have not been tampered with.\n\nA hardware security module (HSM) is a secure USB key or thumb drive used to store cryptographic material where a user must authenticate before they can access the keys stored on the module.\n\nEncryption products make data secure by scrambling it in such a way that only a user with the correct decryption key can subsequently read it.\n\nA boot password requires the user to authenticate before the operating system is loaded. There are usually at least two passwords, though some systems may allow for more."
   }
+{
+    "id": "power_disk_01",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user reports that their computer frequently crashes with a Blue Screen of Death (BSOD) displaying the error code \"0x00000024,\" which indicates an issue with the NTFS file system.\n\nAfter analyzing the situation, which of the following actions should you prioritize to determine the root cause of this error?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Update the graphics card driver to the latest version.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Disable all startup programs to see if the issue persists.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Check the system's RAM for errors using a memory diagnostic tool.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Analyze the system's event logs to identify any disk-related errors or warnings.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The \"0x00000024\" error is associated with the NTFS file system, which involves disk operations. Reviewing event logs for disk-related errors can help identify underlying issues with the file system or hard drive.\n\nWhile faulty RAM can cause system instability, the specific \"0x00000024\" error relates to the NTFS file system, not memory issues. Analyzing disk-related logs is more relevant.\n\nGraphics drivers are unlikely to be related to an NTFS file system error. The focus should be on disk-related diagnostics.\n\nWhile disabling startup programs can help identify software conflicts, it does not directly address the NTFS file system error. Disk analysis is more pertinent."
+  },
+  {
+    "id": "power_disk_02",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You have just installed an SSD drive in your older Windows workstation. However, after you start Windows, you do not see the SSD drive listed in Windows Explorer.\n\nWhat should you do FIRST?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Replace the power supply.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Configure the jumpers on the SSD drive.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Make sure the power connectors on the SSD drive are plugged in all the way.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Use the voltage switch on the power supply to switch from 110 to 220 volts.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Because you have just made a system change, you should check items related to the change you have made. In this case, check to make sure that the power connectors are plugged into the SSD drive.\n\nJumpers are pins on the back of some older hard drives and are used to enable specific types of settings. These do not apply to an SSD drive.\n\nReplacing the power supply is one of the last steps you should take, especially if the power supply is new and seems to be working.\n\nUsing the voltage switch to go from 110 to 220 volts does not normally impact whether or not an SSD drive is working."
+  },
+  {
+    "id": "power_disk_03",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A client complains that their computer intermittently fails to boot, displaying a \"Missing Operating System\" error. You have confirmed that the boot order is correct, and the drive is detected in the UEFI/BIOS.\n\nWhat should you analyze next to identify the root cause of the boot sector issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Examine the drive for file system corruption or logical errors.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Replace the SATA cables connecting the drive to the motherboard.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Check for any recent changes in the system firmware settings.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Test the RAM modules for any faults or errors.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Analyzing the drive for file system corruption or logical errors is appropriate in this scenario. The \"Missing Operating System\" error can be caused by issues within the boot sector or file system, which may prevent the system from locating the operating system.\n\nWhile faulty RAM can cause various system issues, it is less likely to be the cause of a \"Missing Operating System\" error, which is more directly related to the boot sector or drive issues.\n\nAlthough changes in firmware settings can affect boot behavior, the issue described is more indicative of a problem with the drive's boot sector or file system, not the firmware settings.\n\nWhile faulty cables can cause detection issues, the drive is already detected in the UEFI/BIOS. The focus should be on analyzing the integrity of the drive's file system and boot sector."
+  },
+  {
+    "id": "power_disk_04",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "While running a graphics editing program on your Windows workstation, a screen suddenly pops up with an error message warning. You note the error message, but the only way to continue working is to reboot your system.\n\nWhat is this type of error screen called?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "POST",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "HVAC",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "BSoD",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "SPoD",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "You are experiencing a Blue Screen of Death (BSoD). This is a proprietary crash screen officially known as a stop error or blue screen error. A BSoD happens when the Windows OS encounters a fatal system error.\n\nAn SPoD (Spinning Pinwheel of Death) is the macOS equivalent of a BSoD. In this case, you are running a Windows system, so an SPoD does not apply.\n\nPOST errors are encountered when booting your system (before running Windows) and do not apply in this scenario.\n\nHVAC stands for heating, ventilation, and air conditioning. This is the system that moves air between indoor and outdoor areas in a room. HVAC does not directly apply to computer systems."
+  },
+  {
+    "id": "power_disk_05",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Every time a user attempts to save a file, the computer shows an error that reads, \"Cannot read from the source disk.\" What kind of issue does this indicate?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RAID failure",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Drive issue",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Power issue",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "POST issue",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A \"cannot read from the source disk\" error indicates an issue with a fixed disk drive that is failing. Bad sectors typically cause this on a hard disk drive.\n\nPower-on self-test (POST) is a diagnostic program implemented in the system firmware that checks the hardware to ensure the components required to boot the PC are present and functioning correctly.\n\nA power issue might arise due to a fault in the power supply unit (PSU), incoming electricity supply, power cables/connectors, or fuses.\n\nIn a redundant array of independent disks (RAID), if one of the underlying devices fails, the volume will show up as \"degraded,\" but the data on the volume will still be accessible."
+  },
+  {
+    "id": "power_disk_06",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A technician is troubleshooting a failed redundant array of independent disks (RAID) configuration and is unable to access the RAID configuration utility. What does this indicate?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Controller failure",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Boot process failure",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Multiple disk failure",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Disk failure",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "If the technician cannot access the RAID configuration utility, this indicates that the controller itself is likely to have failed. However, the data on the volume should be recoverable.\n\nMost desktop-level RAID solutions can tolerate the loss of only one disk, so the technician should replace it as soon as possible.\n\nIf the RAID failure affects the boot process, the technician can use the RAID configuration utility to verify its status.\n\nIf a volume is not available, either multiple disks (more than the tolerated number of disks) have failed, or the controller has failed."
+  },
+  {
+    "id": "power_disk_07",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When troubleshooting boot sector issues, which of the following steps is essential to ensure the system can successfully boot from the correct drive?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Inspect the power supply unit for any faults or issues.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Ensure that the system firmware is updated to the latest version.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Check if the keyboard is connected properly to avoid boot errors.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Verify that the boot order in the UEFI/BIOS settings is correctly configured.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Verifying that the boot order in the UEFI/BIOS settings is correctly configured is crucial when troubleshooting boot sector issues, as the boot order determines which drive the system attempts to boot from first. If the boot order is incorrect, the system may try to boot from a non-bootable device, leading to boot failures.\n\nWhile a disconnected or malfunctioning keyboard can cause certain boot issues, it is not directly related to boot sector problems. Boot sector issues are more concerned with the configuration and detection of bootable drives.\n\nUpdating the system firmware can resolve some hardware compatibility issues, but it is not a primary step in addressing boot sector issues. Boot sector troubleshooting focuses on drive configuration and boot order.\n\nWhile power supply issues can cause a computer not to start, they are not directly related to boot sector problems. Boot sector troubleshooting involves ensuring the correct drive is being accessed during the boot process."
+  },
+  {
+    "id": "power_disk_08",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are a technician tasked with resolving a boot issue on a client's computer. The system fails to boot and displays an error message indicating \"No Bootable Device Found.\"\n\nUpon inspection, you notice that the system has multiple drives installed.\n\nWhich of the following actions should you take first to resolve the boot sector issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Run a full diagnostic test on all installed drives to check for hardware failures.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Reinstall the operating system on the primary drive.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Check the UEFI/BIOS settings to ensure the correct boot order is set.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Replace the data cables connecting the drives to the motherboard.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Ensuring that the UEFI/BIOS is configured to boot from the correct drive can resolve the \"No Bootable Device Found\" error if the system is trying to boot from a non-bootable drive.\n\nReinstalling the operating system is a more drastic measure and should not be the first step. It is important to first verify that the system is attempting to boot from the correct drive before considering reinstallation.\n\nWhile faulty data cables can cause drive detection issues, the error message specifically indicates a boot order problem. Checking the boot order is a more direct and less invasive step to take first.\n\nRunning diagnostics is a good practice if a hardware failure is suspected, but in this scenario, the error message suggests a configuration issue rather than a hardware failure. Checking the boot order is a more efficient first step."
+  },
+  {
+    "id": "power_disk_09",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When booting your workstation, you hear a series of audible beeps, and the system locks up.\n\nWhat is the FIRST step you should take when troubleshooting this issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Replace the motherboard battery.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Check for dust buildup inside the case.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Disconnect nonessential peripherals and try to reboot.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Check the motherboard documentation for POST errors.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Every time a workstation boots, it runs a Power-On Self-Test (POST) to make sure that all of the basic hardware in the system is present and functioning correctly. If a problem is identified during POST, an error is generated, which can be a series of beeps. You need to check the motherboard documentation to interpret what the series of beeps represents.\n\nIf the motherboard battery fails, the system clock can lose time, or the BIOS/UEFI settings may reset to their defaults. However, this would not cause the series of beeps you are hearing when the system boots.\n\nDust buildup can cause overheating and other symptoms. However, this is not related to the POST error beeps you are hearing when the system boots.\n\nDisconnecting nonessential peripherals and then rebooting is a troubleshooting step for resolving a Blue Screen of Death issue and is not related to POST error beeps."
+  },
+  {
+    "id": "power_disk_10",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user reports that their computer is not booting and displays an error message stating, \"Boot device not found.\" You verify that the hard drive is properly connected and powered.\n\nUpon entering the BIOS/UEFI settings, you notice that the boot order is set to prioritize USB devices over the internal hard drive.\n\nWhat should you do to resolve the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Update the BIOS/UEFI firmware to the latest version.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Change the boot order to prioritize the internal hard drive.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Format the hard drive and reinstall the operating system.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Disable USB ports in the BIOS/UEFI settings.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "By analyzing the BIOS/UEFI settings, you identified that the boot order was incorrect. Changing the boot order to prioritize the internal hard drive will allow the system to boot from the correct device.\n\nDisabling USB ports is not necessary and could prevent the use of USB devices needed for other functions. The issue is related to the boot order, not the functionality of USB ports.\n\nWhile updating firmware can resolve some issues, it is not relevant to the current problem of boot order configuration. The solution lies in adjusting the settings rather than updating them.\n\nFormatting the hard drive is an extreme measure and unnecessary in this scenario. The problem is with the boot order, not the operating system or hard drive integrity."
+  },
+  {
+    "id": "power_disk_11",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following is a common symptom of a failing hard disk drive (HDD) that affects its reliability and performance?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The computer's power supply unit (PSU) fails to provide stable power to the motherboard.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The computer fails to detect any bootable drives during the boot sequence.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The computer displays a blue screen of death (BSOD) during startup.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The computer experiences frequent freezing and slow file access times.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Frequent freezing and slow file access times are common symptoms of a failing hard disk drive. These issues indicate that the drive is struggling to read or write data efficiently, affecting its reliability and performance.\n\nWhile a BSOD can occur due to various hardware and software issues, it is not specifically indicative of a failing hard disk drive. BSODs can be caused by driver issues, memory problems, or other hardware failures.\n\nThe computer failing to detect any bootable drives during the boot sequence is more related to boot configuration problems, connection issues, or BIOS/UEFI settings rather than directly indicating a failing hard disk drive. It could also be due to a completely failed drive, but not necessarily related to reliability and performance.\n\nThe computer's power supply unit (PSU) failing to provide stable power to the motherboard is related to power supply problems and is not directly connected to the reliability and performance of a hard disk drive. A failing PSU can cause various system issues but does not specifically indicate a problem with the HDD."
+  },
+  {
+    "id": "power_disk_12",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When troubleshooting a computer that won't start due to a power issue, which of the following steps should you take first to determine if the problem is related to the power supply unit (PSU)?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Remove all nonessential devices and add them back one by one.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Replace the motherboard with a new one.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Check if the LEDs on the front panel are lit and if you can hear the fans.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Update the system firmware to the latest version.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Checking if the LEDs on the front panel are lit and if you can hear the fans helps determine if the PSU is supplying power to the system. If the LEDs and fans are operational, it indicates that the PSU is at least partially functioning, which helps narrow down the potential causes of the power issue.\n\nReplacing the motherboard is a more invasive and costly step that should only be considered after simpler diagnostics have been performed. It is not the first step in troubleshooting power issues.\n\nUpdating the system firmware is unrelated to diagnosing power issues. Firmware updates are typically used to resolve compatibility or performance issues, not to address basic power functionality.\n\nRemoving all nonessential devices and adding them back one by one is more relevant for diagnosing POST or boot issues rather than initial power issues. It helps identify faulty components but does not directly address whether the PSU is supplying power."
+  },
+  {
+    "id": "power_disk_13",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are called to troubleshoot a desktop computer that suddenly turns off and does not power back on. Upon inspection, you notice that the LEDs on the front panel are not lit, and the fans are not spinning.\n\nWhat should be your next step to analyze and identify the potential cause of the power issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Remove the CPU and test it in another working system.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Immediately replace the power supply unit (PSU) with a new one.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Check the UEFI/BIOS settings to ensure the power settings are configured correctly.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Test the wall socket by plugging in a known-good device, such as a lamp.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Testing the wall socket helps determine if the issue is external to the computer, such as a faulty power outlet. This step is crucial to rule out external power supply issues before investigating internal components.\n\nReplacing the PSU without first verifying the power source is premature and may lead to unnecessary costs. It's important to confirm that the issue isn't with the external power supply before replacing internal components.\n\nIf the computer is not powering on at all, you cannot access the UEFI/BIOS settings. This step is irrelevant when the system shows no signs of receiving power.\n\nTesting the CPU in another system is a more advanced diagnostic step that should only be considered after simpler checks, such as verifying power supply and connections, have been performed. It is not directly related to initial power issues."
+  },
+  {
+    "id": "power_disk_14",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When troubleshooting boot issues, which of the following steps should you take if a fixed disk is not detected during the boot process?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Verify that the drive is powered and check for secure power connections.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Replace the motherboard immediately.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Reinstall the system firmware.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Check if the operating system is up to date.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Ensuring that the drive is powered and that power connectors are secure is a crucial step in troubleshooting when a fixed disk is not detected. This addresses potential power issues that could prevent the drive from being recognized.\n\nChecking if the operating system is up to date is not relevant when a fixed disk is not detected during the boot process. The issue is more likely related to hardware connections or BIOS/UEFI settings rather than the operating system.\n\nReinstalling the system firmware is not a standard troubleshooting step for a fixed disk not being detected. This action is more drastic and typically unrelated to simple detection issues unless a firmware update has caused the problem.\n\nReplacing the motherboard is a significant step and should not be the first action taken when a fixed disk is not detected. This issue is often resolved by checking connections and settings rather than replacing major components."
+  },
+  {
+    "id": "power_disk_15",
+    "topic": "Power and Disk Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are a technician tasked with diagnosing a desktop computer that has been reported to frequently freeze and experience slow file access times.\n\nUpon investigation, you notice that the hard disk drive (HDD) is making unusual clicking noises.\n\nWhat is the MOST appropriate action to take to address the drive's reliability and performance issues?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Run a full system antivirus scan to check for malware affecting the HDD.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Replace the HDD with a new one and restore data from the latest backup.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Update the computer's BIOS/UEFI settings to ensure proper drive configuration.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Defragment the HDD to improve data access speed and performance.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The symptoms of frequent freezing, slow file access, and unusual clicking noises suggest that the HDD is failing. Replacing the HDD and restoring data from a backup is the most appropriate action to ensure data integrity and resolve the reliability and performance issues.\n\nWhile malware can affect system performance, the symptoms described (frequent freezing, slow file access, and clicking noises) are more indicative of a physical hardware issue with the HDD rather than a software problem like malware.\n\nDefragmenting the HDD can improve performance in some cases, but it is not suitable for addressing hardware failure symptoms such as clicking noises. Defragmentation does not resolve physical issues with the drive.\n\nWhile ensuring correct BIOS/UEFI settings is important, it does not address the physical symptoms of a failing HDD, such as clicking noises and performance degradation. The issue is likely hardware-related, requiring drive replacement."
+  }
 ];
 
 let questions = [];

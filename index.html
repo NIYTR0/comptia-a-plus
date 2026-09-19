@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompTIA A+ Master Bank Cycler</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-30">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-indigo-600/20 text-indigo-400 rounded-lg border border-indigo-500/30">
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-slate-100 flex items-center gap-2">
+                        CompTIA A+ Master Cycler
+                        <span class="text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full font-mono">v3.7</span>
+                    </h1>
+                    <p class="text-xs text-slate-400">Strict Practice Bank & Explanation Viewer</p>
+                </div>
+            </div>
+
+            <!-- Header Action Controls -->
+            <div class="flex items-center space-x-2">
+                <button onclick="openModal('addModal')" class="flex items-center space-x-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition shadow-sm">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                    <span>Add Question</span>
+                </button>
+
+                <button onclick="openModal('dataModal')" class="flex items-center space-x-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-xs font-medium rounded-lg transition">
+                    <i data-lucide="database" class="w-4 h-4"></i>
+                    <span>Manage Bank</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="max-w-4xl w-full mx-auto px-4 py-6 flex-1 flex flex-col gap-6">
+
+        <!-- Topic Filter & Session Status Bar -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-wrap items-center justify-between gap-4 shadow-lg">
+            <!-- Filter Dropdown -->
+            <div class="flex items-center space-x-3 flex-1 min-w-[240px]">
+                <i data-lucide="filter" class="w-4 h-4 text-slate-400"></i>
+                <label for="topicFilter" class="text-xs font-medium text-slate-400 whitespace-nowrap">Topic Filter:</label>
+                <select id="topicFilter" onchange="changeFilter(this.value)" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg px-3 py-1.5 focus:outline-none focus:border-indigo-500 transition">
+                    <option value="ALL">All Topics (33 Questions)</option>
+                    <option value="RAM">RAM & Memory Architecture</option>
+                    <option value="CPU">CPU Architecture & Sockets</option>
+                    <option value="PSU">Power Systems & Voltage</option>
+                    <option value="RAID">Storage & RAID Systems</option>
+                    <option value="CHASSIS">Chassis & Hardware Handling</option>
+                </select>
+            </div>
+
+            <!-- Stats Badge -->
+            <div class="flex items-center space-x-4 text-xs">
+                <div class="bg-slate-800 border border-slate-700/80 px-3 py-1.5 rounded-lg flex items-center space-x-2">
+                    <span class="text-slate-400">Bank Size:</span>
+                    <span id="bankCount" class="font-mono text-indigo-400 font-bold">33</span>
+                </div>
+                <div class="bg-slate-800 border border-slate-700/80 px-3 py-1.5 rounded-lg flex items-center space-x-2">
+                    <span class="text-slate-400">Session Viewed:</span>
+                    <span id="viewedCount" class="font-mono text-emerald-400 font-bold">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Primary Question Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-xl overflow-hidden flex flex-col flex-1 relative">
+            
+            <!-- Card Subtopic Tag & Counter Bar -->
+            <div class="bg-slate-950/60 border-b border-slate-800 px-6 py-3 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span id="cardTopicBadge" class="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-md bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                        RAM & Memory
+                    </span>
+                    <span id="multiSelectNotice" class="hidden text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                        Select Multiple
+                    </span>
+                </div>
+                <span id="cardCounter" class="text-xs font-mono text-slate-400">
+                    Question 1 of 33
+                </span>
+            </div>
+
+            <!-- Question Body -->
+            <div class="p-6 md:p-8 flex-1 flex flex-col justify-between gap-6">
+                
+                <!-- Text Statement -->
+                <div>
+                    <h2 id="questionText" class="text-base md:text-lg font-medium text-slate-100 leading-relaxed">
+                        Loading study question...
+                    </h2>
+                </div>
+
+                <!-- Multiple Choice Grid -->
+                <div id="optionsContainer" class="space-y-3">
+                    <!-- Dynamic Choice Buttons rendered by JS -->
+                </div>
+
+                <!-- Explanation Display Block (Initially Hidden) -->
+                <div id="explanationBlock" class="hidden mt-4 p-5 bg-slate-950/80 border border-slate-800 rounded-xl space-y-3 animate-fade-in">
+                    <div class="flex items-center space-x-2 text-emerald-400 font-semibold text-sm border-b border-slate-800/80 pb-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                        <span>Official CompTIA Explanation</span>
+                    </div>
+                    <div id="explanationContent" class="text-xs md:text-sm text-slate-300 leading-relaxed space-y-2">
+                        <!-- Dynamic Explanation Text -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Card Bottom Controls -->
+            <div class="bg-slate-950/80 border-t border-slate-800 px-6 py-4 flex flex-wrap items-center justify-between gap-3">
+                <button id="revealBtn" onclick="toggleExplanation()" class="flex items-center space-x-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg border border-slate-700 transition">
+                    <i data-lucide="eye" class="w-4 h-4 text-indigo-400"></i>
+                    <span id="revealBtnText">Show Explanation</span>
+                </button>
+
+                <div class="flex items-center space-x-3">
+                    <button onclick="nextQuestion()" class="flex items-center space-x-2 px-5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition shadow-md shadow-indigo-900/20">
+                        <span>Next Random Question</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Modal 1: Add Custom Question -->
+    <div id="addModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-xl w-full p-6 shadow-2xl space-y-5 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="text-base font-bold text-slate-100 flex items-center gap-2">
+                    <i data-lucide="plus-circle" class="w-5 h-5 text-indigo-400"></i>
+                    Add Custom Question to Bank
+                </h3>
+                <button onclick="closeModal('addModal')" class="text-slate-400 hover:text-slate-200">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <form id="addQuestionForm" onsubmit="saveCustomQuestion(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-slate-400 mb-1">Subtopic Category</label>
+                    <select id="newCategory" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:border-indigo-500 outline-none">
+                        <option value="RAM">RAM & Memory Architecture</option>
+                        <option value="CPU">CPU Architecture & Sockets</option>
+                        <option value="PSU">Power Systems & Voltage</option>
+                        <option value="RAID">Storage & RAID Systems</option>
+                        <option value="CHASSIS">Chassis & Hardware Handling</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-400 mb-1">Question Prompt</label>
+                    <textarea id="newPrompt" required rows="3" placeholder="Enter full scenario question..." class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:border-indigo-500 outline-none"></textarea>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-xs font-medium text-slate-400">Multiple Choice Choices</label>
+                    <input type="text" id="optA" required placeholder="Choice A" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2 outline-none">
+                    <input type="text" id="optB" required placeholder="Choice B" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2 outline-none">
+                    <input type="text" id="optC" placeholder="Choice C (Optional)" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2 outline-none">
+                    <input type="text" id="optD" placeholder="Choice D (Optional)" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2 outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-400 mb-1">Correct Answer Keys (e.g. "A" or "A,D")</label>
+                    <input type="text" id="newCorrect" required placeholder="A" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 outline-none font-mono">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-400 mb-1">Official Explanation</label>
+                    <textarea id="newExplanation" required rows="3" placeholder="CompTIA explanation text..." class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:border-indigo-500 outline-none"></textarea>
+                </div>
+
+                <div class="flex justify-end space-x-2 pt-2 border-t border-slate-800">
+                    <button type="button" onclick="closeModal('addModal')" class="px-4 py-2 bg-slate-800 text-slate-300 text-xs rounded-lg hover:bg-slate-700">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-500">Save to Local Storage</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: Data Import / Export -->
+    <div id="dataModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-5">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="text-base font-bold text-slate-100 flex items-center gap-2">
+                    <i data-lucide="database" class="w-5 h-5 text-indigo-400"></i>
+                    Manage Master Study Bank
+                </h3>
+                <button onclick="closeModal('dataModal')" class="text-slate-400 hover:text-slate-200">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-xs text-slate-300">
+                <p>Export your active question bank to backup JSON or import a JSON dataset to merge with your local storage.</p>
+                
+                <div class="flex flex-col space-y-2">
+                    <button onclick="exportBankJSON()" class="flex items-center justify-center space-x-2 w-full py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg font-semibold text-slate-200">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span>Export Bank as JSON File</span>
+                    </button>
+
+                    <label class="flex items-center justify-center space-x-2 w-full py-2.5 bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/30 rounded-lg font-semibold text-indigo-300 cursor-pointer">
+                        <i data-lucide="upload" class="w-4 h-4"></i>
+                        <span>Import Questions from JSON File</span>
+                        <input type="file" id="importFileInput" accept=".json" onchange="importBankJSON(event)" class="hidden">
+                    </label>
+
+                    <button onclick="resetToDefaultBank()" class="flex items-center justify-center space-x-2 w-full py-2 bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-rose-400 rounded-lg font-semibold mt-4">
+                        <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+                        <span>Reset Bank to Original 33 Questions</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Default 33 Master Questions Dataset
+        const DEFAULT_MASTER_BANK = [
+            // RAM & Memory Architecture
+            {
+                id: "ram_1",
+                category: "RAM",
+                topicLabel: "RAM & Memory Architecture",
+                question: "How is the peak transfer rate for DDR-200 (PC1600) calculated?",
+                options: [
+                    { key: "A", text: "By halving the data rate to account for transfer delays" },
+                    { key: "B", text: "By multiplying the data rate (200 MT/s) by 8 bytes per transfer" },
+                    { key: "C", text: "By using the clock speed of the memory bus only" },
+                    { key: "D", text: "By multiplying the clock speed by the system memory capacity" }
+                ],
+                correct: ["B"],
+                explanation: "The peak transfer rate for DDR-200 (PC1600) is calculated by multiplying the data rate, which is 200 MT/s, by 8 bytes per transfer, resulting in 1600 MBps."
+            },
+            {
+                id: "ram_2",
+                category: "RAM",
+                topicLabel: "RAM & Memory Architecture",
+                question: "What does Double Data Rate (DDR) memory achieve by using both the rising and falling edges of the clock cycle?",
+                options: [
+                    { key: "A", text: "It doubles the data transfer rate compared to traditional SDRAM." },
+                    { key: "B", text: "It increases memory capacity per module." },
+                    { key: "C", text: "It synchronizes with the system clock to improve stability." },
+                    { key: "D", text: "It reduces the power consumption of memory modules." }
+                ],
+                correct: ["A"],
+                explanation: "DDR memory achieves double the data transfer rate by utilizing both the rising and falling edges of the clock cycle, allowing for two operations per cycle."
+            },
+            {
+                id: "ram_3",
+                category: "RAM",
+                topicLabel: "RAM & Memory Architecture",
+                question: "A graphics artist wants to put together the best possible machine for graphics processing. Which of the following can distinguish between RAM memory modules that appear to be identical?",
+                options: [
+                    { key: "A", text: "Transfer rate" },
+                    { key: "B", text: "Timing" },
+                    { key: "C", text: "RAM type" },
+                    { key: "D", text: "PC-# value" }
+                ],
+                correct: ["B"],
+                explanation: "The technician can use timings (such as CAS latency) to differentiate the performance of RAM modules that are an identical DDR type and speed. Lower timing values indicate better performance."
+            },
+            {
+                id: "ram_4",
+                category: "RAM",
+                topicLabel: "RAM & Memory Architecture",
+                question: "A network administrator is setting up a server and wants to use memory which performs a hash calculation on data values for error handling. What memory module format should be used?",
+                options: [
+                    { key: "A", text: "Swap space" },
+                    { key: "B", text: "RDIMM" },
+                    { key: "C", text: "UDIMM" },
+                    { key: "D", text: "Virtual memory" }
+                ],
+                correct: ["B"],
+                explanation: "Error correction code (ECC) RAM performs a hash calculation on data values and stores it as an 8-bit checksum. Most ECC RAM in enterprise servers is supplied as registered DIMMs (RDIMMs)."
+            },
+            {
+                id: "ram_5",
+                category: "RAM",
+                topicLabel: "RAM & Memory Architecture",
+                question: "A systems administrator sets up dual-channel memory in a system to increase performance. Which of the following components does NOT require dual-channel support?",
+                options: [
+                    { key: "A", text: "CPU" },
+                    { key: "B", text: "RAM devices" },
+                    { key: "C", text: "Memory controller" },
+                    { key: "D", text: "Motherboard" }
+                ],
+                correct: ["B"],
+                explanation: "Dual-channel operation requires support from the CPU, memory controller, and motherboard. Standard RAM modules are used; there are no specialized 'dual-channel' RAM devices."
+            },
+            {
+                id: "ram_6",
+                category: "RAM",
+                topicLabel: "RAM & Memory Architecture",
+                question: "Which memory form factor is designed specifically for space-constrained laptops and small form factor motherboards?",
+                options: [
+                    { key: "A", text: "DIMM" },
+                    { key: "B", text: "SODIMM" },
+                    { key: "C", text: "Micro-ATX" },
+                    { key: "D", text: "RDIMM" }
+                ],
+                correct: ["B"],
+                explanation: "Small Outline Dual In-line Memory Modules (SODIMMs) are approximately half the length of standard desktop DIMMs, making them ideal for laptop computers."
+            },
+            {
+                id: "ram_7",
+                category: "RAM",
+                topicLabel: "RAM & Memory Architecture",
+                question: "Which M.2 keying standard supports PCIe x4 throughput for high-speed NVMe solid-state storage?",
+                options: [
+                    { key: "A", text: "B Key" },
+                    { key: "B", text: "M Key" },
+                    { key: "C", text: "A Key" },
+                    { key: "D", text: "E Key" }
+                ],
+                correct: ["B"],
+                explanation: "An M.2 slot keyed for 'M' supports up to 4 PCIe lanes (PCIe x4) and is utilized by high-performance NVMe SSDs."
+            },
+            {
+                id: "ram_8",
+                category: "RAM",
+                topicLabel: "RAM & Memory Architecture",
+                question: "In Linux operating systems, what dedicated partition or file space on a secondary storage drive is utilized when physical system RAM becomes fully utilized?",
+                options: [
+                    { key: "A", text: "Pagefile.sys" },
+                    { key: "B", text: "Swap space" },
+                    { key: "C", text: "Virtual allocation table" },
+                    { key: "D", text: "RAM Disk" }
+                ],
+                correct: ["B"],
+                explanation: "Linux uses designated disk storage known as 'swap space' to extend physical memory when capacity is exceeded. Windows uses pagefile.sys."
+            },
+            {
+                id: "ram_9",
+                category: "RAM",
+                topicLabel: "RAM & Memory Architecture",
+                question: "What is the total addressable memory space formed by combining physical system RAM and secondary disk swap space called?",
+                options: [
+                    { key: "A", text: "Virtual memory" },
+                    { key: "B", text: "Cache memory" },
+                    { key: "C", text: "Extended register memory" },
+                    { key: "D", text: "Shadow RAM" }
+                ],
+                correct: ["A"],
+                explanation: "Virtual memory (or virtual RAM) represents the total combined addressable memory of physical system RAM plus secondary disk paging/swap space."
+            },
+            {
+                id: "ram_10",
+                category: "RAM",
+                topicLabel: "RAM & Memory Architecture",
+                question: "Unbuffered DIMMs (UDIMMs) differ from Registered DIMMs (RDIMMs) primarily because UDIMMs:",
+                options: [
+                    { key: "A", text: "Do not feature a register buffer chip between the RAM modules and memory controller." },
+                    { key: "B", text: "Operate strictly on 220V power lines." },
+                    { key: "C", text: "Require dual-channel motherboards." },
+                    { key: "D", text: "Only fit in laptop SODIMM slots." }
+                ],
+                correct: ["A"],
+                explanation: "UDIMMs connect directly to the memory controller without an intermediary register, resulting in slightly lower latency but less stability under heavy multi-module enterprise server loads."
+            },
+
+            // CPU Architecture & Sockets
+            {
+                id: "cpu_1",
+                category: "CPU",
+                topicLabel: "CPU Architecture & Sockets",
+                question: "Which of the following refers to placing two or more physical processor cores inside a single processor chip package?",
+                options: [
+                    { key: "A", text: "Hyper-threading" },
+                    { key: "B", text: "Multi-threading" },
+                    { key: "C", text: "Multi-core" },
+                    { key: "D", text: "Multi-processor" }
+                ],
+                correct: ["C"],
+                explanation: "A multi-core processor integrates multiple complete physical execution cores into a single processor package."
+            },
+            {
+                id: "cpu_2",
+                category: "CPU",
+                topicLabel: "CPU Architecture & Sockets",
+                question: "You are building a PC using an AMD Ryzen processor. Which type of socket design are you most likely working with?",
+                options: [
+                    { key: "A", text: "Pin Grid Array (PGA)" },
+                    { key: "B", text: "Land Grid Array (LGA)" },
+                    { key: "C", text: "Ball Grid Array (BGA)" },
+                    { key: "D", text: "Zero Insertion Force (ZIF)" }
+                ],
+                correct: ["A"],
+                explanation: "AMD Ryzen processors (such as AM4 socket designs) commonly use the Pin Grid Array (PGA) design, where CPU pins fit into socket holes. Intel desktop CPUs traditionally use LGA."
+            },
+            {
+                id: "cpu_3",
+                category: "CPU",
+                topicLabel: "CPU Architecture & Sockets",
+                question: "Which of the following should you always do to avoid damage when preparing to install a CPU? (Select two.)",
+                options: [
+                    { key: "A", text: "Ensure that the CPU and motherboard socket type match." },
+                    { key: "B", text: "Adjust the motherboard bus settings." },
+                    { key: "C", text: "Make sure RAM modules are seated properly." },
+                    { key: "D", text: "Use anti-static ESD protection." },
+                    { key: "E", text: "Run a benchmark test." }
+                ],
+                correct: ["A", "D"],
+                explanation: "To avoid physical and electrical damage during CPU installation, always match the socket type and wear proper anti-static (ESD) wrist straps/mats."
+            },
+            {
+                id: "cpu_4",
+                category: "CPU",
+                topicLabel: "CPU Architecture & Sockets",
+                question: "Which of the following statements is true regarding processor instruction sets? (Select two.)",
+                options: [
+                    { key: "A", text: "32-bit processors use only the IA-32 instruction set (also referred to as x86)." },
+                    { key: "B", text: "64-bit processors use the x86-64 instruction set (also referred to as x64)." },
+                    { key: "C", text: "32-bit applications can only run on 32-bit processors." },
+                    { key: "D", text: "x64 processors execute only 64-bit instructions in hardware." },
+                    { key: "E", text: "32-bit applications require BIOS toggles to run on x64." }
+                ],
+                correct: ["A", "B"],
+                explanation: "32-bit processors execute the IA-32 (x86) instruction set architecture. 64-bit processors execute x86-64 (x64) code and feature backward compatibility to run 32-bit software directly in hardware."
+            },
+            {
+                id: "cpu_5",
+                category: "CPU",
+                topicLabel: "CPU Architecture & Sockets",
+                question: "What Intel proprietary technology allows a single physical CPU core to execute two concurrent threads simultaneously?",
+                options: [
+                    { key: "A", text: "Hyper-Threading (HT)" },
+                    { key: "B", text: "Turbo Boost" },
+                    { key: "C", text: "Overclocking" },
+                    { key: "D", text: "Virtualization Technology (VT-x)" }
+                ],
+                correct: ["A"],
+                explanation: "Hyper-Threading creates two logical cores for each physical core in the OS scheduler, allowing parallel execution of threads."
+            },
+            {
+                id: "cpu_6",
+                category: "CPU",
+                topicLabel: "CPU Architecture & Sockets",
+                question: "A CPU socket type where the delicate connection pins reside inside the motherboard socket rather than on the processor chip itself is known as:",
+                options: [
+                    { key: "A", text: "Land Grid Array (LGA)" },
+                    { key: "B", text: "Pin Grid Array (PGA)" },
+                    { key: "C", text: "DIP" },
+                    { key: "D", text: "SEC" }
+                ],
+                correct: ["A"],
+                explanation: "In Land Grid Array (LGA) sockets, the pins are located in the socket housing on the motherboard, while the CPU package has flat copper pad contacts ('lands')."
+            },
+            {
+                id: "cpu_7",
+                category: "CPU",
+                topicLabel: "CPU Architecture & Sockets",
+                question: "Which architectural feature prevents malicious software from executing code in non-executable memory regions?",
+                options: [
+                    { key: "A", text: "DEP / NX Bit (Disable Execute Bit)" },
+                    { key: "B", text: "ECC Memory" },
+                    { key: "C", text: "Overclocking Protection" },
+                    { key: "D", text: "Dual-Channel Routing" }
+                ],
+                correct: ["A"],
+                explanation: "Data Execution Prevention (DEP) / No-Execute (NX) bit allows the CPU to mark memory areas as non-executable to prevent buffer overflow attacks."
+            },
+            {
+                id: "cpu_8",
+                category: "CPU",
+                topicLabel: "CPU Architecture & Sockets",
+                question: "A multi-processor motherboard differs from a multi-core processor because a multi-processor motherboard:",
+                options: [
+                    { key: "A", text: "Contains multiple physical CPU socket installations on the same PCB board." },
+                    { key: "B", text: "Does not require power supply connections." },
+                    { key: "C", text: "Uses 120V low-voltage rails only." },
+                    { key: "D", text: "Can only execute 32-bit instructions." }
+                ],
+                correct: ["A"],
+                explanation: "Multi-processor motherboards feature two or more distinct physical CPU sockets (e.g., dual-socket server boards) to hold separate processor chips."
+            },
+
+            // Power Systems & Voltages
+            {
+                id: "psu_1",
+                category: "PSU",
+                topicLabel: "Power Systems & Voltage",
+                question: "What voltage range do appliances such as dryers, heavy-duty power tools, and oven ranges require?",
+                options: [
+                    { key: "A", text: "120V" },
+                    { key: "B", text: "115V" },
+                    { key: "C", text: "110V" },
+                    { key: "D", text: "220V" }
+                ],
+                correct: ["D"],
+                explanation: "Heavy appliances require a higher voltage supply line (220V–240V AC) to deliver high wattage efficiently without pulling excessive current."
+            },
+            {
+                id: "psu_2",
+                category: "PSU",
+                topicLabel: "Power Systems & Voltage",
+                question: "Which of the following power supply connectors typically connect directly to the motherboard? (Select two.)",
+                options: [
+                    { key: "A", text: "6-pin PCIe power" },
+                    { key: "B", text: "4-pin CPU power" },
+                    { key: "C", text: "SATA power" },
+                    { key: "D", text: "24-pin motherboard power" },
+                    { key: "E", text: "Power on/off switch" }
+                ],
+                correct: ["B", "D"],
+                explanation: "The 24-pin main ATX connector and the 4-pin/8-pin CPU power connector plug directly into motherboard sockets."
+            },
+            {
+                id: "psu_3",
+                category: "PSU",
+                topicLabel: "Power Systems & Voltage",
+                question: "Which of the following factors is most important when choosing a power supply for a PC?",
+                options: [
+                    { key: "A", text: "The type of cooling system" },
+                    { key: "B", text: "The color of the PSU" },
+                    { key: "C", text: "The wattage rating of the PSU" },
+                    { key: "D", text: "The number of USB ports" }
+                ],
+                correct: ["C"],
+                explanation: "Wattage rating determines how much DC electrical power the PSU can supply to internal components under load."
+            },
+            {
+                id: "psu_4",
+                category: "PSU",
+                topicLabel: "Power Systems & Voltage",
+                question: "Which specifications are MOST likely to affect your power supply choice when replacing a PSU? (Select three.)",
+                options: [
+                    { key: "A", text: "Form factor" },
+                    { key: "B", text: "A fan that cools the unit" },
+                    { key: "C", text: "Output wattage" },
+                    { key: "D", text: "Input voltage selections" },
+                    { key: "E", text: "Type and number of connectors" }
+                ],
+                correct: ["A", "C", "E"],
+                explanation: "Form factor (matching case/motherboard size), output wattage capacity, and having the proper cable connectors are critical parameters."
+            },
+            {
+                id: "psu_5",
+                category: "PSU",
+                topicLabel: "Power Systems & Voltage",
+                question: "A high school graduate attends a university in Europe and swaps out their US desktop PSU for European standards. What input voltage standard is used in Europe?",
+                options: [
+                    { key: "A", text: "5V" },
+                    { key: "B", text: "220V" },
+                    { key: "C", text: "12V" },
+                    { key: "D", text: "120V" }
+                ],
+                correct: ["B"],
+                explanation: "European wall power runs on high-line 220V–240V AC standards, whereas North America uses low-line 110V–120V AC."
+            },
+            {
+                id: "psu_6",
+                category: "PSU",
+                topicLabel: "Power Systems & Voltage",
+                question: "Which power supply output rail is most heavily utilized by modern high-performance desktop graphics cards and CPUs?",
+                options: [
+                    { key: "A", text: "+3.3 VDC" },
+                    { key: "B", text: "+5 VDC" },
+                    { key: "C", text: "+12 VDC" },
+                    { key: "D", text: "-12 VDC" }
+                ],
+                correct: ["C"],
+                explanation: "Modern PC systems rely overwhelmingly on the +12 VDC output rail to power power-hungry CPUs and GPUs."
+            },
+            {
+                id: "psu_7",
+                category: "PSU",
+                topicLabel: "Power Systems & Voltage",
+                question: "According to Watt's Law, if a computer component draws 10 Amps of current on a 12V rail, what is the total power consumed in Watts?",
+                options: [
+                    { key: "A", text: "1.2 Watts" },
+                    { key: "B", text: "120 Watts" },
+                    { key: "C", text: "22 Watts" },
+                    { key: "D", text: "1200 Watts" }
+                ],
+                correct: ["B"],
+                explanation: "Power (Watts) = Voltage (Volts) x Current (Amps). Therefore, 12V x 10A = 120 Watts."
+            },
+
+            // RAID & Storage Systems
+            {
+                id: "raid_1",
+                category: "RAID",
+                topicLabel: "Storage & RAID Systems",
+                question: "You want to create a software RAID 1 array on your Windows 11 workstation using Disk 1 and Disk 2. What must you do before configuring the array?",
+                options: [
+                    { key: "A", text: "Format both disks with the same file system." },
+                    { key: "B", text: "Convert the disks from basic to dynamic." },
+                    { key: "C", text: "Convert the disks from dynamic to basic." },
+                    { key: "D", text: "Verify that both disks are the exact same model." }
+                ],
+                correct: ["B"],
+                explanation: "Windows software RAID arrays require drives to be converted from Basic Disks to Dynamic Disks in Disk Management."
+            },
+            {
+                id: "raid_2",
+                category: "RAID",
+                topicLabel: "Storage & RAID Systems",
+                question: "Which drive configuration uses disk striping combined with distributed parity for single-disk fault tolerance?",
+                options: [
+                    { key: "A", text: "RAID 0" },
+                    { key: "B", text: "RAID 1" },
+                    { key: "C", text: "RAID 10" },
+                    { key: "D", text: "RAID 5" }
+                ],
+                correct: ["D"],
+                explanation: "RAID 5 stripes data and parity across a minimum of 3 drives, allowing recovery if 1 drive fails."
+            },
+            {
+                id: "raid_3",
+                category: "RAID",
+                topicLabel: "Storage & RAID Systems",
+                question: "An end user wants maximum read/write performance using disk striping without incorporating any fault tolerance. Which RAID level is this?",
+                options: [
+                    { key: "A", text: "RAID 0" },
+                    { key: "B", text: "RAID 1" },
+                    { key: "C", text: "RAID 5" },
+                    { key: "D", text: "RAID 10" }
+                ],
+                correct: ["A"],
+                explanation: "RAID 0 utilizes striping across disks for maximum speed, but has zero fault tolerance—a single disk failure loses all data."
+            },
+            {
+                id: "raid_4",
+                category: "RAID",
+                topicLabel: "Storage & RAID Systems",
+                question: "Jessica wants to protect data against single hard drive failure in a system supporting a maximum of three disks. Which RAID level offers mirrored protection here?",
+                options: [
+                    { key: "A", text: "RAID 5" },
+                    { key: "B", text: "RAID 1" },
+                    { key: "C", text: "RAID 0" },
+                    { key: "D", text: "RAID 10" }
+                ],
+                correct: ["B"],
+                explanation: "RAID 1 provides disk mirroring and requires a minimum of 2 disks. RAID 10 requires at least 4 drives."
+            },
+            {
+                id: "raid_5",
+                category: "RAID",
+                topicLabel: "Storage & RAID Systems",
+                question: "What is a primary advantage of hardware RAID controller cards over operating system software RAID?",
+                options: [
+                    { key: "A", text: "Hardware RAID offloads array management processing from the host CPU." },
+                    { key: "B", text: "Hardware RAID is always completely free." },
+                    { key: "C", text: "Hardware RAID requires basic disks rather than dynamic disks." },
+                    { key: "D", text: "Hardware RAID does not require hard drives." }
+                ],
+                correct: ["A"],
+                explanation: "Hardware RAID controllers feature dedicated onboard processors and cache memory, eliminating CPU overhead on the host computer."
+            },
+            {
+                id: "raid_6",
+                category: "RAID",
+                topicLabel: "Storage & RAID Systems",
+                question: "What is the minimum number of physical disk drives required to construct a functional RAID 5 volume?",
+                options: [
+                    { key: "A", text: "1" },
+                    { key: "B", text: "2" },
+                    { key: "C", text: "3" },
+                    { key: "D", text: "4" }
+                ],
+                correct: ["C"],
+                explanation: "RAID 5 requires a minimum of 3 drives to distribute data blocks and parity information across the array."
+            },
+
+            // Chassis & Hardware Handling
+            {
+                id: "chassis_1",
+                category: "CHASSIS",
+                topicLabel: "Chassis & Hardware Handling",
+                question: "Which of the following describes a key advantage of using a modular power supply unit (PSU) over a non-modular PSU?",
+                options: [
+                    { key: "A", text: "It increases the total output wattage." },
+                    { key: "B", text: "It eliminates the need for CPU voltage." },
+                    { key: "C", text: "It allows unused cables to be detached, improving cable management and internal chassis airflow." },
+                    { key: "D", text: "It steps down 220V power automatically." }
+                ],
+                correct: ["C"],
+                explanation: "Modular PSUs allow detached cables to be removed, reducing internal clutter and optimizing airflow across heat-generating components."
+            },
+            {
+                id: "chassis_2",
+                category: "CHASSIS",
+                topicLabel: "Chassis & Hardware Handling",
+                question: "A user wants to mitigate data loss risk by implementing hardware array fault tolerance. What technology should be installed?",
+                options: [
+                    { key: "A", text: "RAID" },
+                    { key: "B", text: "SSD" },
+                    { key: "C", text: "NVMe" },
+                    { key: "D", text: "mSATA" }
+                ],
+                correct: ["A"],
+                explanation: "A Redundant Array of Independent Disks (RAID) provides fault tolerance across multiple physical disks."
+            }
+        ];
+
+        // State Variables
+        let currentBank = [];
+        let activeFilter = "ALL";
+        let filteredBank = [];
+        let currentQuestionIndex = 0;
+        let selectedAnswers = [];
+        let viewedQuestions = new Set();
+        let isAnswerRevealed = false;
+
+        // Initialize App
+        window.addEventListener('DOMContentLoaded', () => {
+            loadBankFromStorage();
+            lucide.createIcons();
+            renderQuestion();
+        });
+
+        // Load or Sync Bank
+        function loadBankFromStorage() {
+            const saved = localStorage.getItem('comptia_master_bank');
+            if (saved) {
+                try {
+                    currentBank = JSON.parse(saved);
+                } catch(e) {
+                    currentBank = [...DEFAULT_MASTER_BANK];
+                }
+            } else {
+                currentBank = [...DEFAULT_MASTER_BANK];
+                saveBankToStorage();
+            }
+            updateBankStats();
+            applyFilter();
+        }
+
+        function saveBankToStorage() {
+            localStorage.setItem('comptia_master_bank', JSON.stringify(currentBank));
+            updateBankStats();
+        }
+
+        function updateBankStats() {
+            document.getElementById('bankCount').textContent = currentBank.length;
+            document.getElementById('viewedCount').textContent = viewedQuestions.size;
+        }
+
+        function changeFilter(category) {
+            activeFilter = category;
+            applyFilter();
+            currentQuestionIndex = 0;
+            renderQuestion();
+        }
+
+        function applyFilter() {
+            if (activeFilter === "ALL") {
+                filteredBank = [...currentBank];
+            } else {
+                filteredBank = currentBank.filter(q => q.category === activeFilter);
+            }
+        }
+
+        function renderQuestion() {
+            if (filteredBank.length === 0) {
+                document.getElementById('questionText').textContent = "No questions found in selected filter category.";
+                document.getElementById('optionsContainer').innerHTML = "";
+                document.getElementById('explanationBlock').classList.add('hidden');
+                return;
+            }
+
+            const q = filteredBank[currentQuestionIndex];
+            viewedQuestions.add(q.id);
+            updateBankStats();
+
+            // Reset States
+            selectedAnswers = [];
+            isAnswerRevealed = false;
+            document.getElementById('explanationBlock').classList.add('hidden');
+            document.getElementById('revealBtnText').textContent = "Show Explanation";
+
+            // Update Badges & Counter
+            document.getElementById('cardTopicBadge').textContent = q.topicLabel || q.category;
+            document.getElementById('cardCounter').textContent = `Question ${currentQuestionIndex + 1} of ${filteredBank.length}`;
+            
+            // Multiple Selection Indicator
+            const isMulti = q.correct.length > 1;
+            document.getElementById('multiSelectNotice').classList.toggle('hidden', !isMulti);
+
+            // Render Prompt
+            document.getElementById('questionText').textContent = q.question;
+
+            // Render Options
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.id = `opt-btn-${opt.key}`;
+                btn.onclick = () => selectOption(opt.key, isMulti);
+                btn.className = "w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800/80 hover:border-slate-700 transition flex items-start space-x-3 text-xs md:text-sm text-slate-200 group";
+                
+                btn.innerHTML = `
+                    <span class="key-badge font-mono font-bold bg-slate-800 text-slate-300 border border-slate-700 px-2 py-0.5 rounded text-xs group-hover:border-indigo-500 transition">${opt.key}</span>
+                    <span class="flex-1 mt-0.5">${opt.text}</span>
+                    <i data-lucide="circle" class="status-icon w-4 h-4 text-slate-600 mt-0.5"></i>
+                `;
+                container.appendChild(btn);
+            });
+
+            // Render Explanation Text
+            document.getElementById('explanationContent').innerHTML = `<p>${q.explanation}</p>`;
+            lucide.createIcons();
+        }
+
+        function selectOption(key, isMulti) {
+            if (isAnswerRevealed) return; // Locked once revealed
+
+            if (isMulti) {
+                if (selectedAnswers.includes(key)) {
+                    selectedAnswers = selectedAnswers.filter(k => k !== key);
+                } else {
+                    selectedAnswers.push(key);
+                }
+            } else {
+                selectedAnswers = [key];
+            }
+
+            // Highlight selected options visually
+            const q = filteredBank[currentQuestionIndex];
+            q.options.forEach(opt => {
+                const btn = document.getElementById(`opt-btn-${opt.key}`);
+                const isSel = selectedAnswers.includes(opt.key);
+                if (isSel) {
+                    btn.classList.add('border-indigo-500', 'bg-indigo-950/30');
+                    btn.classList.remove('border-slate-800', 'bg-slate-950/60');
+                } else {
+                    btn.classList.remove('border-indigo-500', 'bg-indigo-950/30');
+                    btn.classList.add('border-slate-800', 'bg-slate-950/60');
+                }
+            });
+
+            // Automatically reveal if single-choice or required count selected
+            if (!isMulti || selectedAnswers.length === q.correct.length) {
+                revealAnswer();
+            }
+        }
+
+        function revealAnswer() {
+            if (isAnswerRevealed) return;
+            isAnswerRevealed = true;
+
+            const q = filteredBank[currentQuestionIndex];
+            
+            q.options.forEach(opt => {
+                const btn = document.getElementById(`opt-btn-${opt.key}`);
+                const isCorrect = q.correct.includes(opt.key);
+                const isUserSelected = selectedAnswers.includes(opt.key);
+
+                if (isCorrect) {
+                    btn.className = "w-full text-left p-3.5 rounded-xl border border-emerald-500/50 bg-emerald-950/30 text-emerald-200 text-xs md:text-sm flex items-start space-x-3";
+                    btn.querySelector('.key-badge').className = "key-badge font-mono font-bold bg-emerald-500 text-slate-950 px-2 py-0.5 rounded text-xs";
+                    btn.querySelector('.status-icon').outerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5"></i>`;
+                } else if (isUserSelected && !isCorrect) {
+                    btn.className = "w-full text-left p-3.5 rounded-xl border border-rose-500/50 bg-rose-950/30 text-rose-200 text-xs md:text-sm flex items-start space-x-3";
+                    btn.querySelector('.key-badge').className = "key-badge font-mono font-bold bg-rose-500 text-white px-2 py-0.5 rounded text-xs";
+                    btn.querySelector('.status-icon').outerHTML = `<i data-lucide="x-circle" class="w-4 h-4 text-rose-400 mt-0.5"></i>`;
+                }
+            });
+
+            document.getElementById('explanationBlock').classList.remove('hidden');
+            document.getElementById('revealBtnText').textContent = "Hide Explanation";
+            lucide.createIcons();
+        }
+
+        function toggleExplanation() {
+            const block = document.getElementById('explanationBlock');
+            if (block.classList.contains('hidden')) {
+                revealAnswer();
+            } else {
+                block.classList.add('hidden');
+                document.getElementById('revealBtnText').textContent = "Show Explanation";
+            }
+        }
+
+        function nextQuestion() {
+            if (filteredBank.length === 0) return;
+            // Pick a random question index different from current
+            if (filteredBank.length > 1) {
+                let nextIdx;
+                do {
+                    nextIdx = Math.floor(Math.random() * filteredBank.length);
+                } while (nextIdx === currentQuestionIndex);
+                currentQuestionIndex = nextIdx;
+            }
+            renderQuestion();
+        }
+
+        // Modal Controls
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Custom Question Save
+        function saveCustomQuestion(e) {
+            e.preventDefault();
+            const cat = document.getElementById('newCategory').value;
+            const prompt = document.getElementById('newPrompt').value;
+            const correctRaw = document.getElementById('newCorrect').value;
+            const explanation = document.getElementById('newExplanation').value;
+
+            const opts = [];
+            ['optA', 'optB', 'optC', 'optD'].forEach((id, idx) => {
+                const val = document.getElementById(id).value.trim();
+                if (val) {
+                    const key = String.fromCharCode(65 + idx);
+                    opts.push({ key: key, text: val });
+                }
+            });
+
+            const newObj = {
+                id: "custom_" + Date.now(),
+                category: cat,
+                topicLabel: document.getElementById('newCategory').options[document.getElementById('newCategory').selectedIndex].text,
+                question: prompt,
+                options: opts,
+                correct: correctRaw.toUpperCase().split(',').map(s => s.trim()),
+                explanation: explanation
+            };
+
+            currentBank.unshift(newObj);
+            saveBankToStorage();
+            closeModal('addModal');
+            document.getElementById('addQuestionForm').reset();
+            applyFilter();
+            currentQuestionIndex = 0;
+            renderQuestion();
+        }
+
+        // Export / Import
+        function exportBankJSON() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(currentBank, null, 2));
+            const dlAnchor = document.createElement('a');
+            dlAnchor.setAttribute("href", dataStr);
+            dlAnchor.setAttribute("download", `comptia_aplus_master_bank_${Date.now()}.json`);
+            document.body.appendChild(dlAnchor);
+            dlAnchor.click();
+            dlAnchor.remove();
+        }
+
+        function importBankJSON(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                try {
+                    const imported = JSON.parse(evt.target.result);
+                    if (Array.isArray(imported)) {
+                        currentBank = imported;
+                        saveBankToStorage();
+                        applyFilter();
+                        currentQuestionIndex = 0;
+                        renderQuestion();
+                        closeModal('dataModal');
+                        alert('Master Bank successfully updated from JSON!');
+                    }
+                } catch(err) {
+                    alert('Invalid JSON dataset file format.');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function resetToDefaultBank() {
+            if (confirm("Reset bank back to original 33 verified questions? Custom additions will be overwritten.")) {
+                currentBank = [...DEFAULT_MASTER_BANK];
+                saveBankToStorage();
+                applyFilter();
+                currentQuestionIndex = 0;
+                renderQuestion();
+                closeModal('dataModal');
+            }
+        }
+    </script>
+</body>
+</html>

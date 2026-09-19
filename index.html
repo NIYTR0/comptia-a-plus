@@ -1263,6 +1263,466 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "The symptoms of frequent freezing, slow file access, and unusual clicking noises suggest that the HDD is failing. Replacing the HDD and restoring data from a backup is the most appropriate action to ensure data integrity and resolve the reliability and performance issues.\n\nWhile malware can affect system performance, the symptoms described (frequent freezing, slow file access, and clicking noises) are more indicative of a physical hardware issue with the HDD rather than a software problem like malware.\n\nDefragmenting the HDD can improve performance in some cases, but it is not suitable for addressing hardware failure symptoms such as clicking noises. Defragmentation does not resolve physical issues with the drive.\n\nWhile ensuring correct BIOS/UEFI settings is important, it does not address the physical symptoms of a failing HDD, such as clicking noises and performance degradation. The issue is likely hardware-related, requiring drive replacement."
+  },
+{
+    "id": "sdi_01",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A technician is troubleshooting an issue with a computer. Although the computer is on the network, the server will not authenticate the user. What kind of problem does this indicate?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Overheating",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Inaccurate date/time",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Cabling issues",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Disk failure",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "If the computer does not correctly synchronize the date and time with other computers on the network, security systems such as authentication will not work."
+  },
+  {
+    "id": "sdi_02",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following is a common factor that might cause a CPU to fail prematurely?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "High CPU usage",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Magnetic field",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Electrostatic discharge (ESD)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Electromagnetic interference",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "Unsupported memory modules",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Electrostatic discharge (ESD) can damage sensitive electronic components, including CPUs, by creating a high-voltage surge that can destroy or degrade the delicate circuits within the processor."
+  },
+  {
+    "id": "sdi_03",
+    "topic": "System and Display Issues",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "You have just finished upgrading your desktop system's CPU. After running for about 15 minutes, the system spontaneously shuts down. Which steps should you take FIRST to begin troubleshooting the issue? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Replace the power supply.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Make sure that you used thermal paste for the CPU.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Remove any unnecessary components and run the system.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Check the power supply voltage switch.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "Check the CPU fan power.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Ensuring thermal paste is applied and that the CPU fan has power address the immediate thermal dissipation issues caused by a CPU upgrade, which are the primary suspects for a system shutting down after 15 minutes."
+  },
+  {
+    "id": "sdi_04",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A technician is troubleshooting a projector that keeps randomly shutting down. What is the most likely cause?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Burned-out bulb",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Incorrect data source",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Overheating",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Loose cable between the monitor and the display",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Overheating typically causes intermittent projector shutdowns as internal thermal sensors trigger safety power-offs to protect components."
+  },
+  {
+    "id": "sdi_05",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are an IT technician tasked with resolving a recurring issue where a user's computer frequently locks up and reboots unexpectedly. After confirming that software issues are not the cause, you suspect a hardware problem. The user reports that the issue often occurs after the computer has been running for a few hours. Based on this scenario, what is the MOST appropriate action to apply next?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Check the CPU fan and heat sink to ensure they are functioning properly and not causing overheating.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Replace the computer's RAM modules with new ones to see if the problem resolves.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Run a full antivirus scan to double-check for any missed malware.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Update the computer's BIOS to the latest version available from the manufacturer.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Symptoms occurring after running for several hours point toward thermal throttling or heat buildup over time. Checking heat dissipation components (fan and heat sink) is the logical first hardware step."
+  },
+  {
+    "id": "sdi_06",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When diagnosing performance issues in a computer system, which of the following steps is crucial to ensure that overheating is not the cause of the problem?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Verify the compatibility of new components with the motherboard.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Monitor temperature sensors and fan speeds.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Use diagnostic tests to compare CPU performance against known baselines.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Rule out operating system and application issues.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Monitoring thermal sensors and cooling fan telemetry gives a direct quantitative reading to confirm or eliminate thermal throttling."
+  },
+  {
+    "id": "sdi_07",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user reports that their computer is running sluggishly after a recent upgrade. As an IT specialist, you need to evaluate the situation to determine the most likely cause. Which of the following actions would BEST help you assess whether the sluggish performance is due to a hardware bottleneck?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Check for overheating by monitoring temperature sensors and fan speeds.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Rule out software and configuration issues by checking for faulty network login scripts.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Use diagnostic tests to compare the system's performance against known baselines.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Verify the compatibility of the new components with the motherboard.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Comparing diagnostic performance metrics against established baseline metrics provides clear evidence of component underperformance and pinpoints hardware bottlenecks."
+  },
+  {
+    "id": "sdi_08",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A customer complains that a recently purchased monitor no longer displays a picture. You verify that the monitor is powered on and that the video cable is securely fastened to the video port. Which of the following actions is the BEST to take next?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Check the brightness and contrast settings using the monitor's controls.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Return the monitor to the manufacturer.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Unload and then reload the video card's software driver.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Open the computer and switch the video card to a different slot.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Always start with the simplest, non-invasive physical adjustments. Incorrect internal settings (like contrast/brightness turned to zero) can simulate a total black screen."
+  },
+  {
+    "id": "sdi_09",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "The contrast on your projector's output is not displaying properly. In addition, the images continually flicker. What is the MOST likely cause of the projector's display problems?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The high-definition files are not in sync with the audio files.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "An outdated projector driver is in operation.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The wrong cable is connected to the HDMI port.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "A bulb is close to burning out.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Flickering and altered contrast rendering on projector displays are typical signs of an aging arc lamp bulb reaching the end of its lifespan."
+  },
+  {
+    "id": "sdi_10",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You have just purchased 10 new notebook computers for your users. You are concerned that users will leave the notebooks on for long periods of time, which could result in display burn-in. What should you do to prevent this from happening?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Install a software utility on each computer that is designed to fix stuck pixels.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Configure each computer to automatically power off after five minutes of inactivity.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Configure a screen saver on each computer.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Increase the hardware acceleration setting on each computer.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Screen savers or turning off displays via power plans prevent static pixels from causing image retention/burn-in without abruptly interrupting user sessions or powering down machines entirely."
+  },
+  {
+    "id": "sdi_11",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A company employee reports that their computer, which was recently upgraded with additional RAM and a new SSD, is still experiencing sluggish performance. As an IT analyst, you need to determine the underlying cause of the issue. Which of the following analyses would BEST help you identify the root cause of the sluggish performance?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Analyze the network traffic to determine if bandwidth limitations are affecting the computer's performance.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Analyze the software applications running on the system to identify any resource-intensive processes.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Analyze the system configuration to ensure that the new RAM is operating in dual-channel mode and the SSD is properly configured.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Analyze the system's temperature logs to check for any signs of overheating that might throttle performance.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Since hardware upgrades were recently installed, evaluating the actual runtime configuration (e.g., dual-channel vs single-channel RAM mode, SATA vs PCIe modes/AHCI drivers) ensures the newly added hardware is running at expected efficiency."
+  },
+  {
+    "id": "sdi_12",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "After working without problems for a couple of years, your computer has begun to lock up. You suspect that it is a thermal issue, but you can't find any component that is not functioning correctly. You have not replaced the CPU or installed any new devices. The CPU cooling fan and the power supply fan are working properly. The lock-ups are happening with increasing frequency. Which of the following is the MOST common condition that explains these symptoms?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "An accumulation of dust has gradually built up.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "The internal temperature sensor is beginning to malfunction intermittently.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The power supply has been switched to the wrong voltage setting.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The BIOS has never been flashed and has gotten more and more out of date.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Over time, accumulated dust clogs heatsink fins and ventilation ports, steadily degrading heat dissipation capability and resulting in frequent thermal lockups."
+  },
+  {
+    "id": "sdi_13",
+    "topic": "System and Display Issues",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "A technician must determine why a computer is overheating. Which of the following may be the cause? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "There is an invalid cable specification.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Blanking plates are covering slots.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The area is too warm.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "A fan is not working.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "High ambient room temperatures (lack of air conditioning, direct sunlight) and broken cooling fans directly contribute to thermal overload."
+  },
+  {
+    "id": "sdi_14",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are tasked with evaluating a computer system that frequently experiences random shutdowns and OS blue screen errors. After eliminating software issues, you suspect a hardware problem. Which of the following actions would be the MOST effective in evaluating the stability of the system's power supply?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Visually inspect the power supply for any physical damage or burnt smells.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Use a multimeter to measure the output voltages of the power supply.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Replace the power supply with a new one to see if the problem persists.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Check the system's event logs for any power-related error messages.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Using a multimeter on the main 24-pin and CPU power connectors allows direct measurement of active voltages against standard tolerances (+12V, +5V, +3.3V)."
+  },
+  {
+    "id": "sdi_15",
+    "topic": "System and Display Issues",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "While trying to use a projector for a presentation, you receive an error that states, 'No signal detected.' What is the MOST likely cause of this error?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "A burned-out bulb",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Weak remote control batteries",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "A loose HDMI cable",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Obstructed air vents on the projector",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A 'No signal detected' message means the projector is powered on and display output works, but it isn't receiving video data from the host device—typically due to a loose or disconnected video cable."
   }
 ];
 

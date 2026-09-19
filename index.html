@@ -813,456 +813,461 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "The technician is implementing the trusted platform module (TPM), which, during the boot process, compares hashes of key system state data to ensure they have not been tampered with.\n\nA hardware security module (HSM) is a secure USB key or thumb drive used to store cryptographic material where a user must authenticate before they can access the keys stored on the module.\n\nEncryption products make data secure by scrambling it in such a way that only a user with the correct decryption key can subsequently read it.\n\nA boot password requires the user to authenticate before the operating system is loaded. There are usually at least two passwords, though some systems may allow for more."
-  }
+  },
 {
-    "id": "power_disk_01",
-    "topic": "Power and Disk Issues",
+    "id": "bios_01",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "A user reports that their computer frequently crashes with a Blue Screen of Death (BSOD) displaying the error code \"0x00000024,\" which indicates an issue with the NTFS file system.\n\nAfter analyzing the situation, which of the following actions should you prioritize to determine the root cause of this error?",
+    "question": "A user reports that their computer is not booting from a newly installed SSD, even though it is properly connected.\n\nUpon checking the system firmware settings, you find that the boot option sequence is set to prioritize the optical drive first, followed by a USB drive, and then the network.\n\nWhich of the following actions should you take to analyze and resolve the boot issue?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Update the graphics card driver to the latest version.",
+        "text": "Enable Secure Boot in the UEFI setup to ensure the SSD is recognized as a trusted device.",
         "isCorrect": false
       },
       {
         "id": "opt_b",
-        "text": "Disable all startup programs to see if the issue persists.",
+        "text": "Update the system firmware to the latest version to ensure compatibility with the SSD.",
         "isCorrect": false
       },
       {
         "id": "opt_c",
-        "text": "Check the system's RAM for errors using a memory diagnostic tool.",
-        "isCorrect": false
+        "text": "Change the boot option sequence to prioritize the SSD as the first boot device.",
+        "isCorrect": true
       },
       {
         "id": "opt_d",
-        "text": "Analyze the system's event logs to identify any disk-related errors or warnings.",
-        "isCorrect": true
+        "text": "Disconnect the optical drive and USB drive to force the system to boot from the SSD.",
+        "isCorrect": false
       }
     ],
-    "explanation": "The \"0x00000024\" error is associated with the NTFS file system, which involves disk operations. Reviewing event logs for disk-related errors can help identify underlying issues with the file system or hard drive.\n\nWhile faulty RAM can cause system instability, the specific \"0x00000024\" error relates to the NTFS file system, not memory issues. Analyzing disk-related logs is more relevant.\n\nGraphics drivers are unlikely to be related to an NTFS file system error. The focus should be on disk-related diagnostics.\n\nWhile disabling startup programs can help identify software conflicts, it does not directly address the NTFS file system error. Disk analysis is more pertinent."
+    "explanation": "Analyzing the boot option sequence reveals that the SSD is not prioritized, which is why the system is not booting from it. By changing the sequence to prioritize the SSD, you ensure that the system firmware searches the SSD first for a boot manager, resolving the issue.\n\nWhile disconnecting other boot devices might force the system to boot from the SSD, it is not an efficient or practical solution. It does not address the root cause of the issue, which is the incorrect boot option sequence.\n\nEnabling Secure Boot is a security measure and does not influence the boot order or resolve issues related to boot device prioritization. It ensures that only trusted software is loaded but does not affect the SSD's boot priority.\n\nWhile updating the firmware can be beneficial for compatibility, it is not necessary in this scenario. The issue is related to the boot option sequence, not firmware compatibility. Prioritizing the SSD in the boot sequence is the correct action to resolve the issue."
   },
   {
-    "id": "power_disk_02",
-    "topic": "Power and Disk Issues",
+    "id": "bios_02",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "You have just installed an SSD drive in your older Windows workstation. However, after you start Windows, you do not see the SSD drive listed in Windows Explorer.\n\nWhat should you do FIRST?",
+    "question": "Which of the following BEST describes the role of the Trusted Platform Module (TPM) in enhancing system security?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Replace the power supply.",
+        "text": "Verifying that the TPM is configured to support legacy BIOS mode for compatibility with older hardware.",
         "isCorrect": false
       },
       {
         "id": "opt_b",
-        "text": "Configure the jumpers on the SSD drive.",
+        "text": "Checking if the TPM is used to control fan speed and temperature monitoring for system stability.",
         "isCorrect": false
       },
       {
         "id": "opt_c",
-        "text": "Make sure the power connectors on the SSD drive are plugged in all the way.",
+        "text": "Assessing whether the TPM is used to store cryptographic keys securely, preventing unauthorized access to encrypted data.",
         "isCorrect": true
       },
       {
         "id": "opt_d",
-        "text": "Use the voltage switch on the power supply to switch from 110 to 220 volts.",
+        "text": "Evaluating if the TPM is enabled to allow booting from USB devices for recovery purposes.",
         "isCorrect": false
       }
     ],
-    "explanation": "Because you have just made a system change, you should check items related to the change you have made. In this case, check to make sure that the power connectors are plugged into the SSD drive.\n\nJumpers are pins on the back of some older hard drives and are used to enable specific types of settings. These do not apply to an SSD drive.\n\nReplacing the power supply is one of the last steps you should take, especially if the power supply is new and seems to be working.\n\nUsing the voltage switch to go from 110 to 220 volts does not normally impact whether or not an SSD drive is working."
+    "explanation": "The TPM is designed to securely store cryptographic keys, which is crucial for protecting encrypted data and ensuring that sensitive information is not accessed by unauthorized users.\n\nWhile booting from USB devices can be useful for recovery, it is not related to the primary function of the TPM. The TPM is not involved in enabling or disabling boot options; its role is focused on security, particularly in storing cryptographic keys.\n\nThe TPM does not play a role in supporting legacy BIOS mode. This option confuses the TPM's security functions with compatibility settings, which are unrelated to the TPM's purpose.\n\nThe TPM is not involved in hardware management tasks such as controlling fan speed or temperature monitoring. This option misrepresents the TPM's role, which is centered around security and cryptographic functions, not hardware stability."
   },
   {
-    "id": "power_disk_03",
-    "topic": "Power and Disk Issues",
+    "id": "bios_03",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "A client complains that their computer intermittently fails to boot, displaying a \"Missing Operating System\" error. You have confirmed that the boot order is correct, and the drive is detected in the UEFI/BIOS.\n\nWhat should you analyze next to identify the root cause of the boot sector issue?",
+    "question": "An energy company is strengthening its defenses and wants to look for methods that successfully protect trade secrets by ensuring none of its company's computing assets are hijacked by malware.\nTo assist in safeguarding the sensitive information, what can the technician enable to ensure this will not happen?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Examine the drive for file system corruption or logical errors.",
-        "isCorrect": true
+        "text": "Boot password",
+        "isCorrect": false
       },
       {
         "id": "opt_b",
-        "text": "Replace the SATA cables connecting the drive to the motherboard.",
+        "text": "HSM",
         "isCorrect": false
       },
       {
         "id": "opt_c",
-        "text": "Check for any recent changes in the system firmware settings.",
+        "text": "TPM",
         "isCorrect": false
       },
       {
         "id": "opt_d",
-        "text": "Test the RAM modules for any faults or errors.",
-        "isCorrect": false
+        "text": "Secure boot",
+        "isCorrect": true
       }
     ],
-    "explanation": "Analyzing the drive for file system corruption or logical errors is appropriate in this scenario. The \"Missing Operating System\" error can be caused by issues within the boot sector or file system, which may prevent the system from locating the operating system.\n\nWhile faulty RAM can cause various system issues, it is less likely to be the cause of a \"Missing Operating System\" error, which is more directly related to the boot sector or drive issues.\n\nAlthough changes in firmware settings can affect boot behavior, the issue described is more indicative of a problem with the drive's boot sector or file system, not the firmware settings.\n\nWhile faulty cables can cause detection issues, the drive is already detected in the UEFI/BIOS. The focus should be on analyzing the integrity of the drive's file system and boot sector."
+    "explanation": "The technician can configure secure boot, which is a unified extensible firmware interface (UEFI) feature designed to prevent malware from hijacking a computer.\n\nA trusted platform module (TPM) is a specification for hardware-based storage of digital certificates, cryptographic keys, and hashed passwords.\n\nA hardware security module (HSM) is a secure USB key or thumb drive used to store cryptographic material where a user must authenticate before they can access the keys stored on the module.\n\nA boot password requires the user to authenticate before the operating system is loaded. Different system software will provide different support for authentication methods. This measure cannot keep malware from injecting code into the bootloader of the operating system."
   },
   {
-    "id": "power_disk_04",
-    "topic": "Power and Disk Issues",
+    "id": "bios_04",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "While running a graphics editing program on your Windows workstation, a screen suddenly pops up with an error message warning. You note the error message, but the only way to continue working is to reboot your system.\n\nWhat is this type of error screen called?",
+    "question": "You have purchased a new notebook. This notebook system uses UEFI firmware and comes with Windows 11 preinstalled. However, you want to use Linux on this system.\nYou download your favorite distribution and install it on the system, removing all Windows partitions on the hard disk in the process. When the installation is complete, you find that the operating system won't load when the system is rebooted.\nWhich of the following would allow your computer to boot to Linux?",
     "options": [
       {
         "id": "opt_a",
-        "text": "POST",
+        "text": "Enable the TPM chip on the motherboard.",
         "isCorrect": false
       },
       {
         "id": "opt_b",
-        "text": "HVAC",
+        "text": "Reinstall Windows 11 on the system.",
         "isCorrect": false
       },
       {
         "id": "opt_c",
-        "text": "BSoD",
-        "isCorrect": true
+        "text": "Set the boot order to boot from the hard disk first in the UEFI configuration.",
+        "isCorrect": false
       },
       {
         "id": "opt_d",
-        "text": "SPoD",
+        "text": "Disable Secure Boot in the UEFI configuration.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "Enable Secure Boot in the UEFI configuration.",
         "isCorrect": false
       }
     ],
-    "explanation": "You are experiencing a Blue Screen of Death (BSoD). This is a proprietary crash screen officially known as a stop error or blue screen error. A BSoD happens when the Windows OS encounters a fatal system error.\n\nAn SPoD (Spinning Pinwheel of Death) is the macOS equivalent of a BSoD. In this case, you are running a Windows system, so an SPoD does not apply.\n\nPOST errors are encountered when booting your system (before running Windows) and do not apply in this scenario.\n\nHVAC stands for heating, ventilation, and air conditioning. This is the system that moves air between indoor and outdoor areas in a room. HVAC does not directly apply to computer systems."
+    "explanation": "In this scenario, you should disable the Secure Boot option in the UEFI configuration. Secure Boot requires the operating system installed on the hard drive to be digitally signed. If it isn't digitally signed, the UEFI firmware will not boot it by default.\n\nReinstalling Windows 11 does not meet the requirements of this scenario.\n\nIf Secure Boot is already enabled, the TPM chip on the motherboard must already be enabled as well.\n\nThe boot order configuration is not preventing the system from booting in this scenario."
   },
   {
-    "id": "power_disk_05",
-    "topic": "Power and Disk Issues",
+    "id": "bios_05",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "Every time a user attempts to save a file, the computer shows an error that reads, \"Cannot read from the source disk.\" What kind of issue does this indicate?",
+    "question": "A company has recently upgraded its systems to UEFI-based firmware, and some employees are experiencing issues accessing system settings during boot.\nWhich of the following actions would BEST evaluate and resolve the issue of missing the key prompt to access the UEFI setup program?",
     "options": [
       {
         "id": "opt_a",
-        "text": "RAID failure",
+        "text": "Adjust the boot order to prioritize the hard drive, ensuring the system boots correctly.",
         "isCorrect": false
       },
       {
         "id": "opt_b",
-        "text": "Drive issue",
+        "text": "Use the Shift-click method on the Restart button from the Windows logon screen to access UEFI boot options.",
         "isCorrect": true
       },
       {
         "id": "opt_c",
-        "text": "Power issue",
+        "text": "Disable Secure Boot in the UEFI setup to allow easier access to system settings.",
         "isCorrect": false
       },
       {
         "id": "opt_d",
-        "text": "POST issue",
+        "text": "Reboot the computer and continuously press the Delete key until the UEFI setup program appears.",
         "isCorrect": false
       }
     ],
-    "explanation": "A \"cannot read from the source disk\" error indicates an issue with a fixed disk drive that is failing. Bad sectors typically cause this on a hard disk drive.\n\nPower-on self-test (POST) is a diagnostic program implemented in the system firmware that checks the hardware to ensure the components required to boot the PC are present and functioning correctly.\n\nA power issue might arise due to a fault in the power supply unit (PSU), incoming electricity supply, power cables/connectors, or fuses.\n\nIn a redundant array of independent disks (RAID), if one of the underlying devices fails, the volume will show up as \"degraded,\" but the data on the volume will still be accessible."
+    "explanation": "Using the Shift-click method on the Restart button from the Windows logon screen to access UEFI boot options provides a reliable way to access UEFI boot options without relying on the timing of key presses during boot. It evaluates the issue by offering an alternative access method, ensuring users can reach the UEFI setup even if they miss the initial prompt.\n\nWhile pressing the Delete key is a common method to access the UEFI setup, it does not evaluate the issue of missing the prompt. This approach relies on timing and may not resolve the problem if the boot process is too fast.\n\nDisabling Secure Boot does not affect the ability to access the UEFI setup program. Secure Boot is a security feature and does not influence the key prompt or access method for UEFI settings.\n\nAdjusting the boot order is unrelated to accessing the UEFI setup program. This action focuses on the sequence of boot devices rather than resolving the issue of missing the key prompt for UEFI access."
   },
   {
-    "id": "power_disk_06",
-    "topic": "Power and Disk Issues",
+    "id": "bios_06",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "A technician is troubleshooting a failed redundant array of independent disks (RAID) configuration and is unable to access the RAID configuration utility. What does this indicate?",
+    "question": "You are a system administrator tasked with optimizing the cooling system of a high-performance workstation used for video editing. The workstation frequently overheats, causing performance issues.\nBased on the system's UEFI settings, which of the following actions should you take to ensure the workstation operates efficiently without overheating?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Controller failure",
+        "text": "Configure the duty cycle settings to a higher percentage to increase the fan speed and improve cooling efficiency.",
         "isCorrect": true
       },
       {
         "id": "opt_b",
-        "text": "Boot process failure",
+        "text": "Set the cooling option to \"Quiet\" to reduce fan noise and allow the system to run at higher temperatures.",
         "isCorrect": false
       },
       {
         "id": "opt_c",
-        "text": "Multiple disk failure",
+        "text": "Use third-party applications to manually monitor the temperature and adjust fan settings as needed.",
         "isCorrect": false
       },
       {
         "id": "opt_d",
-        "text": "Disk failure",
+        "text": "Disable all USB ports to reduce power consumption and indirectly lower system temperature.",
         "isCorrect": false
       }
     ],
-    "explanation": "If the technician cannot access the RAID configuration utility, this indicates that the controller itself is likely to have failed. However, the data on the volume should be recoverable.\n\nMost desktop-level RAID solutions can tolerate the loss of only one disk, so the technician should replace it as soon as possible.\n\nIf the RAID failure affects the boot process, the technician can use the RAID configuration utility to verify its status.\n\nIf a volume is not available, either multiple disks (more than the tolerated number of disks) have failed, or the controller has failed."
+    "explanation": "Increasing the duty cycle settings will make the fans run faster, enhancing cooling efficiency and helping to prevent the workstation from overheating. This action directly addresses the overheating issue by improving airflow and heat dissipation.\n\nWhile this option reduces fan noise, it allows the system to run at higher temperatures, which is not ideal for a workstation that is already experiencing overheating issues. This setting prioritizes noise reduction over cooling efficiency.\n\nDisabling USB ports may slightly reduce power consumption, but it is unlikely to have a significant impact on the system's overall temperature. This action does not directly address the cooling needs of the workstation.\n\nWhile third-party applications can provide valuable temperature monitoring, they do not directly adjust fan settings through UEFI. The question specifically asks for actions within the UEFI settings, making this option less relevant to the scenario."
   },
   {
-    "id": "power_disk_07",
-    "topic": "Power and Disk Issues",
+    "id": "bios_07",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "When troubleshooting boot sector issues, which of the following steps is essential to ensure the system can successfully boot from the correct drive?",
+    "question": "Which of the following BEST describes the technology that was designed to replace the BIOS and is a firmware solution for controlling the startup process and loading the computer operating system into memory?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Inspect the power supply unit for any faults or issues.",
-        "isCorrect": false
+        "text": "UEFI",
+        "isCorrect": true
       },
       {
         "id": "opt_b",
-        "text": "Ensure that the system firmware is updated to the latest version.",
+        "text": "EEPROM",
         "isCorrect": false
       },
       {
         "id": "opt_c",
-        "text": "Check if the keyboard is connected properly to avoid boot errors.",
+        "text": "CMOS",
         "isCorrect": false
       },
       {
         "id": "opt_d",
-        "text": "Verify that the boot order in the UEFI/BIOS settings is correctly configured.",
-        "isCorrect": true
+        "text": "BIOS 2",
+        "isCorrect": false
       }
     ],
-    "explanation": "Verifying that the boot order in the UEFI/BIOS settings is correctly configured is crucial when troubleshooting boot sector issues, as the boot order determines which drive the system attempts to boot from first. If the boot order is incorrect, the system may try to boot from a non-bootable device, leading to boot failures.\n\nWhile a disconnected or malfunctioning keyboard can cause certain boot issues, it is not directly related to boot sector problems. Boot sector issues are more concerned with the configuration and detection of bootable drives.\n\nUpdating the system firmware can resolve some hardware compatibility issues, but it is not a primary step in addressing boot sector issues. Boot sector troubleshooting focuses on drive configuration and boot order.\n\nWhile power supply issues can cause a computer not to start, they are not directly related to boot sector problems. Boot sector troubleshooting involves ensuring the correct drive is being accessed during the boot process."
+    "explanation": "UEFI was designed to replace the BIOS and is a firmware solution for controlling the startup process and loading the computer operating system into memory.\n\nCMOS is a legacy computer chip technology that was used to store system information prior to the introduction of EEPROM.\n\nEEPROM is a non-volatile memory chip that stores the system startup information that is configured through UEFI.\n\nBIOS (Basic Input/Output System) is firmware used to provide runtime services for operating systems. BIOS version 2 does not exist."
   },
   {
-    "id": "power_disk_08",
-    "topic": "Power and Disk Issues",
+    "id": "bios_08",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "You are a technician tasked with resolving a boot issue on a client's computer. The system fails to boot and displays an error message indicating \"No Bootable Device Found.\"\n\nUpon inspection, you notice that the system has multiple drives installed.\n\nWhich of the following actions should you take first to resolve the boot sector issue?",
+    "question": "A user reports that their computer frequently overheats and shuts down during intensive tasks. Upon accessing the system firmware settings, you notice that the fan speed is set to \"Quiet\" mode.\nWhich of the following actions should you take to analyze and resolve the overheating issue?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Run a full diagnostic test on all installed drives to check for hardware failures.",
+        "text": "Enable Secure Boot to ensure that only trusted software runs, preventing overheating.",
         "isCorrect": false
       },
       {
         "id": "opt_b",
-        "text": "Reinstall the operating system on the primary drive.",
+        "text": "Adjust the boot order to prioritize the SSD, reducing the time the system spends booting and thus lowering heat generation.",
         "isCorrect": false
       },
       {
         "id": "opt_c",
-        "text": "Check the UEFI/BIOS settings to ensure the correct boot order is set.",
+        "text": "Change the fan speed setting to \"Cool\" mode to increase fan activity and reduce system temperature.",
         "isCorrect": true
       },
       {
         "id": "opt_d",
-        "text": "Replace the data cables connecting the drives to the motherboard.",
+        "text": "Disable USB ports to reduce power consumption and heat output from connected devices.",
         "isCorrect": false
       }
     ],
-    "explanation": "Ensuring that the UEFI/BIOS is configured to boot from the correct drive can resolve the \"No Bootable Device Found\" error if the system is trying to boot from a non-bootable drive.\n\nReinstalling the operating system is a more drastic measure and should not be the first step. It is important to first verify that the system is attempting to boot from the correct drive before considering reinstallation.\n\nWhile faulty data cables can cause drive detection issues, the error message specifically indicates a boot order problem. Checking the boot order is a more direct and less invasive step to take first.\n\nRunning diagnostics is a good practice if a hardware failure is suspected, but in this scenario, the error message suggests a configuration issue rather than a hardware failure. Checking the boot order is a more efficient first step."
+    "explanation": "By analyzing the current fan speed setting, you can determine that the \"Quiet\" mode is likely contributing to the overheating issue. Changing the setting to \"Cool\" mode will increase fan activity, enhancing cooling and reducing system temperature during intensive tasks.\n\nSecure Boot is a security feature that does not affect system temperature or fan operation. It ensures that only trusted software is loaded during boot but does not address overheating issues.\n\nAdjusting the boot order does not impact the system's temperature during intensive tasks. Boot order settings determine the sequence of boot devices and do not influence heat generation or cooling.\n\nDisabling USB ports may slightly reduce power consumption, but it is unlikely to have a significant impact on the overall system temperature during intensive tasks. The primary issue is related to fan speed settings, not USB port activity."
   },
   {
-    "id": "power_disk_09",
-    "topic": "Power and Disk Issues",
+    "id": "bios_09",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "When booting your workstation, you hear a series of audible beeps, and the system locks up.\n\nWhat is the FIRST step you should take when troubleshooting this issue?",
+    "question": "Which of the following is a typical boot device option that can be prioritized in the system firmware's boot option sequence?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Replace the motherboard battery.",
-        "isCorrect": false
+        "text": "Network/PXE (Preboot Execution Environment)",
+        "isCorrect": true
       },
       {
         "id": "opt_b",
-        "text": "Check for dust buildup inside the case.",
+        "text": "Printer",
         "isCorrect": false
       },
       {
         "id": "opt_c",
-        "text": "Disconnect nonessential peripherals and try to reboot.",
+        "text": "External monitor",
         "isCorrect": false
       },
       {
         "id": "opt_d",
-        "text": "Check the motherboard documentation for POST errors.",
-        "isCorrect": true
+        "text": "Bluetooth device",
+        "isCorrect": false
       }
     ],
-    "explanation": "Every time a workstation boots, it runs a Power-On Self-Test (POST) to make sure that all of the basic hardware in the system is present and functioning correctly. If a problem is identified during POST, an error is generated, which can be a series of beeps. You need to check the motherboard documentation to interpret what the series of beeps represents.\n\nIf the motherboard battery fails, the system clock can lose time, or the BIOS/UEFI settings may reset to their defaults. However, this would not cause the series of beeps you are hearing when the system boots.\n\nDust buildup can cause overheating and other symptoms. However, this is not related to the POST error beeps you are hearing when the system boots.\n\nDisconnecting nonessential peripherals and then rebooting is a troubleshooting step for resolving a Blue Screen of Death issue and is not related to POST error beeps."
+    "explanation": "Network/PXE is a typical boot device option that can be prioritized in the system firmware's boot option sequence. It allows the computer to boot via the network adapter by retrieving boot instructions from a configured server.\n\nBluetooth devices are not typically used as boot devices. They are primarily used for wireless communication and do not have the capability to store or execute boot instructions.\n\nAn external monitor is a display device and does not function as a boot device. It is used to display output from the computer but cannot store or execute boot instructions.\n\nA printer is an output device used for printing documents and cannot be used as a boot device. It does not have the capability to store or execute boot instructions."
   },
   {
-    "id": "power_disk_10",
-    "topic": "Power and Disk Issues",
+    "id": "bios_10",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "A user reports that their computer is not booting and displays an error message stating, \"Boot device not found.\" You verify that the hard drive is properly connected and powered.\n\nUpon entering the BIOS/UEFI settings, you notice that the boot order is set to prioritize USB devices over the internal hard drive.\n\nWhat should you do to resolve the issue?",
+    "question": "You are a technician tasked with setting up a new computer system for a client who wants to install an operating system from a USB drive. However, the system is currently configured to boot from the internal hard drive first.\nWhich of the following actions should you take to ensure the system boots from the USB drive?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Update the BIOS/UEFI firmware to the latest version.",
+        "text": "Format the internal hard drive to remove any existing boot managers.",
         "isCorrect": false
       },
       {
         "id": "opt_b",
-        "text": "Change the boot order to prioritize the internal hard drive.",
+        "text": "Access the UEFI setup program and change the boot option sequence to prioritize the USB drive over the internal hard drive.",
         "isCorrect": true
       },
       {
         "id": "opt_c",
-        "text": "Format the hard drive and reinstall the operating system.",
+        "text": "Connect the USB drive and restart the computer without making any changes to the boot order.",
         "isCorrect": false
       },
       {
         "id": "opt_d",
-        "text": "Disable USB ports in the BIOS/UEFI settings.",
+        "text": "Disable the internal hard drive in the UEFI setup program to force the system to boot from the USB drive.",
         "isCorrect": false
       }
     ],
-    "explanation": "By analyzing the BIOS/UEFI settings, you identified that the boot order was incorrect. Changing the boot order to prioritize the internal hard drive will allow the system to boot from the correct device.\n\nDisabling USB ports is not necessary and could prevent the use of USB devices needed for other functions. The issue is related to the boot order, not the functionality of USB ports.\n\nWhile updating firmware can resolve some issues, it is not relevant to the current problem of boot order configuration. The solution lies in adjusting the settings rather than updating them.\n\nFormatting the hard drive is an extreme measure and unnecessary in this scenario. The problem is with the boot order, not the operating system or hard drive integrity."
+    "explanation": "By accessing the UEFI setup program and adjusting the boot option sequence, you can ensure that the system checks the USB drive for a boot manager before the internal hard drive. This is the appropriate action to take to boot from the USB drive.\n\nSimply connecting the USB drive and restarting the computer will not change the boot order. The system will continue to boot from the internal hard drive as it is currently prioritized in the boot sequence.\n\nFormatting the internal hard drive is unnecessary and could result in data loss. It does not address the need to change the boot order to prioritize the USB drive.\n\nDisabling the internal hard drive is an extreme measure that is not required. Adjusting the boot order is sufficient to achieve the desired outcome without disabling hardware components."
   },
   {
-    "id": "power_disk_11",
-    "topic": "Power and Disk Issues",
+    "id": "bios_11",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "Which of the following is a common symptom of a failing hard disk drive (HDD) that affects its reliability and performance?",
+    "question": "When configuring fan settings in the UEFI setup program, which option would you select to prioritize a quieter operation over cooling performance?",
     "options": [
       {
         "id": "opt_a",
-        "text": "The computer's power supply unit (PSU) fails to provide stable power to the motherboard.",
+        "text": "Cool",
         "isCorrect": false
       },
       {
         "id": "opt_b",
-        "text": "The computer fails to detect any bootable drives during the boot sequence.",
+        "text": "Balanced",
         "isCorrect": false
       },
       {
         "id": "opt_c",
-        "text": "The computer displays a blue screen of death (BSOD) during startup.",
-        "isCorrect": false
+        "text": "Quiet",
+        "isCorrect": true
       },
       {
         "id": "opt_d",
-        "text": "The computer experiences frequent freezing and slow file access times.",
-        "isCorrect": true
+        "text": "Fanless",
+        "isCorrect": false
       }
     ],
-    "explanation": "Frequent freezing and slow file access times are common symptoms of a failing hard disk drive. These issues indicate that the drive is struggling to read or write data efficiently, affecting its reliability and performance.\n\nWhile a BSOD can occur due to various hardware and software issues, it is not specifically indicative of a failing hard disk drive. BSODs can be caused by driver issues, memory problems, or other hardware failures.\n\nThe computer failing to detect any bootable drives during the boot sequence is more related to boot configuration problems, connection issues, or BIOS/UEFI settings rather than directly indicating a failing hard disk drive. It could also be due to a completely failed drive, but not necessarily related to reliability and performance.\n\nThe computer's power supply unit (PSU) failing to provide stable power to the motherboard is related to power supply problems and is not directly connected to the reliability and performance of a hard disk drive. A failing PSU can cause various system issues but does not specifically indicate a problem with the HDD."
+    "explanation": "The \"Quiet\" setting prioritizes reducing fan speed to minimize noise, even if it allows for slightly higher system temperatures. This option is specifically intended for quieter operations.\n\nThe \"Balanced\" setting aims to provide a compromise between cooling performance and noise level, but it does not specifically prioritize quieter operation over cooling.\n\nThe \"Cool\" setting is designed to enhance cooling performance by running fans at higher speeds, which typically results in more noise, not less.\n\nWhile \"Fanless\" might suggest a quieter operation, it is not a typical setting for active cooling systems in UEFI. It implies no fan operation, which could lead to overheating unless the system is specifically designed for passive cooling."
   },
   {
-    "id": "power_disk_12",
-    "topic": "Power and Disk Issues",
+    "id": "bios_12",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "When troubleshooting a computer that won't start due to a power issue, which of the following steps should you take first to determine if the problem is related to the power supply unit (PSU)?",
+    "question": "Which security measure generates and stores cryptographic keys?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Remove all nonessential devices and add them back one by one.",
+        "text": "BIOS/UEFI password",
         "isCorrect": false
       },
       {
         "id": "opt_b",
-        "text": "Replace the motherboard with a new one.",
-        "isCorrect": false
-      },
-      {
-        "id": "opt_c",
-        "text": "Check if the LEDs on the front panel are lit and if you can hear the fans.",
+        "text": "Trusted Platform Module (TPM)",
         "isCorrect": true
       },
       {
+        "id": "opt_c",
+        "text": "Chassis intrusion detection",
+        "isCorrect": false
+      },
+      {
         "id": "opt_d",
-        "text": "Update the system firmware to the latest version.",
+        "text": "DriveLock",
         "isCorrect": false
       }
     ],
-    "explanation": "Checking if the LEDs on the front panel are lit and if you can hear the fans helps determine if the PSU is supplying power to the system. If the LEDs and fans are operational, it indicates that the PSU is at least partially functioning, which helps narrow down the potential causes of the power issue.\n\nReplacing the motherboard is a more invasive and costly step that should only be considered after simpler diagnostics have been performed. It is not the first step in troubleshooting power issues.\n\nUpdating the system firmware is unrelated to diagnosing power issues. Firmware updates are typically used to resolve compatibility or performance issues, not to address basic power functionality.\n\nRemoving all nonessential devices and adding them back one by one is more relevant for diagnosing POST or boot issues rather than initial power issues. It helps identify faulty components but does not directly address whether the PSU is supplying power."
+    "explanation": "A Trusted Platform Module (TPM) is a special chip on the motherboard that generates and stores cryptographic keys. The TPM can be used by applications (such as Bitlocker on Windows systems) to generate and save keys that are used for encryption.\n\nA BIOS/UEFI password controls access to the BIOS/UEFI setup program.\n\nChassis intrusion detection helps you identify when a system case has been opened.\n\nDriveLock is a disk encryption solution."
   },
   {
-    "id": "power_disk_13",
-    "topic": "Power and Disk Issues",
+    "id": "bios_13",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "You are called to troubleshoot a desktop computer that suddenly turns off and does not power back on. Upon inspection, you notice that the LEDs on the front panel are not lit, and the fans are not spinning.\n\nWhat should be your next step to analyze and identify the potential cause of the power issue?",
+    "question": "A company is planning to implement a secure method for storing cryptographic keys used in their data encryption processes. They have several computers that do not support Trusted Platform Module (TPM) technology.\nThe IT manager is considering using a Hardware Security Module (HSM) for this purpose.\nWhich of the following reasons BEST justifies the use of an HSM in this scenario?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Remove the CPU and test it in another working system.",
+        "text": "An HSM can be used to enhance the overall network bandwidth of the company.",
         "isCorrect": false
       },
       {
         "id": "opt_b",
-        "text": "Immediately replace the power supply unit (PSU) with a new one.",
+        "text": "An HSM can be used to improve the processing speed of encryption algorithms.",
         "isCorrect": false
       },
       {
         "id": "opt_c",
-        "text": "Check the UEFI/BIOS settings to ensure the power settings are configured correctly.",
+        "text": "An HSM can be used to back up all company data to prevent data loss.",
         "isCorrect": false
       },
       {
         "id": "opt_d",
-        "text": "Test the wall socket by plugging in a known-good device, such as a lamp.",
+        "text": "An HSM provides a secure way to store cryptographic keys, especially for computers lacking TPM support.",
         "isCorrect": true
       }
     ],
-    "explanation": "Testing the wall socket helps determine if the issue is external to the computer, such as a faulty power outlet. This step is crucial to rule out external power supply issues before investigating internal components.\n\nReplacing the PSU without first verifying the power source is premature and may lead to unnecessary costs. It's important to confirm that the issue isn't with the external power supply before replacing internal components.\n\nIf the computer is not powering on at all, you cannot access the UEFI/BIOS settings. This step is irrelevant when the system shows no signs of receiving power.\n\nTesting the CPU in another system is a more advanced diagnostic step that should only be considered after simpler checks, such as verifying power supply and connections, have been performed. It is not directly related to initial power issues."
+    "explanation": "A Hardware Security Module (HSM) is used to securely store cryptographic keys. It is particularly useful for computers that do not support TPM, providing a secure alternative for key storage and recovery.\n\nAn HSM is focused on secure storage of cryptographic keys, not on network performance.\n\nThe purpose of an HSM is specifically for securely storing cryptographic keys, not for general data backup.\n\nAn HSM is used for secure storage of cryptographic keys, which is unrelated to the speed of encryption processes."
   },
   {
-    "id": "power_disk_14",
-    "topic": "Power and Disk Issues",
+    "id": "bios_14",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "When troubleshooting boot issues, which of the following steps should you take if a fixed disk is not detected during the boot process?",
+    "question": "In the context of system firmware, what is the primary purpose of configuring USB permissions through the UEFI setup program?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Verify that the drive is powered and check for secure power connections.",
-        "isCorrect": true
-      },
-      {
-        "id": "opt_b",
-        "text": "Replace the motherboard immediately.",
+        "text": "To install drivers for USB devices.",
         "isCorrect": false
       },
       {
+        "id": "opt_b",
+        "text": "To enable or disable USB ports for security reasons.",
+        "isCorrect": true
+      },
+      {
         "id": "opt_c",
-        "text": "Reinstall the system firmware.",
+        "text": "To increase the data transfer speed of USB devices.",
         "isCorrect": false
       },
       {
         "id": "opt_d",
-        "text": "Check if the operating system is up to date.",
+        "text": "To update the firmware of USB-connected devices.",
         "isCorrect": false
       }
     ],
-    "explanation": "Ensuring that the drive is powered and that power connectors are secure is a crucial step in troubleshooting when a fixed disk is not detected. This addresses potential power issues that could prevent the drive from being recognized.\n\nChecking if the operating system is up to date is not relevant when a fixed disk is not detected during the boot process. The issue is more likely related to hardware connections or BIOS/UEFI settings rather than the operating system.\n\nReinstalling the system firmware is not a standard troubleshooting step for a fixed disk not being detected. This action is more drastic and typically unrelated to simple detection issues unless a firmware update has caused the problem.\n\nReplacing the motherboard is a significant step and should not be the first action taken when a fixed disk is not detected. This issue is often resolved by checking connections and settings rather than replacing major components."
+    "explanation": "The primary purpose of configuring USB permissions through the UEFI setup program is to enable or disable USB ports, which can be an important security measure to prevent unauthorized access or data transfer.\n\nConfiguring USB permissions in the UEFI setup program does not affect the data transfer speed of USB devices. Speed is determined by the USB version and hardware capabilities.\n\nInstalling drivers for USB devices is typically done within the operating system, not through the UEFI setup program.\n\nUpdating the firmware of USB-connected devices is not related to configuring USB permissions in the UEFI setup program. Firmware updates are usually performed through specific software tools provided by the device manufacturer."
   },
   {
-    "id": "power_disk_15",
-    "topic": "Power and Disk Issues",
+    "id": "bios_15",
+    "topic": "BIOS and UEFI",
     "type": "single",
     "requiredSelections": 1,
-    "question": "You are a technician tasked with diagnosing a desktop computer that has been reported to frequently freeze and experience slow file access times.\n\nUpon investigation, you notice that the hard disk drive (HDD) is making unusual clicking noises.\n\nWhat is the MOST appropriate action to take to address the drive's reliability and performance issues?",
+    "question": "A technician is implementing a feature that will compare hashes of key system state data during the boot process to ensure that nobody has tampered with the system firmware, boot loader, and OS kernel.\nWhat feature is this?",
     "options": [
       {
         "id": "opt_a",
-        "text": "Run a full system antivirus scan to check for malware affecting the HDD.",
-        "isCorrect": false
-      },
-      {
-        "id": "opt_b",
-        "text": "Replace the HDD with a new one and restore data from the latest backup.",
+        "text": "TPM",
         "isCorrect": true
       },
       {
+        "id": "opt_b",
+        "text": "HSM",
+        "isCorrect": false
+      },
+      {
         "id": "opt_c",
-        "text": "Update the computer's BIOS/UEFI settings to ensure proper drive configuration.",
+        "text": "Boot password",
         "isCorrect": false
       },
       {
         "id": "opt_d",
-        "text": "Defragment the HDD to improve data access speed and performance.",
+        "text": "Encryption",
         "isCorrect": false
       }
     ],
-    "explanation": "The symptoms of frequent freezing, slow file access, and unusual clicking noises suggest that the HDD is failing. Replacing the HDD and restoring data from a backup is the most appropriate action to ensure data integrity and resolve the reliability and performance issues.\n\nWhile malware can affect system performance, the symptoms described (frequent freezing, slow file access, and clicking noises) are more indicative of a physical hardware issue with the HDD rather than a software problem like malware.\n\nDefragmenting the HDD can improve performance in some cases, but it is not suitable for addressing hardware failure symptoms such as clicking noises. Defragmentation does not resolve physical issues with the drive.\n\nWhile ensuring correct BIOS/UEFI settings is important, it does not address the physical symptoms of a failing HDD, such as clicking noises and performance degradation. The issue is likely hardware-related, requiring drive replacement."
+    "explanation": "The technician is implementing the trusted platform module (TPM), which, during the boot process, compares hashes of key system state data to ensure they have not been tampered with.\n\nA hardware security module (HSM) is a secure USB key or thumb drive used to store cryptographic material where a user must authenticate before they can access the keys stored on the module.\n\nEncryption products make data secure by scrambling it in such a way that only a user with the correct decryption key can subsequently read it.\n\nA boot password requires the user to authenticate before the operating system is loaded. There are usually at least two passwords, though some systems may allow for more."
   }
 ];
 

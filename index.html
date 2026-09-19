@@ -21,10 +21,10 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Custom scrollbar */
+        /* Custom scrollbars */
         ::-webkit-scrollbar {
             width: 8px;
-            height: 8px;
+            height: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #1e293b;
@@ -50,19 +50,22 @@
                 <div>
                     <h1 class="font-bold text-lg text-slate-100 flex items-center gap-2">
                         CompTIA A+ Master Cycler
-                        <span class="text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full font-mono">v3.7</span>
+                        <span class="text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full font-mono">v4.0</span>
                     </h1>
-                    <p class="text-xs text-slate-400">Strict Practice Bank & Explanation Viewer</p>
+                    <p class="text-xs text-slate-400">Non-Repeating Shuffle • Step-Back History • Direct Jump Grid</p>
                 </div>
             </div>
 
             <!-- Header Action Controls -->
             <div class="flex items-center space-x-2">
+                <button onclick="reshuffleQueue()" title="Reshuffle Deck Sequence" class="flex items-center space-x-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-xs font-medium rounded-lg transition">
+                    <i data-lucide="shuffle" class="w-4 h-4 text-indigo-400"></i>
+                    <span>Reshuffle</span>
+                </button>
                 <button onclick="openModal('addModal')" class="flex items-center space-x-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition shadow-sm">
                     <i data-lucide="plus" class="w-4 h-4"></i>
                     <span>Add Question</span>
                 </button>
-
                 <button onclick="openModal('dataModal')" class="flex items-center space-x-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-xs font-medium rounded-lg transition">
                     <i data-lucide="database" class="w-4 h-4"></i>
                     <span>Manage Bank</span>
@@ -72,7 +75,7 @@
     </header>
 
     <!-- Main Workspace -->
-    <main class="max-w-4xl w-full mx-auto px-4 py-6 flex-1 flex flex-col gap-6">
+    <main class="max-w-4xl w-full mx-auto px-4 py-6 flex-1 flex flex-col gap-5">
 
         <!-- Topic Filter & Session Status Bar -->
         <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-wrap items-center justify-between gap-4 shadow-lg">
@@ -90,16 +93,31 @@
                 </select>
             </div>
 
-            <!-- Stats Badge -->
-            <div class="flex items-center space-x-4 text-xs">
+            <!-- Stats Badges -->
+            <div class="flex items-center space-x-3 text-xs">
                 <div class="bg-slate-800 border border-slate-700/80 px-3 py-1.5 rounded-lg flex items-center space-x-2">
-                    <span class="text-slate-400">Bank Size:</span>
+                    <span class="text-slate-400">Total in Filter:</span>
                     <span id="bankCount" class="font-mono text-indigo-400 font-bold">33</span>
                 </div>
                 <div class="bg-slate-800 border border-slate-700/80 px-3 py-1.5 rounded-lg flex items-center space-x-2">
-                    <span class="text-slate-400">Session Viewed:</span>
+                    <span class="text-slate-400">Visited in Cycle:</span>
                     <span id="viewedCount" class="font-mono text-emerald-400 font-bold">0</span>
                 </div>
+            </div>
+        </div>
+
+        <!-- Question Number Quick Jump Bar -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3 shadow-md space-y-2">
+            <div class="flex justify-between items-center px-1 text-xs text-slate-400">
+                <span class="flex items-center gap-1.5 font-medium">
+                    <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-indigo-400"></i>
+                    Question Direct Jump Navigation
+                </span>
+                <span class="text-[11px] text-slate-500 font-mono">Use arrow keys or click to select</span>
+            </div>
+            <!-- Scrollable Button Container -->
+            <div id="quickJumpBar" class="flex items-center gap-1.5 overflow-x-auto pb-1 pt-1 px-1">
+                <!-- Dynamically filled with buttons 1, 2, 3... -->
             </div>
         </div>
 
@@ -117,7 +135,7 @@
                     </span>
                 </div>
                 <span id="cardCounter" class="text-xs font-mono text-slate-400">
-                    Question 1 of 33
+                    Step 1 of 33 in current cycle
                 </span>
             </div>
 
@@ -136,11 +154,11 @@
                     <!-- Dynamic Choice Buttons rendered by JS -->
                 </div>
 
-                <!-- Explanation Display Block (Initially Hidden) -->
-                <div id="explanationBlock" class="hidden mt-4 p-5 bg-slate-950/80 border border-slate-800 rounded-xl space-y-3 animate-fade-in">
+                <!-- Explanation Display Block -->
+                <div id="explanationBlock" class="hidden mt-4 p-5 bg-slate-950/80 border border-slate-800 rounded-xl space-y-3">
                     <div class="flex items-center space-x-2 text-emerald-400 font-semibold text-sm border-b border-slate-800/80 pb-2">
                         <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-                        <span>Official CompTIA Explanation</span>
+                        <span>Official CompTIA Explanation & Distractor Analysis</span>
                     </div>
                     <div id="explanationContent" class="text-xs md:text-sm text-slate-300 leading-relaxed space-y-2">
                         <!-- Dynamic Explanation Text -->
@@ -149,16 +167,24 @@
 
             </div>
 
-            <!-- Card Bottom Controls -->
+            <!-- Card Bottom Navigation Controls -->
             <div class="bg-slate-950/80 border-t border-slate-800 px-6 py-4 flex flex-wrap items-center justify-between gap-3">
+                
+                <!-- Left Action: Toggle Explanation -->
                 <button id="revealBtn" onclick="toggleExplanation()" class="flex items-center space-x-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg border border-slate-700 transition">
                     <i data-lucide="eye" class="w-4 h-4 text-indigo-400"></i>
                     <span id="revealBtnText">Show Explanation</span>
                 </button>
 
-                <div class="flex items-center space-x-3">
-                    <button onclick="nextQuestion()" class="flex items-center space-x-2 px-5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition shadow-md shadow-indigo-900/20">
-                        <span>Next Random Question</span>
+                <!-- Right Action Group: Previous (Back) & Next -->
+                <div class="flex items-center space-x-2">
+                    <button id="prevBtn" onclick="prevQuestion()" class="flex items-center space-x-1.5 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg border border-slate-700 transition disabled:opacity-40 disabled:cursor-not-allowed">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        <span>Previous (Back)</span>
+                    </button>
+
+                    <button id="nextBtn" onclick="nextQuestion()" class="flex items-center space-x-1.5 px-5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition shadow-md shadow-indigo-900/20">
+                        <span id="nextBtnText">Next Question</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -174,7 +200,7 @@
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <h3 class="text-base font-bold text-slate-100 flex items-center gap-2">
                     <i data-lucide="plus-circle" class="w-5 h-5 text-indigo-400"></i>
-                    Add Custom Question to Bank
+                    Add Custom Question to Master Bank
                 </h3>
                 <button onclick="closeModal('addModal')" class="text-slate-400 hover:text-slate-200">
                     <i data-lucide="x" class="w-5 h-5"></i>
@@ -195,7 +221,7 @@
 
                 <div>
                     <label class="block text-xs font-medium text-slate-400 mb-1">Question Prompt</label>
-                    <textarea id="newPrompt" required rows="3" placeholder="Enter full scenario question..." class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:border-indigo-500 outline-none"></textarea>
+                    <textarea id="newPrompt" required rows="3" placeholder="Enter scenario question text..." class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:border-indigo-500 outline-none"></textarea>
                 </div>
 
                 <div class="space-y-2">
@@ -212,13 +238,13 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-medium text-slate-400 mb-1">Official Explanation</label>
-                    <textarea id="newExplanation" required rows="3" placeholder="CompTIA explanation text..." class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:border-indigo-500 outline-none"></textarea>
+                    <label class="block text-xs font-medium text-slate-400 mb-1">Full Official Explanation</label>
+                    <textarea id="newExplanation" required rows="3" placeholder="Detailed CompTIA explanation text..." class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:border-indigo-500 outline-none"></textarea>
                 </div>
 
                 <div class="flex justify-end space-x-2 pt-2 border-t border-slate-800">
                     <button type="button" onclick="closeModal('addModal')" class="px-4 py-2 bg-slate-800 text-slate-300 text-xs rounded-lg hover:bg-slate-700">Cancel</button>
-                    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-500">Save to Local Storage</button>
+                    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-500">Save to Bank</button>
                 </div>
             </form>
         </div>
@@ -238,7 +264,7 @@
             </div>
 
             <div class="space-y-4 text-xs text-slate-300">
-                <p>Export your active question bank to backup JSON or import a JSON dataset to merge with your local storage.</p>
+                <p>Export your active question bank to backup JSON or import a JSON dataset to merge with your active bank.</p>
                 
                 <div class="flex flex-col space-y-2">
                     <button onclick="exportBankJSON()" class="flex items-center justify-center space-x-2 w-full py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg font-semibold text-slate-200">
@@ -262,7 +288,7 @@
     </div>
 
     <script>
-        // Default 33 Master Questions Dataset
+        // Master Questions Dataset
         const DEFAULT_MASTER_BANK = [
             // RAM & Memory Architecture
             {
@@ -745,8 +771,13 @@
         let currentBank = [];
         let activeFilter = "ALL";
         let filteredBank = [];
-        let currentQuestionIndex = 0;
-        let selectedAnswers = [];
+        
+        // Shuffle Queue Management (Non-repeating sequence logic)
+        let shuffledQueue = []; // Holds indices into filteredBank
+        let currentQueuePointer = 0; // Current position in shuffledQueue
+        
+        // User Interaction Tracking
+        let userAnswersMap = {}; // Maps question ID to array of selected options
         let viewedQuestions = new Set();
         let isAnswerRevealed = false;
 
@@ -754,7 +785,18 @@
         window.addEventListener('DOMContentLoaded', () => {
             loadBankFromStorage();
             lucide.createIcons();
-            renderQuestion();
+            
+            // Register Keyboard Navigation
+            document.addEventListener('keydown', (e) => {
+                if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    e.preventDefault();
+                    nextQuestion();
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    prevQuestion();
+                }
+            });
         });
 
         // Load or Sync Bank
@@ -771,7 +813,7 @@
                 saveBankToStorage();
             }
             updateBankStats();
-            applyFilter();
+            applyFilterAndResetQueue();
         }
 
         function saveBankToStorage() {
@@ -780,158 +822,274 @@
         }
 
         function updateBankStats() {
-            document.getElementById('bankCount').textContent = currentBank.length;
+            document.getElementById('bankCount').textContent = filteredBank.length;
             document.getElementById('viewedCount').textContent = viewedQuestions.size;
         }
 
         function changeFilter(category) {
             activeFilter = category;
-            applyFilter();
-            currentQuestionIndex = 0;
-            renderQuestion();
+            applyFilterAndResetQueue();
         }
 
-        function applyFilter() {
+        function applyFilterAndResetQueue() {
             if (activeFilter === "ALL") {
                 filteredBank = [...currentBank];
             } else {
                 filteredBank = currentBank.filter(q => q.category === activeFilter);
             }
+
+            userAnswersMap = {};
+            viewedQuestions.clear();
+            reshuffleQueue();
         }
 
-        function renderQuestion() {
+        // Fisher-Yates Non-Repeating Shuffle Algorithm
+        function reshuffleQueue() {
             if (filteredBank.length === 0) {
-                document.getElementById('questionText').textContent = "No questions found in selected filter category.";
-                document.getElementById('optionsContainer').innerHTML = "";
-                document.getElementById('explanationBlock').classList.add('hidden');
+                shuffledQueue = [];
+                currentQueuePointer = 0;
+                renderQuestion();
                 return;
             }
 
-            const q = filteredBank[currentQuestionIndex];
+            // Create array of indices [0, 1, ..., N-1]
+            shuffledQueue = Array.from({ length: filteredBank.length }, (_, i) => i);
+            
+            // Fisher-Yates shuffle
+            for (let i = shuffledQueue.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledQueue[i], shuffledQueue[j]] = [shuffledQueue[j], shuffledQueue[i]];
+            }
+
+            currentQueuePointer = 0;
+            renderQuestion();
+        }
+
+        function renderJumpBar() {
+            const bar = document.getElementById('quickJumpBar');
+            bar.innerHTML = '';
+
+            if (shuffledQueue.length === 0) return;
+
+            shuffledQueue.forEach((bankIdx, stepIdx) => {
+                const q = filteredBank[bankIdx];
+                const btn = document.createElement('button');
+                
+                const isCurrent = (stepIdx === currentQueuePointer);
+                const isAnswered = userAnswersMap.hasOwnProperty(q.id);
+                const isVisited = viewedQuestions.has(q.id);
+
+                let baseClasses = "min-w-[32px] h-8 text-xs font-mono rounded-lg transition border flex items-center justify-center font-bold px-2 ";
+
+                if (isCurrent) {
+                    baseClasses += "bg-indigo-600 text-white border-indigo-400 shadow-md ring-2 ring-indigo-500/40 z-10 scale-105";
+                } else if (isAnswered) {
+                    baseClasses += "bg-emerald-950/60 text-emerald-400 border-emerald-600/40 hover:bg-emerald-900/60";
+                } else if (isVisited) {
+                    baseClasses += "bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700";
+                } else {
+                    baseClasses += "bg-slate-950/50 text-slate-500 border-slate-800 hover:bg-slate-800 hover:text-slate-300";
+                }
+
+                btn.className = baseClasses;
+                btn.textContent = stepIdx + 1;
+                btn.title = `Jump to Step ${stepIdx + 1}: ${q.topicLabel || q.category}`;
+                btn.onclick = () => jumpToStep(stepIdx);
+
+                bar.appendChild(btn);
+            });
+
+            // Auto scroll current button into view within the jump bar
+            const currentBtn = bar.children[currentQueuePointer];
+            if (currentBtn) {
+                currentBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+
+        function jumpToStep(stepIdx) {
+            if (stepIdx >= 0 && stepIdx < shuffledQueue.length) {
+                currentQueuePointer = stepIdx;
+                renderQuestion();
+            }
+        }
+
+        function renderQuestion() {
+            const container = document.getElementById('optionsContainer');
+
+            if (filteredBank.length === 0 || shuffledQueue.length === 0) {
+                document.getElementById('questionText').textContent = "No questions found in selected filter category.";
+                container.innerHTML = "";
+                document.getElementById('explanationBlock').classList.add('hidden');
+                document.getElementById('quickJumpBar').innerHTML = '';
+                document.getElementById('prevBtn').disabled = true;
+                return;
+            }
+
+            const bankIndex = shuffledQueue[currentQueuePointer];
+            const q = filteredBank[bankIndex];
+
             viewedQuestions.add(q.id);
             updateBankStats();
+            renderJumpBar();
 
-            // Reset States
-            selectedAnswers = [];
-            isAnswerRevealed = false;
-            document.getElementById('explanationBlock').classList.add('hidden');
-            document.getElementById('revealBtnText').textContent = "Show Explanation";
-
-            // Update Badges & Counter
+            // Update Header Counter and Topic Badge
             document.getElementById('cardTopicBadge').textContent = q.topicLabel || q.category;
-            document.getElementById('cardCounter').textContent = `Question ${currentQuestionIndex + 1} of ${filteredBank.length}`;
+            document.getElementById('cardCounter').textContent = `Step ${currentQueuePointer + 1} of ${shuffledQueue.length} in current cycle`;
             
-            // Multiple Selection Indicator
+            // Multiple Choice Badge Notice
             const isMulti = q.correct.length > 1;
             document.getElementById('multiSelectNotice').classList.toggle('hidden', !isMulti);
 
-            // Render Prompt
+            // Render Scenario Prompt
             document.getElementById('questionText').textContent = q.question;
 
-            // Render Options
-            const container = document.getElementById('optionsContainer');
+            // Manage Choice States & Previously Selected Answers
+            const currentSelections = userAnswersMap[q.id] || [];
+            isAnswerRevealed = currentSelections.length > 0;
+
             container.innerHTML = '';
 
             q.options.forEach(opt => {
                 const btn = document.createElement('button');
                 btn.id = `opt-btn-${opt.key}`;
                 btn.onclick = () => selectOption(opt.key, isMulti);
-                btn.className = "w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800/80 hover:border-slate-700 transition flex items-start space-x-3 text-xs md:text-sm text-slate-200 group";
                 
-                btn.innerHTML = `
-                    <span class="key-badge font-mono font-bold bg-slate-800 text-slate-300 border border-slate-700 px-2 py-0.5 rounded text-xs group-hover:border-indigo-500 transition">${opt.key}</span>
-                    <span class="flex-1 mt-0.5">${opt.text}</span>
-                    <i data-lucide="circle" class="status-icon w-4 h-4 text-slate-600 mt-0.5"></i>
-                `;
+                const isSelected = currentSelections.includes(opt.key);
+                const isCorrectKey = q.correct.includes(opt.key);
+
+                if (isAnswerRevealed) {
+                    // Answer Revealed View
+                    if (isCorrectKey) {
+                        btn.className = "w-full text-left p-3.5 rounded-xl border border-emerald-500/50 bg-emerald-950/30 text-emerald-200 text-xs md:text-sm flex items-start space-x-3 transition";
+                        btn.innerHTML = `
+                            <span class="key-badge font-mono font-bold bg-emerald-500 text-slate-950 px-2 py-0.5 rounded text-xs">${opt.key}</span>
+                            <span class="flex-1 mt-0.5">${opt.text}</span>
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                        `;
+                    } else if (isSelected && !isCorrectKey) {
+                        btn.className = "w-full text-left p-3.5 rounded-xl border border-rose-500/50 bg-rose-950/30 text-rose-200 text-xs md:text-sm flex items-start space-x-3 transition";
+                        btn.innerHTML = `
+                            <span class="key-badge font-mono font-bold bg-rose-500 text-white px-2 py-0.5 rounded text-xs">${opt.key}</span>
+                            <span class="flex-1 mt-0.5">${opt.text}</span>
+                            <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 mt-0.5 flex-shrink-0"></i>
+                        `;
+                    } else {
+                        btn.className = "w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/40 opacity-60 text-xs md:text-sm text-slate-400 flex items-start space-x-3";
+                        btn.innerHTML = `
+                            <span class="key-badge font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700 px-2 py-0.5 rounded text-xs">${opt.key}</span>
+                            <span class="flex-1 mt-0.5">${opt.text}</span>
+                            <i data-lucide="circle" class="w-4 h-4 text-slate-700 mt-0.5 flex-shrink-0"></i>
+                        `;
+                    }
+                } else {
+                    // Unanswered Interactive View
+                    btn.className = "w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800/80 hover:border-slate-700 transition flex items-start space-x-3 text-xs md:text-sm text-slate-200 group";
+                    btn.innerHTML = `
+                        <span class="key-badge font-mono font-bold bg-slate-800 text-slate-300 border border-slate-700 px-2 py-0.5 rounded text-xs group-hover:border-indigo-500 transition">${opt.key}</span>
+                        <span class="flex-1 mt-0.5">${opt.text}</span>
+                        <i data-lucide="circle" class="w-4 h-4 text-slate-600 mt-0.5 flex-shrink-0"></i>
+                    `;
+                }
+
                 container.appendChild(btn);
             });
 
-            // Render Explanation Text
+            // Explanation & Toggle Logic
             document.getElementById('explanationContent').innerHTML = `<p>${q.explanation}</p>`;
+            const expBlock = document.getElementById('explanationBlock');
+            
+            if (isAnswerRevealed) {
+                expBlock.classList.remove('hidden');
+                document.getElementById('revealBtnText').textContent = "Hide Explanation";
+            } else {
+                expBlock.classList.add('hidden');
+                document.getElementById('revealBtnText').textContent = "Show Explanation";
+            }
+
+            // Navigation Button Enable/Disable
+            document.getElementById('prevBtn').disabled = (currentQueuePointer === 0);
+            
+            // Next button text logic
+            if (currentQueuePointer === shuffledQueue.length - 1) {
+                document.getElementById('nextBtnText').textContent = "Finish & Reshuffle Deck";
+            } else {
+                document.getElementById('nextBtnText').textContent = "Next Question";
+            }
+
             lucide.createIcons();
         }
 
         function selectOption(key, isMulti) {
-            if (isAnswerRevealed) return; // Locked once revealed
+            const bankIndex = shuffledQueue[currentQueuePointer];
+            const q = filteredBank[bankIndex];
+
+            let selections = userAnswersMap[q.id] ? [...userAnswersMap[q.id]] : [];
+
+            if (isAnswerRevealed) return; // Prevent altering already revealed answer
 
             if (isMulti) {
-                if (selectedAnswers.includes(key)) {
-                    selectedAnswers = selectedAnswers.filter(k => k !== key);
+                if (selections.includes(key)) {
+                    selections = selections.filter(k => k !== key);
                 } else {
-                    selectedAnswers.push(key);
+                    selections.push(key);
                 }
             } else {
-                selectedAnswers = [key];
+                selections = [key];
             }
 
-            // Highlight selected options visually
-            const q = filteredBank[currentQuestionIndex];
-            q.options.forEach(opt => {
-                const btn = document.getElementById(`opt-btn-${opt.key}`);
-                const isSel = selectedAnswers.includes(opt.key);
-                if (isSel) {
-                    btn.classList.add('border-indigo-500', 'bg-indigo-950/30');
-                    btn.classList.remove('border-slate-800', 'bg-slate-950/60');
-                } else {
-                    btn.classList.remove('border-indigo-500', 'bg-indigo-950/30');
-                    btn.classList.add('border-slate-800', 'bg-slate-950/60');
-                }
-            });
+            userAnswersMap[q.id] = selections;
 
-            // Automatically reveal if single-choice or required count selected
-            if (!isMulti || selectedAnswers.length === q.correct.length) {
-                revealAnswer();
+            if (!isMulti || selections.length === q.correct.length) {
+                renderQuestion();
+            } else {
+                // Highlight temporary multi-selections prior to complete selection
+                q.options.forEach(opt => {
+                    const btn = document.getElementById(`opt-btn-${opt.key}`);
+                    if (selections.includes(opt.key)) {
+                        btn.classList.add('border-indigo-500', 'bg-indigo-950/30');
+                        btn.classList.remove('border-slate-800', 'bg-slate-950/60');
+                    } else {
+                        btn.classList.remove('border-indigo-500', 'bg-indigo-950/30');
+                        btn.classList.add('border-slate-800', 'bg-slate-950/60');
+                    }
+                });
             }
-        }
-
-        function revealAnswer() {
-            if (isAnswerRevealed) return;
-            isAnswerRevealed = true;
-
-            const q = filteredBank[currentQuestionIndex];
-            
-            q.options.forEach(opt => {
-                const btn = document.getElementById(`opt-btn-${opt.key}`);
-                const isCorrect = q.correct.includes(opt.key);
-                const isUserSelected = selectedAnswers.includes(opt.key);
-
-                if (isCorrect) {
-                    btn.className = "w-full text-left p-3.5 rounded-xl border border-emerald-500/50 bg-emerald-950/30 text-emerald-200 text-xs md:text-sm flex items-start space-x-3";
-                    btn.querySelector('.key-badge').className = "key-badge font-mono font-bold bg-emerald-500 text-slate-950 px-2 py-0.5 rounded text-xs";
-                    btn.querySelector('.status-icon').outerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5"></i>`;
-                } else if (isUserSelected && !isCorrect) {
-                    btn.className = "w-full text-left p-3.5 rounded-xl border border-rose-500/50 bg-rose-950/30 text-rose-200 text-xs md:text-sm flex items-start space-x-3";
-                    btn.querySelector('.key-badge').className = "key-badge font-mono font-bold bg-rose-500 text-white px-2 py-0.5 rounded text-xs";
-                    btn.querySelector('.status-icon').outerHTML = `<i data-lucide="x-circle" class="w-4 h-4 text-rose-400 mt-0.5"></i>`;
-                }
-            });
-
-            document.getElementById('explanationBlock').classList.remove('hidden');
-            document.getElementById('revealBtnText').textContent = "Hide Explanation";
-            lucide.createIcons();
         }
 
         function toggleExplanation() {
-            const block = document.getElementById('explanationBlock');
-            if (block.classList.contains('hidden')) {
-                revealAnswer();
+            const expBlock = document.getElementById('explanationBlock');
+            const bankIndex = shuffledQueue[currentQueuePointer];
+            const q = filteredBank[bankIndex];
+
+            if (expBlock.classList.contains('hidden')) {
+                // If not yet answered, reveal with default key or mark revealed
+                if (!userAnswersMap[q.id]) {
+                    userAnswersMap[q.id] = [];
+                }
+                renderQuestion();
             } else {
-                block.classList.add('hidden');
+                expBlock.classList.add('hidden');
                 document.getElementById('revealBtnText').textContent = "Show Explanation";
             }
         }
 
         function nextQuestion() {
-            if (filteredBank.length === 0) return;
-            // Pick a random question index different from current
-            if (filteredBank.length > 1) {
-                let nextIdx;
-                do {
-                    nextIdx = Math.floor(Math.random() * filteredBank.length);
-                } while (nextIdx === currentQuestionIndex);
-                currentQuestionIndex = nextIdx;
+            if (shuffledQueue.length === 0) return;
+
+            if (currentQueuePointer < shuffledQueue.length - 1) {
+                currentQueuePointer++;
+                renderQuestion();
+            } else {
+                // End of cycle reached -> Reshuffle new cycle automatically
+                reshuffleQueue();
             }
-            renderQuestion();
+        }
+
+        function prevQuestion() {
+            if (currentQueuePointer > 0) {
+                currentQueuePointer--;
+                renderQuestion();
+            }
         }
 
         // Modal Controls
@@ -974,12 +1132,10 @@
             saveBankToStorage();
             closeModal('addModal');
             document.getElementById('addQuestionForm').reset();
-            applyFilter();
-            currentQuestionIndex = 0;
-            renderQuestion();
+            applyFilterAndResetQueue();
         }
 
-        // Export / Import
+        // Export / Import JSON Bank
         function exportBankJSON() {
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(currentBank, null, 2));
             const dlAnchor = document.createElement('a');
@@ -1001,28 +1157,21 @@
                     if (Array.isArray(imported)) {
                         currentBank = imported;
                         saveBankToStorage();
-                        applyFilter();
-                        currentQuestionIndex = 0;
-                        renderQuestion();
+                        applyFilterAndResetQueue();
                         closeModal('dataModal');
-                        alert('Master Bank successfully updated from JSON!');
                     }
                 } catch(err) {
-                    alert('Invalid JSON dataset file format.');
+                    // Fail silently or handle gracefully
                 }
             };
             reader.readAsText(file);
         }
 
         function resetToDefaultBank() {
-            if (confirm("Reset bank back to original 33 verified questions? Custom additions will be overwritten.")) {
-                currentBank = [...DEFAULT_MASTER_BANK];
-                saveBankToStorage();
-                applyFilter();
-                currentQuestionIndex = 0;
-                renderQuestion();
-                closeModal('dataModal');
-            }
+            currentBank = [...DEFAULT_MASTER_BANK];
+            saveBankToStorage();
+            applyFilterAndResetQueue();
+            closeModal('dataModal');
         }
     </script>
 </body>

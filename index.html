@@ -327,7 +327,7 @@
 
     <div class="nav-grid-container">
         <div class="grid-header">
-            <span>Question Sequence Queue</span>
+            <span>Question Selector</span>
             <span id="grid-status-text">0/0 Completed</span>
         </div>
         <div class="question-grid" id="question-grid"></div>
@@ -916,7 +916,7 @@ function renderQuestion() {
     const qIndex = historyStack[historyIndex];
     const q = questions[qIndex];
 
-    document.getElementById('stats-badge').innerText = `Question ${historyIndex + 1} of ${historyStack.length} (${questions.length} total)`;
+    document.getElementById('stats-badge').innerText = `Question ${historyIndex + 1} of ${questions.length}`;
     document.getElementById('topic-tag').innerText = q.topic || 'General';
     document.getElementById('question-text').innerText = q.question;
 

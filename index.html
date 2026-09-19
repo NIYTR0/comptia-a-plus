@@ -69,6 +69,12 @@
             color: var(--text-muted);
         }
 
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
         .nav-grid-container {
             background-color: var(--card-bg);
             padding: 15px;
@@ -345,7 +351,10 @@
     <header>
         <h1>CompTIA A+ Master Bank</h1>
         <div class="stats-badge" id="stats-badge">Loading...</div>
-        <button id="resetBankBtn" onclick="resetToDefaults()" style="background:#dc2626; color:#fff; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; font-size:0.85rem; font-weight:600;">Reset Bank</button>
+        <div class="header-actions">
+            <button id="open-manage-btn" class="btn" style="padding:6px 12px; font-size:0.85rem;">Manage Bank</button>
+            <button id="resetBankBtn" onclick="resetToDefaults()" style="background:#dc2626; color:#fff; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; font-size:0.85rem; font-weight:600;">Reset Bank</button>
+        </div>
     </header>
 
     <div class="nav-grid-container">
@@ -395,7 +404,7 @@
 
 <script>
 const DEFAULT_QUESTIONS = [
-{
+  {
     "id": "bios_01",
     "topic": "BIOS and UEFI",
     "question": "A user reports that their computer is not booting from a newly installed SSD, even though it is properly connected.\nUpon checking the system firmware settings, you find that the boot option sequence is set to prioritize the optical drive first, followed by a USB drive, and then the network.\nWhich of the following actions should you take to analyze and resolve the boot issue?",
@@ -512,7 +521,7 @@ function shuffleArray(array) {
 }
 
 function renderGrid() {
-    const gridContainer = document.getElementById('grid-container');
+    const gridContainer = document.getElementById('question-grid');
     const statusText = document.getElementById('grid-status-text');
     if (!gridContainer) return;
 
@@ -528,7 +537,7 @@ function renderGrid() {
 
     questions.forEach((_, i) => {
         const btn = document.createElement('button');
-        btn.className = 'grid-num-btn';
+        btn.className = 'grid-btn';
         btn.textContent = i + 1;
 
         if (i === currentQIdx) {
@@ -537,19 +546,17 @@ function renderGrid() {
 
         if (answeredMap.hasOwnProperty(i)) {
             if (answeredMap[i].isCorrect) {
-                btn.classList.add('correct');
+                btn.classList.add('answered-correct');
             } else {
-                btn.classList.add('incorrect');
+                btn.classList.add('answered-incorrect');
             }
         }
 
         btn.addEventListener('click', () => {
             if (historyStack[historyIndex] !== i) {
-                // Truncate forward history and push new selection
                 historyStack = historyStack.slice(0, historyIndex + 1);
                 historyStack.push(i);
                 historyIndex++;
-                // renderQuestion() will call renderGrid() at the end
                 renderQuestion(); 
             }
         });
@@ -597,7 +604,7 @@ function renderQuestion() {
                 btn.classList.add('incorrect');
             }
         } else {
-            btn.addEventListener('click', () => selectOption(qIndex, idx));
+            btn.addEventListener('click', () => selectOption(idx));
         }
 
         optionsList.appendChild(btn);
@@ -615,7 +622,6 @@ function selectOption(selectedIdx) {
     let isCorrect = false;
 
     if (Array.isArray(q.answer)) {
-        // Multi-select answer validation
         if (Array.isArray(selectedIdx)) {
             const sortedSelected = [...selectedIdx].sort();
             const sortedAnswer = [...q.answer].sort();
@@ -624,7 +630,6 @@ function selectOption(selectedIdx) {
             isCorrect = q.answer.includes(selectedIdx);
         }
     } else {
-        // Standard single-select answer validation
         isCorrect = (selectedIdx === q.answer);
     }
 
@@ -673,6 +678,14 @@ function toggleExplanation() {
     expPanel.classList.toggle('hidden');
 }
 
+function resetToDefaults() {
+    if (confirm('Reset to default built-in question bank?')) {
+        localStorage.removeItem('comptia_a_plus_bank');
+        questions = [...DEFAULT_QUESTIONS];
+        startNewDeck();
+    }
+}
+
 function setupEventListeners() {
     document.getElementById('next-btn').addEventListener('click', nextQuestion);
     document.getElementById('prev-btn').addEventListener('click', prevQuestion);
@@ -685,7 +698,7 @@ function setupEventListeners() {
             const idx = parseInt(e.key) - 1;
             const qIndex = historyStack[historyIndex];
             if (!answeredMap[qIndex] && questions[qIndex] && idx < questions[qIndex].options.length) {
-                selectOption(qIndex, idx);
+                selectOption(idx);
             }
         } else if (e.key === ' ' || e.key === 'ArrowRight') {
             e.preventDefault();
@@ -699,7 +712,9 @@ function setupEventListeners() {
     });
 
     const modal = document.getElementById('manage-modal');
-    document.getElementById('open-manage-btn').addEventListener('click', () => modal.classList.remove('hidden'));
+    const openBtn = document.getElementById('open-manage-btn');
+    if (openBtn) openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+    
     document.getElementById('close-manage-btn').addEventListener('click', () => modal.classList.add('hidden'));
 
     document.getElementById('import-btn').addEventListener('click', () => {
@@ -722,12 +737,8 @@ function setupEventListeners() {
     });
 
     document.getElementById('reset-bank-btn').addEventListener('click', () => {
-        if (confirm('Reset to default built-in question bank?')) {
-            localStorage.removeItem('comptia_a_plus_bank');
-            questions = [...DEFAULT_QUESTIONS];
-            modal.classList.add('hidden');
-            startNewDeck();
-        }
+        resetToDefaults();
+        modal.classList.add('hidden');
     });
 }
 

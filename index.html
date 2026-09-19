@@ -360,28 +360,29 @@
 <script>
 const DEFAULT_QUESTIONS = [
 {
-    "id": 1,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_01",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "A user reports that their computer is not booting from a newly installed SSD, even though it is properly connected.\n\nUpon checking the system firmware settings, you find that the boot option sequence is set to prioritize the optical drive first, followed by a USB drive, and then the network.\n\nWhich of the following actions should you take to analyze and resolve the boot issue?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "Enable Secure Boot in the UEFI setup to ensure the SSD is recognized as a trusted device.",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "Update the system firmware to the latest version to ensure compatibility with the SSD.",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "Change the boot option sequence to prioritize the SSD as the first boot device.",
         "isCorrect": true
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Disconnect the optical drive and USB drive to force the system to boot from the SSD.",
         "isCorrect": false
       }
@@ -389,28 +390,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "Analyzing the boot option sequence reveals that the SSD is not prioritized, which is why the system is not booting from it. By changing the sequence to prioritize the SSD, you ensure that the system firmware searches the SSD first for a boot manager, resolving the issue.\n\nWhile disconnecting other boot devices might force the system to boot from the SSD, it is not an efficient or practical solution. It does not address the root cause of the issue, which is the incorrect boot option sequence.\n\nEnabling Secure Boot is a security measure and does not influence the boot order or resolve issues related to boot device prioritization. It ensures that only trusted software is loaded but does not affect the SSD's boot priority.\n\nWhile updating the firmware can be beneficial for compatibility, it is not necessary in this scenario. The issue is related to the boot option sequence, not firmware compatibility. Prioritizing the SSD in the boot sequence is the correct action to resolve the issue."
   },
   {
-    "id": 2,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_02",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "Which of the following BEST describes the role of the Trusted Platform Module (TPM) in enhancing system security?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "Verifying that the TPM is configured to support legacy BIOS mode for compatibility with older hardware.",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "Checking if the TPM is used to control fan speed and temperature monitoring for system stability.",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "Assessing whether the TPM is used to store cryptographic keys securely, preventing unauthorized access to encrypted data.",
         "isCorrect": true
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Evaluating if the TPM is enabled to allow booting from USB devices for recovery purposes.",
         "isCorrect": false
       }
@@ -418,28 +420,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "The TPM is designed to securely store cryptographic keys, which is crucial for protecting encrypted data and ensuring that sensitive information is not accessed by unauthorized users.\n\nWhile booting from USB devices can be useful for recovery, it is not related to the primary function of the TPM. The TPM is not involved in enabling or disabling boot options; its role is focused on security, particularly in storing cryptographic keys.\n\nThe TPM does not play a role in supporting legacy BIOS mode. This option confuses the TPM's security functions with compatibility settings, which are unrelated to the TPM's purpose.\n\nThe TPM is not involved in hardware management tasks such as controlling fan speed or temperature monitoring. This option misrepresents the TPM's role, which is centered around security and cryptographic functions, not hardware stability."
   },
   {
-    "id": 3,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_03",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "An energy company is strengthening its defenses and wants to look for methods that successfully protect trade secrets by ensuring none of its company's computing assets are hijacked by malware.\nTo assist in safeguarding the sensitive information, what can the technician enable to ensure this will not happen?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "Boot password",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "HSM",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "TPM",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Secure boot",
         "isCorrect": true
       }
@@ -447,33 +450,34 @@ const DEFAULT_QUESTIONS = [
     "explanation": "The technician can configure secure boot, which is a unified extensible firmware interface (UEFI) feature designed to prevent malware from hijacking a computer.\n\nA trusted platform module (TPM) is a specification for hardware-based storage of digital certificates, cryptographic keys, and hashed passwords.\n\nA hardware security module (HSM) is a secure USB key or thumb drive used to store cryptographic material where a user must authenticate before they can access the keys stored on the module.\n\nA boot password requires the user to authenticate before the operating system is loaded. Different system software will provide different support for authentication methods. This measure cannot keep malware from injecting code into the bootloader of the operating system."
   },
   {
-    "id": 4,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_04",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "You have purchased a new notebook. This notebook system uses UEFI firmware and comes with Windows 11 preinstalled. However, you want to use Linux on this system.\nYou download your favorite distribution and install it on the system, removing all Windows partitions on the hard disk in the process. When the installation is complete, you find that the operating system won't load when the system is rebooted.\nWhich of the following would allow your computer to boot to Linux?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "Enable the TPM chip on the motherboard.",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "Reinstall Windows 11 on the system.",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "Set the boot order to boot from the hard disk first in the UEFI configuration.",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Disable Secure Boot in the UEFI configuration.",
         "isCorrect": true
       },
       {
-        "id": "E",
+        "id": "opt_e",
         "text": "Enable Secure Boot in the UEFI configuration.",
         "isCorrect": false
       }
@@ -481,28 +485,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "In this scenario, you should disable the Secure Boot option in the UEFI configuration. Secure Boot requires the operating system installed on the hard drive to be digitally signed. If it isn't digitally signed, the UEFI firmware will not boot it by default.\n\nReinstalling Windows 11 does not meet the requirements of this scenario.\n\nIf Secure Boot is already enabled, the TPM chip on the motherboard must already be enabled as well.\n\nThe boot order configuration is not preventing the system from booting in this scenario."
   },
   {
-    "id": 5,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_05",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "A company has recently upgraded its systems to UEFI-based firmware, and some employees are experiencing issues accessing system settings during boot.\nWhich of the following actions would BEST evaluate and resolve the issue of missing the key prompt to access the UEFI setup program?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "Adjust the boot order to prioritize the hard drive, ensuring the system boots correctly.",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "Use the Shift-click method on the Restart button from the Windows logon screen to access UEFI boot options.",
         "isCorrect": true
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "Disable Secure Boot in the UEFI setup to allow easier access to system settings.",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Reboot the computer and continuously press the Delete key until the UEFI setup program appears.",
         "isCorrect": false
       }
@@ -510,28 +515,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "Using the Shift-click method on the Restart button from the Windows logon screen to access UEFI boot options provides a reliable way to access UEFI boot options without relying on the timing of key presses during boot. It evaluates the issue by offering an alternative access method, ensuring users can reach the UEFI setup even if they miss the initial prompt.\n\nWhile pressing the Delete key is a common method to access the UEFI setup, it does not evaluate the issue of missing the prompt. This approach relies on timing and may not resolve the problem if the boot process is too fast.\n\nDisabling Secure Boot does not affect the ability to access the UEFI setup program. Secure Boot is a security feature and does not influence the key prompt or access method for UEFI settings.\n\nAdjusting the boot order is unrelated to accessing the UEFI setup program. This action focuses on the sequence of boot devices rather than resolving the issue of missing the key prompt for UEFI access."
   },
   {
-    "id": 6,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_06",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "You are a system administrator tasked with optimizing the cooling system of a high-performance workstation used for video editing. The workstation frequently overheats, causing performance issues.\nBased on the system's UEFI settings, which of the following actions should you take to ensure the workstation operates efficiently without overheating?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "Configure the duty cycle settings to a higher percentage to increase the fan speed and improve cooling efficiency.",
         "isCorrect": true
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "Set the cooling option to \"Quiet\" to reduce fan noise and allow the system to run at higher temperatures.",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "Use third-party applications to manually monitor the temperature and adjust fan settings as needed.",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Disable all USB ports to reduce power consumption and indirectly lower system temperature.",
         "isCorrect": false
       }
@@ -539,28 +545,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "Increasing the duty cycle settings will make the fans run faster, enhancing cooling efficiency and helping to prevent the workstation from overheating. This action directly addresses the overheating issue by improving airflow and heat dissipation.\n\nWhile this option reduces fan noise, it allows the system to run at higher temperatures, which is not ideal for a workstation that is already experiencing overheating issues. This setting prioritizes noise reduction over cooling efficiency.\n\nDisabling USB ports may slightly reduce power consumption, but it is unlikely to have a significant impact on the system's overall temperature. This action does not directly address the cooling needs of the workstation.\n\nWhile third-party applications can provide valuable temperature monitoring, they do not directly adjust fan settings through UEFI. The question specifically asks for actions within the UEFI settings, making this option less relevant to the scenario."
   },
   {
-    "id": 7,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_07",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "Which of the following BEST describes the technology that was designed to replace the BIOS and is a firmware solution for controlling the startup process and loading the computer operating system into memory?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "UEFI",
         "isCorrect": true
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "EEPROM",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "CMOS",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "BIOS 2",
         "isCorrect": false
       }
@@ -568,28 +575,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "UEFI was designed to replace the BIOS and is a firmware solution for controlling the startup process and loading the computer operating system into memory.\n\nCMOS is a legacy computer chip technology that was used to store system information prior to the introduction of EEPROM.\n\nEEPROM is a non-volatile memory chip that stores the system startup information that is configured through UEFI.\n\nBIOS (Basic Input/Output System) is firmware used to provide runtime services for operating systems. BIOS version 2 does not exist."
   },
   {
-    "id": 8,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_08",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "A user reports that their computer frequently overheats and shuts down during intensive tasks. Upon accessing the system firmware settings, you notice that the fan speed is set to \"Quiet\" mode.\nWhich of the following actions should you take to analyze and resolve the overheating issue?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "Enable Secure Boot to ensure that only trusted software runs, preventing overheating.",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "Adjust the boot order to prioritize the SSD, reducing the time the system spends booting and thus lowering heat generation.",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "Change the fan speed setting to \"Cool\" mode to increase fan activity and reduce system temperature.",
         "isCorrect": true
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Disable USB ports to reduce power consumption and heat output from connected devices.",
         "isCorrect": false
       }
@@ -597,28 +605,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "By analyzing the current fan speed setting, you can determine that the \"Quiet\" mode is likely contributing to the overheating issue. Changing the setting to \"Cool\" mode will increase fan activity, enhancing cooling and reducing system temperature during intensive tasks.\n\nSecure Boot is a security feature that does not affect system temperature or fan operation. It ensures that only trusted software is loaded during boot but does not address overheating issues.\n\nAdjusting the boot order does not impact the system's temperature during intensive tasks. Boot order settings determine the sequence of boot devices and do not influence heat generation or cooling.\n\nDisabling USB ports may slightly reduce power consumption, but it is unlikely to have a significant impact on the overall system temperature during intensive tasks. The primary issue is related to fan speed settings, not USB port activity."
   },
   {
-    "id": 9,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_09",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "Which of the following is a typical boot device option that can be prioritized in the system firmware's boot option sequence?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "Network/PXE (Preboot Execution Environment)",
         "isCorrect": true
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "Printer",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "External monitor",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Bluetooth device",
         "isCorrect": false
       }
@@ -626,28 +635,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "Network/PXE is a typical boot device option that can be prioritized in the system firmware's boot option sequence. It allows the computer to boot via the network adapter by retrieving boot instructions from a configured server.\n\nBluetooth devices are not typically used as boot devices. They are primarily used for wireless communication and do not have the capability to store or execute boot instructions.\n\nAn external monitor is a display device and does not function as a boot device. It is used to display output from the computer but cannot store or execute boot instructions.\n\nA printer is an output device used for printing documents and cannot be used as a boot device. It does not have the capability to store or execute boot instructions."
   },
   {
-    "id": 10,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_10",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "You are a technician tasked with setting up a new computer system for a client who wants to install an operating system from a USB drive. However, the system is currently configured to boot from the internal hard drive first.\nWhich of the following actions should you take to ensure the system boots from the USB drive?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "Format the internal hard drive to remove any existing boot managers.",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "Access the UEFI setup program and change the boot option sequence to prioritize the USB drive over the internal hard drive.",
         "isCorrect": true
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "Connect the USB drive and restart the computer without making any changes to the boot order.",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Disable the internal hard drive in the UEFI setup program to force the system to boot from the USB drive.",
         "isCorrect": false
       }
@@ -655,28 +665,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "By accessing the UEFI setup program and adjusting the boot option sequence, you can ensure that the system checks the USB drive for a boot manager before the internal hard drive. This is the appropriate action to take to boot from the USB drive.\n\nSimply connecting the USB drive and restarting the computer will not change the boot order. The system will continue to boot from the internal hard drive as it is currently prioritized in the boot sequence.\n\nFormatting the internal hard drive is unnecessary and could result in data loss. It does not address the need to change the boot order to prioritize the USB drive.\n\nDisabling the internal hard drive is an extreme measure that is not required. Adjusting the boot order is sufficient to achieve the desired outcome without disabling hardware components."
   },
   {
-    "id": 11,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_11",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "When configuring fan settings in the UEFI setup program, which option would you select to prioritize a quieter operation over cooling performance?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "Cool",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "Balanced",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "Quiet",
         "isCorrect": true
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Fanless",
         "isCorrect": false
       }
@@ -684,28 +695,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "The \"Quiet\" setting prioritizes reducing fan speed to minimize noise, even if it allows for slightly higher system temperatures. This option is specifically intended for quieter operations.\n\nThe \"Balanced\" setting aims to provide a compromise between cooling performance and noise level, but it does not specifically prioritize quieter operation over cooling.\n\nThe \"Cool\" setting is designed to enhance cooling performance by running fans at higher speeds, which typically results in more noise, not less.\n\nWhile \"Fanless\" might suggest a quieter operation, it is not a typical setting for active cooling systems in UEFI. It implies no fan operation, which could lead to overheating unless the system is specifically designed for passive cooling."
   },
   {
-    "id": 12,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_12",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "Which security measure generates and stores cryptographic keys?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "BIOS/UEFI password",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "Trusted Platform Module (TPM)",
         "isCorrect": true
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "Chassis intrusion detection",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "DriveLock",
         "isCorrect": false
       }
@@ -713,28 +725,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "A Trusted Platform Module (TPM) is a special chip on the motherboard that generates and stores cryptographic keys. The TPM can be used by applications (such as Bitlocker on Windows systems) to generate and save keys that are used for encryption.\n\nA BIOS/UEFI password controls access to the BIOS/UEFI setup program.\n\nChassis intrusion detection helps you identify when a system case has been opened.\n\nDriveLock is a disk encryption solution."
   },
   {
-    "id": 13,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_13",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "A company is planning to implement a secure method for storing cryptographic keys used in their data encryption processes. They have several computers that do not support Trusted Platform Module (TPM) technology.\nThe IT manager is considering using a Hardware Security Module (HSM) for this purpose.\nWhich of the following reasons BEST justifies the use of an HSM in this scenario?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "An HSM can be used to enhance the overall network bandwidth of the company.",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "An HSM can be used to improve the processing speed of encryption algorithms.",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "An HSM can be used to back up all company data to prevent data loss.",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "An HSM provides a secure way to store cryptographic keys, especially for computers lacking TPM support.",
         "isCorrect": true
       }
@@ -742,28 +755,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "A Hardware Security Module (HSM) is used to securely store cryptographic keys. It is particularly useful for computers that do not support TPM, providing a secure alternative for key storage and recovery.\n\nAn HSM is focused on secure storage of cryptographic keys, not on network performance.\n\nThe purpose of an HSM is specifically for securely storing cryptographic keys, not for general data backup.\n\nAn HSM is used for secure storage of cryptographic keys, which is unrelated to the speed of encryption processes."
   },
   {
-    "id": 14,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_14",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "In the context of system firmware, what is the primary purpose of configuring USB permissions through the UEFI setup program?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "To install drivers for USB devices.",
         "isCorrect": false
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "To enable or disable USB ports for security reasons.",
         "isCorrect": true
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "To increase the data transfer speed of USB devices.",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "To update the firmware of USB-connected devices.",
         "isCorrect": false
       }
@@ -771,28 +785,29 @@ const DEFAULT_QUESTIONS = [
     "explanation": "The primary purpose of configuring USB permissions through the UEFI setup program is to enable or disable USB ports, which can be an important security measure to prevent unauthorized access or data transfer.\n\nConfiguring USB permissions in the UEFI setup program does not affect the data transfer speed of USB devices. Speed is determined by the USB version and hardware capabilities.\n\nInstalling drivers for USB devices is typically done within the operating system, not through the UEFI setup program.\n\nUpdating the firmware of USB-connected devices is not related to configuring USB permissions in the UEFI setup program. Firmware updates are usually performed through specific software tools provided by the device manufacturer."
   },
   {
-    "id": 15,
-    "topic": "System Firmware & Hardware",
-    "type": "multiple-choice",
+    "id": "bios_15",
+    "topic": "BIOS and UEFI",
+    "type": "single",
     "requiredSelections": 1,
+    "question": "A technician is implementing a feature that will compare hashes of key system state data during the boot process to ensure that nobody has tampered with the system firmware, boot loader, and OS kernel.\nWhat feature is this?",
     "options": [
       {
-        "id": "A",
+        "id": "opt_a",
         "text": "TPM",
         "isCorrect": true
       },
       {
-        "id": "B",
+        "id": "opt_b",
         "text": "HSM",
         "isCorrect": false
       },
       {
-        "id": "C",
+        "id": "opt_c",
         "text": "Boot password",
         "isCorrect": false
       },
       {
-        "id": "D",
+        "id": "opt_d",
         "text": "Encryption",
         "isCorrect": false
       }

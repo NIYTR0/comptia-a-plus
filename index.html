@@ -207,6 +207,11 @@
             min-width: 20px;
         }
 
+        .option-btn.selected-temp {
+            background-color: rgba(56, 189, 248, 0.15);
+            border-color: var(--accent-blue);
+        }
+
         .option-btn.correct {
             background-color: rgba(34, 197, 94, 0.15) !important;
             border-color: var(--accent-green) !important;
@@ -217,6 +222,11 @@
             background-color: rgba(239, 68, 68, 0.15) !important;
             border-color: var(--accent-red) !important;
             color: #ffffff !important;
+        }
+
+        .option-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         .explanation-panel {
@@ -344,7 +354,7 @@
         </div>
     </main>
 
-    <div class="keyboard-hint">Shortcuts: [1-4] Select Option | [Space] Next Question | [&larr;] Previous | [E] Toggle Explanation</div>
+    <div class="keyboard-hint">Shortcuts: [1-5] Select Option | [Space] Next Question | [&larr;] Previous | [E] Toggle Explanation</div>
 </div>
 
 <script>
@@ -352,75 +362,40 @@ const DEFAULT_QUESTIONS = [
   {
     "id": "bios_01",
     "topic": "BIOS and UEFI",
+    "type": "single",
+    "requiredSelections": 1,
     "question": "A user reports that their computer is not booting from a newly installed SSD, even though it is properly connected.\nUpon checking the system firmware settings, you find that the boot option sequence is set to prioritize the optical drive first, followed by a USB drive, and then the network.\nWhich of the following actions should you take to analyze and resolve the boot issue?",
     "options": [
-      "Enable Secure Boot in the UEFI setup to ensure the SSD is recognized as a trusted device.",
-      "Update the system firmware to the latest version to ensure compatibility with the SSD.",
-      "Change the boot option sequence to prioritize the SSD as the first boot device.",
-      "Disconnect the optical drive and USB drive to force the system to boot from the SSD."
+      { "id": "opt_a", "text": "Enable Secure Boot in the UEFI setup to ensure the SSD is recognized as a trusted device.", "isCorrect": false },
+      { "id": "opt_b", "text": "Update the system firmware to the latest version to ensure compatibility with the SSD.", "isCorrect": false },
+      { "id": "opt_c", "text": "Change the boot option sequence to prioritize the SSD as the first boot device.", "isCorrect": true },
+      { "id": "opt_d", "text": "Disconnect the optical drive and USB drive to force the system to boot from the SSD.", "isCorrect": false }
     ],
-    "answer": 2,
-    "explanation": "Analyzing the boot option sequence reveals that the SSD is not prioritized, which is why the system is not booting from it. By changing the sequence to prioritize the SSD, you ensure that the system firmware searches the SSD first for a boot manager, resolving the issue.\n\nOption Analysis:\n- Change the boot option sequence to prioritize the SSD as the first boot device. (Correct): Prioritizing the SSD in the boot sequence ensures the system firmware searches the SSD first for a boot manager, resolving the issue.\n- Disconnect the optical drive and USB drive to force the system to boot from the SSD. (Incorrect): While disconnecting other boot devices might force the system to boot from the SSD, it is not an efficient or practical solution. It does not address the root cause of the issue, which is the incorrect boot option sequence.\n- Enable Secure Boot in the UEFI setup to ensure the SSD is recognized as a trusted device. (Incorrect): Enabling Secure Boot is a security measure and does not influence the boot order or resolve issues related to boot device prioritization. It ensures that only trusted software is loaded but does not affect the SSD's boot priority.\n- Update the system firmware to the latest version to ensure compatibility with the SSD. (Incorrect): While updating the firmware can be beneficial for compatibility, it is not necessary in this scenario. The issue is related to the boot option sequence, not firmware compatibility."
+    "explanation": "Analyzing the boot option sequence reveals that the SSD is not prioritized, which is why the system is not booting from it. By changing the sequence to prioritize the SSD, you ensure that the system firmware searches the SSD first for a boot manager, resolving the issue.\n\nOption Analysis:\n- Change the boot option sequence to prioritize the SSD as the first boot device. (Correct): Prioritizing the SSD in the boot sequence ensures the system firmware searches the SSD first for a boot manager, resolving the issue.\n- Disconnect the optical drive and USB drive to force the system to boot from the SSD. (Incorrect): While disconnecting other boot devices might force the system to boot from the SSD, it is not an efficient or practical solution.\n- Enable Secure Boot in the UEFI setup to ensure the SSD is recognized as a trusted device. (Incorrect): Enabling Secure Boot is a security measure and does not influence boot device prioritization.\n- Update the system firmware to the latest version to ensure compatibility with the SSD. (Incorrect): Firmware updates are beneficial, but the boot sequence setting is the root cause here."
   },
   {
-    "id": "bios_02",
-    "topic": "BIOS and UEFI",
-    "question": "Which of the following BEST describes the role of the Trusted Platform Module (TPM) in enhancing system security?",
+    "id": "net_01",
+    "topic": "Networking Principles",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "A network technician is configuring an enterprise Wi-Fi infrastructure. Which THREE of the following standard features/protocols operate primarily at the Data Link Layer (Layer 2) of the OSI model? (Select THREE)",
     "options": [
-      "Verifying that the TPM is configured to support legacy BIOS mode for compatibility with older hardware.",
-      "Checking if the TPM is used to control fan speed and temperature monitoring for system stability.",
-      "Assessing whether the TPM is used to store cryptographic keys securely, preventing unauthorized access to encrypted data.",
-      "Evaluating if the TPM is enabled to allow booting from USB devices for recovery purposes."
+      { "id": "opt_a", "text": "MAC Address Filtering", "isCorrect": true },
+      { "id": "opt_b", "text": "802.11 Wi-Fi Framing", "isCorrect": true },
+      { "id": "opt_c", "text": "Address Resolution Protocol (ARP)", "isCorrect": true },
+      { "id": "opt_d", "text": "Internet Protocol (IP) Routing", "isCorrect": false },
+      { "id": "opt_e", "text": "Domain Name System (DNS) Resolution", "isCorrect": false }
     ],
-    "answer": 2,
-    "explanation": "The TPM is designed to securely store cryptographic keys, which is crucial for protecting encrypted data and ensuring that sensitive information is not accessed by unauthorized users.\n\nOption Analysis:\n- Assessing whether the TPM is used to store cryptographic keys securely, preventing unauthorized access to encrypted data. (Correct): Stores cryptographic keys securely to protect encrypted data.\n- Evaluating if the TPM is enabled to allow booting from USB devices for recovery purposes. (Incorrect): While booting from USB devices can be useful for recovery, it is not related to the primary function of the TPM. The TPM is not involved in enabling or disabling boot options; its role is focused on security, particularly in storing cryptographic keys.\n- Verifying that the TPM is configured to support legacy BIOS mode for compatibility with older hardware. (Incorrect): The TPM does not play a role in supporting legacy BIOS mode. This option confuses the TPM's security functions with compatibility settings, which are unrelated to the TPM's purpose.\n- Checking if the TPM is used to control fan speed and temperature monitoring for system stability. (Incorrect): The TPM is not involved in hardware management tasks such as controlling fan speed or temperature monitoring. This option misrepresents the TPM's role, which is centered around security and cryptographic functions, not hardware stability."
-  },
-  {
-    "id": "bios_03",
-    "topic": "BIOS and UEFI",
-    "question": "An energy company is strengthening its defenses and wants to look for methods that successfully protect trade secrets by ensuring none of its company's computing assets are hijacked by malware.\nTo assist in safeguarding the sensitive information, what can the technician enable to ensure this will not happen?",
-    "options": [
-      "Boot password",
-      "HSM",
-      "TPM",
-      "Secure boot"
-    ],
-    "answer": 3,
-    "explanation": "The technician can configure secure boot, which is a unified extensible firmware interface (UEFI) feature designed to prevent malware from hijacking a computer.\n\nOption Analysis:\n- Secure boot (Correct): UEFI feature designed to prevent malware from injecting code into the bootloader or hijacking a computer.\n- TPM (Incorrect): A trusted platform module (TPM) is a specification for hardware-based storage of digital certificates, cryptographic keys, and hashed passwords.\n- HSM (Incorrect): A hardware security module (HSM) is a secure USB key or thumb drive used to store cryptographic material where a user must authenticate before they can access the keys stored on the module.\n- Boot password (Incorrect): A boot password requires the user to authenticate before the operating system is loaded. Different system software will provide different support for authentication methods. This measure cannot keep malware from injecting code into the bootloader of the operating system."
-  },
-  {
-    "id": "bios_04",
-    "topic": "BIOS and UEFI",
-    "question": "You have purchased a new notebook. This notebook system uses UEFI firmware and comes with Windows 11 preinstalled. However, you want to use Linux on this system.\nYou download your favorite distribution and install it on the system, removing all Windows partitions on the hard disk in the process. When the installation is complete, you find that the operating system won't load when the system is rebooted.\nWhich of the following would allow your computer to boot to Linux?",
-    "options": [
-      "Enable the TPM chip on the motherboard.",
-      "Reinstall Windows 11 on the system.",
-      "Set the boot order to boot from the hard disk first in the UEFI configuration.",
-      "Disable Secure Boot in the UEFI configuration.",
-      "Enable Secure Boot in the UEFI configuration."
-    ],
-    "answer": 3,
-    "explanation": "In this scenario, you should disable the Secure Boot option in the UEFI configuration. Secure Boot requires the operating system installed on the hard drive to be digitally signed. If it isn't digitally signed, the UEFI firmware will not boot it by default.\n\nOption Analysis:\n- Disable Secure Boot in the UEFI configuration. (Correct): Disables the digital signature requirement for OS bootloaders, allowing unsigned or non-vendor-trusted Linux distributions to boot.\n- Reinstall Windows 11 on the system. (Incorrect): Reinstalling Windows 11 does not meet the requirements of this scenario.\n- Enable the TPM chip on the motherboard. (Incorrect): If Secure Boot is already enabled, the TPM chip on the motherboard must already be enabled as well.\n- Set the boot order to boot from the hard disk first in the UEFI configuration. (Incorrect): The boot order configuration is not preventing the system from booting in this scenario."
-  },
-  {
-    "id": "bios_05",
-    "topic": "BIOS and UEFI",
-    "question": "A company has recently upgraded its systems to UEFI-based firmware, and some employees are experiencing issues accessing system settings during boot.\nWhich of the following actions would BEST evaluate and resolve the issue of missing the key prompt to access the UEFI setup program?",
-    "options": [
-      "Adjust the boot order to prioritize the hard drive, ensuring the system boots correctly.",
-      "Use the Shift-click method on the Restart button from the Windows logon screen to access UEFI boot options.",
-      "Disable Secure Boot in the UEFI setup to allow easier access to system settings.",
-      "Reboot the computer and continuously press the Delete key until the UEFI setup program appears."
-    ],
-    "answer": 1,
-    "explanation": "Using the Shift-click method on the Restart button from the Windows logon screen to access UEFI boot options provides a reliable way to access UEFI boot options without relying on the timing of key presses during boot. It evaluates the issue by offering an alternative access method, ensuring users can reach the UEFI setup even if they miss the initial prompt.\n\nOption Analysis:\n- Use the Shift-click method on the Restart button from the Windows logon screen to access UEFI boot options. (Correct): Bypasses POST keypress timing requirements by instructing Windows to reboot directly into the Advanced Startup UEFI menu.\n- Reboot the computer and continuously press the Delete key until the UEFI setup program appears. (Incorrect): While pressing the Delete key is a common method to access the UEFI setup, it does not evaluate the issue of missing the prompt. This approach relies on timing and may not resolve the problem if the boot process is too fast.\n- Disable Secure Boot in the UEFI setup to allow easier access to system settings. (Incorrect): Disabling Secure Boot does not affect the ability to access the UEFI setup program. Secure Boot is a security feature and does not influence the key prompt or access method for UEFI settings.\n- Adjust the boot order to prioritize the hard drive, ensuring the system boots correctly. (Incorrect): Adjusting the boot order is unrelated to accessing the UEFI setup program. This action focuses on the sequence of boot devices rather than resolving the issue of missing the key prompt for UEFI access."
+    "explanation": "Layer 2 (Data Link Layer) manages physical addressing, hardware framing, and local device communication on the same LAN segment.\n\nOption Analysis:\n- MAC Address Filtering (Correct): Uses hardware MAC addresses assigned at Layer 2 to permit or deny access.\n- 802.11 Wi-Fi Framing (Correct): Encapsulates payload data into 802.11 Data Link frames for transmission across wireless media.\n- Address Resolution Protocol (ARP) (Correct): Maps Layer 3 IP addresses to Layer 2 MAC addresses, acting directly at the boundary of Layer 2.\n- IP Routing (Incorrect): IP routing operates strictly at Layer 3 (Network Layer).\n- DNS Resolution (Incorrect): DNS operates at Layer 7 (Application Layer)."
   }
 ];
 
 let questions = [];
 let historyStack = [];
 let historyIndex = -1;
-let answeredMap = {};
+let answeredMap = {}; 
+let currentShuffledOptionsMap = {}; // Maps question ID -> shuffled array of option objects
+let tempSelectionsMap = {};         // Keeps track of in-progress multi-select choices before final submission
 
 function initApp() {
     loadBank();
@@ -432,28 +407,37 @@ function loadBank() {
     questions = [...DEFAULT_QUESTIONS];
 }
 
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
 function startNewDeck() {
     historyStack = [];
     historyIndex = -1;
     answeredMap = {};
-    
+    tempSelectionsMap = {};
+    currentShuffledOptionsMap = {};
+
+    // Shuffle options independently for each question on new deck creation
+    questions.forEach(q => {
+        currentShuffledOptionsMap[q.id] = shuffleArray(q.options);
+    });
+
     let unvisited = Array.from({length: questions.length}, (_, i) => i);
-    shuffleArray(unvisited);
-    
-    if (unvisited.length > 0) {
-        historyStack.push(unvisited[0]);
+    let shuffledSequence = shuffleArray(unvisited);
+
+    if (shuffledSequence.length > 0) {
+        historyStack.push(shuffledSequence[0]);
         historyIndex = 0;
     }
-    
+
     renderGrid();
     renderQuestion();
-}
-
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
 }
 
 function renderGrid() {
@@ -525,22 +509,41 @@ function renderQuestion() {
         expPanel.classList.add('hidden');
     }
 
+    // Retrieve shuffled options for this question
+    const displayOptions = currentShuffledOptionsMap[q.id] || q.options;
     const prefixes = ['A', 'B', 'C', 'D', 'E', 'F'];
-    q.options.forEach((opt, idx) => {
+    const currentTemp = tempSelectionsMap[qIndex] || [];
+
+    displayOptions.forEach((opt, idx) => {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
-        btn.innerHTML = `<span class="prefix">${prefixes[idx]}</span> <span>${opt}</span>`;
+        btn.innerHTML = `<span class="prefix">${prefixes[idx]}</span> <span>${opt.text}</span>`;
 
         if (record) {
+            // Question has been evaluated
             btn.disabled = true;
-            if (idx === q.answer) {
+
+            if (opt.isCorrect) {
                 btn.classList.add('correct');
             }
-            if (record.selected === idx && !record.isCorrect) {
+
+            if (record.selectedIds.includes(opt.id) && !opt.isCorrect) {
                 btn.classList.add('incorrect');
             }
         } else {
-            btn.addEventListener('click', () => selectOption(idx));
+            // Question is active
+            const isSelectedInTemp = currentTemp.includes(opt.id);
+
+            if (isSelectedInTemp) {
+                btn.classList.add('selected-temp');
+            }
+
+            // Disable unselected options when selection limit is reached
+            if (!isSelectedInTemp && currentTemp.length >= q.requiredSelections) {
+                btn.disabled = true;
+            } else {
+                btn.addEventListener('click', () => handleOptionClick(qIndex, opt.id));
+            }
         }
 
         optionsList.appendChild(btn);
@@ -550,27 +553,50 @@ function renderQuestion() {
     renderGrid();
 }
 
-function selectOption(selectedIdx) {
-    const qIdx = historyStack[historyIndex];
-    const q = questions[qIdx];
+function handleOptionClick(qIndex, selectedOptionId) {
+    const q = questions[qIndex];
+    if (!q || answeredMap[qIndex]) return;
+
+    if (q.type === 'single') {
+        evaluateQuestion(qIndex, [selectedOptionId]);
+    } else {
+        // Multi-select logic
+        let currentTemp = tempSelectionsMap[qIndex] ? [...tempSelectionsMap[qIndex]] : [];
+
+        if (currentTemp.includes(selectedOptionId)) {
+            // Deselect if clicked again
+            currentTemp = currentTemp.filter(id => id !== selectedOptionId);
+        } else {
+            if (currentTemp.length < q.requiredSelections) {
+                currentTemp.push(selectedOptionId);
+            }
+        }
+
+        tempSelectionsMap[qIndex] = currentTemp;
+
+        // Auto-evaluate when exact selection limit is reached
+        if (currentTemp.length === q.requiredSelections) {
+            evaluateQuestion(qIndex, currentTemp);
+        } else {
+            renderQuestion();
+        }
+    }
+}
+
+function evaluateQuestion(qIndex, selectedIds) {
+    const q = questions[qIndex];
     if (!q) return;
 
-    let isCorrect = false;
+    const correctIds = q.options.filter(o => o.isCorrect).map(o => o.id);
 
-    if (Array.isArray(q.answer)) {
-        if (Array.isArray(selectedIdx)) {
-            const sortedSelected = [...selectedIdx].sort();
-            const sortedAnswer = [...q.answer].sort();
-            isCorrect = JSON.stringify(sortedSelected) === JSON.stringify(sortedAnswer);
-        } else {
-            isCorrect = q.answer.includes(selectedIdx);
-        }
-    } else {
-        isCorrect = (selectedIdx === q.answer);
-    }
+    // Compare selected IDs against true correct IDs
+    const isCorrect = (
+        selectedIds.length === correctIds.length &&
+        selectedIds.every(id => correctIds.includes(id))
+    );
 
-    answeredMap[qIdx] = {
-        selected: selectedIdx,
+    answeredMap[qIndex] = {
+        selectedIds: selectedIds,
         isCorrect: isCorrect
     };
 
@@ -626,11 +652,21 @@ function setupEventListeners() {
     document.getElementById('toggle-exp-btn').addEventListener('click', toggleExplanation);
 
     document.addEventListener('keydown', (e) => {
-        if (e.key >= '1' && e.key <= '6') {
+        if (e.key >= '1' && e.key <= '5') {
             const idx = parseInt(e.key) - 1;
             const qIndex = historyStack[historyIndex];
-            if (!answeredMap[qIndex] && questions[qIndex] && idx < questions[qIndex].options.length) {
-                selectOption(idx);
+            const q = questions[qIndex];
+            if (q && !answeredMap[qIndex]) {
+                const displayOptions = currentShuffledOptionsMap[q.id] || q.options;
+                if (idx < displayOptions.length) {
+                    const optId = displayOptions[idx].id;
+                    const currentTemp = tempSelectionsMap[qIndex] || [];
+                    
+                    // Allow hotkey selection if option is clickable
+                    if (currentTemp.includes(optId) || currentTemp.length < q.requiredSelections) {
+                        handleOptionClick(qIndex, optId);
+                    }
+                }
             }
         } else if (e.key === ' ' || e.key === 'ArrowRight') {
             e.preventDefault();

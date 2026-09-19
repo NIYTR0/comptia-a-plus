@@ -3,1176 +3,928 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CompTIA A+ Master Bank Cycler</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>CompTIA A+ Master Practice Bank</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-        }
-        
-        .code-font {
-            font-family: 'JetBrains Mono', monospace;
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-green: #22c55e;
+            --accent-red: #ef4444;
+            --accent-gold: #f59e0b;
+            --border-color: #334155;
+            --hover-bg: #334155;
         }
 
-        /* Custom scrollbars */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 6px;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-        ::-webkit-scrollbar-track {
-            background: #1e293b;
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
+
+        .app-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
+
+        header {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            color: var(--accent-blue);
+        }
+
+        .stats-badge {
+            background-color: var(--bg-color);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        .nav-grid-container {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .grid-header {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .question-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            max-height: 120px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .grid-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+
+        .grid-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-main);
+        }
+
+        .grid-btn.active {
+            background-color: var(--accent-gold);
+            color: #000;
+            border-color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .grid-btn.answered-correct {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .grid-btn.answered-incorrect {
+            border-color: var(--accent-red);
+            color: var(--accent-red);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .topic-tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .question-text {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.15s ease, border-color 0.15s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background-color: var(--hover-bg);
+            border-color: var(--accent-blue);
+        }
+
+        .option-btn .prefix {
+            font-weight: 700;
+            color: var(--accent-blue);
+            min-width: 20px;
+        }
+
+        .option-btn.correct {
+            background-color: rgba(34, 197, 94, 0.15) !important;
+            border-color: var(--accent-green) !important;
+            color: #ffffff !important;
+        }
+
+        .option-btn.incorrect {
+            background-color: rgba(239, 68, 68, 0.15) !important;
+            border-color: var(--accent-red) !important;
+            color: #ffffff !important;
+        }
+
+        .explanation-panel {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .explanation-panel.hidden {
+            display: none !important;
+        }
+
+        .explanation-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .explanation-content {
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: #e2e8f0;
+            white-space: pre-wrap;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: var(--hover-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover:not(:disabled) {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            border-color: #3b82f6;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background-color: #1d4ed8;
+            border-color: #60a5fa;
+            color: #ffffff;
+        }
+
+        .keyboard-hint {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: -5px;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-overlay.hidden {
+            display: none;
+        }
+
+        .modal {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            width: 90%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .modal textarea {
+            width: 100%;
+            height: 200px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            resize: vertical;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+<body>
 
-    <!-- Header -->
-    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-30">
-        <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-3">
-            <div class="flex items-center space-x-3">
-                <div class="p-2 bg-indigo-600/20 text-indigo-400 rounded-lg border border-indigo-500/30">
-                    <i data-lucide="cpu" class="w-6 h-6"></i>
-                </div>
-                <div>
-                    <h1 class="font-bold text-lg text-slate-100 flex items-center gap-2">
-                        CompTIA A+ Master Cycler
-                        <span class="text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full font-mono">v4.0</span>
-                    </h1>
-                    <p class="text-xs text-slate-400">Non-Repeating Shuffle • Step-Back History • Direct Jump Grid</p>
-                </div>
-            </div>
-
-            <!-- Header Action Controls -->
-            <div class="flex items-center space-x-2">
-                <button onclick="reshuffleQueue()" title="Reshuffle Deck Sequence" class="flex items-center space-x-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-xs font-medium rounded-lg transition">
-                    <i data-lucide="shuffle" class="w-4 h-4 text-indigo-400"></i>
-                    <span>Reshuffle</span>
-                </button>
-                <button onclick="openModal('addModal')" class="flex items-center space-x-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition shadow-sm">
-                    <i data-lucide="plus" class="w-4 h-4"></i>
-                    <span>Add Question</span>
-                </button>
-                <button onclick="openModal('dataModal')" class="flex items-center space-x-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-xs font-medium rounded-lg transition">
-                    <i data-lucide="database" class="w-4 h-4"></i>
-                    <span>Manage Bank</span>
-                </button>
-            </div>
-        </div>
+<div class="app-container">
+    <header>
+        <h1>CompTIA A+ Master Bank</h1>
+        <div class="stats-badge" id="stats-badge">Step 1 of 33</div>
+        <button class="btn" id="open-manage-btn">Manage Bank</button>
     </header>
 
-    <!-- Main Workspace -->
-    <main class="max-w-4xl w-full mx-auto px-4 py-6 flex-1 flex flex-col gap-5">
+    <div class="nav-grid-container">
+        <div class="grid-header">
+            <span>Question Sequence Queue</span>
+            <span id="grid-status-text">0/33 Completed</span>
+        </div>
+        <div class="question-grid" id="question-grid"></div>
+    </div>
 
-        <!-- Topic Filter & Session Status Bar -->
-        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-wrap items-center justify-between gap-4 shadow-lg">
-            <!-- Filter Dropdown -->
-            <div class="flex items-center space-x-3 flex-1 min-w-[240px]">
-                <i data-lucide="filter" class="w-4 h-4 text-slate-400"></i>
-                <label for="topicFilter" class="text-xs font-medium text-slate-400 whitespace-nowrap">Topic Filter:</label>
-                <select id="topicFilter" onchange="changeFilter(this.value)" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg px-3 py-1.5 focus:outline-none focus:border-indigo-500 transition">
-                    <option value="ALL">All Topics (33 Questions)</option>
-                    <option value="RAM">RAM & Memory Architecture</option>
-                    <option value="CPU">CPU Architecture & Sockets</option>
-                    <option value="PSU">Power Systems & Voltage</option>
-                    <option value="RAID">Storage & RAID Systems</option>
-                    <option value="CHASSIS">Chassis & Hardware Handling</option>
-                </select>
-            </div>
-
-            <!-- Stats Badges -->
-            <div class="flex items-center space-x-3 text-xs">
-                <div class="bg-slate-800 border border-slate-700/80 px-3 py-1.5 rounded-lg flex items-center space-x-2">
-                    <span class="text-slate-400">Total in Filter:</span>
-                    <span id="bankCount" class="font-mono text-indigo-400 font-bold">33</span>
-                </div>
-                <div class="bg-slate-800 border border-slate-700/80 px-3 py-1.5 rounded-lg flex items-center space-x-2">
-                    <span class="text-slate-400">Visited in Cycle:</span>
-                    <span id="viewedCount" class="font-mono text-emerald-400 font-bold">0</span>
-                </div>
-            </div>
+    <main class="card">
+        <div class="card-header">
+            <span class="topic-tag" id="topic-tag">General</span>
+            <span style="font-size: 0.85rem; color: var(--text-muted);" id="q-id-display">ID: 1</span>
         </div>
 
-        <!-- Question Number Quick Jump Bar -->
-        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3 shadow-md space-y-2">
-            <div class="flex justify-between items-center px-1 text-xs text-slate-400">
-                <span class="flex items-center gap-1.5 font-medium">
-                    <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-indigo-400"></i>
-                    Question Direct Jump Navigation
-                </span>
-                <span class="text-[11px] text-slate-500 font-mono">Use arrow keys or click to select</span>
-            </div>
-            <!-- Scrollable Button Container -->
-            <div id="quickJumpBar" class="flex items-center gap-1.5 overflow-x-auto pb-1 pt-1 px-1">
-                <!-- Dynamically filled with buttons 1, 2, 3... -->
-            </div>
+        <div class="question-text" id="question-text">Loading question...</div>
+
+        <div class="options-list" id="options-list"></div>
+
+        <div class="explanation-panel hidden" id="explanation-panel">
+            <div class="explanation-title">Official CompTIA Explanation</div>
+            <div class="explanation-content" id="explanation-content"></div>
         </div>
 
-        <!-- Primary Question Card -->
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-xl overflow-hidden flex flex-col flex-1 relative">
-            
-            <!-- Card Subtopic Tag & Counter Bar -->
-            <div class="bg-slate-950/60 border-b border-slate-800 px-6 py-3 flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <span id="cardTopicBadge" class="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-md bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                        RAM & Memory
-                    </span>
-                    <span id="multiSelectNotice" class="hidden text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                        Select Multiple
-                    </span>
-                </div>
-                <span id="cardCounter" class="text-xs font-mono text-slate-400">
-                    Step 1 of 33 in current cycle
-                </span>
-            </div>
-
-            <!-- Question Body -->
-            <div class="p-6 md:p-8 flex-1 flex flex-col justify-between gap-6">
-                
-                <!-- Text Statement -->
-                <div>
-                    <h2 id="questionText" class="text-base md:text-lg font-medium text-slate-100 leading-relaxed">
-                        Loading study question...
-                    </h2>
-                </div>
-
-                <!-- Multiple Choice Grid -->
-                <div id="optionsContainer" class="space-y-3">
-                    <!-- Dynamic Choice Buttons rendered by JS -->
-                </div>
-
-                <!-- Explanation Display Block -->
-                <div id="explanationBlock" class="hidden mt-4 p-5 bg-slate-950/80 border border-slate-800 rounded-xl space-y-3">
-                    <div class="flex items-center space-x-2 text-emerald-400 font-semibold text-sm border-b border-slate-800/80 pb-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-                        <span>Official CompTIA Explanation & Distractor Analysis</span>
-                    </div>
-                    <div id="explanationContent" class="text-xs md:text-sm text-slate-300 leading-relaxed space-y-2">
-                        <!-- Dynamic Explanation Text -->
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Card Bottom Navigation Controls -->
-            <div class="bg-slate-950/80 border-t border-slate-800 px-6 py-4 flex flex-wrap items-center justify-between gap-3">
-                
-                <!-- Left Action: Toggle Explanation -->
-                <button id="revealBtn" onclick="toggleExplanation()" class="flex items-center space-x-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg border border-slate-700 transition">
-                    <i data-lucide="eye" class="w-4 h-4 text-indigo-400"></i>
-                    <span id="revealBtnText">Show Explanation</span>
-                </button>
-
-                <!-- Right Action Group: Previous (Back) & Next -->
-                <div class="flex items-center space-x-2">
-                    <button id="prevBtn" onclick="prevQuestion()" class="flex items-center space-x-1.5 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg border border-slate-700 transition disabled:opacity-40 disabled:cursor-not-allowed">
-                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                        <span>Previous (Back)</span>
-                    </button>
-
-                    <button id="nextBtn" onclick="nextQuestion()" class="flex items-center space-x-1.5 px-5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition shadow-md shadow-indigo-900/20">
-                        <span id="nextBtnText">Next Question</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-
+        <div class="controls">
+            <button class="btn" id="prev-btn" disabled>&larr; Previous</button>
+            <button class="btn" id="toggle-exp-btn">Toggle Explanation</button>
+            <button class="btn btn-primary" id="next-btn">Next &rarr;</button>
         </div>
-
     </main>
 
-    <!-- Modal 1: Add Custom Question -->
-    <div id="addModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-xl w-full p-6 shadow-2xl space-y-5 max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                <h3 class="text-base font-bold text-slate-100 flex items-center gap-2">
-                    <i data-lucide="plus-circle" class="w-5 h-5 text-indigo-400"></i>
-                    Add Custom Question to Master Bank
-                </h3>
-                <button onclick="closeModal('addModal')" class="text-slate-400 hover:text-slate-200">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
+    <div class="keyboard-hint">Shortcuts: [1-4] Select Option | [Space] Next Question | [&larr;] Previous | [E] Toggle Explanation</div>
+</div>
 
-            <form id="addQuestionForm" onsubmit="saveCustomQuestion(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-medium text-slate-400 mb-1">Subtopic Category</label>
-                    <select id="newCategory" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:border-indigo-500 outline-none">
-                        <option value="RAM">RAM & Memory Architecture</option>
-                        <option value="CPU">CPU Architecture & Sockets</option>
-                        <option value="PSU">Power Systems & Voltage</option>
-                        <option value="RAID">Storage & RAID Systems</option>
-                        <option value="CHASSIS">Chassis & Hardware Handling</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-medium text-slate-400 mb-1">Question Prompt</label>
-                    <textarea id="newPrompt" required rows="3" placeholder="Enter scenario question text..." class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:border-indigo-500 outline-none"></textarea>
-                </div>
-
-                <div class="space-y-2">
-                    <label class="block text-xs font-medium text-slate-400">Multiple Choice Choices</label>
-                    <input type="text" id="optA" required placeholder="Choice A" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2 outline-none">
-                    <input type="text" id="optB" required placeholder="Choice B" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2 outline-none">
-                    <input type="text" id="optC" placeholder="Choice C (Optional)" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2 outline-none">
-                    <input type="text" id="optD" placeholder="Choice D (Optional)" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2 outline-none">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-medium text-slate-400 mb-1">Correct Answer Keys (e.g. "A" or "A,D")</label>
-                    <input type="text" id="newCorrect" required placeholder="A" class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 outline-none font-mono">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-medium text-slate-400 mb-1">Full Official Explanation</label>
-                    <textarea id="newExplanation" required rows="3" placeholder="Detailed CompTIA explanation text..." class="w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5 focus:border-indigo-500 outline-none"></textarea>
-                </div>
-
-                <div class="flex justify-end space-x-2 pt-2 border-t border-slate-800">
-                    <button type="button" onclick="closeModal('addModal')" class="px-4 py-2 bg-slate-800 text-slate-300 text-xs rounded-lg hover:bg-slate-700">Cancel</button>
-                    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-500">Save to Bank</button>
-                </div>
-            </form>
+<div class="modal-overlay hidden" id="manage-modal">
+    <div class="modal">
+        <h2>Manage Question Bank</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Paste JSON question arrays below to import and add to your active browser storage.</p>
+        <textarea id="import-json" placeholder='[{"id": "q1", "topic": "Hardware", "question": "...", "options": ["A", "B", "C", "D"], "answer": 0, "explanation": "..."}]'></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+            <button class="btn" id="reset-bank-btn" style="color: var(--accent-red); border-color: var(--accent-red);">Reset Default</button>
+            <button class="btn" id="close-manage-btn">Cancel</button>
+            <button class="btn btn-primary" id="import-btn">Import JSON</button>
         </div>
     </div>
+</div>
 
-    <!-- Modal 2: Data Import / Export -->
-    <div id="dataModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-5">
-            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                <h3 class="text-base font-bold text-slate-100 flex items-center gap-2">
-                    <i data-lucide="database" class="w-5 h-5 text-indigo-400"></i>
-                    Manage Master Study Bank
-                </h3>
-                <button onclick="closeModal('dataModal')" class="text-slate-400 hover:text-slate-200">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
+<script>
+const DEFAULT_QUESTIONS = [
+  {
+    "id": "hw_01",
+    "topic": "Hardware & Motherboards",
+    "question": "A technician is replacing a motherboard on a desktop computer. Which of the following components MUST be compatible with the motherboard socket type?",
+    "options": ["RAM", "CPU", "GPU", "PSU"],
+    "answer": 1,
+    "explanation": "The CPU (Central Processing Unit) must strictly match the physical socket architecture (e.g., LGA 1700, AM5) of the motherboard. RAM relies on memory slot standards (DDR4/DDR5), GPUs connect via PCIe slots, and PSUs use standardized power connectors."
+  },
+  {
+    "id": "hw_02",
+    "topic": "Power Supplies",
+    "question": "Which power supply connector is specifically designed to provide additional 12V power directly to a modern high-end graphics card?",
+    "options": ["20+4 pin ATX", "SATA Power", "PCIe 6+2 pin", "4/8-pin CPU"],
+    "answer": 2,
+    "explanation": "PCIe 6+2 pin connectors supply dedicated +12V power to high-draw PCI Express expansion cards like GPUs. 20+4 pin powers the mainboard, SATA powers drives, and 4/8-pin CPU provides power to the processor socket."
+  },
+  {
+    "id": "hw_03",
+    "topic": "Storage",
+    "question": "A user wants the fastest possible read/write speeds for an internal drive. Which form factor and protocol combination should be recommended?",
+    "options": ["SATA III SSD 2.5\"", "M.2 NVMe PCIe SSD", "SATA M.2 SSD", "7200 RPM HDD"],
+    "answer": 1,
+    "explanation": "M.2 NVMe drives utilize the PCIe bus, achieving throughput speeds well over 3500–7000 MB/s, far surpassing SATA III bandwidth limits capped around 600 MB/s."
+  },
+  {
+    "id": "net_01",
+    "topic": "Networking Ports",
+    "question": "Which port number does secure web browsing (HTTPS) use by default?",
+    "options": ["80", "21", "443", "22"],
+    "answer": 2,
+    "explanation": "HTTPS operates on TCP port 443 by default for TLS/SSL encrypted web communications. Port 80 is unencrypted HTTP, Port 21 is FTP, and Port 22 is SSH."
+  },
+  {
+    "id": "net_02",
+    "topic": "Networking Protocols",
+    "question": "A network device needs to automatically assign IP addresses, default gateways, and DNS servers to local clients. Which service provides this?",
+    "options": ["DNS", "DHCP", "SNMP", "ARP"],
+    "answer": 1,
+    "explanation": "DHCP (Dynamic Host Configuration Protocol) automatically leases IP configuration settings to network clients. DNS resolves domain names to IP addresses."
+  },
+  {
+    "id": "net_03",
+    "topic": "Networking Hardware",
+    "question": "Which network device operates primarily at Layer 2 of the OSI model and uses MAC addresses to forward traffic to specific ports?",
+    "options": ["Hub", "Router", "Switch", "Modem"],
+    "answer": 2,
+    "explanation": "Switches operate at Layer 2 (Data Link) and maintain a MAC address table to direct frames only to the destination port. Hubs repeat traffic to all ports (Layer 1), and Routers forward based on IP addresses (Layer 3)."
+  },
+  {
+    "id": "sec_01",
+    "topic": "Security Concepts",
+    "question": "Which authentication factor is represented by requiring a user to scan their fingerprint or face?",
+    "options": ["Something you know", "Something you have", "Something you are", "Somewhere you are"],
+    "answer": 2,
+    "explanation": "'Something you are' refers to biometric characteristics such as fingerprints, facial scans, or iris patterns. Passwords are 'something you know', and hardware tokens are 'something you have'."
+  },
+  {
+    "id": "sec_02",
+    "topic": "Network Security",
+    "question": "Which wireless security protocol offers the strongest encryption standard utilizing GCMP-256 for enterprise environments?",
+    "options": ["WEP", "WPA", "WPA2-Personal", "WPA3"],
+    "answer": 3,
+    "explanation": "WPA3 is the latest wireless security standard featuring robust AES/GCMP encryption and protection against offline dictionary attacks via SAE."
+  },
+  {
+    "id": "trouble_01",
+    "topic": "Troubleshooting Methodology",
+    "question": "According to the official CompTIA troubleshooting methodology, what is the FIRST step a technician should take when resolving a problem?",
+    "options": [
+      "Establish a theory of probable cause",
+      "Identify the problem",
+      "Test the theory to determine cause",
+      "Document findings, actions, and outcomes"
+    ],
+    "answer": 1,
+    "explanation": "The 6-step CompTIA methodology starts with: 1. Identify the problem (question user, perform backups, inquire about changes). 2. Establish a theory. 3. Test theory. 4. Plan/implement solution. 5. Verify system functionality. 6. Document findings."
+  },
+  {
+    "id": "trouble_02",
+    "topic": "Display Troubleshooting",
+    "question": "A user reports that an external monitor displays 'No Signal' after bootup. The power LED on the monitor is amber. What is the most likely cause?",
+    "options": [
+      "The monitor backlight has failed",
+      "The video cable is disconnected or faulty",
+      "GPU driver corruption",
+      "Screen resolution set too high"
+    ],
+    "answer": 1,
+    "explanation": "An amber power light with 'No Signal' indicates the display is in power-saving mode because it receives no active video feed, pointing directly to a loose or damaged video cable or improper input selection."
+  },
+  {
+    "id": "bios_uefi_voltage_01",
+    "topic": "Power Systems",
+    "question": "What voltage range do appliances such as dryers, heavy-duty power tools, and oven ranges require?",
+    "options": ["120V", "115V", "110V", "220V"],
+    "answer": 3,
+    "explanation": "Heavy appliances such as clothes dryers, oven ranges, central air units, and heavy-duty shop tools require a higher voltage supply line (220V–240V AC in North America) to deliver high wattage efficiently without pulling excessive current (amperage). Higher voltage allows higher power delivery using thinner wire gauges and reduces heat buildup caused by current flow.\n\nOption Analysis:\n- 220V (Correct): Standard North American heavy appliance rating supplied by a double-pole circuit breaker tapping both hot legs of a split-phase service.\n- 120V (Incorrect): Standard residential nominal single-phase voltage used for standard household electronics, small kitchen appliances, and desktop computers.\n- 115V / 110V (Incorrect): Legacy nominal voltages frequently used interchangeably with 120V in informal contexts, but insufficient to power heavy-duty, high-wattage equipment."
+  },
+  {
+    "id": "q12",
+    "topic": "Core Hardware",
+    "question": "A user needs to replace a computer's power supply. What is the FIRST step the technician should take before opening the case?",
+    "options": [
+      "Disconnect the power cable from the wall outlet",
+      "Attach an ESD grounding strap to the wrist",
+      "Unplug the 24-pin motherboard connector",
+      "Press the power button to discharge remaining capacitor charge"
+    ],
+    "answer": 0,
+    "explanation": "Safety first: Always completely disconnect the AC power cord from the wall outlet before opening the case or touching internal power components. Once disconnected, pressing the power button helps drain residual power from capacitors."
+  },
+  {
+    "id": "q13",
+    "topic": "Core Hardware",
+    "question": "Which component is responsible for storing the system's active runtime data, program instructions, and temporary work structures while powered on?",
+    "options": ["ROM", "NVMe SSD", "RAM", "CMOS"],
+    "answer": 2,
+    "explanation": "RAM (Random Access Memory) is volatile temporary system memory that holds live data and active program code for rapid CPU retrieval while the computer is turned on."
+  },
+  {
+    "id": "q14",
+    "topic": "Networking",
+    "question": "Which port number is utilized by unencrypted HTTP web traffic by default?",
+    "options": ["21", "80", "443", "8080"],
+    "answer": 1,
+    "explanation": "HTTP defaults to TCP port 80 for unencrypted web communication. HTTPS uses port 443, FTP uses port 21, and port 8080 is common for alternate/proxy web services."
+  },
+  {
+    "id": "q15",
+    "topic": "Networking",
+    "question": "A custom desktop build boots up, but the BIOS/UEFI date and time constantly reset to January 1st every time power is removed. Which component needs replacement?",
+    "options": ["Main PSU", "CR2032 CMOS battery", "System BIOS chip", "RTC Crystal"],
+    "answer": 1,
+    "explanation": "A depleted CR2032 CMOS coin cell battery fails to retain volatile motherboard firmware settings and Real-Time Clock (RTC) date/time details when AC power is completely disconnected."
+  },
+  {
+    "id": "q16",
+    "topic": "Mobile Devices",
+    "question": "Which mobile device feature uses satellite technology to pinpoint physical location anywhere on Earth without requiring cellular data?",
+    "options": ["Cell Tower Triangulation", "GPS", "Wi-Fi Positioning", "NFC"],
+    "answer": 1,
+    "explanation": "GPS (Global Positioning System) listens directly to satellite radio signals orbiting Earth to calculate geographic position without requiring active cellular network connections."
+  },
+  {
+    "id": "q17",
+    "topic": "Storage",
+    "question": "A storage array combines multiple physical hard drives into a single logical unit using RAID 1. What primary benefit does RAID 1 provide?",
+    "options": ["Maximum striping performance", "Disk mirroring / Fault tolerance", "Block-level parity", "Capacity summation"],
+    "answer": 1,
+    "explanation": "RAID 1 provides exact disk mirroring, writing identical data simultaneously across two physical drives to guarantee fault tolerance if one drive fails."
+  },
+  {
+    "id": "q18",
+    "topic": "Security",
+    "question": "Which authentication credential type provides 'something you have' in multi-factor authentication (MFA)?",
+    "options": ["Password / PIN", "Retina scan", "Hardware security key token", "Secret security question"],
+    "answer": 2,
+    "explanation": "A physical hardware security token, smart card, or key fob represents 'something you have'. Passwords/PINs are 'something you know', and retina scans are 'something you are'."
+  },
+  {
+    "id": "q19",
+    "topic": "Printers",
+    "question": "A laser printer outputs pages with repeated dark smudges or spots occurring at exact, regular intervals down every sheet. What component is most likely damaged?",
+    "options": ["Fuser roller / OPC drum", "Transfer belt", "Primary corona wire", "Paper pick-up roller"],
+    "answer": 0,
+    "explanation": "Repetitive defects occurring at equal spacing down a page indicate a damaged, gouged, or dirty cylindrical roller (such as the imaging drum or fuser roller). The defect interval corresponds directly to the roller's circumference."
+  },
+  {
+    "id": "q20",
+    "topic": "Troubleshooting",
+    "question": "After installing a new PCI Express graphics card, a desktop PC powers on with fans spinning, but produces no image on the screen and emits a series of beep codes. What is the most likely cause?",
+    "options": [
+      "Graphics card drivers are out of date",
+      "PCIe slot is operating at lower lane speeds",
+      "Graphics card is not fully seated or auxiliary power is unplugged",
+      "Monitor refresh rate setting is mismatched"
+    ],
+    "answer": 2,
+    "explanation": "Pre-boot beep codes indicate hardware POST initialization failures. An unseated expansion card or missing PCIe auxiliary power leads to immediate video initialization failure during POST."
+  },
+  {
+    "id": "q21",
+    "topic": "Core Hardware",
+    "question": "What type of RAM module form factor is specifically used in standard laptop computers and small form factor systems?",
+    "options": ["DIMM", "SO-DIMM", "Micro-DIMM", "ECC-DIMM"],
+    "answer": 1,
+    "explanation": "SO-DIMM (Small Outline Dual In-line Memory Module) is the compact RAM module size used in laptops and SFF PCs."
+  },
+  {
+    "id": "q22",
+    "topic": "Networking",
+    "question": "Which tool would a technician use to verify electrical continuity and wire mapping across an RJ-45 Ethernet cable?",
+    "options": ["Toner Probe", "Cable Tester", "Punchdown Tool", "Crimper"],
+    "answer": 1,
+    "explanation": "A cable tester checks pin-for-pin continuity and sequence mapping to ensure no open conductors or reversed wires exist in an Ethernet cable."
+  },
+  {
+    "id": "q23",
+    "topic": "Core Hardware",
+    "question": "Which motherboard component manages communication between high-speed devices like PCIe slots and CPU on older architecture systems?",
+    "options": ["Southbridge", "Northbridge", "Super I/O", "CMOS"],
+    "answer": 1,
+    "explanation": "In legacy chipset architectures, the Northbridge managed rapid data traffic between CPU, system RAM, and AGP/PCIe graphics."
+  },
+  {
+    "id": "q24",
+    "topic": "Storage",
+    "question": "What is the maximum single channel data transfer rate capped by the SATA III interface standard?",
+    "options": ["1.5 Gbps", "3.0 Gbps", "6.0 Gbps", "12.0 Gbps"],
+    "answer": 2,
+    "explanation": "SATA Revision 3.0 supports a maximum bus speed of 6.0 Gbps (yielding ~600 MB/s real-world throughput)."
+  },
+  {
+    "id": "q25",
+    "topic": "Networking",
+    "question": "Which wireless frequency band provides the longest transmission range and superior penetration through solid walls?",
+    "options": ["2.4 GHz", "5.0 GHz", "6.0 GHz", "60 GHz"],
+    "answer": 0,
+    "explanation": "Lower radio frequencies like 2.4 GHz penetrate physical obstacles better and cover greater distance than higher frequencies like 5 GHz or 6 GHz."
+  },
+  {
+    "id": "q26",
+    "topic": "Troubleshooting",
+    "question": "A user reports clicking noises coming from inside their desktop workstation case. Shortly after, Windows crashes with a BSOD. Which component is failing?",
+    "options": ["CPU Cooling Fan", "Mechanical Hard Drive (HDD)", "Power Supply Transformer", "Solid State Drive"],
+    "answer": 1,
+    "explanation": "The 'click of death' is a classic symptom of mechanical hard drive actuator arm failure hitting internal platter limits."
+  },
+  {
+    "id": "q27",
+    "topic": "Mobile Devices",
+    "question": "Which component converts DC battery power into high-voltage AC power to light backlights on older LCD screens?",
+    "options": ["Digitizer", "Inverter", "OLED Controller", "GPU"],
+    "answer": 1,
+    "explanation": "Inverters convert DC voltage into AC voltage to power Cold Cathode Fluorescent Lamps (CCFLs) in older LCD displays."
+  },
+  {
+    "id": "q28",
+    "topic": "Printers",
+    "question": "What process in laser printing uses heat and pressure to permanently bond toner powder onto paper fibers?",
+    "options": ["Exposing", "Developing", "Transferring", "Fusing"],
+    "answer": 3,
+    "explanation": "The fuser assembly applies heat and high pressure to permanently melt and bind toner particles to paper."
+  },
+  {
+    "id": "q29",
+    "topic": "Security",
+    "question": "Which term describes sending targeted fraudulent emails disguised as legitimate communications to trick executives into revealing confidential information?",
+    "options": ["Phishing", "Spear Phishing", "Whaling", "Vishing"],
+    "answer": 2,
+    "explanation": "Whaling is high-level targeted phishing specifically focused on high-profile executives and corporate officers."
+  },
+  {
+    "id": "q30",
+    "topic": "Cloud Computing",
+    "question": "Which cloud computing deployment model allows customers full control over operating systems, storage, and networking hardware configurations without physical maintenance?",
+    "options": ["SaaS", "PaaS", "IaaS", "DaaS"],
+    "answer": 2,
+    "explanation": "IaaS (Infrastructure as a Service) provides virtualized hardware resources (servers, storage, networking) for complete OS and app configuration."
+  },
+  {
+    "id": "q31",
+    "topic": "Networking",
+    "question": "Which command-line utility tests network end-to-end connectivity and measures ICMP round-trip packet latency?",
+    "options": ["ipconfig", "ping", "tracert", "netstat"],
+    "answer": 1,
+    "explanation": "Ping uses ICMP Echo Request and Reply messages to verify host connectivity and measure response latency in milliseconds."
+  },
+  {
+    "id": "q32",
+    "topic": "Core Hardware",
+    "question": "Which expansion card standard connects directly to motherboard slots to provide high-speed dedicated sound, video, or network interfaces?",
+    "options": ["PCIe", "AGP", "ISA", "PCI-X"],
+    "answer": 0,
+    "explanation": "PCI Express (PCIe) is the modern high-speed point-to-point serial expansion card interface standard."
+  },
+  {
+    "id": "q33",
+    "topic": "Virtualization",
+    "question": "What type of hypervisor runs directly on bare metal server hardware without requiring a host operating system?",
+    "options": ["Type 1", "Type 2", "Hosted", "Application-level"],
+    "answer": 0,
+    "explanation": "Type 1 (Bare-Metal) hypervisors run directly on underlying hardware for maximum virtualization performance and security."
+  }
+];
 
-            <div class="space-y-4 text-xs text-slate-300">
-                <p>Export your active question bank to backup JSON or import a JSON dataset to merge with your active bank.</p>
-                
-                <div class="flex flex-col space-y-2">
-                    <button onclick="exportBankJSON()" class="flex items-center justify-center space-x-2 w-full py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg font-semibold text-slate-200">
-                        <i data-lucide="download" class="w-4 h-4"></i>
-                        <span>Export Bank as JSON File</span>
-                    </button>
+let questions = [];
+let historyStack = [];
+let historyIndex = -1;
+let answeredMap = {};
 
-                    <label class="flex items-center justify-center space-x-2 w-full py-2.5 bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/30 rounded-lg font-semibold text-indigo-300 cursor-pointer">
-                        <i data-lucide="upload" class="w-4 h-4"></i>
-                        <span>Import Questions from JSON File</span>
-                        <input type="file" id="importFileInput" accept=".json" onchange="importBankJSON(event)" class="hidden">
-                    </label>
+function initApp() {
+    loadBank();
+    setupEventListeners();
+    startNewDeck();
+}
 
-                    <button onclick="resetToDefaultBank()" class="flex items-center justify-center space-x-2 w-full py-2 bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-rose-400 rounded-lg font-semibold mt-4">
-                        <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
-                        <span>Reset Bank to Original 33 Questions</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+function loadBank() {
+    const saved = localStorage.getItem('comptia_a_plus_bank');
+    if (saved) {
+        try {
+            questions = JSON.parse(saved);
+        } catch (e) {
+            questions = [...DEFAULT_QUESTIONS];
+        }
+    } else {
+        questions = [...DEFAULT_QUESTIONS];
+    }
+}
 
-    <script>
-        // Master Questions Dataset
-        const DEFAULT_MASTER_BANK = [
-            // RAM & Memory Architecture
-            {
-                id: "ram_1",
-                category: "RAM",
-                topicLabel: "RAM & Memory Architecture",
-                question: "How is the peak transfer rate for DDR-200 (PC1600) calculated?",
-                options: [
-                    { key: "A", text: "By halving the data rate to account for transfer delays" },
-                    { key: "B", text: "By multiplying the data rate (200 MT/s) by 8 bytes per transfer" },
-                    { key: "C", text: "By using the clock speed of the memory bus only" },
-                    { key: "D", text: "By multiplying the clock speed by the system memory capacity" }
-                ],
-                correct: ["B"],
-                explanation: "The peak transfer rate for DDR-200 (PC1600) is calculated by multiplying the data rate, which is 200 MT/s, by 8 bytes per transfer, resulting in 1600 MBps."
-            },
-            {
-                id: "ram_2",
-                category: "RAM",
-                topicLabel: "RAM & Memory Architecture",
-                question: "What does Double Data Rate (DDR) memory achieve by using both the rising and falling edges of the clock cycle?",
-                options: [
-                    { key: "A", text: "It doubles the data transfer rate compared to traditional SDRAM." },
-                    { key: "B", text: "It increases memory capacity per module." },
-                    { key: "C", text: "It synchronizes with the system clock to improve stability." },
-                    { key: "D", text: "It reduces the power consumption of memory modules." }
-                ],
-                correct: ["A"],
-                explanation: "DDR memory achieves double the data transfer rate by utilizing both the rising and falling edges of the clock cycle, allowing for two operations per cycle."
-            },
-            {
-                id: "ram_3",
-                category: "RAM",
-                topicLabel: "RAM & Memory Architecture",
-                question: "A graphics artist wants to put together the best possible machine for graphics processing. Which of the following can distinguish between RAM memory modules that appear to be identical?",
-                options: [
-                    { key: "A", text: "Transfer rate" },
-                    { key: "B", text: "Timing" },
-                    { key: "C", text: "RAM type" },
-                    { key: "D", text: "PC-# value" }
-                ],
-                correct: ["B"],
-                explanation: "The technician can use timings (such as CAS latency) to differentiate the performance of RAM modules that are an identical DDR type and speed. Lower timing values indicate better performance."
-            },
-            {
-                id: "ram_4",
-                category: "RAM",
-                topicLabel: "RAM & Memory Architecture",
-                question: "A network administrator is setting up a server and wants to use memory which performs a hash calculation on data values for error handling. What memory module format should be used?",
-                options: [
-                    { key: "A", text: "Swap space" },
-                    { key: "B", text: "RDIMM" },
-                    { key: "C", text: "UDIMM" },
-                    { key: "D", text: "Virtual memory" }
-                ],
-                correct: ["B"],
-                explanation: "Error correction code (ECC) RAM performs a hash calculation on data values and stores it as an 8-bit checksum. Most ECC RAM in enterprise servers is supplied as registered DIMMs (RDIMMs)."
-            },
-            {
-                id: "ram_5",
-                category: "RAM",
-                topicLabel: "RAM & Memory Architecture",
-                question: "A systems administrator sets up dual-channel memory in a system to increase performance. Which of the following components does NOT require dual-channel support?",
-                options: [
-                    { key: "A", text: "CPU" },
-                    { key: "B", text: "RAM devices" },
-                    { key: "C", text: "Memory controller" },
-                    { key: "D", text: "Motherboard" }
-                ],
-                correct: ["B"],
-                explanation: "Dual-channel operation requires support from the CPU, memory controller, and motherboard. Standard RAM modules are used; there are no specialized 'dual-channel' RAM devices."
-            },
-            {
-                id: "ram_6",
-                category: "RAM",
-                topicLabel: "RAM & Memory Architecture",
-                question: "Which memory form factor is designed specifically for space-constrained laptops and small form factor motherboards?",
-                options: [
-                    { key: "A", text: "DIMM" },
-                    { key: "B", text: "SODIMM" },
-                    { key: "C", text: "Micro-ATX" },
-                    { key: "D", text: "RDIMM" }
-                ],
-                correct: ["B"],
-                explanation: "Small Outline Dual In-line Memory Modules (SODIMMs) are approximately half the length of standard desktop DIMMs, making them ideal for laptop computers."
-            },
-            {
-                id: "ram_7",
-                category: "RAM",
-                topicLabel: "RAM & Memory Architecture",
-                question: "Which M.2 keying standard supports PCIe x4 throughput for high-speed NVMe solid-state storage?",
-                options: [
-                    { key: "A", text: "B Key" },
-                    { key: "B", text: "M Key" },
-                    { key: "C", text: "A Key" },
-                    { key: "D", text: "E Key" }
-                ],
-                correct: ["B"],
-                explanation: "An M.2 slot keyed for 'M' supports up to 4 PCIe lanes (PCIe x4) and is utilized by high-performance NVMe SSDs."
-            },
-            {
-                id: "ram_8",
-                category: "RAM",
-                topicLabel: "RAM & Memory Architecture",
-                question: "In Linux operating systems, what dedicated partition or file space on a secondary storage drive is utilized when physical system RAM becomes fully utilized?",
-                options: [
-                    { key: "A", text: "Pagefile.sys" },
-                    { key: "B", text: "Swap space" },
-                    { key: "C", text: "Virtual allocation table" },
-                    { key: "D", text: "RAM Disk" }
-                ],
-                correct: ["B"],
-                explanation: "Linux uses designated disk storage known as 'swap space' to extend physical memory when capacity is exceeded. Windows uses pagefile.sys."
-            },
-            {
-                id: "ram_9",
-                category: "RAM",
-                topicLabel: "RAM & Memory Architecture",
-                question: "What is the total addressable memory space formed by combining physical system RAM and secondary disk swap space called?",
-                options: [
-                    { key: "A", text: "Virtual memory" },
-                    { key: "B", text: "Cache memory" },
-                    { key: "C", text: "Extended register memory" },
-                    { key: "D", text: "Shadow RAM" }
-                ],
-                correct: ["A"],
-                explanation: "Virtual memory (or virtual RAM) represents the total combined addressable memory of physical system RAM plus secondary disk paging/swap space."
-            },
-            {
-                id: "ram_10",
-                category: "RAM",
-                topicLabel: "RAM & Memory Architecture",
-                question: "Unbuffered DIMMs (UDIMMs) differ from Registered DIMMs (RDIMMs) primarily because UDIMMs:",
-                options: [
-                    { key: "A", text: "Do not feature a register buffer chip between the RAM modules and memory controller." },
-                    { key: "B", text: "Operate strictly on 220V power lines." },
-                    { key: "C", text: "Require dual-channel motherboards." },
-                    { key: "D", text: "Only fit in laptop SODIMM slots." }
-                ],
-                correct: ["A"],
-                explanation: "UDIMMs connect directly to the memory controller without an intermediary register, resulting in slightly lower latency but less stability under heavy multi-module enterprise server loads."
-            },
+function startNewDeck() {
+    historyStack = [];
+    historyIndex = -1;
+    answeredMap = {};
+    
+    let unvisited = Array.from({length: questions.length}, (_, i) => i);
+    shuffleArray(unvisited);
+    
+    if (unvisited.length > 0) {
+        historyStack.push(unvisited[0]);
+        historyIndex = 0;
+    }
+    
+    renderGrid();
+    renderQuestion();
+}
 
-            // CPU Architecture & Sockets
-            {
-                id: "cpu_1",
-                category: "CPU",
-                topicLabel: "CPU Architecture & Sockets",
-                question: "Which of the following refers to placing two or more physical processor cores inside a single processor chip package?",
-                options: [
-                    { key: "A", text: "Hyper-threading" },
-                    { key: "B", text: "Multi-threading" },
-                    { key: "C", text: "Multi-core" },
-                    { key: "D", text: "Multi-processor" }
-                ],
-                correct: ["C"],
-                explanation: "A multi-core processor integrates multiple complete physical execution cores into a single processor package."
-            },
-            {
-                id: "cpu_2",
-                category: "CPU",
-                topicLabel: "CPU Architecture & Sockets",
-                question: "You are building a PC using an AMD Ryzen processor. Which type of socket design are you most likely working with?",
-                options: [
-                    { key: "A", text: "Pin Grid Array (PGA)" },
-                    { key: "B", text: "Land Grid Array (LGA)" },
-                    { key: "C", text: "Ball Grid Array (BGA)" },
-                    { key: "D", text: "Zero Insertion Force (ZIF)" }
-                ],
-                correct: ["A"],
-                explanation: "AMD Ryzen processors (such as AM4 socket designs) commonly use the Pin Grid Array (PGA) design, where CPU pins fit into socket holes. Intel desktop CPUs traditionally use LGA."
-            },
-            {
-                id: "cpu_3",
-                category: "CPU",
-                topicLabel: "CPU Architecture & Sockets",
-                question: "Which of the following should you always do to avoid damage when preparing to install a CPU? (Select two.)",
-                options: [
-                    { key: "A", text: "Ensure that the CPU and motherboard socket type match." },
-                    { key: "B", text: "Adjust the motherboard bus settings." },
-                    { key: "C", text: "Make sure RAM modules are seated properly." },
-                    { key: "D", text: "Use anti-static ESD protection." },
-                    { key: "E", text: "Run a benchmark test." }
-                ],
-                correct: ["A", "D"],
-                explanation: "To avoid physical and electrical damage during CPU installation, always match the socket type and wear proper anti-static (ESD) wrist straps/mats."
-            },
-            {
-                id: "cpu_4",
-                category: "CPU",
-                topicLabel: "CPU Architecture & Sockets",
-                question: "Which of the following statements is true regarding processor instruction sets? (Select two.)",
-                options: [
-                    { key: "A", text: "32-bit processors use only the IA-32 instruction set (also referred to as x86)." },
-                    { key: "B", text: "64-bit processors use the x86-64 instruction set (also referred to as x64)." },
-                    { key: "C", text: "32-bit applications can only run on 32-bit processors." },
-                    { key: "D", text: "x64 processors execute only 64-bit instructions in hardware." },
-                    { key: "E", text: "32-bit applications require BIOS toggles to run on x64." }
-                ],
-                correct: ["A", "B"],
-                explanation: "32-bit processors execute the IA-32 (x86) instruction set architecture. 64-bit processors execute x86-64 (x64) code and feature backward compatibility to run 32-bit software directly in hardware."
-            },
-            {
-                id: "cpu_5",
-                category: "CPU",
-                topicLabel: "CPU Architecture & Sockets",
-                question: "What Intel proprietary technology allows a single physical CPU core to execute two concurrent threads simultaneously?",
-                options: [
-                    { key: "A", text: "Hyper-Threading (HT)" },
-                    { key: "B", text: "Turbo Boost" },
-                    { key: "C", text: "Overclocking" },
-                    { key: "D", text: "Virtualization Technology (VT-x)" }
-                ],
-                correct: ["A"],
-                explanation: "Hyper-Threading creates two logical cores for each physical core in the OS scheduler, allowing parallel execution of threads."
-            },
-            {
-                id: "cpu_6",
-                category: "CPU",
-                topicLabel: "CPU Architecture & Sockets",
-                question: "A CPU socket type where the delicate connection pins reside inside the motherboard socket rather than on the processor chip itself is known as:",
-                options: [
-                    { key: "A", text: "Land Grid Array (LGA)" },
-                    { key: "B", text: "Pin Grid Array (PGA)" },
-                    { key: "C", text: "DIP" },
-                    { key: "D", text: "SEC" }
-                ],
-                correct: ["A"],
-                explanation: "In Land Grid Array (LGA) sockets, the pins are located in the socket housing on the motherboard, while the CPU package has flat copper pad contacts ('lands')."
-            },
-            {
-                id: "cpu_7",
-                category: "CPU",
-                topicLabel: "CPU Architecture & Sockets",
-                question: "Which architectural feature prevents malicious software from executing code in non-executable memory regions?",
-                options: [
-                    { key: "A", text: "DEP / NX Bit (Disable Execute Bit)" },
-                    { key: "B", text: "ECC Memory" },
-                    { key: "C", text: "Overclocking Protection" },
-                    { key: "D", text: "Dual-Channel Routing" }
-                ],
-                correct: ["A"],
-                explanation: "Data Execution Prevention (DEP) / No-Execute (NX) bit allows the CPU to mark memory areas as non-executable to prevent buffer overflow attacks."
-            },
-            {
-                id: "cpu_8",
-                category: "CPU",
-                topicLabel: "CPU Architecture & Sockets",
-                question: "A multi-processor motherboard differs from a multi-core processor because a multi-processor motherboard:",
-                options: [
-                    { key: "A", text: "Contains multiple physical CPU socket installations on the same PCB board." },
-                    { key: "B", text: "Does not require power supply connections." },
-                    { key: "C", text: "Uses 120V low-voltage rails only." },
-                    { key: "D", text: "Can only execute 32-bit instructions." }
-                ],
-                correct: ["A"],
-                explanation: "Multi-processor motherboards feature two or more distinct physical CPU sockets (e.g., dual-socket server boards) to hold separate processor chips."
-            },
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
-            // Power Systems & Voltages
-            {
-                id: "psu_1",
-                category: "PSU",
-                topicLabel: "Power Systems & Voltage",
-                question: "What voltage range do appliances such as dryers, heavy-duty power tools, and oven ranges require?",
-                options: [
-                    { key: "A", text: "120V" },
-                    { key: "B", text: "115V" },
-                    { key: "C", text: "110V" },
-                    { key: "D", text: "220V" }
-                ],
-                correct: ["D"],
-                explanation: "Heavy appliances require a higher voltage supply line (220V–240V AC) to deliver high wattage efficiently without pulling excessive current."
-            },
-            {
-                id: "psu_2",
-                category: "PSU",
-                topicLabel: "Power Systems & Voltage",
-                question: "Which of the following power supply connectors typically connect directly to the motherboard? (Select two.)",
-                options: [
-                    { key: "A", text: "6-pin PCIe power" },
-                    { key: "B", text: "4-pin CPU power" },
-                    { key: "C", text: "SATA power" },
-                    { key: "D", text: "24-pin motherboard power" },
-                    { key: "E", text: "Power on/off switch" }
-                ],
-                correct: ["B", "D"],
-                explanation: "The 24-pin main ATX connector and the 4-pin/8-pin CPU power connector plug directly into motherboard sockets."
-            },
-            {
-                id: "psu_3",
-                category: "PSU",
-                topicLabel: "Power Systems & Voltage",
-                question: "Which of the following factors is most important when choosing a power supply for a PC?",
-                options: [
-                    { key: "A", text: "The type of cooling system" },
-                    { key: "B", text: "The color of the PSU" },
-                    { key: "C", text: "The wattage rating of the PSU" },
-                    { key: "D", text: "The number of USB ports" }
-                ],
-                correct: ["C"],
-                explanation: "Wattage rating determines how much DC electrical power the PSU can supply to internal components under load."
-            },
-            {
-                id: "psu_4",
-                category: "PSU",
-                topicLabel: "Power Systems & Voltage",
-                question: "Which specifications are MOST likely to affect your power supply choice when replacing a PSU? (Select three.)",
-                options: [
-                    { key: "A", text: "Form factor" },
-                    { key: "B", text: "A fan that cools the unit" },
-                    { key: "C", text: "Output wattage" },
-                    { key: "D", text: "Input voltage selections" },
-                    { key: "E", text: "Type and number of connectors" }
-                ],
-                correct: ["A", "C", "E"],
-                explanation: "Form factor (matching case/motherboard size), output wattage capacity, and having the proper cable connectors are critical parameters."
-            },
-            {
-                id: "psu_5",
-                category: "PSU",
-                topicLabel: "Power Systems & Voltage",
-                question: "A high school graduate attends a university in Europe and swaps out their US desktop PSU for European standards. What input voltage standard is used in Europe?",
-                options: [
-                    { key: "A", text: "5V" },
-                    { key: "B", text: "220V" },
-                    { key: "C", text: "12V" },
-                    { key: "D", text: "120V" }
-                ],
-                correct: ["B"],
-                explanation: "European wall power runs on high-line 220V–240V AC standards, whereas North America uses low-line 110V–120V AC."
-            },
-            {
-                id: "psu_6",
-                category: "PSU",
-                topicLabel: "Power Systems & Voltage",
-                question: "Which power supply output rail is most heavily utilized by modern high-performance desktop graphics cards and CPUs?",
-                options: [
-                    { key: "A", text: "+3.3 VDC" },
-                    { key: "B", text: "+5 VDC" },
-                    { key: "C", text: "+12 VDC" },
-                    { key: "D", text: "-12 VDC" }
-                ],
-                correct: ["C"],
-                explanation: "Modern PC systems rely overwhelmingly on the +12 VDC output rail to power power-hungry CPUs and GPUs."
-            },
-            {
-                id: "psu_7",
-                category: "PSU",
-                topicLabel: "Power Systems & Voltage",
-                question: "According to Watt's Law, if a computer component draws 10 Amps of current on a 12V rail, what is the total power consumed in Watts?",
-                options: [
-                    { key: "A", text: "1.2 Watts" },
-                    { key: "B", text: "120 Watts" },
-                    { key: "C", text: "22 Watts" },
-                    { key: "D", text: "1200 Watts" }
-                ],
-                correct: ["B"],
-                explanation: "Power (Watts) = Voltage (Volts) x Current (Amps). Therefore, 12V x 10A = 120 Watts."
-            },
+function renderGrid() {
+    const gridEl = document.getElementById('question-grid');
+    gridEl.innerHTML = '';
+    
+    const currentQIndex = historyStack[historyIndex];
+    let answeredCount = Object.keys(answeredMap).length;
+    document.getElementById('grid-status-text').innerText = `${answeredCount}/${questions.length} Completed`;
 
-            // RAID & Storage Systems
-            {
-                id: "raid_1",
-                category: "RAID",
-                topicLabel: "Storage & RAID Systems",
-                question: "You want to create a software RAID 1 array on your Windows 11 workstation using Disk 1 and Disk 2. What must you do before configuring the array?",
-                options: [
-                    { key: "A", text: "Format both disks with the same file system." },
-                    { key: "B", text: "Convert the disks from basic to dynamic." },
-                    { key: "C", text: "Convert the disks from dynamic to basic." },
-                    { key: "D", text: "Verify that both disks are the exact same model." }
-                ],
-                correct: ["B"],
-                explanation: "Windows software RAID arrays require drives to be converted from Basic Disks to Dynamic Disks in Disk Management."
-            },
-            {
-                id: "raid_2",
-                category: "RAID",
-                topicLabel: "Storage & RAID Systems",
-                question: "Which drive configuration uses disk striping combined with distributed parity for single-disk fault tolerance?",
-                options: [
-                    { key: "A", text: "RAID 0" },
-                    { key: "B", text: "RAID 1" },
-                    { key: "C", text: "RAID 10" },
-                    { key: "D", text: "RAID 5" }
-                ],
-                correct: ["D"],
-                explanation: "RAID 5 stripes data and parity across a minimum of 3 drives, allowing recovery if 1 drive fails."
-            },
-            {
-                id: "raid_3",
-                category: "RAID",
-                topicLabel: "Storage & RAID Systems",
-                question: "An end user wants maximum read/write performance using disk striping without incorporating any fault tolerance. Which RAID level is this?",
-                options: [
-                    { key: "A", text: "RAID 0" },
-                    { key: "B", text: "RAID 1" },
-                    { key: "C", text: "RAID 5" },
-                    { key: "D", text: "RAID 10" }
-                ],
-                correct: ["A"],
-                explanation: "RAID 0 utilizes striping across disks for maximum speed, but has zero fault tolerance—a single disk failure loses all data."
-            },
-            {
-                id: "raid_4",
-                category: "RAID",
-                topicLabel: "Storage & RAID Systems",
-                question: "Jessica wants to protect data against single hard drive failure in a system supporting a maximum of three disks. Which RAID level offers mirrored protection here?",
-                options: [
-                    { key: "A", text: "RAID 5" },
-                    { key: "B", text: "RAID 1" },
-                    { key: "C", text: "RAID 0" },
-                    { key: "D", text: "RAID 10" }
-                ],
-                correct: ["B"],
-                explanation: "RAID 1 provides disk mirroring and requires a minimum of 2 disks. RAID 10 requires at least 4 drives."
-            },
-            {
-                id: "raid_5",
-                category: "RAID",
-                topicLabel: "Storage & RAID Systems",
-                question: "What is a primary advantage of hardware RAID controller cards over operating system software RAID?",
-                options: [
-                    { key: "A", text: "Hardware RAID offloads array management processing from the host CPU." },
-                    { key: "B", text: "Hardware RAID is always completely free." },
-                    { key: "C", text: "Hardware RAID requires basic disks rather than dynamic disks." },
-                    { key: "D", text: "Hardware RAID does not require hard drives." }
-                ],
-                correct: ["A"],
-                explanation: "Hardware RAID controllers feature dedicated onboard processors and cache memory, eliminating CPU overhead on the host computer."
-            },
-            {
-                id: "raid_6",
-                category: "RAID",
-                topicLabel: "Storage & RAID Systems",
-                question: "What is the minimum number of physical disk drives required to construct a functional RAID 5 volume?",
-                options: [
-                    { key: "A", text: "1" },
-                    { key: "B", text: "2" },
-                    { key: "C", text: "3" },
-                    { key: "D", text: "4" }
-                ],
-                correct: ["C"],
-                explanation: "RAID 5 requires a minimum of 3 drives to distribute data blocks and parity information across the array."
-            },
-
-            // Chassis & Hardware Handling
-            {
-                id: "chassis_1",
-                category: "CHASSIS",
-                topicLabel: "Chassis & Hardware Handling",
-                question: "Which of the following describes a key advantage of using a modular power supply unit (PSU) over a non-modular PSU?",
-                options: [
-                    { key: "A", text: "It increases the total output wattage." },
-                    { key: "B", text: "It eliminates the need for CPU voltage." },
-                    { key: "C", text: "It allows unused cables to be detached, improving cable management and internal chassis airflow." },
-                    { key: "D", text: "It steps down 220V power automatically." }
-                ],
-                correct: ["C"],
-                explanation: "Modular PSUs allow detached cables to be removed, reducing internal clutter and optimizing airflow across heat-generating components."
-            },
-            {
-                id: "chassis_2",
-                category: "CHASSIS",
-                topicLabel: "Chassis & Hardware Handling",
-                question: "A user wants to mitigate data loss risk by implementing hardware array fault tolerance. What technology should be installed?",
-                options: [
-                    { key: "A", text: "RAID" },
-                    { key: "B", text: "SSD" },
-                    { key: "C", text: "NVMe" },
-                    { key: "D", text: "mSATA" }
-                ],
-                correct: ["A"],
-                explanation: "A Redundant Array of Independent Disks (RAID) provides fault tolerance across multiple physical disks."
+    for (let i = 0; i < questions.length; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'grid-btn';
+        btn.innerText = i + 1;
+        
+        if (i === currentQIndex) {
+            btn.classList.add('active');
+        } else if (answeredMap[i] !== undefined) {
+            if (answeredMap[i].isCorrect) {
+                btn.classList.add('answered-correct');
+            } else {
+                btn.classList.add('answered-incorrect');
             }
-        ];
+        }
 
-        // State Variables
-        let currentBank = [];
-        let activeFilter = "ALL";
-        let filteredBank = [];
-        
-        // Shuffle Queue Management (Non-repeating sequence logic)
-        let shuffledQueue = []; // Holds indices into filteredBank
-        let currentQueuePointer = 0; // Current position in shuffledQueue
-        
-        // User Interaction Tracking
-        let userAnswersMap = {}; // Maps question ID to array of selected options
-        let viewedQuestions = new Set();
-        let isAnswerRevealed = false;
-
-        // Initialize App
-        window.addEventListener('DOMContentLoaded', () => {
-            loadBankFromStorage();
-            lucide.createIcons();
-            
-            // Register Keyboard Navigation
-            document.addEventListener('keydown', (e) => {
-                if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
-                if (e.key === 'ArrowRight' || e.key === ' ') {
-                    e.preventDefault();
-                    nextQuestion();
-                } else if (e.key === 'ArrowLeft') {
-                    e.preventDefault();
-                    prevQuestion();
-                }
-            });
+        btn.addEventListener('click', () => {
+            if (historyStack[historyIndex] !== i) {
+                historyStack = historyStack.slice(0, historyIndex + 1);
+                historyStack.push(i);
+                historyIndex++;
+                renderGrid();
+                renderQuestion();
+            }
         });
 
-        // Load or Sync Bank
-        function loadBankFromStorage() {
-            const saved = localStorage.getItem('comptia_master_bank');
-            if (saved) {
-                try {
-                    currentBank = JSON.parse(saved);
-                } catch(e) {
-                    currentBank = [...DEFAULT_MASTER_BANK];
-                }
-            } else {
-                currentBank = [...DEFAULT_MASTER_BANK];
-                saveBankToStorage();
+        gridEl.appendChild(btn);
+    }
+}
+
+function renderQuestion() {
+    if (historyIndex < 0 || historyIndex >= historyStack.length) return;
+    const qIndex = historyStack[historyIndex];
+    const q = questions[qIndex];
+
+    document.getElementById('stats-badge').innerText = `Step ${historyIndex + 1} of ${historyStack.length} (${questions.length} total)`;
+    document.getElementById('topic-tag').innerText = q.topic || 'General';
+    document.getElementById('q-id-display').innerText = `ID: ${q.id || (qIndex + 1)}`;
+    document.getElementById('question-text').innerText = q.question;
+
+    const optionsList = document.getElementById('options-list');
+    optionsList.innerHTML = '';
+
+    const expPanel = document.getElementById('explanation-panel');
+    const expContent = document.getElementById('explanation-content');
+    expContent.innerText = q.explanation;
+
+    const record = answeredMap[qIndex];
+
+    if (record) {
+        expPanel.classList.remove('hidden');
+    } else {
+        expPanel.classList.add('hidden');
+    }
+
+    const prefixes = ['A', 'B', 'C', 'D', 'E', 'F'];
+    q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="prefix">${prefixes[idx]}</span> <span>${opt}</span>`;
+
+        if (record) {
+            btn.disabled = true;
+            if (idx === q.answer) {
+                btn.classList.add('correct');
             }
-            updateBankStats();
-            applyFilterAndResetQueue();
-        }
-
-        function saveBankToStorage() {
-            localStorage.setItem('comptia_master_bank', JSON.stringify(currentBank));
-            updateBankStats();
-        }
-
-        function updateBankStats() {
-            document.getElementById('bankCount').textContent = filteredBank.length;
-            document.getElementById('viewedCount').textContent = viewedQuestions.size;
-        }
-
-        function changeFilter(category) {
-            activeFilter = category;
-            applyFilterAndResetQueue();
-        }
-
-        function applyFilterAndResetQueue() {
-            if (activeFilter === "ALL") {
-                filteredBank = [...currentBank];
-            } else {
-                filteredBank = currentBank.filter(q => q.category === activeFilter);
+            if (record.selected === idx && !record.isCorrect) {
+                btn.classList.add('incorrect');
             }
-
-            userAnswersMap = {};
-            viewedQuestions.clear();
-            reshuffleQueue();
+        } else {
+            btn.addEventListener('click', () => selectOption(qIndex, idx));
         }
 
-        // Fisher-Yates Non-Repeating Shuffle Algorithm
-        function reshuffleQueue() {
-            if (filteredBank.length === 0) {
-                shuffledQueue = [];
-                currentQueuePointer = 0;
-                renderQuestion();
-                return;
-            }
+        optionsList.appendChild(btn);
+    });
 
-            // Create array of indices [0, 1, ..., N-1]
-            shuffledQueue = Array.from({ length: filteredBank.length }, (_, i) => i);
-            
-            // Fisher-Yates shuffle
-            for (let i = shuffledQueue.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffledQueue[i], shuffledQueue[j]] = [shuffledQueue[j], shuffledQueue[i]];
-            }
+    document.getElementById('prev-btn').disabled = (historyIndex <= 0);
+    renderGrid();
+}
 
-            currentQueuePointer = 0;
-            renderQuestion();
-        }
+function selectOption(qIndex, selectedIdx) {
+    const q = questions[qIndex];
+    const isCorrect = (selectedIdx === q.answer);
+    
+    answeredMap[qIndex] = {
+        selected: selectedIdx,
+        isCorrect: isCorrect
+    };
 
-        function renderJumpBar() {
-            const bar = document.getElementById('quickJumpBar');
-            bar.innerHTML = '';
+    renderQuestion();
+}
 
-            if (shuffledQueue.length === 0) return;
-
-            shuffledQueue.forEach((bankIdx, stepIdx) => {
-                const q = filteredBank[bankIdx];
-                const btn = document.createElement('button');
-                
-                const isCurrent = (stepIdx === currentQueuePointer);
-                const isAnswered = userAnswersMap.hasOwnProperty(q.id);
-                const isVisited = viewedQuestions.has(q.id);
-
-                let baseClasses = "min-w-[32px] h-8 text-xs font-mono rounded-lg transition border flex items-center justify-center font-bold px-2 ";
-
-                if (isCurrent) {
-                    baseClasses += "bg-indigo-600 text-white border-indigo-400 shadow-md ring-2 ring-indigo-500/40 z-10 scale-105";
-                } else if (isAnswered) {
-                    baseClasses += "bg-emerald-950/60 text-emerald-400 border-emerald-600/40 hover:bg-emerald-900/60";
-                } else if (isVisited) {
-                    baseClasses += "bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700";
-                } else {
-                    baseClasses += "bg-slate-950/50 text-slate-500 border-slate-800 hover:bg-slate-800 hover:text-slate-300";
-                }
-
-                btn.className = baseClasses;
-                btn.textContent = stepIdx + 1;
-                btn.title = `Jump to Step ${stepIdx + 1}: ${q.topicLabel || q.category}`;
-                btn.onclick = () => jumpToStep(stepIdx);
-
-                bar.appendChild(btn);
-            });
-
-            // Auto scroll current button into view within the jump bar
-            const currentBtn = bar.children[currentQueuePointer];
-            if (currentBtn) {
-                currentBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+function nextQuestion() {
+    if (historyIndex < historyStack.length - 1) {
+        historyIndex++;
+    } else {
+        const visitedSet = new Set(historyStack);
+        const unvisited = [];
+        for (let i = 0; i < questions.length; i++) {
+            if (!visitedSet.has(i)) {
+                unvisited.push(i);
             }
         }
 
-        function jumpToStep(stepIdx) {
-            if (stepIdx >= 0 && stepIdx < shuffledQueue.length) {
-                currentQueuePointer = stepIdx;
-                renderQuestion();
-            }
+        if (unvisited.length > 0) {
+            const nextRandom = unvisited[Math.floor(Math.random() * unvisited.length)];
+            historyStack.push(nextRandom);
+            historyIndex++;
+        } else {
+            let nextRandom = Math.floor(Math.random() * questions.length);
+            historyStack.push(nextRandom);
+            historyIndex++;
         }
+    }
+    renderQuestion();
+}
 
-        function renderQuestion() {
-            const container = document.getElementById('optionsContainer');
+function prevQuestion() {
+    if (historyIndex > 0) {
+        historyIndex--;
+        renderQuestion();
+    }
+}
 
-            if (filteredBank.length === 0 || shuffledQueue.length === 0) {
-                document.getElementById('questionText').textContent = "No questions found in selected filter category.";
-                container.innerHTML = "";
-                document.getElementById('explanationBlock').classList.add('hidden');
-                document.getElementById('quickJumpBar').innerHTML = '';
-                document.getElementById('prevBtn').disabled = true;
-                return;
+function toggleExplanation() {
+    const expPanel = document.getElementById('explanation-panel');
+    expPanel.classList.toggle('hidden');
+}
+
+function setupEventListeners() {
+    document.getElementById('next-btn').addEventListener('click', nextQuestion);
+    document.getElementById('prev-btn').addEventListener('click', prevQuestion);
+    document.getElementById('toggle-exp-btn').addEventListener('click', toggleExplanation);
+
+    document.addEventListener('keydown', (e) => {
+        if (!document.getElementById('manage-modal').classList.contains('hidden')) return;
+
+        if (e.key >= '1' && e.key <= '6') {
+            const idx = parseInt(e.key) - 1;
+            const qIndex = historyStack[historyIndex];
+            if (!answeredMap[qIndex] && questions[qIndex] && idx < questions[qIndex].options.length) {
+                selectOption(qIndex, idx);
             }
-
-            const bankIndex = shuffledQueue[currentQueuePointer];
-            const q = filteredBank[bankIndex];
-
-            viewedQuestions.add(q.id);
-            updateBankStats();
-            renderJumpBar();
-
-            // Update Header Counter and Topic Badge
-            document.getElementById('cardTopicBadge').textContent = q.topicLabel || q.category;
-            document.getElementById('cardCounter').textContent = `Step ${currentQueuePointer + 1} of ${shuffledQueue.length} in current cycle`;
-            
-            // Multiple Choice Badge Notice
-            const isMulti = q.correct.length > 1;
-            document.getElementById('multiSelectNotice').classList.toggle('hidden', !isMulti);
-
-            // Render Scenario Prompt
-            document.getElementById('questionText').textContent = q.question;
-
-            // Manage Choice States & Previously Selected Answers
-            const currentSelections = userAnswersMap[q.id] || [];
-            isAnswerRevealed = currentSelections.length > 0;
-
-            container.innerHTML = '';
-
-            q.options.forEach(opt => {
-                const btn = document.createElement('button');
-                btn.id = `opt-btn-${opt.key}`;
-                btn.onclick = () => selectOption(opt.key, isMulti);
-                
-                const isSelected = currentSelections.includes(opt.key);
-                const isCorrectKey = q.correct.includes(opt.key);
-
-                if (isAnswerRevealed) {
-                    // Answer Revealed View
-                    if (isCorrectKey) {
-                        btn.className = "w-full text-left p-3.5 rounded-xl border border-emerald-500/50 bg-emerald-950/30 text-emerald-200 text-xs md:text-sm flex items-start space-x-3 transition";
-                        btn.innerHTML = `
-                            <span class="key-badge font-mono font-bold bg-emerald-500 text-slate-950 px-2 py-0.5 rounded text-xs">${opt.key}</span>
-                            <span class="flex-1 mt-0.5">${opt.text}</span>
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
-                        `;
-                    } else if (isSelected && !isCorrectKey) {
-                        btn.className = "w-full text-left p-3.5 rounded-xl border border-rose-500/50 bg-rose-950/30 text-rose-200 text-xs md:text-sm flex items-start space-x-3 transition";
-                        btn.innerHTML = `
-                            <span class="key-badge font-mono font-bold bg-rose-500 text-white px-2 py-0.5 rounded text-xs">${opt.key}</span>
-                            <span class="flex-1 mt-0.5">${opt.text}</span>
-                            <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 mt-0.5 flex-shrink-0"></i>
-                        `;
-                    } else {
-                        btn.className = "w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/40 opacity-60 text-xs md:text-sm text-slate-400 flex items-start space-x-3";
-                        btn.innerHTML = `
-                            <span class="key-badge font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700 px-2 py-0.5 rounded text-xs">${opt.key}</span>
-                            <span class="flex-1 mt-0.5">${opt.text}</span>
-                            <i data-lucide="circle" class="w-4 h-4 text-slate-700 mt-0.5 flex-shrink-0"></i>
-                        `;
-                    }
-                } else {
-                    // Unanswered Interactive View
-                    btn.className = "w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800/80 hover:border-slate-700 transition flex items-start space-x-3 text-xs md:text-sm text-slate-200 group";
-                    btn.innerHTML = `
-                        <span class="key-badge font-mono font-bold bg-slate-800 text-slate-300 border border-slate-700 px-2 py-0.5 rounded text-xs group-hover:border-indigo-500 transition">${opt.key}</span>
-                        <span class="flex-1 mt-0.5">${opt.text}</span>
-                        <i data-lucide="circle" class="w-4 h-4 text-slate-600 mt-0.5 flex-shrink-0"></i>
-                    `;
-                }
-
-                container.appendChild(btn);
-            });
-
-            // Explanation & Toggle Logic
-            document.getElementById('explanationContent').innerHTML = `<p>${q.explanation}</p>`;
-            const expBlock = document.getElementById('explanationBlock');
-            
-            if (isAnswerRevealed) {
-                expBlock.classList.remove('hidden');
-                document.getElementById('revealBtnText').textContent = "Hide Explanation";
-            } else {
-                expBlock.classList.add('hidden');
-                document.getElementById('revealBtnText').textContent = "Show Explanation";
-            }
-
-            // Navigation Button Enable/Disable
-            document.getElementById('prevBtn').disabled = (currentQueuePointer === 0);
-            
-            // Next button text logic
-            if (currentQueuePointer === shuffledQueue.length - 1) {
-                document.getElementById('nextBtnText').textContent = "Finish & Reshuffle Deck";
-            } else {
-                document.getElementById('nextBtnText').textContent = "Next Question";
-            }
-
-            lucide.createIcons();
-        }
-
-        function selectOption(key, isMulti) {
-            const bankIndex = shuffledQueue[currentQueuePointer];
-            const q = filteredBank[bankIndex];
-
-            let selections = userAnswersMap[q.id] ? [...userAnswersMap[q.id]] : [];
-
-            if (isAnswerRevealed) return; // Prevent altering already revealed answer
-
-            if (isMulti) {
-                if (selections.includes(key)) {
-                    selections = selections.filter(k => k !== key);
-                } else {
-                    selections.push(key);
-                }
-            } else {
-                selections = [key];
-            }
-
-            userAnswersMap[q.id] = selections;
-
-            if (!isMulti || selections.length === q.correct.length) {
-                renderQuestion();
-            } else {
-                // Highlight temporary multi-selections prior to complete selection
-                q.options.forEach(opt => {
-                    const btn = document.getElementById(`opt-btn-${opt.key}`);
-                    if (selections.includes(opt.key)) {
-                        btn.classList.add('border-indigo-500', 'bg-indigo-950/30');
-                        btn.classList.remove('border-slate-800', 'bg-slate-950/60');
-                    } else {
-                        btn.classList.remove('border-indigo-500', 'bg-indigo-950/30');
-                        btn.classList.add('border-slate-800', 'bg-slate-950/60');
-                    }
-                });
-            }
-        }
-
-        function toggleExplanation() {
-            const expBlock = document.getElementById('explanationBlock');
-            const bankIndex = shuffledQueue[currentQueuePointer];
-            const q = filteredBank[bankIndex];
-
-            if (expBlock.classList.contains('hidden')) {
-                // If not yet answered, reveal with default key or mark revealed
-                if (!userAnswersMap[q.id]) {
-                    userAnswersMap[q.id] = [];
-                }
-                renderQuestion();
-            } else {
-                expBlock.classList.add('hidden');
-                document.getElementById('revealBtnText').textContent = "Show Explanation";
-            }
-        }
-
-        function nextQuestion() {
-            if (shuffledQueue.length === 0) return;
-
-            if (currentQueuePointer < shuffledQueue.length - 1) {
-                currentQueuePointer++;
-                renderQuestion();
-            } else {
-                // End of cycle reached -> Reshuffle new cycle automatically
-                reshuffleQueue();
-            }
-        }
-
-        function prevQuestion() {
-            if (currentQueuePointer > 0) {
-                currentQueuePointer--;
-                renderQuestion();
-            }
-        }
-
-        // Modal Controls
-        function openModal(id) {
-            document.getElementById(id).classList.remove('hidden');
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.add('hidden');
-        }
-
-        // Custom Question Save
-        function saveCustomQuestion(e) {
+        } else if (e.key === ' ' || e.key === 'ArrowRight') {
             e.preventDefault();
-            const cat = document.getElementById('newCategory').value;
-            const prompt = document.getElementById('newPrompt').value;
-            const correctRaw = document.getElementById('newCorrect').value;
-            const explanation = document.getElementById('newExplanation').value;
-
-            const opts = [];
-            ['optA', 'optB', 'optC', 'optD'].forEach((id, idx) => {
-                const val = document.getElementById(id).value.trim();
-                if (val) {
-                    const key = String.fromCharCode(65 + idx);
-                    opts.push({ key: key, text: val });
-                }
-            });
-
-            const newObj = {
-                id: "custom_" + Date.now(),
-                category: cat,
-                topicLabel: document.getElementById('newCategory').options[document.getElementById('newCategory').selectedIndex].text,
-                question: prompt,
-                options: opts,
-                correct: correctRaw.toUpperCase().split(',').map(s => s.trim()),
-                explanation: explanation
-            };
-
-            currentBank.unshift(newObj);
-            saveBankToStorage();
-            closeModal('addModal');
-            document.getElementById('addQuestionForm').reset();
-            applyFilterAndResetQueue();
+            nextQuestion();
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            prevQuestion();
+        } else if (e.key.toLowerCase() === 'e') {
+            toggleExplanation();
         }
+    });
 
-        // Export / Import JSON Bank
-        function exportBankJSON() {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(currentBank, null, 2));
-            const dlAnchor = document.createElement('a');
-            dlAnchor.setAttribute("href", dataStr);
-            dlAnchor.setAttribute("download", `comptia_aplus_master_bank_${Date.now()}.json`);
-            document.body.appendChild(dlAnchor);
-            dlAnchor.click();
-            dlAnchor.remove();
+    const modal = document.getElementById('manage-modal');
+    document.getElementById('open-manage-btn').addEventListener('click', () => modal.classList.remove('hidden'));
+    document.getElementById('close-manage-btn').addEventListener('click', () => modal.classList.add('hidden'));
+
+    document.getElementById('import-btn').addEventListener('click', () => {
+        const txt = document.getElementById('import-json').value.trim();
+        if (!txt) return;
+        try {
+            const parsed = JSON.parse(txt);
+            if (Array.isArray(parsed)) {
+                questions = parsed;
+                localStorage.setItem('comptia_a_plus_bank', JSON.stringify(questions));
+                modal.classList.add('hidden');
+                document.getElementById('import-json').value = '';
+                startNewDeck();
+            } else {
+                alert('Invalid format. Must be a JSON Array of question objects.');
+            }
+        } catch (e) {
+            alert('JSON Parse Error: ' + e.message);
         }
+    });
 
-        function importBankJSON(e) {
-            const file = e.target.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = function(evt) {
-                try {
-                    const imported = JSON.parse(evt.target.result);
-                    if (Array.isArray(imported)) {
-                        currentBank = imported;
-                        saveBankToStorage();
-                        applyFilterAndResetQueue();
-                        closeModal('dataModal');
-                    }
-                } catch(err) {
-                    // Fail silently or handle gracefully
-                }
-            };
-            reader.readAsText(file);
+    document.getElementById('reset-bank-btn').addEventListener('click', () => {
+        if (confirm('Reset to default built-in question bank?')) {
+            localStorage.removeItem('comptia_a_plus_bank');
+            questions = [...DEFAULT_QUESTIONS];
+            modal.classList.add('hidden');
+            startNewDeck();
         }
+    });
+}
 
-        function resetToDefaultBank() {
-            currentBank = [...DEFAULT_MASTER_BANK];
-            saveBankToStorage();
-            applyFilterAndResetQueue();
-            closeModal('dataModal');
-        }
-    </script>
+window.addEventListener('DOMContentLoaded', initApp);
+</script>
 </body>
 </html>

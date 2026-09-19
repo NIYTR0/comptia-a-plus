@@ -490,7 +490,7 @@ function renderQuestion() {
     const qIndex = historyStack[historyIndex];
     const q = questions[qIndex];
 
-    document.getElementById('stats-badge').innerText = `Step ${historyIndex + 1} of ${historyStack.length} (${questions.length} total)`;
+    document.getElementById('stats-badge').innerText = `Question ${historyIndex + 1} of ${historyStack.length} (${questions.length} total)`;
     document.getElementById('topic-tag').innerText = q.topic || 'General';
     document.getElementById('question-text').innerText = q.question;
 

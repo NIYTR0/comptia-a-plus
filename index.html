@@ -344,14 +344,14 @@
 <div class="app-container">
     <header>
         <h1>CompTIA A+ Master Bank</h1>
-        <div class="stats-badge" id="stats-badge">Step 1 of 33</div>
-        <button class="btn" id="open-manage-btn">Manage Bank</button>
+        <div class="stats-badge" id="stats-badge">Loading...</div>
+        <button id="resetBankBtn" onclick="resetToDefaults()" style="background:#dc2626; color:#fff; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; font-size:0.85rem; font-weight:600;">Reset Bank</button>
     </header>
 
     <div class="nav-grid-container">
         <div class="grid-header">
             <span>Question Sequence Queue</span>
-            <span id="grid-status-text">0/33 Completed</span>
+            <span id="grid-status-text">0/0 Completed</span>
         </div>
         <div class="question-grid" id="question-grid"></div>
     </div>
@@ -359,7 +359,6 @@
     <main class="card">
         <div class="card-header">
             <span class="topic-tag" id="topic-tag">General</span>
-            <span style="font-size: 0.85rem; color: var(--text-muted);" id="q-id-display">ID: 1</span>
         </div>
 
         <div class="question-text" id="question-text">Loading question...</div>
@@ -513,40 +512,50 @@ function shuffleArray(array) {
 }
 
 function renderGrid() {
-    const gridEl = document.getElementById('question-grid');
-    gridEl.innerHTML = '';
-    
-    const currentQIndex = historyStack[historyIndex];
-    let answeredCount = Object.keys(answeredMap).length;
-    document.getElementById('grid-status-text').innerText = `${answeredCount}/${questions.length} Completed`;
+    const gridContainer = document.getElementById('grid-container');
+    const statusText = document.getElementById('grid-status-text');
+    if (!gridContainer) return;
 
-    for (let i = 0; i < questions.length; i++) {
+    gridContainer.innerHTML = '';
+    const total = questions.length;
+    const completed = Object.keys(answeredMap).length;
+
+    if (statusText) {
+        statusText.textContent = `${completed}/${total} Completed`;
+    }
+
+    const currentQIdx = historyStack[historyIndex];
+
+    questions.forEach((_, i) => {
         const btn = document.createElement('button');
-        btn.className = 'grid-btn';
-        btn.innerText = i + 1;
-        
-        if (i === currentQIndex) {
+        btn.className = 'grid-num-btn';
+        btn.textContent = i + 1;
+
+        if (i === currentQIdx) {
             btn.classList.add('active');
-        } else if (answeredMap[i] !== undefined) {
+        }
+
+        if (answeredMap.hasOwnProperty(i)) {
             if (answeredMap[i].isCorrect) {
-                btn.classList.add('answered-correct');
+                btn.classList.add('correct');
             } else {
-                btn.classList.add('answered-incorrect');
+                btn.classList.add('incorrect');
             }
         }
 
         btn.addEventListener('click', () => {
             if (historyStack[historyIndex] !== i) {
+                // Truncate forward history and push new selection
                 historyStack = historyStack.slice(0, historyIndex + 1);
                 historyStack.push(i);
                 historyIndex++;
-                renderGrid();
-                renderQuestion();
+                // renderQuestion() will call renderGrid() at the end
+                renderQuestion(); 
             }
         });
 
-        gridEl.appendChild(btn);
-    }
+        gridContainer.appendChild(btn);
+    });
 }
 
 function renderQuestion() {
@@ -556,7 +565,6 @@ function renderQuestion() {
 
     document.getElementById('stats-badge').innerText = `Step ${historyIndex + 1} of ${historyStack.length} (${questions.length} total)`;
     document.getElementById('topic-tag').innerText = q.topic || 'General';
-    document.getElementById('q-id-display').innerText = `ID: ${q.id || (qIndex + 1)}`;
     document.getElementById('question-text').innerText = q.question;
 
     const optionsList = document.getElementById('options-list');
@@ -599,11 +607,28 @@ function renderQuestion() {
     renderGrid();
 }
 
-function selectOption(qIndex, selectedIdx) {
-    const q = questions[qIndex];
-    const isCorrect = (selectedIdx === q.answer);
-    
-    answeredMap[qIndex] = {
+function selectOption(selectedIdx) {
+    const qIdx = historyStack[historyIndex];
+    const q = questions[qIdx];
+    if (!q) return;
+
+    let isCorrect = false;
+
+    if (Array.isArray(q.answer)) {
+        // Multi-select answer validation
+        if (Array.isArray(selectedIdx)) {
+            const sortedSelected = [...selectedIdx].sort();
+            const sortedAnswer = [...q.answer].sort();
+            isCorrect = JSON.stringify(sortedSelected) === JSON.stringify(sortedAnswer);
+        } else {
+            isCorrect = q.answer.includes(selectedIdx);
+        }
+    } else {
+        // Standard single-select answer validation
+        isCorrect = (selectedIdx === q.answer);
+    }
+
+    answeredMap[qIdx] = {
         selected: selectedIdx,
         isCorrect: isCorrect
     };

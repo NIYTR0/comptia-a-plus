@@ -1723,7 +1723,457 @@ const DEFAULT_QUESTIONS = [
     }
   ],
   "explanation": "A loosely connected HDMI cable often causes a projector to be unable to detect a signal.\n\nA burned-out bulb would cause the projector to be unable to display anything at all.\n\nObstructed vents could cause the bulb to burn out or could cause a sensor to trigger a shutdown.\n\nWeak batteries in the remote control would affect the remote control's ability to communicate with the projector, but this would not result in a \"No signal detected\" error."
-}
+},
+{
+    "id": "hw_01",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When troubleshooting a Windows system that displays a Blue Screen of Death (BSOD), which of the following steps should you take to understand the cause of the error?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Check the error code and message displayed on the BSOD to identify the specific problem.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Disconnect all peripheral devices and attempt to boot the system again.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Immediately restart the computer to see if the issue resolves itself.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Reinstall the operating system to ensure all corrupted files are replaced.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The BSOD provides an error code and message that can help identify the specific issue causing the crash. Understanding these details is crucial for diagnosing and resolving the underlying problem.\n\nWhile restarting the computer might temporarily resolve the issue, it does not help in understanding the cause of the BSOD. Without identifying the error, the problem may persist or recur.\n\nWhile disconnecting peripherals can help isolate hardware issues, it does not directly address understanding the cause of a BSOD. The error message on the BSOD is a more direct source of information.\n\nReinstalling the operating system is a drastic measure that may resolve the issue but does not help in understanding the specific cause of the BSOD. It's important to analyze the error code first to determine if reinstallation is necessary."
+  },
+  {
+    "id": "hw_02",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are responsible for enhancing the security of a company's laptops that are frequently used by employees for remote work. The company wants to ensure that sensitive data on these laptops is protected even if the devices are lost or stolen.\n\nHow can you utilize the Trusted Platform Module (TPM) to achieve this goal?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Configure TPM to monitor system temperatures and alert users of overheating.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Enable TPM to store encryption keys and use it to encrypt the entire hard drive with BitLocker.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Enable TPM to provide faster boot times by optimizing hardware initialization.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Use TPM to disable all USB ports, preventing unauthorized data transfer.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "TPM can securely store encryption keys, and when used with BitLocker, it can encrypt the entire hard drive. This ensures that sensitive data is protected, even if the laptop is lost or stolen, as the data cannot be accessed without the correct decryption key.\n\nTPM is not used for managing USB port permissions. Its primary function is to securely store cryptographic keys and enhance security features like encryption, not to control hardware interfaces like USB ports.\n\nTPM does not have the capability to monitor system temperatures. Its role is focused on security, particularly in storing cryptographic keys and ensuring platform integrity, not hardware monitoring.\n\nTPM is not designed to optimize boot times or hardware initialization. Its purpose is to enhance security by storing cryptographic keys and supporting secure boot processes, not to improve system performance or speed."
+  },
+  {
+    "id": "hw_03",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user reports that their computer frequently overheats and shuts down during intensive tasks. Upon accessing the system firmware settings, you notice that the fan speed is set to \"Quiet\" mode.\n\nWhich of the following actions should you take to analyze and resolve the overheating issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Enable Secure Boot to ensure that only trusted software runs, preventing overheating.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Adjust the boot order to prioritize the SSD, reducing the time the system spends booting and thus lowering heat generation.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Change the fan speed setting to \"Cool\" mode to increase fan activity and reduce system temperature.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Disable USB ports to reduce power consumption and heat output from connected devices.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "By analyzing the current fan speed setting, you can determine that the \"Quiet\" mode is likely contributing to the overheating issue. Changing the setting to \"Cool\" mode will increase fan activity, enhancing cooling and reducing system temperature during intensive tasks.\n\nSecure Boot is a security feature that does not affect system temperature or fan operation. It ensures that only trusted software is loaded during boot but does not address overheating issues.\n\nAdjusting the boot order does not impact the system's temperature during intensive tasks. Boot order settings determine the sequence of boot devices and do not influence heat generation or cooling.\n\nDisabling USB ports may slightly reduce power consumption, but it is unlikely to have a significant impact on the overall system temperature during intensive tasks. The primary issue is related to fan speed settings, not USB port activity."
+  },
+  {
+    "id": "hw_04",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A flat panel monitor has several black dots. After extensive troubleshooting, it appears to be a display problem. What can fix this?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Adjust the resolution.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Change the bulb.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Adjust brightness and contrast controls.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Check for warranty replacement.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "A flat-panel monitor defect may cause individual pixels to be \"stuck\" or \"dead.\" A technician can sometimes fix stuck pixels using a software program. However, a technician cannot usually fix dead pixels (solid black) and should submit the monitor for warranty replacement (if available).\n\nAdjusting the brightness and contrast of a display can help fix a dim image, but not dead pixels.\n\nAdjusting the resolution can resolve a fuzzy image, but it cannot fix dead pixels.\n\nFlat-panel monitors generally do not have a replaceable bulb. However, some projectors may have a replaceable bulb."
+  },
+  {
+    "id": "hw_05",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When configuring fan settings in the UEFI setup program, which option would you select to prioritize a quieter operation over cooling performance?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Cool",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Balanced",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Quiet",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Fanless",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The \"Quiet\" setting prioritizes reducing fan speed to minimize noise, even if it allows for slightly higher system temperatures. This option is specifically intended for quieter operations.\n\nThe \"Balanced\" setting aims to provide a compromise between cooling performance and noise level, but it does not specifically prioritize quieter operation over cooling.\n\nThe \"Cool\" setting is designed to enhance cooling performance by running fans at higher speeds, which typically results in more noise, not less.\n\nWhile \"Fanless\" might suggest a quieter operation, it is not a typical setting for active cooling systems in UEFI. It implies no fan operation, which could lead to overheating unless the system is specifically designed for passive cooling."
+  },
+  {
+    "id": "hw_06",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are tasked with evaluating a computer system that frequently experiences random shutdowns and OS blue screen errors. After eliminating software issues, you suspect a hardware problem.\n\nWhich of the following actions would be the MOST effective in evaluating the stability of the system's power supply?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Visually inspect the power supply for any physical damage or burnt smells.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Use a multimeter to measure the output voltages of the power supply.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Replace the power supply with a new one to see if the problem persists.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Check the system's event logs for any power-related error messages.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Using a multimeter to measure the output voltages allows you to accurately evaluate whether the power supply is providing stable and correct voltages to the system. This method provides direct and quantitative data about the power supply's performance.\n\nWhile a visual inspection can reveal obvious physical damage or burnt smells, it does not provide a comprehensive evaluation of the power supply's stability or voltage output.\n\nReplacing the power supply without first evaluating the current one does not provide an understanding of the existing power supply's condition. It is more of a trial-and-error approach rather than an evaluative one.\n\nWhile checking event logs can provide insights into power-related issues, it does not directly evaluate the power supply's voltage stability. Event logs are more useful for identifying patterns or symptoms rather than evaluating hardware components."
+  },
+  {
+    "id": "hw_07",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following options is typically available in the system firmware settings for controlling cooling fans?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Enabling Secure Boot to prevent overheating during boot",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Setting the minimum temperature at which fans start to cool the system",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Adjusting the screen brightness to reduce heat generation",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Configuring the boot order to prioritize devices with lower heat output",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "In the system firmware settings, you can typically set the minimum temperature at which fans start to cool the system. This option helps manage the cooling process by activating fans when the system reaches a certain temperature threshold.\n\nAdjusting screen brightness is not related to fan control settings in the system firmware. Screen brightness is typically managed through the operating system or monitor settings, not through firmware fan controls.\n\nSecure Boot is a security feature that ensures that only trusted software is loaded during the boot process. It does not have any impact on fan control or temperature management.\n\nConfiguring the boot order is related to the sequence in which devices are checked for boot managers, not temperature management or fan control. Boot order settings do not influence heat output or cooling fan operation."
+  },
+  {
+    "id": "hw_08",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user submits a support ticket. The user is experiencing a lack of audio signal to the display. The user's computer has a display with built-in audio and a DVI cable connected to a fully-updated Windows PC. Diagnose the lack of audio.",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Failing monitor circuitry",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Output resolution does not match device’s native resolution.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Using an incorrect cable type",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Outdated audio drivers",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Since the digital visual interface (DVI) does not provide sound, the technician must link the speakers to the computer's audio interfaces through 3.5mm connectors.\n\nA display image will appear fuzzy if the output resolution does not match the native resolution of the display device. However, this will not cause audio issues.\n\nWhile driver issues can cause problems with audio, in this case, the user has claimed to be using a fully-updated system.\n\nThe monitor's backlight or circuitry failure might cause a flickering or flashing display. For example, if the image is nearly invisible, the backlight on the display may have failed."
+  },
+  {
+    "id": "hw_09",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are a technician tasked with troubleshooting a desktop computer that powers on but does not boot. The fans are spinning, but the screen remains blank, and there are no beep codes from the internal speaker. The user mentioned that the system firmware was recently updated.\n\nWhich of the following actions should you take first to resolve the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Replace the CPU with a known good one to check for faults.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Check the power supply unit (PSU) for faults.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Remove and re-seat all non-essential adapter cards and cables.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Reset the system firmware to its default settings.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Given that the system firmware was recently updated and the computer does not boot, resetting the firmware to its default settings can resolve issues caused by a failed or incorrect firmware update. This step directly addresses the potential root cause of the problem.\n\nWhile a faulty CPU can prevent the system from booting, the absence of beep codes and the recent firmware update suggest that the issue might be related to the firmware rather than the CPU itself. Replacing the CPU should be considered only after other potential causes have been ruled out.\n\nAlthough a faulty PSU can cause boot issues, the fact that the fans are spinning indicates that the PSU is likely providing power. The problem is more likely related to the firmware update rather than the power supply.\n\nWhile re-seating adapter cards and cables can resolve connection issues, the context of a recent firmware update suggests that the problem is more likely related to the firmware settings rather than physical connections. This step is useful if there were recent hardware changes or maintenance."
+  },
+  {
+    "id": "hw_10",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When powering on a legacy IBM desktop computer, hearing one short beep code would indicate the computer is experiencing what sort of issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Faulty onboard speaker",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "No issue",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Power supply fault",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Keyboard issue",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "One short beep indicates a normal power-on self-test (POST), meaning the system is OK. Computer technicians configure most modern PCs to boot silently, however.\n\nNo beep may indicate a problem with the power supply, the motherboard problem, or a faulty onboard speaker. The technician should narrow down the issue by checking each component to rule it out, moving on to the next one until discovering the component causing the problem.\n\nRepeating short beeps would indicate a power supply fault or a motherboard problem. Check power cord connections to internal components, especially to the motherboard itself.\n\nThree long beeps would indicate a keyboard issue. However, first, check that a key is not depressed."
+  },
+  {
+    "id": "hw_11",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A technician is troubleshooting a projector that keeps randomly shutting down. What is the most likely cause?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Burned-out bulb",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Incorrect data source",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Overheating",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Loose cable between the monitor and the display",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Overheating typically causes intermittent projector shutdown. Check that the projector's fan is working, that the vents are free from dust and obstructions, and that the ambient temperature is not too high.\n\nA completely failed bulb is known as a burned-out bulb. A technician might hear the bulb \"pop\" and observe scorch marks on the inside or a broken filament.\n\nIf the projector is on, but there is no image displayed, the technician should check the cable and connectors between the video card and monitor.\n\nThe technician may also need to adjust the image or select the appropriate data source or input channel if no image is displayed."
+  },
+  {
+    "id": "hw_12",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A company is evaluating different boot options for its new fleet of computers to ensure the fastest boot times and efficient recovery processes.\n\nWhich boot option should they prioritize in the boot sequence to achieve these goals, considering modern hardware capabilities?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "USB drive formatted as a boot device",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Network/PXE (Preboot Execution Environment)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Optical drive (CD/DVD/Blu-ray)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Fixed disk (HDD or SSD) using NVMe interface",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Prioritizing a fixed disk, specifically an SSD using the NVMe interface, in the boot sequence ensures the fastest boot times due to the high-speed data transfer capabilities of NVMe. This option leverages modern hardware capabilities to provide efficient and rapid system startup, making it the optimal choice for performance-focused environments.\n\nOptical drives are significantly slower compared to SSDs and are typically used for installations or repairs rather than regular booting. Prioritizing an optical drive would not meet the goal of achieving the fastest boot times.\n\nWhile Network/PXE booting is useful for centralized management and recovery processes, it relies on network speed and server configuration, which can introduce delays. It is not the fastest option for regular booting compared to local NVMe SSDs.\n\nUSB drives can be used for recovery and installation purposes, but they generally do not offer the same speed and performance as NVMe SSDs for regular booting. They are more suitable for temporary or emergency boot scenarios rather than daily use."
+  },
+  {
+    "id": "hw_13",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A technician replaced a failed drive in a RAID array and noticed a severely degraded performance. What is the problem?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "There is a cable problem.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Takes resources to rebuild the array.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "The controller is failing.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "There is a faulty disk.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "After replacing the failed disk in the redundant array of independent disks (RAID) array, the performance of the array degrades for some time since the array is rebuilding and the system is writing several gigabytes of data onto the new drive.\n\nIf the controller were failing, replacing the failed disk or boot into the RAID array would not have been possible.\n\nA cable problem would not cause degraded performance. However, a cable problem would likely cause the system not to read the new disk at all.\n\nThe technician has already replaced the faulty disk. Furthermore, failing disks generally fail slowly over time, not immediately, causing substantial performance issues."
+  },
+  {
+    "id": "hw_14",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "What options are available when using Self-Monitoring, Analysis, and Reporting Technology (SMART)? (Select all that apply.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Read test",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Drive self-test (short)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "File recovery",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Confidence test",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The confidence test is one of the options available on SMART. It is a short operational test to ensure the drive is simply operating properly.\n\nThe drive self-test is a test on the internal workings of the individual disk. The short version just tests for common mechanical issues. A self-test failure will require a drive replacement.\n\nThe read test simply tests the reading aspect of the drive. Therefore, long read times will result in performance issues overall.\n\nA file recovery option is not available on SMART. SMART primarily focuses on individual disk diagnostic tasks."
+  },
+  {
+    "id": "hw_15",
+    "topic": "Troubleshooting PC Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What issue is occurring when there is no light-emitting diode (LED) lit on a hard drive disk (HDD)?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Data loss",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Faulty disk",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "RAID failure",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Mechanical issue",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "If disk activity lights (or LED status indicators) are not active, the whole system might not be receiving power, or the individual HDD could be faulty.\n\nA loud or grinding noise, or any sort of clicking sound, is a sign of a mechanical problem.\n\nAn LED status itself does not determine data loss. For example, if the HDD was part of a RAID 5 group, data is still available with one faulty disk; two disk failures would result in some data loss.\n\nA redundant array of independent disks (RAID) failure depends on the RAID type. If part of a RAID 0 group, then a single disk failure results in failure to the RAID. There is no indication of that here."
+  }
 ];
 
 let questions = [];

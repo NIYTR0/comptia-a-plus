@@ -396,289 +396,71 @@
 
 <script>
 const DEFAULT_QUESTIONS = [
-  {
-    "id": "hw_01",
-    "topic": "Hardware & Motherboards",
-    "question": "A technician is replacing a motherboard on a desktop computer. Which of the following components MUST be compatible with the motherboard socket type?",
-    "options": ["RAM", "CPU", "GPU", "PSU"],
-    "answer": 1,
-    "explanation": "The CPU (Central Processing Unit) must strictly match the physical socket architecture (e.g., LGA 1700, AM5) of the motherboard.\n\nOption Analysis:\n- CPU (Correct): Socket architecture physical pin layout and mechanical mounting dictate exact CPU generation compatibility.\n- RAM (Incorrect): RAM relies on memory slot interface standards (DDR4 vs DDR5) rather than the CPU socket.\n- GPU (Incorrect): GPUs connect via standardized PCI Express (PCIe) expansion slots.\n- PSU (Incorrect): PSUs use standardized ATX power cabling."
-  },
-  {
-    "id": "hw_02",
-    "topic": "Power Supplies",
-    "question": "Which power supply connector is specifically designed to provide additional 12V power directly to a modern high-end graphics card?",
-    "options": ["20+4 pin ATX", "SATA Power", "PCIe 6+2 pin", "4/8-pin CPU"],
+{
+    "id": "bios_01",
+    "topic": "BIOS and UEFI",
+    "question": "A user reports that their computer is not booting from a newly installed SSD, even though it is properly connected.\nUpon checking the system firmware settings, you find that the boot option sequence is set to prioritize the optical drive first, followed by a USB drive, and then the network.\nWhich of the following actions should you take to analyze and resolve the boot issue?",
+    "options": [
+      "Enable Secure Boot in the UEFI setup to ensure the SSD is recognized as a trusted device.",
+      "Update the system firmware to the latest version to ensure compatibility with the SSD.",
+      "Change the boot option sequence to prioritize the SSD as the first boot device.",
+      "Disconnect the optical drive and USB drive to force the system to boot from the SSD."
+    ],
     "answer": 2,
-    "explanation": "PCIe 6+2 pin connectors supply dedicated +12V power directly to high-draw PCI Express expansion cards like GPUs.\n\nOption Analysis:\n- PCIe 6+2 pin (Correct): Designed specifically to deliver up to 75W (6-pin) or 150W (8-pin) of auxiliary power to expansion cards.\n- 20+4 pin ATX (Incorrect): Provides main motherboard systemic power.\n- SATA Power (Incorrect): Supplies 3.3V, 5V, and 12V power to mass storage drives.\n- 4/8-pin CPU (Incorrect): Supplies dedicated power to the CPU motherboard VRM circuit."
+    "explanation": "Analyzing the boot option sequence reveals that the SSD is not prioritized, which is why the system is not booting from it. By changing the sequence to prioritize the SSD, you ensure that the system firmware searches the SSD first for a boot manager, resolving the issue.\n\nOption Analysis:\n- Change the boot option sequence to prioritize the SSD as the first boot device. (Correct): Prioritizing the SSD in the boot sequence ensures the system firmware searches the SSD first for a boot manager, resolving the issue.\n- Disconnect the optical drive and USB drive to force the system to boot from the SSD. (Incorrect): While disconnecting other boot devices might force the system to boot from the SSD, it is not an efficient or practical solution. It does not address the root cause of the issue, which is the incorrect boot option sequence.\n- Enable Secure Boot in the UEFI setup to ensure the SSD is recognized as a trusted device. (Incorrect): Enabling Secure Boot is a security measure and does not influence the boot order or resolve issues related to boot device prioritization. It ensures that only trusted software is loaded but does not affect the SSD's boot priority.\n- Update the system firmware to the latest version to ensure compatibility with the SSD. (Incorrect): While updating the firmware can be beneficial for compatibility, it is not necessary in this scenario. The issue is related to the boot option sequence, not firmware compatibility."
   },
   {
-    "id": "hw_03",
-    "topic": "Storage",
-    "question": "A user wants the fastest possible read/write speeds for an internal drive. Which form factor and protocol combination should be recommended?",
-    "options": ["SATA III SSD 2.5\"", "M.2 NVMe PCIe SSD", "SATA M.2 SSD", "7200 RPM HDD"],
-    "answer": 1,
-    "explanation": "M.2 NVMe drives utilize the PCI Express bus, achieving throughput speeds exceeding 3500–7000 MB/s, far surpassing legacy SATA interfaces.\n\nOption Analysis:\n- M.2 NVMe PCIe SSD (Correct): Uses NVMe protocol over high-speed PCIe lanes for maximum IOPS and throughput.\n- SATA III SSD 2.5\" / SATA M.2 SSD (Incorrect): Capped at legacy SATA III bus speed limits (~600 MB/s).\n- 7200 RPM HDD (Incorrect): Mechanical drives suffer from latency and peak around 150–200 MB/s."
-  },
-  {
-    "id": "net_01",
-    "topic": "Networking Ports",
-    "question": "Which port number does secure web browsing (HTTPS) use by default?",
-    "options": ["80", "21", "443", "22"],
+    "id": "bios_02",
+    "topic": "BIOS and UEFI",
+    "question": "Which of the following BEST describes the role of the Trusted Platform Module (TPM) in enhancing system security?",
+    "options": [
+      "Verifying that the TPM is configured to support legacy BIOS mode for compatibility with older hardware.",
+      "Checking if the TPM is used to control fan speed and temperature monitoring for system stability.",
+      "Assessing whether the TPM is used to store cryptographic keys securely, preventing unauthorized access to encrypted data.",
+      "Evaluating if the TPM is enabled to allow booting from USB devices for recovery purposes."
+    ],
     "answer": 2,
-    "explanation": "HTTPS operates on TCP port 443 by default for TLS/SSL encrypted web communications.\n\nOption Analysis:\n- 443 (Correct): Standard encrypted web communication port.\n- 80 (Incorrect): Unencrypted plaintext HTTP web traffic.\n- 21 (Incorrect): File Transfer Protocol (FTP) control connection.\n- 22 (Incorrect): Secure Shell (SSH) and SFTP remote terminal connection."
+    "explanation": "The TPM is designed to securely store cryptographic keys, which is crucial for protecting encrypted data and ensuring that sensitive information is not accessed by unauthorized users.\n\nOption Analysis:\n- Assessing whether the TPM is used to store cryptographic keys securely, preventing unauthorized access to encrypted data. (Correct): Stores cryptographic keys securely to protect encrypted data.\n- Evaluating if the TPM is enabled to allow booting from USB devices for recovery purposes. (Incorrect): While booting from USB devices can be useful for recovery, it is not related to the primary function of the TPM. The TPM is not involved in enabling or disabling boot options; its role is focused on security, particularly in storing cryptographic keys.\n- Verifying that the TPM is configured to support legacy BIOS mode for compatibility with older hardware. (Incorrect): The TPM does not play a role in supporting legacy BIOS mode. This option confuses the TPM's security functions with compatibility settings, which are unrelated to the TPM's purpose.\n- Checking if the TPM is used to control fan speed and temperature monitoring for system stability. (Incorrect): The TPM is not involved in hardware management tasks such as controlling fan speed or temperature monitoring. This option misrepresents the TPM's role, which is centered around security and cryptographic functions, not hardware stability."
   },
   {
-    "id": "net_02",
-    "topic": "Networking Protocols",
-    "question": "A network device needs to automatically assign IP addresses, default gateways, and DNS servers to local clients. Which service provides this?",
-    "options": ["DNS", "DHCP", "SNMP", "ARP"],
-    "answer": 1,
-    "explanation": "DHCP (Dynamic Host Configuration Protocol) automatically leases IP addresses, subnet masks, default gateways, and DNS settings to network clients.\n\nOption Analysis:\n- DHCP (Correct): Automates network configuration assignment.\n- DNS (Incorrect): Resolves human-readable domain names to IP addresses.\n- SNMP (Incorrect): Network management and monitoring protocol.\n- ARP (Incorrect): Maps known IP addresses to local hardware MAC addresses."
-  },
-  {
-    "id": "net_03",
-    "topic": "Networking Hardware",
-    "question": "Which network device operates primarily at Layer 2 of the OSI model and uses MAC addresses to forward traffic to specific ports?",
-    "options": ["Hub", "Router", "Switch", "Modem"],
-    "answer": 2,
-    "explanation": "Switches operate at Layer 2 (Data Link) and maintain a CAM table of MAC addresses to direct frames only to the intended destination port.\n\nOption Analysis:\n- Switch (Correct): Layer 2 device that forwards frames based on physical MAC addresses.\n- Hub (Correct): Layer 1 legacy device that blindly repeats incoming signals to all connected ports.\n- Router (Incorrect): Layer 3 device that routes packets across subnets using logical IP addresses.\n- Modem (Incorrect): Converts signal types between ISP infrastructure and Ethernet."
-  },
-  {
-    "id": "sec_01",
-    "topic": "Security Concepts",
-    "question": "Which authentication factor is represented by requiring a user to scan their fingerprint or face?",
-    "options": ["Something you know", "Something you have", "Something you are", "Somewhere you are"],
-    "answer": 2,
-    "explanation": "'Something you are' refers to inherent biometric features such as fingerprints, facial scans, or iris patterns.\n\nOption Analysis:\n- Something you are (Correct): Physical biometric identification.\n- Something you know (Incorrect): Knowledge-based credentials like passwords, PINs, or security answers.\n- Something you have (Incorrect): Possession-based credentials like key fobs, smartcards, or phone authenticator apps.\n- Somewhere you are (Incorrect): Location-based authentication like IP subnet limits or GPS geofencing."
-  },
-  {
-    "id": "sec_02",
-    "topic": "Network Security",
-    "question": "Which wireless security protocol offers the strongest encryption standard utilizing GCMP-256 for enterprise environments?",
-    "options": ["WEP", "WPA", "WPA2-Personal", "WPA3"],
+    "id": "bios_03",
+    "topic": "BIOS and UEFI",
+    "question": "An energy company is strengthening its defenses and wants to look for methods that successfully protect trade secrets by ensuring none of its company's computing assets are hijacked by malware.\nTo assist in safeguarding the sensitive information, what can the technician enable to ensure this will not happen?",
+    "options": [
+      "Boot password",
+      "HSM",
+      "TPM",
+      "Secure boot"
+    ],
     "answer": 3,
-    "explanation": "WPA3 is the newest wireless security standard, incorporating 192-bit cryptographic strength and GCMP-256 for enterprise environments.\n\nOption Analysis:\n- WPA3 (Correct): Modern wireless security offering robust AES/GCMP-256 encryption and protection against offline brute-force attacks via SAE.\n- WEP (Incorrect): Heavily flawed, obsolete security standard using weak RC4 encryption.\n- WPA (Incorrect): Legacy interim standard utilizing TKIP.\n- WPA2-Personal (Incorrect): Standard Wi-Fi security utilizing CCMP/AES, but vulnerable to dictionary attacks."
+    "explanation": "The technician can configure secure boot, which is a unified extensible firmware interface (UEFI) feature designed to prevent malware from hijacking a computer.\n\nOption Analysis:\n- Secure boot (Correct): UEFI feature designed to prevent malware from injecting code into the bootloader or hijacking a computer.\n- TPM (Incorrect): A trusted platform module (TPM) is a specification for hardware-based storage of digital certificates, cryptographic keys, and hashed passwords.\n- HSM (Incorrect): A hardware security module (HSM) is a secure USB key or thumb drive used to store cryptographic material where a user must authenticate before they can access the keys stored on the module.\n- Boot password (Incorrect): A boot password requires the user to authenticate before the operating system is loaded. Different system software will provide different support for authentication methods. This measure cannot keep malware from injecting code into the bootloader of the operating system."
   },
   {
-    "id": "trouble_01",
-    "topic": "Troubleshooting Methodology",
-    "question": "According to the official CompTIA troubleshooting methodology, what is the FIRST step a technician should take when resolving a problem?",
+    "id": "bios_04",
+    "topic": "BIOS and UEFI",
+    "question": "You have purchased a new notebook. This notebook system uses UEFI firmware and comes with Windows 11 preinstalled. However, you want to use Linux on this system.\nYou download your favorite distribution and install it on the system, removing all Windows partitions on the hard disk in the process. When the installation is complete, you find that the operating system won't load when the system is rebooted.\nWhich of the following would allow your computer to boot to Linux?",
     "options": [
-      "Establish a theory of probable cause",
-      "Identify the problem",
-      "Test the theory to determine cause",
-      "Document findings, actions, and outcomes"
+      "Enable the TPM chip on the motherboard.",
+      "Reinstall Windows 11 on the system.",
+      "Set the boot order to boot from the hard disk first in the UEFI configuration.",
+      "Disable Secure Boot in the UEFI configuration.",
+      "Enable Secure Boot in the UEFI configuration."
     ],
-    "answer": 1,
-    "explanation": "The official 6-step CompTIA Troubleshooting Methodology dictates identifying the problem as Step 1.\n\nOption Analysis:\n- Identify the problem (Correct): Step 1 - Question the user, identify changes to the system, review logs, and perform backups before proceeding.\n- Establish a theory of probable cause (Incorrect): Step 2 - Analyze symptoms and question the obvious.\n- Test the theory to determine cause (Incorrect): Step 3 - Confirm cause or re-establish theory.\n- Document findings, actions, and outcomes (Incorrect): Step 6 - Final step of the process."
-  },
-  {
-    "id": "trouble_02",
-    "topic": "Display Troubleshooting",
-    "question": "A user reports that an external monitor displays 'No Signal' after bootup. The power LED on the monitor is amber. What is the most likely cause?",
-    "options": [
-      "The monitor backlight has failed",
-      "The video cable is disconnected or faulty",
-      "GPU driver corruption",
-      "Screen resolution set too high"
-    ],
-    "answer": 1,
-    "explanation": "An amber power LED indicates power-save mode due to the monitor receiving no active video signal from the computer.\n\nOption Analysis:\n- The video cable is disconnected or faulty (Correct): A loose or failed cable prevents video signal transmission, triggering power-save mode.\n- Backlight failure (Incorrect): A failed backlight displays a dim image visible under direct light, not a 'No Signal' OSD message.\n- GPU driver corruption (Incorrect): Driver issues occur during OS load, whereas POST display output remains visible.\n- Resolution set too high (Incorrect): Out-of-range resolution displays an 'Out of Range' warning rather than 'No Signal'."
-  },
-  {
-    "id": "bios_uefi_voltage_01",
-    "topic": "Power Systems",
-    "question": "What voltage range do appliances such as dryers, heavy-duty power tools, and oven ranges require?",
-    "options": ["120V", "115V", "110V", "220V"],
     "answer": 3,
-    "explanation": "Heavy appliances such as clothes dryers, oven ranges, central air units, and heavy-duty shop tools require a higher voltage supply line (220V–240V AC in North America) to deliver high wattage efficiently without pulling excessive current (amperage). Higher voltage allows higher power delivery using thinner wire gauges and reduces heat buildup caused by current flow.\n\nOption Analysis:\n- 220V (Correct): Standard North American heavy appliance rating supplied by a double-pole circuit breaker tapping both hot legs of a split-phase service.\n- 120V (Incorrect): Standard residential nominal single-phase voltage used for standard household electronics, small kitchen appliances, and desktop computers.\n- 115V / 110V (Incorrect): Legacy nominal voltages frequently used interchangeably with 120V in informal contexts, but insufficient to power heavy-duty, high-wattage equipment."
+    "explanation": "In this scenario, you should disable the Secure Boot option in the UEFI configuration. Secure Boot requires the operating system installed on the hard drive to be digitally signed. If it isn't digitally signed, the UEFI firmware will not boot it by default.\n\nOption Analysis:\n- Disable Secure Boot in the UEFI configuration. (Correct): Disables the digital signature requirement for OS bootloaders, allowing unsigned or non-vendor-trusted Linux distributions to boot.\n- Reinstall Windows 11 on the system. (Incorrect): Reinstalling Windows 11 does not meet the requirements of this scenario.\n- Enable the TPM chip on the motherboard. (Incorrect): If Secure Boot is already enabled, the TPM chip on the motherboard must already be enabled as well.\n- Set the boot order to boot from the hard disk first in the UEFI configuration. (Incorrect): The boot order configuration is not preventing the system from booting in this scenario."
   },
   {
-    "id": "q12",
-    "topic": "Core Hardware",
-    "question": "A user needs to replace a computer's power supply. What is the FIRST step the technician should take before opening the case?",
+    "id": "bios_05",
+    "topic": "BIOS and UEFI",
+    "question": "A company has recently upgraded its systems to UEFI-based firmware, and some employees are experiencing issues accessing system settings during boot.\nWhich of the following actions would BEST evaluate and resolve the issue of missing the key prompt to access the UEFI setup program?",
     "options": [
-      "Disconnect the power cable from the wall outlet",
-      "Attach an ESD grounding strap to the wrist",
-      "Unplug the 24-pin motherboard connector",
-      "Press the power button to discharge remaining capacitor charge"
+      "Adjust the boot order to prioritize the hard drive, ensuring the system boots correctly.",
+      "Use the Shift-click method on the Restart button from the Windows logon screen to access UEFI boot options.",
+      "Disable Secure Boot in the UEFI setup to allow easier access to system settings.",
+      "Reboot the computer and continuously press the Delete key until the UEFI setup program appears."
     ],
-    "answer": 0,
-    "explanation": "Safety first: Always completely disconnect the AC power cord from the wall outlet before opening the case or touching internal electrical components.\n\nOption Analysis:\n- Disconnect power cable (Correct): Prevents electrical shock hazards from active AC current.\n- Attach ESD strap (Incorrect): Critical ESD prevention step, but secondary to removing high-voltage AC hazards.\n- Unplug 24-pin connector (Incorrect): Done inside the case after removing external power.\n- Discharge capacitors (Incorrect): Done immediately after disconnecting the main power cord."
-  },
-  {
-    "id": "q13",
-    "topic": "Core Hardware",
-    "question": "Which component is responsible for storing the system's active runtime data, program instructions, and temporary work structures while powered on?",
-    "options": ["ROM", "NVMe SSD", "RAM", "CMOS"],
-    "answer": 2,
-    "explanation": "RAM (Random Access Memory) is high-speed volatile memory that holds active operating system files, program instructions, and working data for CPU processing.\n\nOption Analysis:\n- RAM (Correct): Volatile working memory cleared when powered off.\n- ROM (Incorrect): Non-volatile read-only memory holding permanent boot code.\n- NVMe SSD (Incorrect): Non-volatile mass storage for permanent file retention.\n- CMOS (Incorrect): Low-power RAM chip holding hardware configuration settings."
-  },
-  {
-    "id": "q14",
-    "topic": "Networking",
-    "question": "Which port number is utilized by unencrypted HTTP web traffic by default?",
-    "options": ["21", "80", "443", "8080"],
     "answer": 1,
-    "explanation": "HTTP (Hypertext Transfer Protocol) communicates over TCP port 80 in unencrypted cleartext by default.\n\nOption Analysis:\n- 80 (Correct): Default standard HTTP unencrypted port.\n- 21 (Incorrect): FTP control port.\n- 443 (Incorrect): Secure encrypted HTTPS port.\n- 8080 (Incorrect): Alternate web proxy or secondary HTTP test port."
-  },
-  {
-    "id": "q15",
-    "topic": "Networking",
-    "question": "A custom desktop build boots up, but the BIOS/UEFI date and time constantly reset to January 1st every time power is removed. Which component needs replacement?",
-    "options": ["Main PSU", "CR2032 CMOS battery", "System BIOS chip", "RTC Crystal"],
-    "answer": 1,
-    "explanation": "A depleted CR2032 CMOS battery fails to supply trickle power to the Real-Time Clock (RTC) and CMOS memory, causing custom BIOS settings and time to clear when AC power is disconnected.\n\nOption Analysis:\n- CR2032 CMOS battery (Correct): Coin cell battery that powers the RTC and maintains volatile settings.\n- Main PSU (Incorrect): Main power supply does not maintain low-voltage RTC state when switched off or unplugged.\n- System BIOS chip (Incorrect): Non-volatile EEPROM/Flash chip storing core firmware code, not dependent on the battery for code retention.\n- RTC Crystal (Incorrect): Board oscillator clock component, rarely fails independently."
-  },
-  {
-    "id": "q16",
-    "topic": "Mobile Devices",
-    "question": "Which mobile device feature uses satellite technology to pinpoint physical location anywhere on Earth without requiring cellular data?",
-    "options": ["Cell Tower Triangulation", "GPS", "Wi-Fi Positioning", "NFC"],
-    "answer": 1,
-    "explanation": "GPS (Global Positioning System) receives signals directly from orbiting satellite networks to determine geographic position without cell towers or internet.\n\nOption Analysis:\n- GPS (Correct): Direct satellite signal positioning system.\n- Cell Tower Triangulation (Incorrect): Uses cellular tower signal strengths and requires active cell connections.\n- Wi-Fi Positioning (Incorrect): Maps known BSSID Wi-Fi router coordinates.\n- NFC (Incorrect): Short-range communication technology used for tap payments."
-  },
-  {
-    "id": "q17",
-    "topic": "Storage",
-    "question": "A storage array combines multiple physical hard drives into a single logical unit using RAID 1. What primary benefit does RAID 1 provide?",
-    "options": ["Maximum striping performance", "Disk mirroring / Fault tolerance", "Block-level parity", "Capacity summation"],
-    "answer": 1,
-    "explanation": "RAID 1 creates an exact mirror copy of data across two physical disks to ensure uninterrupted fault tolerance if one drive fails.\n\nOption Analysis:\n- Disk mirroring / Fault tolerance (Correct): Identical data written across drives; 1-drive failure tolerance.\n- Maximum striping performance (Incorrect): Describes RAID 0, which offers speed but zero fault tolerance.\n- Block-level parity (Incorrect): Describes RAID 5 (single parity) or RAID 6 (dual parity).\n- Capacity summation (Incorrect): Describes JBOD spanning."
-  },
-  {
-    "id": "q18",
-    "topic": "Security",
-    "question": "Which authentication credential type provides 'something you have' in multi-factor authentication (MFA)?",
-    "options": ["Password / PIN", "Retina scan", "Hardware security key token", "Secret security question"],
-    "answer": 2,
-    "explanation": "A physical hardware security key, smart card, or token represents a physical object in your possession ('something you have').\n\nOption Analysis:\n- Hardware security key token (Correct): Possession factor.\n- Password / PIN (Incorrect): Knowledge factor ('something you know').\n- Retina scan (Incorrect): Inherence biometric factor ('something you are').\n- Secret security question (Incorrect): Knowledge factor ('something you know')."
-  },
-  {
-    "id": "q19",
-    "topic": "Printers",
-    "question": "A laser printer outputs pages with repeated dark smudges or spots occurring at exact, regular intervals down every sheet. What component is most likely damaged?",
-    "options": ["Fuser roller / OPC drum", "Transfer belt", "Primary corona wire", "Paper pick-up roller"],
-    "answer": 0,
-    "explanation": "Repetitive flaws occurring at regular distance intervals down a printed page indicate physical surface damage or debris stuck on a cylindrical roller (OPC drum or fuser roller).\n\nOption Analysis:\n- Fuser roller / OPC drum (Correct): Defect repetition interval matches the exact circumference of the drum or fuser roller.\n- Transfer belt (Incorrect): Would produce continuous vertical lines across the page.\n- Primary corona wire (Incorrect): Uniformly charges drum; failure causes blank or solid black pages.\n- Paper pick-up roller (Incorrect): Feeds blank paper from tray; causes misfeeds or paper jams."
-  },
-  {
-    "id": "q20",
-    "topic": "Troubleshooting",
-    "question": "After installing a new PCI Express graphics card, a desktop PC powers on with fans spinning, but produces no image on the screen and emits a series of beep codes. What is the most likely cause?",
-    "options": [
-      "Graphics card drivers are out of date",
-      "PCIe slot is operating at lower lane speeds",
-      "Graphics card is not fully seated or auxiliary power is unplugged",
-      "Monitor refresh rate setting is mismatched"
-    ],
-    "answer": 2,
-    "explanation": "BIOS beep codes during POST indicate hardware initialization failures. An unseated GPU or missing PCIe auxiliary power prevents display adapter initialization.\n\nOption Analysis:\n- Card not seated / unplugged power (Correct): Triggers hardware POST beep code errors prior to display startup.\n- Out of date drivers (Incorrect): Drivers load with the operating system long after POST completes.\n- PCIe slot lane speeds (Incorrect): Lower lane counts reduce performance but do not block system POST.\n- Monitor refresh rate (Incorrect): Refresh rate mismatches occur inside OS display settings."
-  },
-  {
-    "id": "q21",
-    "topic": "Core Hardware",
-    "question": "What type of RAM module form factor is specifically used in standard laptop computers and small form factor systems?",
-    "options": ["DIMM", "SO-DIMM", "Micro-DIMM", "ECC-DIMM"],
-    "answer": 1,
-    "explanation": "SO-DIMM (Small Outline Dual In-line Memory Module) is the compact RAM standard designed for laptops and mini-PCs.\n\nOption Analysis:\n- SO-DIMM (Correct): Compact memory module form factor (~half the length of standard DIMMs).\n- DIMM (Incorrect): Full-size memory module used in standard desktop computers.\n- Micro-DIMM (Incorrect): Obsolete ultra-small form factor.\n- ECC-DIMM (Incorrect): Error-correcting memory feature used in enterprise servers."
-  },
-  {
-    "id": "q22",
-    "topic": "Networking",
-    "question": "Which tool would a technician use to verify electrical continuity and wire mapping across an RJ-45 Ethernet cable?",
-    "options": ["Toner Probe", "Cable Tester", "Punchdown Tool", "Crimper"],
-    "answer": 1,
-    "explanation": "A cable tester verifies pin-to-pin continuity, wire sequence mapping, and identifies shorts or open circuits in Ethernet cables.\n\nOption Analysis:\n- Cable Tester (Correct): Diagnostic tool that checks pin mapping and continuity.\n- Toner Probe (Incorrect): Traces and locates specific cable runs through walls or bundles.\n- Punchdown Tool (Incorrect): Terminates bulk wire conductors into patch panels and Keystone jacks.\n- Crimper (Incorrect): Attaches RJ-45 connector plugs onto raw cable ends."
-  },
-  {
-    "id": "q23",
-    "topic": "Core Hardware",
-    "question": "Which motherboard component manages communication between high-speed devices like PCIe slots and CPU on older architecture systems?",
-    "options": ["Southbridge", "Northbridge", "Super I/O", "CMOS"],
-    "answer": 1,
-    "explanation": "In legacy motherboard chipset designs, the Northbridge handled rapid data transmission between CPU, RAM, and high-speed PCIe/AGP video slots.\n\nOption Analysis:\n- Northbridge (Correct): Legacy high-speed controller interfaced with CPU, RAM, and GPU.\n- Southbridge (Incorrect): Legacy controller handling slower I/O peripherals (SATA, USB, PCI, audio).\n- Super I/O (Incorrect): Legacy controller for serial, parallel, and floppy ports.\n- CMOS (Incorrect): Configuration memory chip."
-  },
-  {
-    "id": "q24",
-    "topic": "Storage",
-    "question": "What is the maximum single channel data transfer rate capped by the SATA III interface standard?",
-    "options": ["1.5 Gbps", "3.0 Gbps", "6.0 Gbps", "12.0 Gbps"],
-    "answer": 2,
-    "explanation": "SATA Revision 3.0 supports a maximum raw throughput speed of 6.0 Gbps (~600 MB/s actual bandwidth).\n\nOption Analysis:\n- 6.0 Gbps (Correct): Official maximum specification speed for SATA Revision 3.0.\n- 1.5 Gbps (Incorrect): SATA Revision 1.0 speed.\n- 3.0 Gbps (Incorrect): SATA Revision 2.0 speed.\n- 12.0 Gbps (Incorrect): SAS (Serial Attached SCSI) revision speed."
-  },
-  {
-    "id": "q25",
-    "topic": "Networking",
-    "question": "Which wireless frequency band provides the longest transmission range and superior penetration through solid walls?",
-    "options": ["2.4 GHz", "5.0 GHz", "6.0 GHz", "60 GHz"],
-    "answer": 0,
-    "explanation": "Lower frequency radio waves (2.4 GHz) travel further distances and pass through physical walls and barriers much better than higher frequencies.\n\nOption Analysis:\n- 2.4 GHz (Correct): Superior physical range and barrier penetration; higher congestion.\n- 5.0 GHz (Incorrect): Higher bandwidth and speed, but shorter range and poor wall penetration.\n- 6.0 GHz (Incorrect): Introduced with Wi-Fi 6E; maximum speed, shortest range.\n- 60 GHz (Incorrect): Ultra-high frequency used in WiGig; blocked by basic walls."
-  },
-  {
-    "id": "q26",
-    "topic": "Troubleshooting",
-    "question": "A user reports clicking noises coming from inside their desktop workstation case. Shortly after, Windows crashes with a BSOD. Which component is failing?",
-    "options": ["CPU Cooling Fan", "Mechanical Hard Drive (HDD)", "Power Supply Transformer", "Solid State Drive"],
-    "answer": 1,
-    "explanation": "Rhythmic metallic clicking noises followed by read errors or BSODs indicate physical mechanical failure of a hard drive's head actuator arm.\n\nOption Analysis:\n- Mechanical Hard Drive (Correct): Physical drive failure ('click of death').\n- CPU Cooling Fan (Incorrect): Failing fans produce grinding or buzzing sounds, causing thermal throttling/shutdowns.\n- Power Supply Transformer (Incorrect): PSU issues cause immediate power-off without clicking read sounds.\n- Solid State Drive (Incorrect): SSDs contain zero moving parts and fail silently."
-  },
-  {
-    "id": "q27",
-    "topic": "Mobile Devices",
-    "question": "Which component converts DC battery power into high-voltage AC power to light backlights on older LCD screens?",
-    "options": ["Digitizer", "Inverter", "OLED Controller", "GPU"],
-    "answer": 1,
-    "explanation": "Display inverters convert low-voltage Direct Current (DC) from the system battery into high-voltage Alternating Current (AC) required by CCFL backlights.\n\nOption Analysis:\n- Inverter (Correct): DC-to-AC power converter for CCFL backlights.\n- Digitizer (Incorrect): Touchscreen glass overlay that converts physical touch inputs to digital signals.\n- OLED Controller (Incorrect): Controls self-emissive light-emitting diodes directly without backlights.\n- GPU (Incorrect): Renders graphics data."
-  },
-  {
-    "id": "q28",
-    "topic": "Printers",
-    "question": "What process in laser printing uses heat and pressure to permanently bond toner powder onto paper fibers?",
-    "options": ["Exposing", "Developing", "Transferring", "Fusing"],
-    "answer": 3,
-    "explanation": "The fusing stage uses heated rollers and press rollers to melt toner plastic resin into paper fibers.\n\nOption Analysis:\n- Fusing (Correct): Step 5 in laser printing - applies heat and pressure to bind toner.\n- Exposing (Incorrect): Step 2 - laser writes invisible electrostatic latent image on drum.\n- Developing (Incorrect): Step 3 - toner attracts to drum areas charged by laser.\n- Transferring (Incorrect): Step 4 - toner moves from drum to paper via high voltage charge."
-  },
-  {
-    "id": "q29",
-    "topic": "Security",
-    "question": "Which term describes sending targeted fraudulent emails disguised as legitimate communications to trick executives into revealing confidential information?",
-    "options": ["Phishing", "Spear Phishing", "Whaling", "Vishing"],
-    "answer": 2,
-    "explanation": "Whaling is a specialized form of spear phishing specifically targeting high-profile targets like C-level corporate executives.\n\nOption Analysis:\n- Whaling (Correct): Phishing attack specifically targeting executive management.\n- Phishing (Incorrect): Broad, non-targeted social engineering emails.\n- Spear Phishing (Incorrect): Targeted attack against a specific individual or team.\n- Vishing (Incorrect): Social engineering conducted over voice telephone calls."
-  },
-  {
-    "id": "q30",
-    "topic": "Cloud Computing",
-    "question": "Which cloud computing deployment model allows customers full control over operating systems, storage, and networking hardware configurations without physical maintenance?",
-    "options": ["SaaS", "PaaS", "IaaS", "DaaS"],
-    "answer": 2,
-    "explanation": "IaaS (Infrastructure as a Service) provides virtualized raw infrastructure (servers, network interfaces, storage) allowing customers to manage OS and applications.\n\nOption Analysis:\n- IaaS (Correct): Provides raw hardware infrastructure management.\n- SaaS (Incorrect): Provides complete ready-to-use applications (e.g., Microsoft 365, Gmail).\n- PaaS (Incorrect): Provides runtime environments and tools for developers without OS control.\n- DaaS (Incorrect): Desktop as a Service virtual desktop delivery."
-  },
-  {
-    "id": "q31",
-    "topic": "Networking",
-    "question": "Which command-line utility tests network end-to-end connectivity and measures ICMP round-trip packet latency?",
-    "options": ["ipconfig", "ping", "tracert", "netstat"],
-    "answer": 1,
-    "explanation": "The ping command sends ICMP Echo Request packets to verify network reachability and measure round-trip time latency.\n\nOption Analysis:\n- ping (Correct): Uses ICMP to check host connectivity and measure response time in milliseconds.\n- ipconfig (Incorrect): Displays local IP network interface configuration.\n- tracert (Incorrect): Traces hop-by-hop router paths across networks.\n- netstat (Incorrect): Displays active network connections and listening ports."
-  },
-  {
-    "id": "q32",
-    "topic": "Core Hardware",
-    "question": "Which expansion card standard connects directly to motherboard slots to provide high-speed dedicated sound, video, or network interfaces?",
-    "options": ["PCIe", "AGP", "ISA", "PCI-X"],
-    "answer": 0,
-    "explanation": "PCI Express (PCIe) is the modern standard point-to-point serial expansion card bus for modern motherboards.\n\nOption Analysis:\n- PCIe (Correct): Modern high-bandwidth expansion bus standard (x1, x4, x8, x16 lanes).\n- AGP (Incorrect): Obsolete dedicated graphics port.\n- ISA (Incorrect): Legacy 8-bit/16-bit expansion bus from original PCs.\n- PCI-X (Incorrect): Extended legacy PCI standard used in older servers."
-  },
-  {
-    "id": "q33",
-    "topic": "Virtualization",
-    "question": "What type of hypervisor runs directly on bare metal server hardware without requiring a host operating system?",
-    "options": ["Type 1", "Type 2", "Hosted", "Application-level"],
-    "answer": 0,
-    "explanation": "Type 1 hypervisors (Bare-Metal) run directly on physical hardware interfaces for maximum performance, security, and low overhead.\n\nOption Analysis:\n- Type 1 (Correct): Bare-metal hypervisor (e.g., VMware ESXi, Proxmox, Hyper-V).\n- Type 2 (Incorrect): Hosted hypervisor running on top of a primary OS (e.g., VirtualBox, VMware Workstation).\n- Hosted / Application-level (Incorrect): Synonymous with Type 2 hypervisors."
+    "explanation": "Using the Shift-click method on the Restart button from the Windows logon screen to access UEFI boot options provides a reliable way to access UEFI boot options without relying on the timing of key presses during boot. It evaluates the issue by offering an alternative access method, ensuring users can reach the UEFI setup even if they miss the initial prompt.\n\nOption Analysis:\n- Use the Shift-click method on the Restart button from the Windows logon screen to access UEFI boot options. (Correct): Bypasses POST keypress timing requirements by instructing Windows to reboot directly into the Advanced Startup UEFI menu.\n- Reboot the computer and continuously press the Delete key until the UEFI setup program appears. (Incorrect): While pressing the Delete key is a common method to access the UEFI setup, it does not evaluate the issue of missing the prompt. This approach relies on timing and may not resolve the problem if the boot process is too fast.\n- Disable Secure Boot in the UEFI setup to allow easier access to system settings. (Incorrect): Disabling Secure Boot does not affect the ability to access the UEFI setup program. Secure Boot is a security feature and does not influence the key prompt or access method for UEFI settings.\n- Adjust the boot order to prioritize the hard drive, ensuring the system boots correctly. (Incorrect): Adjusting the boot order is unrelated to accessing the UEFI setup program. This action focuses on the sequence of boot devices rather than resolving the issue of missing the key prompt for UEFI access."
   }
 ];
 

@@ -960,6 +960,511 @@ const DEFAULT_QUESTIONS = [
     "explanation": "HDMI is the default cable standard for newer electronic devices, such as Blu-ray players and LED TVs. HDMI can carry both digital video and audio signals. Most modern computers include an HDMI port.\n\nDVI and VGA only support video signals.\n\nS/PDIF cables and ports are used to send a digital audio signal to high-end audio devices. It does not support video signals."
   },
 {
+    "id": "psu_01",
+    "topic": "Power Supplies and Cooling",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary purpose of a 20+4-pin P1 adapter cable on an ATX power supply unit (PSU)?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To provide compatibility with both 20-pin and 24-pin motherboards",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "To increase the voltage output of the PSU",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To allow the PSU to operate at higher wattage",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "To connect additional peripherals to the PSU",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The 20+4-pin P1 adapter cable allows compatibility with both 20-pin and 24-pin motherboard connectors, making the PSU adaptable for older and newer motherboard designs. This adapter does not increase voltage output or wattage capability, nor is it designed for connecting peripherals."
+  },
+  {
+    "id": "psu_02",
+    "topic": "Power Supplies and Cooling",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "Which of the following power supply connectors typically connect directly to the motherboard? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "6-pin PCIe power",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "4-pin CPU power",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "SATA power",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "24-pin motherboard power",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "Power on/off switch",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The 4-pin CPU and 24-pin power supply connectors reside on the power supply, which connects directly to the motherboard.\n\nThe power switch cable is connected to the system case and is connected to the motherboard.\n\nPCIe power connectors (6-pin) connect to video cards.\n\nSATA power cables connect to SATA devices."
+  },
+  {
+    "id": "psu_03",
+    "topic": "Power Supplies and Cooling",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which component is responsible for transferring heat from the CPU to the liquid in a liquid cooling system?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Radiator",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Water block",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Pump",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Heat sink",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The water block is a crucial component of a liquid cooling system. It is attached directly to the CPU and transfers heat from the processor to the coolant (liquid) that circulates through the system. The liquid is then cooled down by passing through the radiator before it is recirculated."
+  },
+  {
+    "id": "psu_04",
+    "topic": "Power Supplies and Cooling",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "You need to replace the power supply in your home desktop computer.\nWhich of the following specifications are the MOST likely to affect your power supply choice? (Select three.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Form factor",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "A fan that cools the unit",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Output wattage",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Input voltage selections",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "An on/off power switch",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_f",
+        "text": "Type and number of connectors",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_g",
+        "text": "Output voltage selections",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "When choosing a power supply:\nSelect the power supply form factor that matches the motherboard and case form factor (ATX, Micro-ATX, Mini-ITX, etc.).\nMake sure that the power supply has the correct type and number of power connectors for all of your devices.\nSelect a power supply with sufficient watts to power all devices. The higher the wattage, the more internal and external devices can be supported.\nNearly all power supplies can accept between 100 and 240 volts of AC input power. Use the switch on the back to specify the input power that is appropriate for the voltage used in your country.\nAll power supplies output +/-5 and +/-12 volts of DC output power.\nIn addition, most power supplies provide an on/off switch, and all power supplies provide some type of cooling (such as a fan)."
+  },
+  {
+    "id": "psu_05",
+    "topic": "Power Supplies and Cooling",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following thermal solutions might you find on memory modules?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Liquid cooling",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Surface area dissipation",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Active heat sink",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Passive heat sink",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Memory modules use passive heat sinks (also called heat spreaders). They do not have a fan because they rely on increased surface area and passive air movement to cool them.\n\nActive heat sinks are used by components that generate more heat, such as CPUs, high-end video cards, and some motherboard chipsets with integrated graphics.\n\nSurface area dissipation is a generic term for cooling used by both active and passive cooling systems.\n\nLiquid cooling systems are used when air cooling is not sufficient. Liquid-based cooling systems are composed of tubes, cooling plates, a reservoir, and a radiator, primarily used for high-end gaming computers and high-performance systems."
+  },
+  {
+    "id": "psu_06",
+    "topic": "Power Supplies and Cooling",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "Which of the following voltages are provided by an ATX power supply? (Select three.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "3.3",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "12",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "9",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "15",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "5",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_f",
+        "text": "24",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_g",
+        "text": "7",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "An ATX power supply provides 3.3, 5, and 12-volt DC power sources, but not 7, 9, 15, or 24 volts."
+  },
+  {
+    "id": "psu_07",
+    "topic": "Power Supplies and Cooling",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You have a desktop computer that provides a 250-watt power supply. You recently added a four-disk RAID 10 array to the system, and now it spontaneously shuts down.\nWhich of the following would MOST likely solve this issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Upgrade to a power supply that provides more volts.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Use the switch on the power supply to switch from 115 VAC to 230 VAC.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Upgrade to smaller capacity hard drives.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Upgrade to a power supply that provides more watts.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The number of devices a power supply can support is directly related to the number of watts the power supply provides. In this situation, the new RAID array, along with all of the other components in the system, is drawing more watts than the power supply can provide. A watt is a rating for the amount of work that the power supply can perform.\n\nVolts measure electrical pressure and are not directly related to the number of supportable devices. The voltage is dependent on the wall socket's voltage. The voltage switch on the power supply should match the voltage at the wall outlet. 115 is used in the United States, while 230 is typically used in Europe."
+  },
+  {
+    "id": "psu_08",
+    "topic": "Power Supplies and Cooling",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Your company relocated you from the United States to their United Kingdom office in London. You brought your personal computer with you, and you are in the process of setting it up. Your computer was previously configured to receive 115 VAC, but the electricity in London uses 230 VAC.\nWhich of the following would allow your computer to run on 230 VAC?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Inspect the power supply unit for a manual voltage switch and move it to 230 VAC. Otherwise, no action is necessary.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Purchase a new power supply that is compatible with 230 VAC.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Purchase a voltage converter and plug your computer into the converter box.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Edit the BIOS and modify the voltage input setting.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Most power supplies have the capacity to receive either 115 or 230 volts of power just by toggling a switch on the power supply case. However, modern power supplies generally support automatic voltage switching with no action required. You can use this switch when using the power supply in other countries. The 115-volt setting is used in the United States. 230 volts is used in Europe.\n\nBecause most power supplies support both 115 VAC and 230 VAC, you probably don't need to purchase an external voltage converter.\n\nBIOS does not provide a voltage input setting to switch from 115 VAC to 230 VAC."
+  },
+  {
+    "id": "psu_09",
+    "topic": "Power Supplies and Cooling",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are testing the power supply in a PC system by measuring the voltage on the 12 V rail using a multimeter. The voltage is registering as +10.1 volts.\nWhat should you do?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Disconnect all devices drawing power from the power supply before testing it.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Switch the voltage selector on the back from 220 VAC to 110 VAC.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Replace the power supply.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Nothing. The power supply is working normally.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Voltage levels should be within +/- 5% of normal. In this case, the 12 V rail on the power supply should be between 11.4 and 12.6 volts. Because the voltage registers as +10.1 volts, the power supply is bad or failing and should be replaced.\n\nSwitching the voltage selector on the back from 220 VAC to 110 VAC will not resolve the voltage output.\n\nDisconnecting all devices drawing power before testing would make the testing invalid. You need to test the load with the devices attached."
+  },
+  {
+    "id": "psu_10",
+    "topic": "Power Supplies and Cooling",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "An employee submits a support ticket stating that their computer will not turn on.\nWhich of the following troubleshooting steps should you take first? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Use a multimeter to test the power supply.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Make sure that the keyboard and mouse are plugged in.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Open the computer and replace the power supply.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Make sure that the surge protector is turned on.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "Make sure that the power cord is plugged into the wall.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "When troubleshooting the power supply, always check the following before opening up the computer:\nMake sure that the power cord is plugged into the wall.\nVerify that any surge protectors are plugged in and in the On position.\nMake sure that the power supply's switch is in the On position.\nOnly after you identify that the power supply is the problem should you replace it.\n\nThe keyboard and mouse being unplugged will not prevent the computer from powering on.\n\nTest the power supply using a multimeter only after ruling out the obvious potential issues."
+  },
+  {
+    "id": "psu_11",
+    "topic": "Power Supplies and Cooling",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A hardware technician is ordering power supply units (PSUs) for the organization's desktop computers. Most PSUs designed for use with desktop PCs are based on which form factor?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Mini-ITX",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "PCIe",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "SFF",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "ATX",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The ATX form factor is the most common standard used for PSU designs. Mini-ITX is a less common, small-footprint motherboard design. PCIe is a connectivity standard for expansion cards. Small Form Factor (SFF) is a standardized small case design standard."
+  },
+  {
+    "id": "psu_12",
+    "topic": "Power Supplies and Cooling",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A hardware technician installed a new power supply unit (PSU) in a workstation and removed unnecessary power connector cables. What type of PSU did the technician install?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "ATX",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Redundant",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "ATX12V",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Modular",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Modular PSU incorporates connectors on the PSU and component ends of the power cables. ATX12V, ATC, and Redundant PSU do not explicitly include an option to remove unnecessary connectors."
+  },
+  {
+    "id": "psu_13",
+    "topic": "Power Supplies and Cooling",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "You have a motherboard that uses a 24-pin ATX connector.\nWhich types of power supply could you use with this motherboard? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "A power supply with a 20-pin ATX and a Molex connector",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "A power supply with a 24-pin ATX connector only",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "A power supply with a 20-pin ATX and a +4-pin connector",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "A power supply with a 20-pin ATX and a 6-pin connector",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "A power supply with a 20-pin ATX connector only",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "In this case, the motherboard needs either a 24-pin ATX connector or a 20-pin ATX and a +4-pin connector.\n\nWhen selecting a power supply, make sure it includes the necessary connectors for your motherboard. Some motherboards and processors require an extra 4-pin and/or 8-pin connector in addition to the main 20- or 24-pin power connector.\n\nA Molex connector is used by legacy components (such as IDE hard drives and PATA optical drives), case fans, and other accessory devices.\n\nA 6-pin connector is used for video cards."
+  },
+  {
+    "id": "psu_14",
+    "topic": "Power Supplies and Cooling",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "Which of the following will ensure optimal system cooling? (Select three.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Remove the side panel on the case.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Keep the ambient temperature below 80 degrees F.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Leave space between the case and any walls or obstructions.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Bundle cables together and secure unused cables to the case.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "Stack hard drives next to each other.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_f",
+        "text": "Remove unused expansion slot covers to increase airflow.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Consider the following recommendations to ensure optimal system cooling:\nKeep the case free of dust and debris. Excess dust can restrict airflow and prevent proper heat transfer.\nReduce the number of airflow obstructions. Employ proper cable management (bundle cables together and secure unused cables to the case). Space out multiple hard disk drives instead of stacking them next to each other.\nMaintain appropriate ambient temperatures. Optimal ambient temperatures are between 60 and 80 degrees Fahrenheit.\nEnsure proper ventilation; leave space between the computer and any walls or desks.\nPreserve negative pressure inside the case by keeping all covers and shields installed (unused expansion cards, I/O shield, front drive bays)."
+  },
+  {
+    "id": "psu_15",
+    "topic": "Power Supplies and Cooling",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You have a desktop computer that you want to upgrade. You add several internal and external components. You realize that you need to ensure that your power supply can support these new components.\nWhich of the following power supply ratings BEST describes the rating you would use to determine this?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Watt rating",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "DC voltage rating",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "AC voltage rating",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Resistance rating",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The number of devices a power supply can support is directly related to the number of watts that the power supply is rated for. A power supply's watt rating determines its maximum power output.\n\nAC and DC voltage are a measure of electrical pressure and are not directly related to the number of supportable devices. The voltage is dependent on the voltage of the wall outlet, and the voltage switch on the power supply should match the outlet's voltage. 115 is used in the United States, while 230 is typically used in Europe.\n\nResistance is a measure of how much an electrical device reduces the electrical current flowing through it."
+  },
+{
     "id": "bios_01",
     "topic": "BIOS and UEFI",
     "type": "single",

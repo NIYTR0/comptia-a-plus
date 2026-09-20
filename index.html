@@ -359,6 +359,156 @@
 
 <script>
 const DEFAULT_QUESTIONS = [
+    {
+    "id": "it_spec_01",
+    "topic": "What Does an IT Specialist Do?",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Why is it important to establish and test a theory during the troubleshooting process?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To focus solely on the symptoms of the problem without considering possible causes.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "To avoid consulting external resources or other technicians during the troubleshooting process.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To systematically identify the probable cause of the problem and confirm it through testing.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "To immediately implement a solution without wasting time on unnecessary steps.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Establishing and testing a theory is a systematic approach to diagnosing a problem. By identifying probable causes and confirming them through testing, technicians can efficiently determine the root cause and proceed with an appropriate solution.\n\nIt is important to diagnose the problem before implementing a solution. Skipping the step of establishing and testing a theory could lead to incorrect fixes and wasted effort.\n\nIt is also important to go beyond symptoms and identify the underlying causes of the problem. Focusing only on symptoms without testing theories would result in incomplete troubleshooting.\n\nThe troubleshooting process encourages using research techniques, consulting other technicians, and leveraging external resources when necessary. Collaboration and research are valuable tools for accurately diagnosing and resolving issues."
+  },
+  {
+    "id": "it_spec_02",
+    "topic": "What Does an IT Specialist Do?",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary purpose of escalating an issue during the troubleshooting process?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To involve senior staff or external resources when the problem cannot be resolved at the current level.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "To skip basic troubleshooting steps and focus on advanced diagnostics.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To immediately replace faulty hardware without further testing.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "To document the problem for future reference without attempting to resolve it.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The purpose of escalation is to seek assistance from senior staff, subject matter experts, or external resources when the problem cannot be resolved after thorough troubleshooting. Escalation ensures that the issue is addressed efficiently without wasting time or resources.\n\nReplacing hardware without proper testing is not part of the escalation process. Escalation involves seeking additional expertise or resources, not making assumptions about the cause of the problem.\n\nEscalation occurs after basic and intermediate troubleshooting steps have been completed. Skipping steps is not aligned with the systematic approach outlined in the troubleshooting methodology.\n\nWhile documentation is important, the purpose of escalation is to resolve the issue, not just to record it. Documentation supports the escalation process by providing a clear record of what has been attempted so far."
+  },
+  {
+    "id": "it_spec_03",
+    "topic": "What Does an IT Specialist Do?",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user reports that he is unable to access data on an external hard drive. You investigate the problem and determine that the USB cable connection to the hard drive is damaged. You replace the cable.\n\nWhich of the following actions should you take next?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Test the solution.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Create an action plan.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Document the problem and solution.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Determine if escalation is necessary.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "After replacing the USB cable, the next logical step is to test whether the solution resolved the issue. Testing ensures that the external hard drive is now accessible and functioning as expected. This aligns with the troubleshooting methodology, which emphasizes verifying full-system functionality after implementing a solution.\n\nWhile documentation is a critical step in the troubleshooting process, it is not the immediate next step after replacing the USB cable. According to the methodology, documentation should occur after verifying that the solution works and the issue is resolved. This ensures that the documentation reflects the complete resolution process, including any lessons learned or preventive measures implemented.\n\nDetermining if escalation is necessary is a step taken when the problem cannot be resolved or if the issue requires expertise or resources beyond your scope. Since the problem has been addressed by replacing the USB cable, escalation is not relevant at this stage. Testing the solution comes first to confirm that escalation is unnecessary.\n\nCreating an action plan is a step that occurs earlier in the troubleshooting process before implementing a solution. It involves planning the steps to resolve the problem. Since the cable has already been replaced, the action plan has already been executed, and the next step is to test the solution to ensure it worked."
+  },
+  {
+    "id": "it_spec_04",
+    "topic": "What Does an IT Specialist Do?",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are troubleshooting a network printer that is not responding to print jobs.\nAfter identifying the problem and testing your theory, you determine that the issue is caused by an outdated firmware version on the printer.\nBefore implementing a plan of action to update the firmware, what should you analyze to ensure the solution is appropriate?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Check if other users are experiencing similar issues and wait for them to report the problem before taking action.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Analyze whether the printer can be replaced with a newer model instead of updating the firmware.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Immediately proceed with the firmware update without checking for compatibility.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Confirm whether the firmware update is compatible with the printer model and network environment.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Analyzing compatibility is a critical step before implementing a firmware update. Ensuring that the update is suitable for the printer model and network environment prevents potential issues, such as bricking the device or introducing new problems. This aligns with the troubleshooting methodology, which emphasizes careful planning and adherence to vendor instructions.\n\nSkipping the compatibility analysis can lead to serious issues, such as rendering the printer inoperable. Implementing a plan of action requires careful consideration of all potential risks and ensuring the solution is appropriate.\n\nReplacing the printer is not a necessary step at this stage. The issue has already been identified as an outdated firmware problem, and updating the firmware is a more cost-effective and efficient solution.\n\nWaiting for other users to report the issue delays the resolution unnecessarily. The problem has already been identified, and the focus should be on implementing the solution after analyzing its appropriateness."
+  },
+  {
+    "id": "it_spec_05",
+    "topic": "What Does an IT Specialist Do?",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user reports that their laptop is not connecting to the office Wi-Fi network.\nAs part of \"Questioning the Obvious,\" which of the following actions should you take first?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Verify that the Wi-Fi is enabled on the laptop.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Replace the office Wi-Fi router with a new one.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Reinstall the laptop's network drivers.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Escalate the issue to the network infrastructure team.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Questioning the Obvious\" involves checking simple and obvious potential causes first. Ensuring that the Wi-Fi is enabled on the laptop is a basic step that could immediately resolve the issue without requiring more complex troubleshooting.\n\nReinstalling network drivers is a more advanced troubleshooting step. Before taking such action, you should check simpler causes, such as whether the Wi-Fi is enabled on the laptop.\n\nReplacing the router is an extreme step that should only be considered after ruling out all other potential causes, including basic checks like verifying the laptop's Wi-Fi settings.\n\nEscalation is only necessary if the problem cannot be resolved after performing basic troubleshooting steps. \"Questioning the Obvious\" focuses on addressing simple potential causes before involving other teams."
+  },
 {
     "id": "bios_01",
     "topic": "BIOS and UEFI",

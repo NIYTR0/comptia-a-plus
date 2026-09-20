@@ -1097,7 +1097,7 @@ const DEFAULT_QUESTIONS = [
         "isCorrect": false
       }
     ],
-    "explanation": "When choosing a power supply:\nSelect the power supply form factor that matches the motherboard and case form factor (ATX, Micro-ATX, Mini-ITX, etc.).\nMake sure that the power supply has the correct type and number of power connectors for all of your devices.\nSelect a power supply with sufficient watts to power all devices. The higher the wattage, the more internal and external devices can be supported.\nNearly all power supplies can accept between 100 and 240 volts of AC input power. Use the switch on the back to specify the input power that is appropriate for the voltage used in your country.\nAll power supplies output +/-5 and +/-12 volts of DC output power.\nIn addition, most power supplies provide an on/off switch, and all power supplies provide some type of cooling (such as a fan)."
+    "explanation": "When choosing a power supply:\n* Select the power supply form factor that matches the motherboard and case form factor (ATX, Micro-ATX, Mini-ITX, etc.).\n* Make sure that the power supply has the correct type and number of power connectors for all of your devices.\n* Select a power supply with sufficient watts to power all devices. The higher the wattage, the more internal and external devices can be supported.\nNearly all power supplies can accept between 100 and 240 volts of AC input power. Use the switch on the back to specify the input power that is appropriate for the voltage used in your country.\nAll power supplies output +/-5 and +/-12 volts of DC output power.\nIn addition, most power supplies provide an on/off switch, and all power supplies provide some type of cooling (such as a fan)."
   },
   {
     "id": "psu_05",
@@ -2543,6 +2543,636 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "The x64 architecture includes hardware-based virtualization technologies and Data Execution Prevention (DEP), which enhance performance and security. Hardware-based virtualization technologies, such as Intel VT-x and AMD-V, improve virtual machine efficiency, while DEP prevents code execution in non-executable memory regions, increasing system security. The option stating that x64 enhances performance with smaller instruction sets is incorrect, as its benefits derive from hardware-based features rather than reduced instruction size. Supporting 32-bit virtual machines is possible but does not eliminate performance penalties entirely. x64 does not eliminate the need for software-based security measures, as both hardware and software security features work together to protect systems."
+  },
+{
+    "id": "sys_dev_01",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user wants to mitigate the risk of data loss by using hardware that provides fault tolerance. What can the user use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RAID",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "SSD",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "NVMe",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "mSATA",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A redundant array of independent disks (RAID) is an array that appears as a single storage resource or volume and can be partitioned and formatted like any other drive. RAID has a basic level numbered from 0 to 6. There are also nested RAID solutions, like RAID 10.\n\nNVMe (NVM express) can be packaged for installation to a PCIe slot as an expansion card or an M.2 slot.\n\nA solid-state drive (SSD) uses flash memory technology to implement persistent mass storage. Flash memory performs much better than the mechanical components used in hard drives.\n\nA mini-serial ATA (mSATA) allows a technician to plug an SSD packaged as an adapter card into the motherboard's combined data and power port."
+  },
+  {
+    "id": "sys_dev_02",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What does Double Data Rate (DDR) memory achieve by using both the rising and falling edges of the clock cycle?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It doubles the data transfer rate compared to traditional SDRAM.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "It increases memory capacity per module.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It synchronizes with the system clock to improve stability.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It reduces the power consumption of memory modules.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "DDR memory achieves double the data transfer rate by utilizing both the rising and falling edges of the clock cycle, allowing for two operations per cycle. This does not inherently increase capacity, synchronize stability, or reduce power consumption, but it significantly improves data throughput compared to traditional SDRAM."
+  },
+  {
+    "id": "sys_dev_03",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You have been asked to configure the drives in a computer. The end user wants to use striping without incorporating any fault tolerance.\nWhich of the following will BEST meet these requirements?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RAID 0",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "RAID 1",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "RAID 5",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Expanded volume set",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "RAID 0 uses disk striping and offers no fault tolerance. Disk striping breaks data into units and stores the units across a series of disks by reading and writing to all disks simultaneously. A failure of one disk in the set means all data is lost. This is the fastest of all RAID types.\n\nRAID 1 provides fault tolerance but does not use striping. An expanded volume set is a volume that spans more than one hard drive.\n\nRAID 5 uses disk striping, but provides fault tolerance for a single disk failure as well.\n\nAn expanded volume set offers no fault tolerance and does not use striping."
+  },
+  {
+    "id": "sys_dev_04",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following factors is most important when choosing a power supply for a PC?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The type of cooling system",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The color of the PSU",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The wattage rating of the PSU",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "The number of USB ports",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The wattage rating of the PSU is a critical factor to consider when choosing a power supply. It determines how much power the PSU can provide to the system. A PSU with inadequate wattage may not supply enough power for high-performance components, leading to system instability or hardware failure."
+  },
+  {
+    "id": "sys_dev_05",
+    "topic": "Installing System Devices",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "You need to replace the power supply in your home desktop computer.\nWhich of the following specifications are the MOST likely to affect your power supply choice? (Select three.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Form factor",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "A fan that cools the unit",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Output wattage",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Input voltage selections",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "An on/off power switch",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_f",
+        "text": "Type and number of connectors",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_g",
+        "text": "Output voltage selections",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "When choosing a power supply:\nSelect the power supply form factor that matches the motherboard and case form factor (ATX, Micro-ATX, Mini-ITX, etc.).\n\nMake sure that the power supply has the correct type and number of power connectors for all of your devices.\n\nSelect a power supply with sufficient watts to power all devices. The higher the wattage, the more internal and external devices can be supported.\n\nNearly all power supplies can accept between 100 and 240 volts of AC input power. Use the switch on the back to specify the input power that is appropriate for the voltage used in your country.\n\nAll power supplies output +/-5 and +/-12 volts of DC output power.\n\nIn addition, most power supplies provide an on/off switch, and all power supplies provide some type of cooling (such as a fan)."
+  },
+  {
+    "id": "sys_dev_06",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A recent U.S. high school graduate is attending a university overseas in Europe. The graduate has a desktop and swaps out the power supply unit (PSU) to match European standards. What does the high school graduate swap out the PSU for?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "5V",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "220V",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "12V",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "120V",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "In Europe, the voltage is 220-240 VAC (high-line). AC voltage supply varies by country and by the nature of AC distribution circuits. Consequently, PSUs have quite a wide tolerance in each band.\n\nA 120V power supply unit (PSU) is only for North America, where the input voltage for most homes and offices is 120 VAC (low-line).\n\nA 12V rail is used off the PSU to internal components. For a modern computer, the output rating of the +12 VDC rail (or rails) is the most important factor and the most heavily used.\n\nA power supply unit (PSU) provides 12V, 5V, and 3.3V rails."
+  },
+  {
+    "id": "sys_dev_07",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Jessica is concerned about losing data due to a hard disk failure. Her computer will only support a maximum of three disks. To protect her data, she has decided to use RAID (Redundant Array of Independent Disks).\nWhich of the following RAID types would give Jessica the BEST mirrored data protection?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RAID 5",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "RAID 1",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "RAID 0",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "RAID 10",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "RAID 1 is the only mirrored solution that can work on three or less drives. RAID 0 and RAID 5 protect data using striping. RAID 10 uses mirroring, but this requires a minimum of four disks."
+  },
+  {
+    "id": "sys_dev_08",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A graphics artist wants to put together the best possible machine since the plan is to do graphics-intensive processing. Which of the following can the graphics artist use to distinguish between memory that appears to be the same?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Transfer rate",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Timing",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "RAM type",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "PC-# value",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The technician can use timings to differentiate the performance of RAM modules that are an identical double data rate (DDR) type and speed. Lower timing values are an indicator of better performance.\n\nThe technician is looking at RAM that appears to be the same so that the transfer rates will look the same.\n\nWhile RAM type would normally give a good indication (DDR2 vs. DDR3), the technician is looking at RAM that appears to be the same. This means that they would compare DDR2 against DDR2 or DDR3 against DDR3.\n\nAn administrator would label DDR memory modules using the maximum theoretical bandwidth, such as PC1600, PC2100, etc. However, the technician is looking at RAM that appears to be the same."
+  },
+  {
+    "id": "sys_dev_09",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following refers to placing two or more processors in a single processor chip?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Hyper-threading",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Multi-threading",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Multi-core",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Multi-processor",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A multi-core processor has multiple processor cores integrated into a single processor package.\n\nA multi-processor motherboard allows you to install two (or more) processors on the same motherboard.\n\nMulti-threading is an operating system feature that allows more than one process to work at the same time.\n\nHyper-threading is a feature of some Intel processors that allows a single processor to run threads in parallel, as opposed to the older and slower technology of processing threads linearly."
+  },
+  {
+    "id": "sys_dev_10",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A systems administrator sets up dual-channel memory in a system to increase performance. Which of the following does NOT require support?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "CPU",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "RAM devices",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Memory controller",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Motherboard",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "With a dual-channel memory controller, there are effectively two 64-bit pathways through the bus to the CPU, meaning that the system can send 128 bits of data per transfer rather than 64 bits. This does not require support from RAM devices, but it does from all others mentioned.\n\nThis feature requires support from the central processing unit (CPU). The system uses standard RAM modules. There are no \"dual-channel\" DDR memory modules.\n\nThis feature also requires support from the memory controller and motherboard. When configuring a dual-channel system, users must consult the system documentation to identify the appropriate slots to use.\n\nLast, this feature also requires support from the motherboard."
+  },
+  {
+    "id": "sys_dev_11",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network administrator is setting up a server to manage their routers and switches throughout the environment and push standardized configurations. The administrator wants to use memory which performs a hash calculation on the data value. What should the network administrator use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Swap space",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "RDIMM",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "UDIMM",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Virtual memory",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Error correction code (ECC) RAM performs a hash calculation on the data value for each transfer and stores it as an 8-bit checksum. Most types of ECC supply as registered Dual Inline Memory Modules (RDIMMs). A registered DIMM uses an extra component to reduce electrical load on the memory controller.\n\nWhile the administrator could use unbuffered DIMM (UDIMM) since some types of ECC RAM get packaged in UDIMMs, although this is much rarer.\n\nIf there is insufficient system RAM, the administrator can extend memory space by using disk storage known as swap space in a Linux system.\n\nThe total amount of addressable memory (system RAM plus swap space) is virtual memory or virtual RAM."
+  },
+  {
+    "id": "sys_dev_12",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following central processing unit (CPU) architectures implement a system-on-chip (SoC) where all the controllers, including video, sound, networking, and storage, are part of the CPU?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "x86",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "x64",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "ARM",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "IA-32",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "ARM is considered a System on Chip (SoC) because it integrates a CPU along with other essential components, such as memory, input/output controllers, and sometimes GPUs, all on a single chip. This integration allows ARM-based SoCs to deliver efficient performance in compact, power-saving designs, commonly used in smartphones and embedded systems."
+  },
+  {
+    "id": "sys_dev_13",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You want to create a software RAID 1 array on your Windows 11 workstation using Disk 1 and Disk 2.\nWhat do you need to do with Disk 1 and Disk 2 before configuring them for a RAID 1 array?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Format both disks with the same file system.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Convert the disks from basic to dynamic.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Convert the disks from dynamic to basic.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Verify that both disks are the same size.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "You can only use dynamic disks to create a software RAID array in Windows. Therefore, you need to convert Disk 1 and Disk 2 (using the Disk Management tool) from basic disks to dynamic disks.\n\nWith RAID 1, you write redundantly on both disks. If the disks are not the same size, the mirroring is limited to the size on the smaller disk. However, this does not impact preparing the disks for use in a RAID 1 array.\n\nWhile it's important to configure the disks with a file system, this step is part of configuring the RAID 1 software array. You do not need to do this before the configuration process."
+  },
+  {
+    "id": "sys_dev_14",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following drive configurations uses striping with parity for fault tolerance?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RAID 0",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "RAID 1",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "RAID 10",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "RAID 5",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "RAID 5 uses disk striping, but provides fault tolerance for a single disk failure. Disk striping breaks data into units and stores the units across a series of disks by reading and writing to all disks simultaneously.\n\nRAID 0 uses disk striping and offers no fault tolerance. A failure of one disk in the set means that all data is lost.\n\nRAID 1 provides fault tolerance, but does not use striping.\n\nA RAID 10 array nests a mirrored array within a striped array."
+  },
+  {
+    "id": "sys_dev_15",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are building a PC using an AMD Ryzen processor. Which type of socket design are you most likely working with?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Pin Grid Array (PGA)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Land Grid Array (LGA)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Ball Grid Array (BGA)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Zero Insertion Force (ZIF)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "AMD Ryzen processors commonly use the Pin Grid Array (PGA) design, where the CPU has pins on the underside that fit into the socket. This is a key characteristic of many AMD processors, while Intel typically uses Land Grid Array (LGA)."
+  },
+  {
+    "id": "sys_dev_16",
+    "topic": "Installing System Devices",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "Which of the following should you always do to avoid damage when you prepare to install a CPU? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Ensure that the CPU and motherboard socket type match.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Adjust the motherboard bus, processor, and memory settings.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Make sure that the memory (RAM) modules are seated properly.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Use anti-static protection.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "Run a benchmark test.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "When you prepare to install a CPU, always use anti-static protection and ensure that the CPU and motherboard socket type match.\n\nRunning a benchmark test gives you information about the speeds of the processor, graphics card, storage drives, and memory. A benchmark test is not related to preparing to install a CPU.\n\nAdjusting the motherboard bus, processor, and memory settings is often done when overclocking a processor. Adjusting the motherboard is not a step to avoid damage when preparing to install a CPU.\n\nWhile you might want to make sure that the memory modules are seated properly after installing the CPU, making sure that the memory modules are seated properly is not associated with avoiding damage to the CPU."
+  },
+  {
+    "id": "sys_dev_17",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What voltage range do appliances such as dryers, heavy-duty power tools, and oven ranges require?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "120V",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "115V",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "110V",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "220V",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "220V is a requirement for appliances because of the high-power range needed to supply them. The power requirement for 200V would be 900 watts of power. This range is typically in commercial applications for large motors and other equipment.\n\n110V is present mainly in portable electronics and small appliances. 110V is typically safer to work with because of the fewer volts.\n\n115V is similar to 110V and rated on a low range that would not support the appliances.\n\n120V is in the same low range as 110V and 115V. 110V, 115V, and 120V have tests to operate at a lower voltage."
+  },
+  {
+    "id": "sys_dev_18",
+    "topic": "Installing System Devices",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "Which of the following power supply connectors typically connect directly to the motherboard? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "6-pin PCIe power",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "4-pin CPU power",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "SATA power",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "24-pin motherboard power",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "Power on/off switch",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The 4-pin CPU and 24-pin power supply connectors reside on the power supply, which connects directly to the motherboard.\n\nThe power switch cable is connected to the system case and is connected to the motherboard.\n\nPCIe power connectors (6-pin) connect to video cards.\n\nSATA power cables connect to SATA devices."
+  },
+  {
+    "id": "sys_dev_19",
+    "topic": "Installing System Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "How is the peak transfer rate for DDR-200 (PC1600) calculated?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "By halving the data rate to account for transfer delays",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "By multiplying the data rate (200 MT/s) by 8 bytes per transfer",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "By using the clock speed of the memory bus only",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "By multiplying the clock speed by the system memory capacity",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The peak transfer rate for DDR-200 (PC1600) is calculated by multiplying the data rate, which is 200 MT/s, by 8 bytes per transfer, resulting in 1600 MBps. This approach uses the data rate and transfer size rather than just clock speed, system memory capacity, or adjusting for delays."
+  },
+  {
+    "id": "sys_dev_20",
+    "topic": "Installing System Devices",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "Which of the following statements is true? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "32-bit processors use only the IA-32 instruction set (also referred to as x86).",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "64-bit processors use the x86-64 instruction set (also referred to as x64).",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "32-bit applications can only run on 32-bit processors.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "x64 processors execute only 64-bit instructions in the hardware.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "32-bit applications can run on 64-bit processors if the BIOS/UEFI is set correctly.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The processor instruction set identifies all instructions (operations) that a processor can perform. 32-bit processors use the IA-32 instruction set (also referred to as x86). Itanium processors from Intel use the IA-64 instruction set. AMD64 and Intel 64 processors use the x86-64 instruction set (also referred to as x64).\n\n32-bit applications can run on 64-bit processors.\n\nx64 processors execute both 32-bit and 64-bit instructions in the hardware.\n\nThere are no settings in BIOS/UEFI to make sure that 32-bit applications can run on 64-bit processors."
   },
 {
     "id": "bios_01",

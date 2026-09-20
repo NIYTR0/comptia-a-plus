@@ -2240,6 +2240,311 @@ const DEFAULT_QUESTIONS = [
     "explanation": "Dual-channel systems use two memory controllers, while triple-channel systems use three memory controllers. Quadruple-channel (quad-channel) systems use four memory controllers. Each memory controller can communicate with one or more memory modules at the same time."
   },
 {
+    "id": "cpu_01",
+    "topic": "CPUs",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What must be true for device drivers in a 64-bit operating system?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "They must be written specifically for 64-bit systems.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "They are no longer required for hardware devices.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "They can be shared between 32-bit and 64-bit operating systems.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "They are automatically compatible with all modern hardware.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Device drivers must be written specifically for 64-bit systems to function properly in a 64-bit operating system. The architecture of the operating system determines the compatibility requirements for device drivers, and a 64-bit OS requires drivers compiled for 64-bit. The concept that drivers can be shared between 32-bit and 64-bit systems is incorrect, as driver architecture must match the OS. The option about automatic compatibility with modern hardware is false, as drivers must still be tailored for specific hardware. Lastly, the option stating that drivers are no longer required is incorrect because they remain critical for hardware-software communication."
+  },
+  {
+    "id": "cpu_02",
+    "topic": "CPUs",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following central processing unit (CPU) architectures implement a system-on-chip (SoC) where all the controllers, including video, sound, networking, and storage, are part of the CPU?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "x86",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "x64",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "ARM",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "IA-32",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "ARM is considered a System on Chip (SoC) because it integrates a CPU along with other essential components, such as memory, input/output controllers, and sometimes GPUs, all on a single chip. This integration allows ARM-based SoCs to deliver efficient performance in compact, power-saving designs, commonly used in smartphones and embedded systems."
+  },
+  {
+    "id": "cpu_03",
+    "topic": "CPUs",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is a key advantage of ARM-based processors in mobile devices compared to x86/x64 processors?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "They offer higher performance-per-watt, improving battery life.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "They execute complex tasks more quickly due to the CISC architecture.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "They require fewer software modifications for compatibility.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "They integrate fewer components, reducing the motherboard size.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "ARM processors offer higher performance-per-watt, which improves battery life and is ideal for mobile devices. ARM's power efficiency is a crucial factor in mobile applications, providing longer battery life and enabling fanless designs. The option stating that ARM uses CISC architecture is incorrect, as its efficiency comes from its RISC-based design. The option claiming that ARM requires fewer software modifications is inaccurate, as software must often be recompiled or emulated for compatibility. Additionally, the idea that ARM integrates fewer components is false because its SoC design combines multiple functionalities, reducing hardware size and complexity."
+  },
+  {
+    "id": "cpu_04",
+    "topic": "CPUs",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You work at a computer repair store. You just upgraded the processor (CPU) in a customer's computer. The computer starts, but it locks up shortly after starting Windows.\nWhich of the following is MOST likely causing the computer to automatically shut down?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The CPU is bad.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The computer has a virus.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The fan is not running.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "The CPU is not supported by the BIOS.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Today, most computers are designed to turn off automatically if inner components overheat. In this case, the fan is probably not running. You might have forgotten to connect the power connector for the fan to the motherboard.\n\nIf the CPU were bad or not supported, the computer would most likely not boot to the operating system.\n\nAlthough a virus could cause this symptom, the computer was not shutting down before you ever worked on it. Since you did not need to connect to the internet to upgrade the CPU, a virus is an unlikely cause."
+  },
+  {
+    "id": "cpu_05",
+    "topic": "CPUs",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You have just installed a new CPU in your workstation along with a CPU heat sink and fan.\nWhich of the following should you do next as a best practice?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Ensure that the CPU and motherboard socket type match.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Verify that the motherboard supports the processor speed.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Connect the fan's power supply.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Update the UEFI after installing the processor.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "As a best practice, connecting the fan's power supply is the next step you should complete to ensure the cooling system functions properly and prevent the CPU from overheating when the system is powered on.\n\nEnsuring that the CPU and motherboard socket type match is a step that you should complete before you install the CPU.\n\nVerifying that the motherboard supports the processor speed is another step that you should complete before you install the CPU.\n\nSometimes updating the UEFI/BIOS after installing a processor is required, but it is not always the immediate next step."
+  },
+  {
+    "id": "cpu_06",
+    "topic": "CPUs",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A software developer is creating an application that will run multiple parallel threads through the central processing unit (CPU) at the same time to reduce the amount of \"idle time\" the CPU spends waiting for new instructions to process. What type of process is the developer taking advantage of?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Multi-core",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Multi-socket",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Multithreading",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Processor extensions",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Multithreading allows a CPU to work on multiple tasks concurrently, such as performing calculations while simultaneously waiting for data from a network request. This overlapping of tasks keeps the CPU busy and minimizes idle time, leading to more efficient program execution."
+  },
+  {
+    "id": "cpu_07",
+    "topic": "CPUs",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are installing an Intel Core processor into a motherboard. Which socket type are you most likely using?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Ball Grid Array (BGA)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Zero Insertion Force (ZIF)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Land Grid Array (LGA)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Pin Grid Array (PGA)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Intel processors typically use the Land Grid Array (LGA) socket design, where the pins are on the motherboard socket rather than the CPU. The CPU has flat contacts that connect to the pins, in contrast to AMD's more common use of PGA sockets."
+  },
+  {
+    "id": "cpu_08",
+    "topic": "CPUs",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "You have been using the same computer for several years. To improve performance, you decide to upgrade the processor. You check the motherboard documentation and purchase the fastest processor that is supported by the motherboard. However, when you try to start the computer, it beeps regularly, and nothing is displayed on the screen.\nWhich of the following actions will MOST likely resolve this issue? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Press F8 while booting the computer.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Reinstall the old processor in the motherboard.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Flash the UEFI firmware.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Replace the CPU with a new one.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "Replace the motherboard.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Flashing the BIOS or UEFI firmware is often required to upgrade system components, such as upgrading to a faster processor. If the motherboard documentation lists the processor as supported, but the processor is not correctly recognized, updating the BIOS or UEFI firmware to the latest version might fix the problem. Before you can do this, you must reinstall the old processor in the system to get the system back up and running again.\n\nOnly replace the CPU if you have determined that the CPU is faulty.\n\nPressing F8 while booting the system displays the advanced boot menu on older versions of Windows.\n\nReplacing the motherboard is probably not required because the motherboard was working correctly with the older CPU, and the documentation indicates that the new CPU is compatible."
+  },
+  {
+    "id": "cpu_09",
+    "topic": "CPUs",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following refers to placing two or more processors in a single processor chip?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Hyper-threading",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Multi-threading",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Multi-core",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Multi-processor",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A multi-core processor has multiple processor cores integrated into a single processor package.\n\nA multi-processor motherboard allows you to install two (or more) processors on the same motherboard.\n\nMulti-threading is an operating system feature that allows more than one process to work at the same time.\n\nHyper-threading is a feature of some Intel processors that allows a single processor to run threads in parallel, as opposed to the older and slower technology of processing threads linearly."
+  },
+  {
+    "id": "cpu_10",
+    "topic": "CPUs",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "How does the x64 architecture enhance virtualization and security?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It supports 32-bit virtual machines without performance penalties.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "It eliminates the need for software-based security measures.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It improves performance with smaller instruction sets.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It includes hardware-based virtualization technologies and Data Execution Prevention (DEP).",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The x64 architecture includes hardware-based virtualization technologies and Data Execution Prevention (DEP), which enhance performance and security. Hardware-based virtualization technologies, such as Intel VT-x and AMD-V, improve virtual machine efficiency, while DEP prevents code execution in non-executable memory regions, increasing system security. The option stating that x64 enhances performance with smaller instruction sets is incorrect, as its benefits derive from hardware-based features rather than reduced instruction size. Supporting 32-bit virtual machines is possible but does not eliminate performance penalties entirely. x64 does not eliminate the need for software-based security measures, as both hardware and software security features work together to protect systems."
+  },
+{
     "id": "bios_01",
     "topic": "BIOS and UEFI",
     "type": "single",

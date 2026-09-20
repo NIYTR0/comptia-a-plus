@@ -1465,6 +1465,471 @@ const DEFAULT_QUESTIONS = [
     "explanation": "The number of devices a power supply can support is directly related to the number of watts that the power supply is rated for. A power supply's watt rating determines its maximum power output.\n\nAC and DC voltage are a measure of electrical pressure and are not directly related to the number of supportable devices. The voltage is dependent on the voltage of the wall outlet, and the voltage switch on the power supply should match the outlet's voltage. 115 is used in the United States, while 230 is typically used in Europe.\n\nResistance is a measure of how much an electrical device reduces the electrical current flowing through it."
   },
 {
+    "id": "storage_01",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What distinguishes SD Express cards from earlier versions of SD cards?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "They are only compatible with devices using USB interfaces",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "They have a maximum capacity of 32 GB",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "They are only available in the original SD format with speeds up to 25 MBps",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "They offer much higher speeds",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "SD Express cards stand out because they use PCIe and NVMe interfaces, allowing for significantly higher speeds of up to 985 MBps compared to earlier versions. They are not limited to USB interfaces or small capacities; instead, they offer improved performance and capacity options. The original SD format only supported speeds up to 25 MBps, which is much slower than SD Express."
+  },
+  {
+    "id": "storage_02",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following drive configurations uses striping with parity for fault tolerance?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RAID 0",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "RAID 1",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "RAID 10",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "RAID 5",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "RAID 5 uses disk striping, but provides fault tolerance for a single disk failure. Disk striping breaks data into units and stores the units across a series of disks by reading and writing to all disks simultaneously.\n\nRAID 0 uses disk striping and offers no fault tolerance. A failure of one disk in the set means that all data is lost.\n\nRAID 1 provides fault tolerance, but does not use striping.\n\nA RAID 10 array nests a mirrored array within a striped array."
+  },
+  {
+    "id": "storage_03",
+    "topic": "Storage Devices",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "You are in the process of purchasing several new Windows-based computers to replace broken or outdated computers. You have heard that solid-state drives (SSDs) can significantly increase systems' overall performance.\nWhich of the following BEST describe the features of solid-state drives (SSDs) compared to hard disk drives (HDDs)? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "An SSD opens files faster than an HDD.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "An SSD uses flash technology to store data.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "SSD spindles move at a faster rate than those of an HDD.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "An SSD can be adversely affected by magnetism.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "An SSD cheaply stores a large amount of data.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A solid-state drive is a flash device with a storage capacity similar to that of a small hard drive. Solid-state drives are used as replacements for hard disk drives and store operating systems, application, and data files.\n\nSolid-state drives have several advantages. They:\n* Are faster than hard drives.\n* Have no moving parts.\n* Have lower power consumption than hard drives (which is good for laptops).\n* Are less susceptible to physical damage and are immune to magnetic field damage.\n* Are smaller and lighter than hard drives.\n\nThe main disadvantage to solid-state drives is cost. They are several times more expensive than comparable hard drives. However, their advantages make them a good choice in many situations, especially for portable devices."
+  },
+  {
+    "id": "storage_04",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "One of your customers wants you to build a personal server that he can use in his home. One of his concerns is making sure that he has at least one data backup stored on the server in the event that a disk fails. You have decided to back up his data using RAID.\nSince this server is for personal use only, the customer wants to keep costs down. Therefore, he would like to keep the number of drives to a minimum.\nWhich of the following RAID systems would BEST meet the customer's specifications?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RAID 1",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "RAID 0",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "RAID 5",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "RAID 10",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "RAID 1 protects memory from a single disk failure and provides high-read performance. RAID 1 also only requires a minimum of two disks. RAID 5 would also protect data from a single disk failure but requires a minimum of three disks, and RAID 10 requires a minimum of four disks."
+  },
+  {
+    "id": "storage_05",
+    "topic": "Storage Devices",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "You want to create a high-performance Windows laptop with both a 2-TB hard drive and a 1-TB SSD drive.\nWhich of the following are data storage recommendations for your high performance system? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Store heavily used information on the SSD drive.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Automatically back up important data on the hard drive to the SSD drive.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Store data that requires high performance on the SSD drive.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Store data that requires high performance on the hard drive.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "Store heavily used information on the hard drive.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "For your high-performance system, you should adhere to the following data storage recommendations:\n* Store heavily used information on the standard hard disk drive.\n* Store high-performance data on the SSD drive.\n* As a final recommendation, you should automatically back up important data on the SSD drive to the hard drive."
+  },
+  {
+    "id": "storage_06",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You have an existing computer running Windows 11. You want to configure a RAID 1 array in the computer. You install two new SATA drives and then use the RAID controller integrated in the motherboard to define a RAID 1 array using both drives.\nWhen you boot the computer, Windows does not show the logical RAID drive. What should you do?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Set the jumpers on the drives to use SATA I mode.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Install the driver for the RAID controller.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "In the BIOS, change the SATA disk mode to RAID.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "In the BIOS, change the SATA disk mode to AHCI.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "You must install the RAID driver so that Windows recognizes arrays created by the motherboard RAID utility. Without the driver, Windows will not be able to see the logical drive defined by the array.\n\nWhen you define the array, you configure the BIOS to use RAID as the SATA type. If you had not completed this step, you would not be able to run the RAID configuration utility.\n\nYou use AHCI to configure SATA drives to support hot swapping.\n\nSetting the jumpers is designed to help older drives work smoothly with newer equipment by limiting the data transfer rate. There are no jumpers on newer hard drives (manufactured after 2002)."
+  },
+  {
+    "id": "storage_07",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which Blu-ray standard defines rewritable discs?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "BD-R",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "BD-R/RW",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "BD-ROM",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "BD-RE",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "BD-RE is the Blu-ray standard that defines rewritable discs.\n\nBD-ROM is the read-only standard, and BD-R is the recordable standard.\n\nR/RW is used to designate rewritable CD and DVD discs, not Blu-ray discs."
+  },
+  {
+    "id": "storage_08",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You have configured Disk 3 and Disk 4 on your Windows 11 workstation as a RAID 1 array with the NTFS file system, and you have assigned F as the drive letter for the array. Each disk has an individual storage capacity of 1 TB.\nHowever, when you check the available storage size of F, you notice that it only lists 1 TB (instead of 2 TB) of available disk storage space. What should you do to resolve the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Change the volume to a spanned volume.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Make sure both disks are set to dynamic instead of basic.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "You need to change to a RAID 5 array.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Nothing. The RAID array is working as designed.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "You do not need to do anything. A RAID 1 array provides mirroring, which means that the same data is available on both disks. This means that the total size of the volume is equal to just the size of one of the disks in the array. In this case, the total volume size is still 1 TB, even though each disk is capable of storing 1 TB.\n\nYou change the format of the disks from basic to dynamic before creating the RAID array.\n\nA RAID 5 array requires three disks, not two. In addition, you can't create a RAID 5 array on a Windows workstation. You can only do this on server versions of Windows.\n\nWhile a spanned volume spans across multiple hard disk drives (much like a RAID volume), it is not a RAID method. A spanned volume simply glues two disks together to create a volume without any redundancy or performance improvement."
+  },
+  {
+    "id": "storage_09",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which storage device uses aluminum platters for storing data?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "SD card",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "DVD disc",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "CD-ROM disc",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Hard disk",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "DLT tape",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Hard disks use magnetic disks and platters.\n\nOptical drives, such as DVD or CD-ROM drives, use a reflective surface that is read by an optical reader.\n\nFlash devices, such as SD cards, store information using programmable non-volatile flash memory.\n\nDLT drives use magnetic tape."
+  },
+  {
+    "id": "storage_10",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is an advantage of RAID 5 over RAID 1?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RAID 5 improves performance over RAID 1.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "RAID 5 provides redundancy for the disk controller.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "RAID 5 provides redundancy; RAID 1 does not.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "RAID 5 continues to operate with a failure in two disks. RAID 1 can only operate with a failure of one disk.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "RAID 5 provides both fault tolerance and improved performance. RAID 1 (utilizing mirroring) provides only fault tolerance with no performance benefit. Both RAID 5 and RAID 1 can only sustain a loss of one disk in the set. Use multiple disk controllers to provide redundancy for the disk controller."
+  },
+  {
+    "id": "storage_11",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are a sales representative for a large pharmaceutical company. You often want to share information from your laptop quickly with customers during onsite visits.\nWhich of the following storage media would BEST allow you to quickly and inexpensively share your files with the customers?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "HDD drive",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "SDHC memory card",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "SSD drive",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Flash drive",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "A flash drive (sometimes called a thumb drive) uses flash memory to permanently store data on flash memory chips. You can plug a flash drive into the appropriate port (such as a USB port) on a PC and have it function as a standard hard drive. In this scenario, you would simply plug it externally into your laptop, copy the files, and then leave it with the customer to copy to their own device.\n\nWhile an SSD drive can act as an external drive, an SDD drive is much more expensive than a flash drive and would not be practical to leave with the customer.\n\nWhile you normally install an HDD drive on a PC, an HDD drive can be housed for external access as well. However, it would be a very expensive solution compared to simply leaving a flash drive with the customer.\n\nWhile an SDHC memory card might be a solution, it would only work if the customer had a PC with a memory card reader. The flash drive uses a USB connector, which is a much more universal method of connecting to a PC or other portable computing device."
+  },
+  {
+    "id": "storage_12",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are configuring a new system, and you want to use a RAID 0 array for the operating system using SATA disks and a special controller card that includes a RAID processor.\nWhich RAID method should you use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Software",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Operating system",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "JBOD",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Hardware",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Hardware RAID uses a special controller card that includes a RAID processor. While it is the most expensive RAID method, it provides much better performance and is more reliable than other methods.\n\nSoftware RAID uses a driver and the system CPU for controlling RAID operations. While some RAID controller cards support RAID configuration, they do not have an onboard RAID processor and are classified as software RAID.\n\nOperating system RAID uses RAID features within the operating system. Like software RAID, the system CPU is used for RAID operations.\n\nJBOD (Just a Bunch of Disks) is a spanned volume."
+  },
+  {
+    "id": "storage_13",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You work for a small company as the human resources specialist. Since the company is fairly small, you are maintaining all of the employee information on your desktop computer, which is running Windows 11. This computer has two high-capacity hard disks. You want to ensure that this information is protected from a hard disk failure, so you want to set up a Windows software RAID system.\nWhich of the following would be your BEST solution?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Use striped volumes.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Use RAID 5 volumes.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Use spanned volumes.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Use mirrored volumes.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "A Windows software RAID system can be configured on Windows 11 using the Windows Disk Management tool. Of the available options from within Disk Management, you would need to configure a mirrored volume to protect your data from a disk failure. Disk mirroring requires two available drives with sufficient storage. Once configured, the data written to a mirrored volume is duplicated to both drives. This duplication, or mirroring, means that if one of the mirrored drives fails, all of the data can still be retrieved from the remaining good drive.\n\nA spanned volume is a dynamic volume consisting of disk space on more than one physical disk. This method does not duplicate the data. If a spanned volume drive fails, the data is lost.\n\nA striped volume uses the free space on more than one physical hard disk to create a bigger volume (similar to a spanned volume). However, a striped volume writes across all volumes in the stripe in small blocks, distributing the load across the disks in the volume. In other words, when a single file is written, some of the file will be on one disk, and the rest of the file will be on another. This makes writing files faster. It does not, however, protect the data in the event of a disk failure.\n\nRAID 5 requires more than two disks."
+  },
+  {
+    "id": "storage_14",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You want to create a software RAID 1 array on your Windows 11 workstation using Disk 1 and Disk 2.\nWhat do you need to do with Disk 1 and Disk 2 before configuring them for a RAID 1 array?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Format both disks with the same file system.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Convert the disks from basic to dynamic.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Convert the disks from dynamic to basic.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Verify that both disks are the same size.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "You can only use dynamic disks to create a software RAID array in Windows. Therefore, you need to convert Disk 1 and Disk 2 (using the Disk Management tool) from basic disks to dynamic disks.\n\nWith RAID 1, you write redundantly on both disks. If the disks are not the same size, the mirroring is limited to the size on the smaller disk. However, this does not impact preparing the disks for use in a RAID 1 array.\n\nWhile it's important to configure the disks with a file system, this step is part of configuring the RAID 1 software array. You do not need to do this before the configuration process."
+  },
+  {
+    "id": "storage_15",
+    "topic": "Storage Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are building a new computer that will contain two hard disks. To provide increased performance, you have decided to configure the drives using RAID technology.\nWhich of the following will BEST meet your needs?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RAID 5",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "RAID 0",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "RAID 2",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "RAID 1",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "RAID 0 (striping) uses two or more disks and provides an increase in performance but not fault tolerance. RAID 1 (mirroring) uses two disks to provide fault tolerance but not an increase in performance. RAID 5 uses a minimum of three disks and provides both fault tolerance and an increase in performance."
+  },
+{
     "id": "bios_01",
     "topic": "BIOS and UEFI",
     "type": "single",

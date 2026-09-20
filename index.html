@@ -1930,6 +1930,316 @@ const DEFAULT_QUESTIONS = [
     "explanation": "RAID 0 (striping) uses two or more disks and provides an increase in performance but not fault tolerance. RAID 1 (mirroring) uses two disks to provide fault tolerance but not an increase in performance. RAID 5 uses a minimum of three disks and provides both fault tolerance and an increase in performance."
   },
 {
+    "id": "mem_01",
+    "topic": "System Memory",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "Which of the following are true when working with dual-, triple-, and quad-channel memory module sets? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "You can mix modules with different capacities within a set.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "You must install modules in matching sets (capacity and speed).",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "You need to install memory modules next to each other in a set.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "You should use the same capacity modules for a set.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "You can assign memory slots to memory modules in BIOS/UEFI.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The memory modules within a set must be exactly the same in capacity and speed configuration, preferably from the same manufacturer and the same model.\n\nYou need to install memory modules in the slots specified in the motherboard documentation. Normally, the modules in a set are spaced one slot apart (such as slots 1 and 3).\n\nWhile you can configure some memory parameters in BIOS/UEFI, you cannot re-assign memory slots to memory modules in BIOS/UEFI."
+  },
+  {
+    "id": "mem_02",
+    "topic": "System Memory",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You notice your applications are loading and running slowly when you switch between them. You also notice that your hard disk drive light is constantly lit.\nWhich of the following is the BEST option to stop this problem from happening frequently on your system?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Configure a larger paging file on the HHD.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Install more physical RAM.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Reboot the system at the first indication of the problem.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Install a larger CPU.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The hard disk driver staying lit constantly, applications loading slowly, and applications running slowly are symptoms of disk thrashing. The recommended fix for disk thrashing is to install more physical RAM.\n\nRebooting the system will not fix a disk thrashing problem.\n\nInstalling a larger CPU will not fix a disk thrashing problem.\n\nConfiguring a larger paging file on the HHD will improve the performance of the virtual memory but will not prevent disk thrashing. If you have inadequate physical RAM for what you are continuously using your system for, the kernel will constantly swap, which will cause disk thrashing. So installing more physical RAM would be the best choice."
+  },
+  {
+    "id": "mem_03",
+    "topic": "System Memory",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary way that DDR2, DDR3, DDR4, and DDR5 memory improve performance over earlier DDR versions?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "By increasing the memory clock speed",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "By using smaller memory modules to improve heat dissipation",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "By multiplying the bus speed to allow higher bandwidth",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "By reducing the number of memory cells required for data storage",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "DDR2 and subsequent DDR generations improve performance by multiplying the bus speed, which enhances bandwidth without increasing memory device speed to the point of overheating or instability. Simply increasing the memory clock speed or reducing module size alone would not achieve the same scalable performance improvements. Reducing memory cells would decrease capacity, not enhance performance."
+  },
+  {
+    "id": "mem_04",
+    "topic": "System Memory",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "What are the advantages of DDR4 over DDR3, assuming the same operating frequency? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "DDR4 doubles the data transfer rate of DDR3.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "DDR4 includes a buffer between the data bus and the memory.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "DDR4 accepts four consecutive 64-bit words per bus clock cycle.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "DDR4 accepts sixteen consecutive 64-bit words per bus clock cycle.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "DDR4 uses less power than DDR3.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "DDR4 doubles the data transfer rate of DDR3 and generally requires less voltage than DDR3 memory.\n\nDDR4 accepts eight consecutive 64-bit words per bus clock cycle, the same as found in DDR3.\n\nDDR3 and DDR4 memory include a buffer between the data bus and the memory."
+  },
+  {
+    "id": "mem_05",
+    "topic": "System Memory",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are trying to push a memory module into a memory slot, but it is not seating properly.\nWhat is the MOST likely issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "You are trying to install a single-sided memory module in a double-sided slot.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "You need to clear debris from the memory slot.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "You need to push down the slot tabs and move them back.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "You are trying to install the memory module backward in the memory slot.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Most memory is keyed to prevent it from being installed backward or in incompatible slots. In this scenario, the most likely issue is that you are trying to install the memory module backward in the memory slot.\n\nThere are no memory slots that are specific to single-sided or double-sided memory modules.\n\nAn empty slot normally has the slot tabs pushed down and back.\n\nWhile there may be some debris in a memory slot, this is not likely the cause."
+  },
+  {
+    "id": "mem_06",
+    "topic": "System Memory",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "How is the peak transfer rate for DDR-200 (PC1600) calculated?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "By halving the data rate to account for transfer delays",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "By multiplying the data rate (200 MT/s) by 8 bytes per transfer",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "By using the clock speed of the memory bus only",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "By multiplying the clock speed by the system memory capacity",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The peak transfer rate for DDR-200 (PC1600) is calculated by multiplying the data rate, which is 200 MT/s, by 8 bytes per transfer, resulting in 1600 MBps. This approach uses the data rate and transfer size rather than just clock speed, system memory capacity, or adjusting for delays."
+  },
+  {
+    "id": "mem_07",
+    "topic": "System Memory",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following is simulated memory that is created through a paging file on the hard drive?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Virtual memory",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "RAM",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Disk thrashing",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "VMM",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Virtual memory is simulated memory that is created through a paging file on the hard drive.\n\nDisk thrashing is when the amount of physical memory is so low that data must constantly be moved from physical RAM to disk and back again.\n\nRAM stands for random access memory, which is a system's physical memory.\n\nVMM is the Virtual Memory Manager, which is the utility in charge of swapping data between physical memory and the hard disk."
+  },
+  {
+    "id": "mem_08",
+    "topic": "System Memory",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You have just received an order for various system components you placed several weeks ago. One of the components is labeled as SO-DIMM memory.\nWhich of the following was this memory MOST likely purchased for?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Printers",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Servers",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Desktop workstations",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Laptop computers",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Small outline dual in-line memory modules (SO-DIMM) is a compact form factor of DIMM. It is typically used in smaller computers, such as laptops.\n\nServers and desktop workstations normally use DIMM memory.\n\nPrinters normally use SIMM memory."
+  },
+  {
+    "id": "mem_09",
+    "topic": "System Memory",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What might be necessary to enable dual-channel mode on a dual-channel motherboard?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Using mismatched memory modules to force dual-channel compatibility",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Activating dual-channel mode within the PC's firmware",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Installing modules with higher timings and latency to increase stability",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Replacing the motherboard's memory slots with single-channel slots",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Enabling dual-channel mode may require activation in the system setup program within the PC's firmware. Simply replacing memory slots or using mismatched modules would not enable dual-channel and could reduce performance. Modules with higher timings do not inherently improve stability and may impact performance negatively."
+  },
+  {
+    "id": "mem_10",
+    "topic": "System Memory",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Your server runs in quadruple-channel memory mode.and uses a dedicated memory controller per memory channel.\nHow many memory controllers are being used?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Eight",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Four",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Two",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "One",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Dual-channel systems use two memory controllers, while triple-channel systems use three memory controllers. Quadruple-channel (quad-channel) systems use four memory controllers. Each memory controller can communicate with one or more memory modules at the same time."
+  },
+{
     "id": "bios_01",
     "topic": "BIOS and UEFI",
     "type": "single",

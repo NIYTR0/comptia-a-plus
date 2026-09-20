@@ -510,7 +510,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "\"Questioning the Obvious\" involves checking simple and obvious potential causes first. Ensuring that the Wi-Fi is enabled on the laptop is a basic step that could immediately resolve the issue without requiring more complex troubleshooting.\n\nReinstalling network drivers is a more advanced troubleshooting step. Before taking such action, you should check simpler causes, such as whether the Wi-Fi is enabled on the laptop.\n\nReplacing the router is an extreme step that should only be considered after ruling out all other potential causes, including basic checks like verifying the laptop's Wi-Fi settings.\n\nEscalation is only necessary if the problem cannot be resolved after performing basic troubleshooting steps. \"Questioning the Obvious\" focuses on addressing simple potential causes before involving other teams."
   },
 {
-    "id": "it_spec_06",
+    "id": "imc_01",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -540,7 +540,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "The serial port is a legacy connection interface that transmits data one bit at a time over a single wire and is known as RS-232.\n\nWhile it is true that a serial port transmits data one bit at a time over a single wire, it is not commonly used for connecting modern USB devices. USB has largely replaced serial ports for many functions, but they are not the same interface.\n\nSerial ports do not support high-speed data transmission rates similar to USB. They are considered legacy interfaces and have been largely replaced by USB for connecting external modems.\n\nSerial ports do not use a 15-pin interface; they typically use a 9-pin or 25-pin interface. Additionally, they are not used for connecting video devices; VGA or DVI interfaces are used for video connections."
   },
   {
-    "id": "it_spec_07",
+    "id": "imc_02",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -570,7 +570,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "A Lightning port is found only on Apple’s mobile devices. The Lightning connector is reversible.\n\nUniversal Serial Bus (USB) is the standard meaning of connecting most peripheral device types to a computer. A host controller manages USB.\n\nThunderbolt displays interfaces like the DisplayPort or HDMI and a general peripheral interface like USB.\n\nSATA (serial advanced technology attachment) is the standard means of connecting internal storage drives within a desktop PC. STAT uses cables of up to 1 m terminated with compact 7-pin connectors. Each SATA host adapter port supports a single device."
   },
   {
-    "id": "it_spec_08",
+    "id": "imc_03",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -600,7 +600,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "A technician can provision a solid-state drive (SSD) in an adapter card form factor. These often use an M.2 interface. As well, an M.2 port orients horizontally.\n\nThe motherboard will contain several serial advanced technology attachment (SATA) ports to connect one or more fixed drives.\n\nThere is also an external SATA (eSATA) standard for the attachment of external drives, with a 2 m (78 in.) cable.\n\nWithin an enterprise local area network (LAN) or datacenter, a storage area network (SAN) provisions access to a configurable pool of storage devices that application servers can use."
   },
   {
-    "id": "it_spec_09",
+    "id": "imc_04",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -630,7 +630,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "RS-232 serial communication requires the COM port settings on the laptop to match the device's settings. Mismatched parameters, such as baud rate or parity, can prevent successful communication. Analyzing and adjusting these settings is a logical step in troubleshooting the issue.\n\nVGA cables are designed for video transmission, not serial communication. Replacing the RS-232 cable with a VGA cable would not resolve the issue and demonstrate a misunderstanding of the cable's purpose.\n\nUpdating firmware is not directly related to analyzing the issue with the serial connection. Additionally, the device may not support firmware updates via USB if it is a legacy device relying on RS-232 for management.\n\nPS/2 ports are designed for connecting keyboards and mice, not for serial communication. Using a PS/2-to-serial adapter would not address the issue and is not a valid troubleshooting step for RS-232 connections."
   },
   {
-    "id": "it_spec_10",
+    "id": "imc_05",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -660,7 +660,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "RS-232 serial cables are commonly used to connect to the console ports of network equipment for device management. Since most modern laptops do not have built-in serial ports, a USB-to-serial adapter is often required to establish the connection. In addition, the vendor may provide a serial cable specifically designed to be used with the hardware.\n\nVGA cables are used for video transmission, not for serial communication or device management. The console port on a network switch is not designed for video output.\n\nDVI cables are designed for video output, not for serial communication. Additionally, Ethernet ports are used for network connectivity, not for connecting to console ports.\n\nPS/2 cables are used for connecting older keyboards and mice, not for serial communication or network device management. The console port on a switch requires an RS-232 serial connection, not a PS/2 connection."
   },
   {
-    "id": "it_spec_11",
+    "id": "imc_06",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -690,7 +690,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "An x8 card will fit in an x8 or x16 socket. Therefore, the card should work at x8, but in some circumstances, it may only work at x1.\n\nIt is not that the speed is slower since the card is only working at x1. It may also be possible to fit a longer card into a shorter slot, referred to as down-plugging.\n\nIt is not that the RAM does not match the Peripheral Component Interconnect Express (PCIe) card. Each PCIe adapter card supports a specific number of lanes, typically x1, x4, x8, or x16.\n\nIf the operator noticed that performance was sluggish, then it was not working fine."
   },
   {
-    "id": "it_spec_12",
+    "id": "imc_07",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -720,7 +720,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "DVI connectors come in different types (DVI-I, DVI-D, and DVI-A) with varying pin configurations. Ensuring that the adapter cable matches the type of DVI port on the monitor is essential for compatibility. If the pin configuration does not match, the connection will not work, which is likely the issue in this scenario.\n\nDVI does not support audio output. Replacing the adapter cable for this reason would not resolve the issue, as audio is irrelevant to the problem described in the scenario.\n\nThe scenario specifies that the monitor uses a DVI connection, not a VGA. Using a VGA to HDMI adapter would not address the compatibility issue and would not work with the DVI monitor.\n\nThere is no specific need for drivers to use DVI adapters. Most adapter cables are plug-and-play and do not require additional software. This answer introduces an unnecessary step that is not relevant to the scenario."
   },
   {
-    "id": "it_spec_13",
+    "id": "imc_08",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -750,7 +750,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "The x64 chip is the best and most powerful type to use. The x86 instruction set is extended for 64-bit operation as the x64 instruction set, developed initially by AMD as AMD64 or x86-64.\n\nThis x86 instruction set defines a CPU as IBM PC compatible. Intel and Advanced Micro Devices (AMD) designed and manufactured x86 PC processors.\n\nAn advanced reduced instruction set computing (RISC) machine implements a system-on-chip (SoC). SoC means that all controllers, video, sound, networking, and storage are part of the CPU.\n\nAn option for advanced RISC machine (ARM) support is emulation. The ARM device runs a facsimile of an x86 or x64 environment. Windows 10 ARM-based devices use emulation to run x86 and x64 software apps."
   },
   {
-    "id": "it_spec_14",
+    "id": "imc_09",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -780,7 +780,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "That VA displays provide better color accuracy and viewing angles than TN displays is the correct answer. VA panels improve color reproduction and viewing angles compared to TN panels, making them better for general use.\n\nThat VA displays offer the fastest response times, making them ideal for fast-action gaming is incorrect. TN panels are typically faster than VA panels in response times.\n\nThat VA displays completely eliminate color shifting, even when viewed from extreme angles is incorrect. VA panels can still show some color shifting at extreme angles.\n\nThat VA displays maintain consistent color accuracy and viewing angles that match or exceed IPS panels is incorrect. IPS panels generally provide more consistent color accuracy and viewing angles than VA."
   },
   {
-    "id": "it_spec_15",
+    "id": "imc_10",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -810,7 +810,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "Cat 5 cable supports the older 100 Mbps Fast Ethernet standard. It is no longer commercially available. A technician will probably need to rewire the network cabled with Cat 5 to support Gigabit Ethernet.\n\nCat 5e would still be an acceptable choice for providing Gigabit Ethernet links for client computers, but most sites now opt to install Cat 6 cable.\n\nThe improved construction standards for Cat 6 mean that it is more reliable than Cat 5e for Gigabit Ethernet, and it can also support 10 Gbps over a reduced range.\n\nCat 6A supports 10 Gbps over 100 m, but the cable is bulkier and heavier than Cat 5e and Cat 6, and the installation requirements are more stringent."
   },
   {
-    "id": "it_spec_16",
+    "id": "imc_11",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -840,7 +840,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "Some motherboards allow users to enable or disable specific slots through the BIOS/UEFI settings. Ensuring the PCI slot is enabled is a logical troubleshooting step when the NIC is not recognized.\n\nWhile PCIe is a newer interface, replacing the NIC without confirming the root cause of the issue is unnecessary and may not resolve the problem.\n\nDIMM slots are for RAM modules, not for NICs or other adapter cards. This is not a valid troubleshooting step.\n\nThe CPU does not directly control the PCI slot's functionality. Replacing the CPU is unrelated to resolving this issue."
   },
   {
-    "id": "it_spec_17",
+    "id": "imc_12",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -870,7 +870,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "Most modern 24-pin ATX connectors are designed to be backward compatible with 20-pin motherboard connectors. The extra 4 pins can be left hanging off the side without causing any issues, ensuring proper power delivery.\n\nCutting the connector would permanently damage the power supply and is unnecessary, as the 24-pin connector is designed to work with 20-pin connectors.\n\nWhile an adapter could work, it is not required because the 24-pin connector is already compatible with 20-pin connectors.\n\nReplacing the power supply is unnecessary, as the 24-pin connector is designed to work with 20-pin motherboards."
   },
   {
-    "id": "it_spec_18",
+    "id": "imc_13",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -900,7 +900,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "RS-232 serial ports support data rates up to about 115 Kbps, which is significantly slower than modern interfaces like USB. The slower data transmission rate is one of the primary reasons RS-232 has been largely replaced by USB in modern computing.\n\nRS-232 serial ports are still compatible with modern operating systems, often through the use of USB-to-serial adapters. The issue is not compatibility but rather the slower data rates and less sophisticated signaling compared to modern interfaces.\n\nRS-232 does support digital data transmission. However, it uses less sophisticated signaling methods compared to modern interfaces like USB, which makes it less efficient and slower.\n\nWhile RS-232 connectors like DB9 are larger than USB-C, the physical size is not the primary reason for their obsolescence. The main issue is their slower data transmission rates and limited functionality compared to modern alternatives."
   },
   {
-    "id": "it_spec_19",
+    "id": "imc_14",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,
@@ -930,7 +930,7 @@ const DEFAULT_QUESTIONS = [
     "explanation": "Molex power connectors are commonly used to provide power case fans for older hard disk drive (HDD). Molex connectors are 4-pin power connectors traditionally found in older computer systems. They are often used to power devices such as case fans, optical drives, and older hard disk drives. They provide a reliable power connection but lack the more modern features found in newer power connectors.\n\nA SATA SSD does not use a Molex connector. Instead, it relies on a SATA power connector, which is specifically designed for SATA-based drives and offers a more compact and streamlined design compared to Molex.\n\nA monitor is powered externally through its own dedicated power cable and does not connect directly to the computer's internal power supply.\n\nA USB external hard drive is powered through its USB connection or via an external power adapter."
   },
   {
-    "id": "it_spec_20",
+    "id": "imc_15",
     "topic": "Installing Motherboards and Connectors",
     "type": "single",
     "requiredSelections": 1,

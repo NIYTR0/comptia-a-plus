@@ -4988,6 +4988,156 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "If disk activity lights (or LED status indicators) are not active, the whole system might not be receiving power, or the individual HDD could be faulty.\n\nA loud or grinding noise, or any sort of clicking sound, is a sign of a mechanical problem.\n\nAn LED status itself does not determine data loss. For example, if the HDD was part of a RAID 5 group, data is still available with one faulty disk; two disk failures would result in some data loss.\n\nA redundant array of independent disks (RAID) failure depends on the RAID type. If part of a RAID 0 group, then a single disk failure results in failure to the RAID. There is no indication of that here."
+  },
+{
+    "id": "net_types_01",
+    "topic": "Network Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which type of network is best suited for a company that operates across multiple locations in a city?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "LAN",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "MAN",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "WLAN",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "PAN",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A MAN (Metropolitan Area Network) is ideal for a company with networks spread across multiple locations in a single city, as it bridges the gap between local LANs and broader WANs. LANs are restricted to a single site, PANs cover very small areas, and WLANs are limited to local, often indoor, wireless communication."
+  },
+  {
+    "id": "net_types_02",
+    "topic": "Network Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following features is typically included in a datacenter to ensure a high level of availability?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Gaming equipment",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Climate control",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Retail facilities",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Basic electrical service",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Datacenters include climate control to maintain optimal temperatures and protect hardware. Gaming equipment is irrelevant to datacenter operations. Datacenters require dedicated, specialized power solutions instead of basic service. Retail facilities are unrelated to datacenter functions."
+  },
+  {
+    "id": "net_types_03",
+    "topic": "Network Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is an example of a common PAN technology?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Fiber optic",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Wi-Fi",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Bluetooth",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Ethernet",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Bluetooth is commonly used in Personal Area Networks (PANs), connecting devices over a short range. Ethernet and fiber optic are more suited for LAN or WAN connections, while Wi-Fi is more common for wireless LANs, not PANs."
+  },
+  {
+    "id": "net_types_04",
+    "topic": "Network Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which device is responsible for forwarding traffic between networks?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Access point",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Router",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Network interface",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Switch",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Routers are used to connect multiple networks together. When sending data between networks, the router is responsible for forwarding the data to the proper network. Switches are used to connect multiple computers inside of a network together. Access points are used to connect wireless network hosts. The network interface (NIC) converts the digital data into a signal that can be transmitted along the transmission medium."
+  },
+  {
+    "id": "net_types_05",
+    "topic": "Network Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following is a characteristic of most private or enterprise WANs?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Utilizes Bluetooth for data transfer",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Consists solely of wireless connections",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Uses equipment leased from an ISP",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Only operates within a single building",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Most private or enterprise WANs use equipment and cabling leased from an ISP to connect LANs across multiple locations. WANs can operate over wide areas, unlike LANs, and do not rely solely on wireless or Bluetooth connections, as these are impractical for long distances."
   }
 ];
 

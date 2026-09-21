@@ -354,7 +354,7 @@
         </div>
     </main>
 
-    <div class="keyboard-hint">Shortcuts: [1-5] Select Option | [Space] Next Question | [&larr;] Previous | [E] Toggle Explanation</div>
+    <div class="keyboard-hint">Shortcuts: [1-6] Select Option | [Space] Next Question | [&larr;] Previous | [E] Toggle Explanation</div>
 </div>
 
 <script>
@@ -5253,7 +5253,7 @@ function setupEventListeners() {
     document.getElementById('toggle-exp-btn').addEventListener('click', toggleExplanation);
 
     document.addEventListener('keydown', (e) => {
-        if (e.key >= '1' && e.key <= '5') {
+        if (e.key >= '1' && e.key <= '6') {
             const idx = parseInt(e.key) - 1;
             const qIndex = historyStack[historyIndex];
             const q = questions[qIndex];

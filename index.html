@@ -5138,6 +5138,456 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "Most private or enterprise WANs use equipment and cabling leased from an ISP to connect LANs across multiple locations. WANs can operate over wide areas, unlike LANs, and do not rely solely on wireless or Bluetooth connections, as these are impractical for long distances."
+  },
+{
+    "id": "network_hw_01",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following describes a benefit of using a patch panel?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It reduces the need for network cables.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "It eliminates the need for switches.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It amplifies signals over long distances.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It prevents wear and tear on switch ports.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "A patch panel prevents wear and tear on switch ports by serving as a static termination point for structured cabling. Short patch cables are used to connect the panel to the switch, making replacements easy without disturbing permanent cabling. Signal amplification is not a feature associated with patch panels. Switches are still required for network connectivity between connected devices. Patch panels do not reduce the number of cables needed; they simply organize them more effectively."
+  },
+  {
+    "id": "network_hw_02",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What function does an Ethernet switch perform when it receives a data frame?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It stores the frame until the destination device requests it.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "It discards the frame if the destination is not in its MAC address table.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It decodes the frame and forwards it to the appropriate port based on the destination MAC address.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "It broadcasts the frame to all ports.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "An Ethernet switch decodes the frame to identify both the source and destination MAC addresses and then forwards the frame to the port that corresponds to the destination MAC address in its table. This process makes data delivery more efficient by only sending data to the intended recipient, unlike broadcasting, which sends data to all connected devices. Broadcasting frames to all ports is inefficient and is characteristic of network hubs, not switches. Ethernet switches forward frames in real-time as long as the destination MAC address is known. Discarding frames without an entry in the MAC address table is incorrect because switches will flood the frame to all ports except the source, learning new addresses as responses are received."
+  },
+  {
+    "id": "network_hw_03",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "How do switches and bridges learn where devices are located on a network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "When a data packet enters a port, the destination MAC address is copied from the data packet header.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "When a data packet enters a port, the source MAC address is copied from the data packet header.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "When a data packet enters a port, the source IP address is copied from the data packet header.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "When a data packet enters a port, the destination IP address is copied from the data packet header.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Bridges and switches learn addresses by copying the MAC address of the source device from the data packet header and placing it in the MAC address table. The port number the data packet entered is also recorded in the table and associated with the source MAC address.\nA switch and/or bridge cannot record the destination MAC address because they do not know the port that is used to reach the destination device.\nBridges and switches operate at Layer 2 and do not use IP addresses (which exist at Layer 3)."
+  },
+  {
+    "id": "network_hw_04",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which IEEE PoE standard is most suitable for devices requiring around 25 W of power, such as advanced wireless access points and pan-tilt-zoom security cameras?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "802.3af",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "802.3bt Type 4",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "802.3at",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "802.3bt Type 3",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "802.3at (PoE+ or Type 2) provides up to 25 W of power, making it ideal for devices with higher energy demands like advanced wireless access points, pan-tilt-zoom security cameras, and video IP phones. 802.3af only supports up to 13 W, which is insufficient for these higher-power devices. 802.3bt Type 3 and Type 4 standards deliver even more power, up to 51 W and 73 W, respectively, and are intended for significantly larger power requirements, such as digital signage and LED lighting, which exceed the needs of devices covered under 802.3at."
+  },
+  {
+    "id": "network_hw_05",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the purpose of a patch panel?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To allow wireless devices to access the network through cabling",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "To provide a centralized point where wall port cables are connected to Ethernet switch ports",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "To serve as a power supply for connected devices",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "To directly connect computers to the Ethernet switch without additional components",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The patch panel serves as a centralized point where wall port cables are connected to Ethernet switch ports, allowing easy changes to network connections. Directly connecting computers to switches without a patch panel would limit flexibility in network management. Wireless devices do not require this cabling setup, as they connect via Wi-Fi. Patch panels do not supply power to devices (a PoE switch does); they organize and link network connections."
+  },
+  {
+    "id": "network_hw_06",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Why does an Ethernet switch eliminate the negative effects of collisions in a network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It assigns a separate collision domain to each port.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "It reduces the number of devices connected to the network.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It prevents devices from sending data at the same time.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It limits the amount of data transmitted to avoid congestion.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "An Ethernet switch eliminates collisions by assigning a separate collision domain to each port, allowing devices to communicate independently. This configuration ensures that each device connected to the switch operates in full-duplex mode, enabling simultaneous sending and receiving of data at the network's full speed. Reducing the number of devices does not address collisions, as collisions occur based on how traffic is handled, not the number of connections. Preventing devices from sending data simultaneously is unnecessary because full-duplex communication inherently supports simultaneous transmissions. Limiting data to avoid congestion relates to traffic management, not collision prevention, which is handled by creating isolated collision domains per port."
+  },
+  {
+    "id": "network_hw_07",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the purpose of a patch cord?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It links a port on the patch panel to a port on the Ethernet switch.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "It routes network traffic between different floors in a building.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It terminates cables into insulation displacement connectors (IDCs).",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It connects the computer directly to the Ethernet switch.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A patch cord connects a port on the patch panel to a port on the Ethernet switch, completing the link from the wall port to the network. The computer connects to the wall port, not directly via the patch cord, to the ethernet switch. Terminating cables into IDCs is done at the back of the patch panel, not by the patch cord. While patch cords connect devices, they are not specifically used for routing network traffic between floors."
+  },
+  {
+    "id": "network_hw_08",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Why is it important to label ports on a patch panel?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To provide redundancy in case of failure",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "To increase network speed",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To prevent data collisions",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "To reduce errors during troubleshooting",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Labeling ports reduces errors during troubleshooting by making it easy to identify and match connections between the patch panel and switch. Proper labeling also speeds up network changes and repairs. Increasing network speed depends on hardware specifications, not labeling. Providing redundancy involves backup devices or paths, not labeling. Data collisions are eliminated by switches, which provide separate collision domains, not by labeling."
+  },
+  {
+    "id": "network_hw_09",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What differentiates a managed switch from an unmanaged switch?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "A managed switch can be configured with security settings and advanced features.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "A managed switch does not connect devices within a network.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "A managed switch operates only with a specific ISP's network.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "A managed switch has no physical ports for network connections.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A managed switch can be configured with security settings and advanced features, offering greater control and functionality for larger networks. Unlike unmanaged switches, it provides options for network management and monitoring. Managed switches are not limited to specific ISPs and are specifically designed to connect devices within a network. They also come with physical ports for network connections, often in large quantities."
+  },
+  {
+    "id": "network_hw_10",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the purpose of bonding multiple Ethernet NIC ports?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To create a higher-speed link by combining the speeds of multiple ports",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "To allow one port to function as a backup in case of a failure",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To improve signal quality for distant connections",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "To connect both copper and fiber connections simultaneously",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Bonding multiple Ethernet NIC ports enables a higher-speed link by combining the individual speeds of each port, effectively increasing the data transfer rate. Improved signal quality for long distances is achieved through cabling standards or signal boosters, not by bonding ports. Using one port as a backup would be achieved through redundancy settings, not bonding, and simultaneous copper and fiber connections requiring specific NICs with different port types rather than bonded ports."
+  },
+  {
+    "id": "network_hw_11",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are using a patch panel to connect the computers in your building to the appropriate switches, and you need to connect the Ethernet wires from the building network port cables to the patch panel.\nWhere do you connect the wires on a patch panel?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "You connect the outgoing wires to the front and the incoming wires to the back.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "You connect the wires to the backside of the panel.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "You connect the wires to the front side of the panel.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "You connect the incoming wires to the front and the outgoing wires to the back.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "All network ports in a building terminate at a patch panel. The Ethernet cables are punched down and terminate on the backside of the patch panel.\nThe front of the patch panel consists of RJ-45 ports. An Ethernet cable runs from the patch panel to the network switch to provide the connection between a device that is connected to the network port and the switch.\nThere are no specified incoming or outgoing wires on an Ethernet cable."
+  },
+  {
+    "id": "network_hw_12",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A technician determines that an older network hub that connects 24 workstations is performing poorly due to excessive network collisions.\nWhich of the following network devices would be the BEST replacement?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Switch",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Bridge",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Patch panel",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Router",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A switch maintains a table of MAC addresses by port and forwards network data packets to only the port that matches the MAC address. This significantly reduces collisions.\nA router manages IP traffic between networks.\nA bridge separates two network segments and forwards data packets from one segment to another.\nA patch panel organizes network cables and connects inbound and outbound cables."
+  },
+  {
+    "id": "network_hw_13",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Why might a company choose to use modular switches in its network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To avoid using racks for network equipment",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "To provide wireless connectivity to employees",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To limit the number of devices connected to the network",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "To interconnect multiple switch units through a fast backplane",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Modular switches allow companies to interconnect multiple switch units via a fast communications backplane, enabling the management of many access ports in a compact design. Modular switches are typically mounted in racks for efficient space use. They do not limit device connections but rather facilitate large networks. Additionally, they do not provide wireless connectivity; they are specifically for wired networks."
+  },
+  {
+    "id": "network_hw_14",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What component allows PoE functionality when a switch does not support PoE?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Ethernet splitter",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Endspan switch",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Power adapter",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "PoE injector",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "A PoE injector (also known as a midspan device) enables PoE functionality when a switch does not natively support it. It connects between the switch and the powered device, injecting power into the Ethernet cable while preserving data connectivity. An endspan switch is a PoE-enabled switch that directly provides power without requiring additional hardware, which is different from using an injector. A power adapter provides local power to a device but does not integrate with Ethernet cabling. An Ethernet splitter splits network signals but does not provide power delivery, making it unsuitable for PoE functionality."
+  },
+  {
+    "id": "network_hw_15",
+    "topic": "Network Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Currently, your company is in the process of upgrading security in the company headquarters building by installing biometric sensors to limit access to specific rooms.\nYour network switches are PoE-enabled, which allows biometric sensors to connect to switches without an external power source.\nWhich of the following PoE standards is designed for use with biometric sensors that require 25 watts?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "802.11n",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "802.1X",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "802.3af (PoE)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "802.3at (PoE+)",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "802.3at PoE+ provides a maximum of 30 watts of power, which is designed for use with devices like biometric sensors and tablets.\n802.3af POE allows powered devices to draw up to about 13 W. This is not enough watts for the device.\n802.1X is a network access control/authentication standard, not a power‑delivery standard. It governs how devices authenticate to the network; it does not define how power is delivered over Ethernet.\n802.11n is a wireless networking standard (Wi‑Fi) and is unrelated to PoE."
   }
 ];
 

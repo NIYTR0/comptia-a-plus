@@ -6043,6 +6043,481 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "A tone generator and probe can be used to identify the wall jack connected to the severed wire. The tone generator can be attached to the severed wire, and the probe will sound when it is brought close to the connected wall jack.\nA multimeter measures voltage, current, and resistance on a wire.\nA loopback plug can be plugged into a network adapter to test whether the NIC can send and receive properly.\nA cable stripper is used to cut away the plastic jacket or coating from a network cable."
+  },
+{
+    "id": "wnt_01",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is Bluetooth Low Energy (BLE) primarily designed for?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Enabling backward compatibility with all previous Bluetooth versions",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Large file transfers between computers and mobile devices",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Continuous streaming of high-definition video content",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Small battery-powered devices that transmit small amounts of data infrequently",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Bluetooth Low Energy (BLE) is designed specifically for small battery-powered devices, transmitting small amounts of data occasionally to conserve power. BLE is not intended for continuous high-bandwidth applications like video streaming or large file transfers. BLE is not backward compatible with classic Bluetooth, although some devices can support both BLE and classic Bluetooth simultaneously."
+  },
+  {
+    "id": "wnt_02",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "How do adapters supporting Bluetooth versions 3 and 4 achieve faster data transfer rates?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "By using infrared technology for improved connectivity",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "By negotiating an 802.11 radio link for large file transfers",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "By increasing the Bluetooth signal range",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "By doubling the Bluetooth frequency to enhance speed",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Adapters supporting Bluetooth versions 3 and 4 can achieve faster data transfer rates by negotiating an 802.11 radio link, which allows for higher speeds when transferring large files. Increasing signal range does not directly impact speed, and Bluetooth does not use infrared technology. Doubling the frequency is not a method used to increase speed in Bluetooth connections."
+  },
+  {
+    "id": "wnt_03",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the advantage of using the same SSID for both frequency bands on a dual-band access point?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It forces devices to use only the 2.4 GHz band.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "It allows devices to automatically connect to the band with the strongest signal.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "It prevents interference from nearby networks.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It restricts users to manual selection of the frequency band.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Using the same SSID for both bands allows devices to automatically connect to the band with the strongest signal, improving connectivity and simplifying network selection for the user. Forcing devices to a specific band or requiring manual selection would limit flexibility. Using the same SSID does not inherently reduce interference from nearby networks, which is managed through channel configuration."
+  },
+  {
+    "id": "wnt_04",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician is upgrading the wireless network so that it can take advantage of \"multiple input multiple output\" (MIMO) to increase reliability and bandwidth. What standard is the technician upgrading the wireless network to?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "802.11n",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "802.11b",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "802.11a",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "802.11g",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "802.11n was the first Wi-Fi standard to introduce MIMO (Multiple Input Multiple Output) technology, which allows multiple antennas to transmit and receive data simultaneously. This increases the network's reliability, range, and bandwidth, making it suitable for environments that require enhanced performance.\n802.11g is an older standard that does not support MIMO. It operates at 2.4 GHz and offers lower speeds and ranges compared to 802.11n. 802.11b is one of the earliest Wi-Fi standards and does not support MIMO. It has a limited range and operates at slower speeds.\n802.11a operates at 5 GHz and offers higher speeds than 802.11b and 802.11g, but it does not support MIMO. It is primarily used for specific business applications requiring the 5 GHz band without MIMO capability."
+  },
+  {
+    "id": "wnt_05",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An organization located on a large piece of rural property needs to connect its office building on the north side of the property with its warehouse and shipping operation on the south side of the property. The organization decides to connect the locations using long-range fixed wireless. What frequency spectrum must the organization use to ensure that nobody else can use the same frequency band?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Licensed",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "802.11ax",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Unlicensed",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "DFS",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A licensed frequency spectrum provides exclusive access to a specific frequency band, ensuring that no other entities can use the same frequency in the area. This is especially useful for long-range, fixed wireless connections in rural areas where dedicated, interference-free communication is essential for reliable operation between distant locations. Unlicensed frequencies, such as the 2.4 GHz and 5 GHz bands, are open for public use, meaning that other organizations or individuals could potentially operate on the same frequencies, leading to interference and unreliable communication. 802.11ax (Wi-Fi 6) is a Wi-Fi standard, not a frequency spectrum type. It typically operates in unlicensed bands and is designed for high-density, short- to medium-range wireless networks, not long-range fixed wireless connections. DFS is a mechanism that allows Wi-Fi devices to avoid interference with radar systems by automatically selecting channels within the 5 GHz band. However, it does not provide exclusive access to frequencies, so other users could still be present on the same frequencies."
+  },
+  {
+    "id": "wnt_06",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary purpose of a Wi-Fi analyzer?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To reduce noise levels in wireless networks",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "To boost the signal strength of wireless networks",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To measure signal strength and troubleshoot performance issues",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "To create new wireless access points automatically",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A Wi-Fi analyzer is used to measure the signal strength of various networks and troubleshoot performance issues, helping to identify optimal channel configurations. It does not boost signals, create new access points, or directly reduce noise; rather, it analyzes existing conditions to assist in optimizing network performance."
+  },
+  {
+    "id": "wnt_07",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which dBm value is the most realistic and indicates a strong wireless signal in a typical environment?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "-80 dBm",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "-90 dBm",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "-65 dBm",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "-30 dBm",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "-65 dBm is generally considered a strong wireless signal, suitable for reliable connectivity. A value of -90 dBm or -80 dBm is weaker and likely to result in packet loss or disconnections. A value of -30 dBm is extremely strong, but -65 dBm is typically the threshold for good performance in common wireless."
+  },
+  {
+    "id": "wnt_08",
+    "topic": "Wireless Networking Types",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "Which of the following technologies does the 802.11ac wireless networking standard use to provide increased bandwidth and communication speeds? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Dual-band transmission to allow data to be transmitted at two frequencies at the same time",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Channel bonding to combine more channels in the 5 GHz band to allow more than double the bandwidth",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Peer-to-peer mode to allow each host to communicate directly with other hosts",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "MU-MIMO to allow multiple users to access the same channel",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "OFDM modulation to allow several parallel data channels to stream data",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The 802.11ac wireless network standard increases bandwidth and communication speeds using the following technologies:\nMU-MIMO is an enhancement to MIMO that allows multiple users to use the same channel. In addition to adding MU-MIMO, 802.11ac doubled the number of MIMO radio streams from four to eight.\nChannel bonding combines two non-overlapping 20 MHz channels into a single 40 MHz channel, resulting in slightly more than double the bandwidth.\nAll the other technologies are not used to increase the bandwidth and communication speeds for 801.11ac."
+  },
+  {
+    "id": "wnt_09",
+    "topic": "Wireless Networking Types",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "Which IEEE wireless standards specify transmission speeds up to 54 Mbps? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "802.1ac",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Bluetooth",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "802.11b",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "802.11a",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "802.11g",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Both the 802.11a and the 802.11g wireless standards specify maximum transmission speeds up to 54 Mbps.\nBluetooth is a wireless standard that is commonly used to connect peripheral devices and operates at 720 Kbps.\nThe 802.11b wireless standard provides transmission speeds of 11 Mbps.\nThe 802.11ac wireless standard provides transmission speeds of up to 2.6 Gbps."
+  },
+  {
+    "id": "wnt_10",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What distinguishes NFC from RFID technology?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "NFC and RFID are both designed for long-range communication.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "RFID is primarily used for contactless payments, while NFC is used for high-speed data transfer.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "NFC operates at very short ranges and can function as both tag and reader.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "NFC is used for tracking parcels over long distances.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "NFC operates at short ranges (typically up to two inches) and can act as both a tag and a reader, enabling peer-to-peer communication, which is suitable for contactless payments and quick data exchanges. RFID is primarily used for tracking and inventory over longer distances. RFID is less common for contactless payments, and neither technology is intended for high-speed or long-range data transfer."
+  },
+  {
+    "id": "wnt_11",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What feature of Bluetooth allows two devices to securely exchange data?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Only allowing communication between identical device types",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Pairing procedure that authenticates devices before communication",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Encrypted data stored in the device's internal memory",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Use of physical cables between devices",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Bluetooth devices use a pairing procedure to authenticate each other, ensuring a secure connection before data exchange. Bluetooth connections are wireless, not requiring physical cables, and the pairing process rather than memory encryption is what ensures secure data exchange. Bluetooth can connect different types of devices, not just identical ones."
+  },
+  {
+    "id": "wnt_12",
+    "topic": "Wireless Networking Types",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "Which of the following are characteristics of the 802.11g wireless standard? (Select three.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Operates in the 5.75 GHz range",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Backward compatible with 802.11a devices",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Maximum bandwidth of 11 Mbps",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Operates in the 2.4 GHz range",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "Backward compatible with 802.11b devices",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_f",
+        "text": "Maximum bandwidth of 54 Mbps",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "802.11g wireless networks:\nOperate in the 2.4 GHz range.\nHave a maximum bandwidth of 54 Mbps.\nAre backward compatible with 802.11b networks.\n802.11b provides 11 Mbps of bandwidth. 802.11a operates in the 5.75 GHz range. For this reason, 802.11a is not compatible with 802.11b or 802.11g."
+  },
+  {
+    "id": "wnt_13",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following wireless networking standards uses a frequency of 5 GHz and supports data transmission speeds up to 2.6 Gbps?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "802.11ac",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "802.11g",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "802.11b",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "802.11a",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "802.11n",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The 802.11ac standard uses the 5 GHz frequency and supports data transmission speeds up to 2.6 Gbps.\n802.11g and 802.11a both support data transmission speeds up to 54 Mbps.\n802.11b supports data transmission speeds up to 11 Mbps.\n802.11n supports data transmission speeds up to 600 Mbps."
+  },
+  {
+    "id": "wnt_14",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What does a high Signal-to-Noise Ratio (SNR) indicate in a wireless network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Low data transmission speed across the network",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Increased power output from the Wi-Fi device",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Stronger signal compared to background noise",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Higher noise levels that interfere with the signal",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A high Signal-to-Noise Ratio (SNR) means the signal is significantly stronger than the background noise, leading to better network performance. Higher noise levels would result in a lower SNR, not a higher one. SNR does not reflect power output or directly relate to data speed but impacts the quality and reliability of the connection."
+  },
+  {
+    "id": "wnt_15",
+    "topic": "Wireless Networking Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician is upgrading a grocery store's checkout lines with contactless payment devices. What type of wireless technology are the payment devices based on?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RFID",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "802.11a",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Bluetooth",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "NFC",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "NFC (Near Field Communication) is a wireless technology used in contactless payment systems. It enables secure, short-range communication between devices, such as payment terminals and contactless cards or smartphones, typically within a range of a few centimeters. 802.11a is a Wi-Fi standard used for wireless networking, not typically for secure, short-range communication required in contactless payments. Bluetooth is a wireless technology for short-range communication, but it is generally used for pairing devices over a slightly longer range than NFC and is not specifically optimized for secure contactless payments. While RFID (Radio Frequency Identification) is used for short-range identification and can sometimes be used in payment systems, NFC is specifically designed for secure, close proximity communication and is the primary technology in contactless payment systems."
   }
 ];
 

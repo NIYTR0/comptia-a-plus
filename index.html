@@ -6518,6 +6518,606 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "NFC (Near Field Communication) is a wireless technology used in contactless payment systems. It enables secure, short-range communication between devices, such as payment terminals and contactless cards or smartphones, typically within a range of a few centimeters. 802.11a is a Wi-Fi standard used for wireless networking, not typically for secure, short-range communication required in contactless payments. Bluetooth is a wireless technology for short-range communication, but it is generally used for pairing devices over a slightly longer range than NFC and is not specifically optimized for secure contactless payments. While RFID (Radio Frequency Identification) is used for short-range identification and can sometimes be used in payment systems, NFC is specifically designed for secure, close proximity communication and is the primary technology in contactless payment systems."
+  },
+{
+    "id": "clnh_01",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the main characteristic of an unmanaged switch?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It requires extensive configuration to function.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "It includes advanced security features for corporate networks.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It operates automatically without configuration.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "It typically has 64 or more ports for large networks.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "An unmanaged switch operates automatically without requiring configuration, making it ideal for small networks or home use. Extensive configuration is unnecessary for unmanaged switches, as they are designed for simple, plug-and-play functionality. Advanced security features are typical of managed switches for larger networks. Unmanaged switches often have fewer ports (4, 8, or 16 but can have more), but 64 ports are not a typical number of ports found on either a managed or unmanaged switch."
+  },
+  {
+    "id": "clnh_02",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "There are strict requirements for signal strength to minimize interference in the unlicensed long-range fixed wireless spectrum. What are the main components of these requirements? (Select all that apply.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Transmit power",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Effective isotropic radiated power",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Antenna gain",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "IEEE 802.11",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Transmit power is the fundamental strength of the radio, measured in dBm (decibel-milliwatts). Regulatory requirements limit the power output to minimize the potential for conflicts. Antenna gain is the amount that a signal boosts by directionality—focusing the signal in a single direction rather than spreading it over a wide area. Effective isotropic radiated power (EIRP) is signal strength from a transmitter, measured as the sum of transmit power, antenna cable/connector loss, and antenna gain, expressed in dBm. The IEEE 802.11 standards define frequencies, not signal transmission power components."
+  },
+  {
+    "id": "clnh_03",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are an IT consultant tasked with providing internet connectivity for a rural farm that lacks access to traditional wired internet options like DSL, cable, or fiber. The farm requires internet access for managing IoT devices, monitoring weather data, and conducting occasional video calls. After assessing the available options, you decide to recommend a Wireless Internet Service Provider (WISP). Which of the following configurations would BEST meet the farm's needs while ensuring reliable connectivity?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Install a WISP antenna on the farm's roof to establish a line-of-sight connection to the nearest WISP tower.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Use a satellite internet connection instead, as it provides better speeds and reliability than WISP in rural areas.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Install a WISP antenna in the farm's basement to protect it from weather-related damage.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Use a mobile hotspot device with a 4G LTE connection instead of WISP, as it is more cost-effective and widely available.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "WISPs rely on a line-of-sight connection between the customer's antenna and the WISP tower to provide reliable internet access. Installing the antenna on the roof ensures the best possible signal strength and minimizes obstructions like trees or buildings. Satellite internet typically has higher latency and weather disruptions compared to WISP. Basement installation would completely block the line-of-sight, and mobile hotspots are less reliable or scalable for heavy farm IoT demands."
+  },
+  {
+    "id": "clnh_04",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What distinguishes NFC from RFID technology?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "NFC and RFID are both designed for long-range communication.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "RFID is primarily used for contactless payments, while NFC is used for high-speed data transfer.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "NFC operates at very short ranges and can function as both tag and reader.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "NFC is used for tracking parcels over long distances.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "NFC operates at short ranges (typically up to two inches) and can act as both a tag and a reader, enabling peer-to-peer communication suitable for contactless payments and quick data exchanges. RFID is primarily used for tracking and inventory over longer distances. Neither technology is intended for high-speed or long-range data transfer."
+  },
+  {
+    "id": "clnh_05",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which type of network is best suited for a company that operates across multiple locations in a city?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "LAN",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "MAN",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "WLAN",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "PAN",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A MAN (Metropolitan Area Network) is ideal for a company with networks spread across multiple locations in a single city, bridging the gap between local LANs and broader WANs. LANs are restricted to a single site, PANs cover very small areas, and WLANs are limited to local wireless communication."
+  },
+  {
+    "id": "clnh_06",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A maintenance worker accidentally nicks a bundle of network cables routed to multiple wall jacks in a conference room. Only one of the cable's wires is severed. A technician is tasked with replacing the cable. Which of the following tools would the technician MOST likely use to identify which wall jack connects to the severed cable?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Loopback plug",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Multimeter",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Tone generator and probe",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Cable stripper",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A tone generator and probe can be used to identify the wall jack connected to the severed wire. The tone generator can be attached to the severed wire, and the probe will sound when brought close to the connected wall jack. A multimeter measures electrical properties, a loopback plug tests network interfaces, and a cable stripper cuts away outer cable jackets."
+  },
+  {
+    "id": "clnh_07",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician is installing a device with an inductor that will copy all the traffic coming through the cable to a monitor port. What type of device is the technician installing?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Active TAP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "MMF",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Passive TAP",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "SMF",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A Passive TAP (Test Access Point) is a device used in network monitoring that allows a copy of network traffic to be made without interrupting data flow. A passive TAP uses an inductor or optical splitter to duplicate the signal to a monitor port without requiring external power. SMF and MMF are fiber optic cable types, and an Active TAP requires external power to operate."
+  },
+  {
+    "id": "clnh_08",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "While a local area network (LAN) is a group of computers connected by cabling and switches at a single location, what type of network spans multiple geographic locations, such as states in the U.S.?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Metropolitan area network (MAN)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Personal area network (PAN)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Wide area network (WAN)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Storage area network (SAN)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A LAN operates at a single site, whereas a Wide Area Network (WAN) spans multiple geographic locations across cities, states, or countries. The internet is a prime example of a WAN."
+  },
+  {
+    "id": "clnh_09",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which wireless standard can stream data at a rate of up to 54 Mbps using a frequency of 5 GHz?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "802.11g",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "802.11a",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "802.11n",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "802.11b",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "802.11a operates in the 5 GHz band and supports speeds up to 54 Mbps. 802.11b operates at 2.4 GHz up to 11 Mbps, 802.11g operates at 2.4 GHz up to 54 Mbps, and 802.11n supports much higher speeds across dual bands."
+  },
+  {
+    "id": "clnh_10",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Why is maintaining documentation of switch port connections important?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It limits unauthorized access to network ports.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "It prevents data loss by storing connection backups.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It helps quickly identify device connections during troubleshooting.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "It improves data transmission speeds by reducing latency.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Maintaining accurate documentation of switch port connections allows technicians to quickly identify devices during troubleshooting, audits, and upgrades, saving time and resolving issues efficiently. Documentation does not affect latency or prevent data loss."
+  },
+  {
+    "id": "clnh_11",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which type of cabling is primarily used in LANs?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Satellite",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Copper twisted pair",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Coaxial",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Fiber optic",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Copper twisted pair cabling is the standard media most commonly used in LANs to connect end-user devices to switches. Fiber optic is primarily used for high-speed switch backbones or specialized links."
+  },
+  {
+    "id": "clnh_12",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following LAN devices receives a signal on one port and forwards that signal only to the port where the destination device is connected?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Hub",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Router",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Network adapter",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Switch",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "A network switch uses MAC address tables to inspect frames and forward traffic specifically to the destination port, offering dedicated bandwidth per port. Hubs broadcast traffic to all ports, and routers bridge separate layer 3 networks."
+  },
+  {
+    "id": "clnh_13",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A penetration tester must infiltrate a company's facility to capture all the network traffic from a particular set of PCs over a physical network cable. The tester can only access the intermediate distribution frame (IDF) closets into which all devices are patched. What tool can the tester utilize to accomplish their goal?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Toner probe",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Network tap",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Wi-Fi analyzer",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Cable tester",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A network tap intercepts signals passing over a physical cable link and forwards a copy to a packet analyzer. Toner probes trace cable paths, Wi-Fi analyzers inspect wireless networks, and cable testers check physical continuity."
+  },
+  {
+    "id": "clnh_14",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "All PC motherboards have a built-in 1000BASE-T compatible adapter to establish connectivity with the Ethernet. What other devices connect to different types of Ethernets, such as fiber optics? (Select all that apply.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Network interface card (NIC)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Modem",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "SOHO router",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Patch panel",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Dedicated expansion NICs, modems, and SOHO routers can support alternative media types like fiber optics or broadband ISP connections. Patch panels are passive termination blocks that do not actively connect to networks."
+  },
+  {
+    "id": "clnh_15",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "A network administrator plans to install a network of wireless access points with power supplied over data cabling. Each access point requires a 20W power supply. What version of Power over Ethernet (PoE) must the switch support to fulfill this requirement? (Select all that apply.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "PoE-power injector",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "An 802.3af switch",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "PoE++/4PPoE (802.3bt)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "PoE+ (802.3at)",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "PoE+ (802.3at) provides up to approximately 25W–30W of usable power, and PoE++ (802.3bt) provides 51W–73W+, both of which easily satisfy a 20W power requirement. Standard 802.3af only supplies up to about 13W usable power."
+  },
+  {
+    "id": "clnh_16",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network administrator disconnected the company network router during a construction project. The system had a full fiber connection terminated to an optical network terminal (ONT), but now the patch cable is missing. What type of cable does the system need for this connection?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "A copper wire VGA, HDMI, or USB adapter cable",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "An RJ11-terminated patch cord asymmetrical digital subscriber line (DSL)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "An RJ45 unshielded twisted pair (UTP) patch cable",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "An RS-232 serial port cable",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "An Optical Network Terminal (ONT) converts incoming optical signals from a fiber line into electrical signals, providing an RJ45 Ethernet handoff port that connects to the router using a standard RJ45 UTP patch cable."
+  },
+  {
+    "id": "clnh_17",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Why are datacenters located in purpose-built facilities?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To provide a comfortable workspace for employees",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "To reduce construction costs",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To store company data in a convenient location",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "To offer highly available environments for critical applications",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Datacenters are engineered with specialized power redundancy, climate control, and physical security to guarantee high availability and reliability for mission-critical enterprise applications."
+  },
+  {
+    "id": "clnh_18",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Some products are known to use the combined throughput of all radios. For example, the AX6000 claims nominal rates of 1,148 Mbps on the 2.4 GHz radio and 4,804 Mbps over 5 GHz. This type is an example of what?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "A device for Wi-Fi 6 that can operate on both bands",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "A WPA 2 connection of WPA3 device",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "An upgraded Wi-Fi 4 set to operate on both bands",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "A Wi-Fi 5 adapter that can operate on both bands",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The 'AX' designation refers to Wi-Fi 6 (802.11ax) technology. Routers in this tier market their aggregate speeds by combining the maximum theoretical throughput rates across simultaneous 2.4 GHz and 5 GHz radios."
+  },
+  {
+    "id": "clnh_19",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician installs wireless access points (APs) in an office and would like to use power over Ethernet (PoE) to power the APs. The current network infrastructure is not capable of doing this. What would the network technician need to install to augment the power requirements for PoE APs?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Patch panel",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Managed switch",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Firewall",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Power injector",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "If a switch lacks built-in PoE capability, a power injector (midspan) can be installed inline between the switch port and the access point to supply electrical power over the data cable."
+  },
+  {
+    "id": "clnh_20",
+    "topic": "Comparing Local Networking Hardware",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "To ensure the wire is conducting signals, a network technician needs to evaluate a patch cord connected to a wall port and patch panel port. What device could the technician use to ensure its connection is correct?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Loopback plug",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Toner probe",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Cable tester",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Network tap",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A cable tester uses units attached to both ends of a link to verify pinout correctness, continuity, and proper signal conduction across permanent links and patch cords."
   }
 ];
 

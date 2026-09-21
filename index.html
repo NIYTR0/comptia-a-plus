@@ -5588,6 +5588,461 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "802.3at PoE+ provides a maximum of 30 watts of power, which is designed for use with devices like biometric sensors and tablets.\n802.3af POE allows powered devices to draw up to about 13 W. This is not enough watts for the device.\n802.1X is a network access control/authentication standard, not a power‑delivery standard. It governs how devices authenticate to the network; it does not define how power is delivered over Ethernet.\n802.11n is a wireless networking standard (Wi‑Fi) and is unrelated to PoE."
+  },
+{
+    "id": "netct_01",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician is connecting a computer to the network using Ethernet. How is the physical connection to the cable made?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Using the RJ45 port",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Using PoE",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Using the MAC address",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Using a patch panel",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The physical connection to an Ethernet cable is made via an RJ45 port, which is the standard port for Ethernet networking. An RJ45 connector on the Ethernet cable plugs directly into the RJ45 port on a computer or network device, allowing it to connect to the network. The MAC address is a unique identifier assigned to a network device, not a physical means of connection. It operates at the data link layer (Layer 2) and does not involve physically connecting the cable. A patch panel is a central point where network cables are organized and connected. However, it does not directly connect a computer to an Ethernet cable; instead, it helps manage multiple connections within a network setup. Power over Ethernet (PoE) allows Ethernet cables to transmit electrical power along with data, enabling devices like IP cameras or wireless access points to operate without separate power sources. It is not a method for physically connecting a computer to an Ethernet network."
+  },
+  {
+    "id": "netct_02",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is a major benefit STP provides that UTP does not?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Greater resistance to interference",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Safer for installations in overhead ceiling spaces",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Ability to install longer cable lengths",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Lower cost",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Shielded twisted pair (STP) has a grounded outer copper shield around the bundle of twisted pairs or around each pair. This provides added protection against EMI. Unshielded twisted pair (UTP) does not have a grounded outer copper shield.\nSTP costs considerably more than UTP. Neither is safer for installations in overhead ceiling spaces unless they are made with plenum plastic shielding.\nSTP and UTP are equally effective at transmitting signals over the same distance."
+  },
+  {
+    "id": "netct_03",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST describes the purpose for which loopback plugs are used?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Grabbing and lifting small objects",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Removing broken pins within sockets",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Testing ports by returning output signals as input",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Connecting computers together without using network cards or modems",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Loopback plugs are used to test ports by returning output signals as input. Use a loopback plug to test the functionality of serial ports or networking ports.\nA 3-prong holder is a tweezer-like tool with three prongs for grabbing and lifting small objects.\nAn IC extractor is a tweezer-like tool (usually spring-loaded in the open position) that's used to remove integrated circuit chips.\nNull modem cables are used to connect computers using their serial ports without the need for a modem and phone line connection."
+  },
+  {
+    "id": "netct_04",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary function of a network tap?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To replace network switches in small networks",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "To amplify signals passing over a cable for longer transmission distances",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To intercept and copy signals passing over a cable for monitoring or analysis",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "To provide additional ports for connecting multiple network devices",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The main function of a network tap is to intercept and copy signals passing over a cable, enabling the captured data to be sent to a packet or protocol analyzer for monitoring or analysis. Amplifying signals for longer distances is not the purpose of a tap; this would involve repeaters or amplifiers. Network taps do not add additional connection ports for devices like a switch would, nor are they intended to replace switches in small networks."
+  },
+  {
+    "id": "netct_05",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician used a tool that energizes each wire in a cable. When the technician sent energy to some of the wires, the LED on the tool did not light up. What tool was the technician using?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Tone generator",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Loopback plug",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Cable tester",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Toner probe",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A cable tester is a tool used to check the integrity and functionality of cables by sending a signal through each wire. If the LED on the tester does not light up for certain wires, it indicates a break or fault in those wires, meaning the cable is not transmitting signals properly. A toner probe is used in conjunction with a tone generator to trace cables through walls or ceilings. It does not test the functionality of each wire within a cable. A tone generator, used with a probe, helps locate cables by emitting a tone. It is not designed to test the individual wires in a cable for continuity or signal integrity. A loopback plug is used to test network ports and troubleshoot connectivity issues by reflecting signals back to the source. It is not used to check the integrity of each individual wire in a cable."
+  },
+  {
+    "id": "netct_06",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are using a crimper to attach an RJ-45 connector to a Cat 6 UTP cable. You need to use the T568A standard to connect the individual wires to the connector. Which wire should you connect to pin 1?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Blue",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Orange with white",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Green",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Green with white",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "According to the T568A standard, the green with white wire should be connected to pin 1 on an RJ-45 connector."
+  },
+  {
+    "id": "netct_07",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician needs to deploy a computer on an Ethernet network and notices that the computer will sit on a shelf directly under a fluorescent light. What type of cable will the technician use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Fiber optic",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "UTP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Coax",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "STP",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Shielded Twisted Pair (STP) cable is the best choice for this situation because it includes shielding that protects against electromagnetic interference (EMI), which can be caused by fluorescent lighting. The shielding around the wires helps to prevent data transmission issues that could arise from the nearby light source. UTP lacks shielding, making it more susceptible to interference from nearby sources like fluorescent lights. This interference could lead to data loss or signal degradation, making UTP unsuitable in this environment. While coaxial cables are shielded and can resist some interference, they are not commonly used for standard Ethernet networks and are generally more suitable for television and broadband internet connections. Fiber optic cables are immune to electromagnetic interference; however, they are typically more expensive and may be unnecessary in this scenario where STP can provide sufficient protection. Fiber optic is generally reserved for long-distance or high-bandwidth applications."
+  },
+  {
+    "id": "netct_08",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A printer is behaving erratically; you suspect a faulty parallel port. Which tool can you use to test the parallel port?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Loopback plug",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Multimeter",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Cable tester",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Ammeter",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A loopback plug allows an output signal to be returned as input. Loopback plugs are used to test serial and parallel ports.\nA cable tester verifies that a network can carry a signal from one end to the other and that all wires within the connector are in their correct positions.\nA multimeter measures electrical properties, such as voltage, amps, and resistance.\nAn ammeter is an instrument that measures the flow of electric current in a circuit."
+  },
+  {
+    "id": "netct_09",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "As a network engineer, you have been creating patch (straight-through) cables for a network switch. You have plugged in all the cables and are testing data transmission through the cables.\nYou notice that the data transmission is not functioning properly in some of the cables, and you are sure that one of the cables is interfering with the transmission at the near end.\nWhat is this type of interference called?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Cat 5 Ethernet interference",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Router interference",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Cross-talk interference",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Wi-Fi interference",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Cross-talk is an interference between two pairs in a cable. The cable transmitting the interfering signal interferes the greatest at the end where the interfering signal is transmitted from (called the near end) with other cables next to it. In this scenario, you probably did not keep the wire pairs twisted as much as possible up to the end of the cable connector, and you will need to fix the issue.\nCat 5 Ethernet is a type of network connector, not a type of network interference.\nYou are using a network switch, not a router, so there should be no interference from any router.\nWi-Fi interference can come from many sources, but you are using a wired (not a wireless) connection."
+  },
+  {
+    "id": "netct_10",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician needs to replace a broken Ethernet cable. What connector will the technician use to terminate the new cable, also known as 8P8C?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RJ-45",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "LC",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "F-type",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "SC",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "RJ-45 is the connector used to terminate Ethernet cables and is also known as an 8P8C (8-position, 8-contact) connector. This connector type is standard for Ethernet networking cables, enabling proper data transmission across devices on a network. F-type connectors are used for coaxial cables, primarily in television and cable internet connections, not for Ethernet cables. SC (Subscriber Connector or Standard Connector) is a type of fiber optic connector, not suitable for Ethernet cables, which use copper wiring. LC (Lucent Connector) is another type of fiber optic connector used for smaller form factor fiber optic cables, but it is also not appropriate for Ethernet cabling."
+  },
+  {
+    "id": "netct_11",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A technician is running a network above a dropped ceiling that is also used for ventilation. The cable must be a twisted pair and must be capable of Gigabit Ethernet speeds.\nWhich of the following cables should the technician use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Riser-rated Cat 5e",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Plenum-rated Cat 6a",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Plenum-rated multimode fiber",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Riser-rated RG-58",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Plenum-rated Cat 6a cables can transfer data at 10 Gbps and can be placed in plenum spaces used for ventilation.\nRiser-rated RG-58 cables are coaxial and can transfer data at 10 Mbps. Plenum-rated cables can be used in riser applications, but riser-rated cables cannot be used in plenum applications.\nRiser-rated Cat 5e cables can transfer data at 1 Gbps, but they cannot be used in plenum applications.\nPlenum-rated multimode fiber can transfer data at 10 Gbps, but it is not a twisted pair."
+  },
+  {
+    "id": "netct_12",
+    "topic": "Network Cable Types",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "Which of the following are characteristics of a coaxial network cable? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It has a conductor made from copper in the center.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "It uses two concentric metallic conductors.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "It is totally immune to electromagnetic interference (EMI).",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It is made of plastic or glass in the center.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "It has conductors that are twisted around each other to eliminate crosstalk.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A coaxial cable is composed of a central copper conductor that is surrounded by an insulator, which is then surrounded by a second metallic mesh conductor. The name coaxial is derived from the fact that both of these conductors share a common axis.\nTwisted-pair cables are twisted around each other to reduce the effects of electromagnetic interference (EMI) and crosstalk.\nFiber optic cables have a plastic or glass center (known as the core). Only fiber optic cables are totally immune to electromagnetic interference (EMI) because light pulses, instead of electrical signals, represent the data."
+  },
+  {
+    "id": "netct_13",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What distinguishes single-mode fiber (SMF) from multi-mode fiber (MMF) in terms of usage?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "SMF is better suited for long distances and high speeds, whereas MMF is ideal for shorter distances in LANs.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "SMF uses lower-cost LEDs, while MMF uses high-power lasers.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "SMF has a larger core than MMF, allowing for more light to pass through.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "SMF and MMF perform identically, with only minor cost differences.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Single-mode fiber is designed for high-speed, long-distance transmission and is well-suited for WANs, while multi-mode fiber, with a larger core and LED-based technology, is cost-effective and ideal for shorter distances in LANs. Multi-mode does not use high-power lasers like SMF and is generally less capable of high-speed, long-distance transmission. SMF has a smaller core, focusing light more precisely, which improves distance and speed."
+  },
+  {
+    "id": "netct_14",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Why can fiber optic cables support higher bandwidth and longer distances compared to copper cables?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Copper signals are stronger than light pulses, leading to shorter cable runs.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Fiber optic cables are less durable and, therefore, require longer cable runs.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Fiber optic cables are thicker, which reduces interference.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The light pulses in fiber optics are not susceptible to interference and experience less attenuation.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Fiber optic cables use light pulses that are not affected by electrical interference and suffer less attenuation, allowing for higher bandwidth and longer distances. Fiber optic cables are not necessarily thicker, as core size varies with the type of fiber. Copper signals are more susceptible to interference, limiting the distance they can travel. Fiber optics are durable but fragile in certain conditions and do not require longer runs based on durability."
+  },
+  {
+    "id": "netct_15",
+    "topic": "Network Cable Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A maintenance worker accidentally nicks a bundle of network cables routed to multiple wall jacks in a conference room. Only one of the cable's wires is severed. A technician is tasked with replacing the cable.\nWhich of the following tools would the technician MOST likely use to identify which wall jack connects to the severed cable?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Loopback plug",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Multimeter",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Tone generator and probe",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Cable stripper",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A tone generator and probe can be used to identify the wall jack connected to the severed wire. The tone generator can be attached to the severed wire, and the probe will sound when it is brought close to the connected wall jack.\nA multimeter measures voltage, current, and resistance on a wire.\nA loopback plug can be plugged into a network adapter to test whether the NIC can send and receive properly.\nA cable stripper is used to cut away the plastic jacket or coating from a network cable."
   }
 ];
 

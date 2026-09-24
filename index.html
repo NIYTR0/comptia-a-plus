@@ -7118,6 +7118,456 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "A cable tester uses units attached to both ends of a link to verify pinout correctness, continuity, and proper signal conduction across permanent links and patch cords."
+  },
+{
+    "id": "ict_01",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are currently using a cellular network plan that provides maximum speeds of up to 10 Gbps for your smartphone.\nWhich of the following cellular network types are you using?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "5G",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "3G",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "4G",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "2G",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "At speeds of up to 10 Gbps, you are using a 5G cellular network type.\nThe other listed cellular network types provide the following maximum speeds:\n2G - 14.4 Kbps\n3G - 42 Mbps\n4G - 300 Mbps"
+  },
+  {
+    "id": "ict_02",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST describes the primary characteristic of Fiber to the Curb (FTTC) and Fiber to the Premises (FTTP) internet connections?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "They rely on fiber optic cables to deliver high-speed internet connections.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "They are exclusively used for cellular internet connections.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "They use coaxial cables to connect the ISP to the customer's premises.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "They use legacy copper telephone lines for data transmission.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Fiber to the Curb (FTTC) and Fiber to the Premises (FTTP) are internet connection types that utilize fiber optic cables to provide high-speed data transmission. Fiber optic technology is known for its ability to transmit data at very high speeds over long distances with minimal signal loss, making it a key feature of these connection types.\n\nCoaxial cables are primarily used in cable internet connections, not in FTTC or FTTP. While coaxial cables are part of hybrid fiber-coaxial (HFC) networks, FTTC and FTTP rely solely on fiber optic cables.\n\nLegacy copper telephone lines are used in Digital Subscriber Line (DSL) connections, not in FTTC or FTTP. Fiber connections bypass the limitations of copper lines by using fiber optic cables for faster and more reliable data transmission.\n\nCellular internet connections, such as 3G, 4G, and 5G, rely on wireless radio signals rather than fiber optic cables. FTTC and FTTP are wired internet connection types that use fiber optics."
+  },
+  {
+    "id": "ict_03",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A small business located on a remote island is considering Geostationary Orbital Satellite Internet Access to support its operations. The business needs to analyze the suitability of this internet connection type for its requirements, which include frequent video conferencing, large data uploads, and real-time collaboration with mainland offices.\nAfter reviewing the characteristics of satellite internet, the business must decide whether this option is appropriate.\nWhich of the following factors BEST explains why Geostationary Orbital Satellite Internet Access might not fully meet the business's needs?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The high latency of satellite internet can negatively impact real-time collaboration and video conferencing.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Satellite internet connections are not compatible with modern networking hardware like routers.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Geostationary satellites are unable to provide sufficient bandwidth for large data uploads.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The satellite dish requires frequent realignment due to the movement of geostationary satellites.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Geostationary Orbital Satellite Internet Access is known for its high latency due to the long distance signals must travel to and from the satellite (approximately 35,786 km). This latency can cause delays in real-time applications such as video conferencing and collaborative tools, making it less suitable for the business's needs. This is the most accurate analysis of why satellite internet might not fully meet the business's requirements.\n\nWhile bandwidth limitations can vary depending on the service provider, modern satellite internet services using advanced technologies (e.g., high-throughput satellites) can provide sufficient bandwidth for large data uploads. Bandwidth is not the primary limitation; latency is the more significant issue for this scenario.\n\nSatellite internet is fully compatible with modern networking hardware, including routers. Businesses can use routers to distribute the satellite internet connection to multiple devices. This statement is incorrect and does not analyze the actual limitations of satellite internet.\n\nGeostationary satellites remain fixed relative to the Earth's surface, so the satellite dish does not require frequent realignment. Once installed and aligned correctly, the dish remains stationary. This statement is factually incorrect and does not apply to the scenario."
+  },
+  {
+    "id": "ict_04",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following best describes the advantages of Asymmetrical Digital Subscriber Line (ADSL) over Symmetrical Digital Subscriber Line (SDSL) for home internet users?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "SDSL is more cost-effective for home users due to its symmetrical speed capabilities.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "SDSL provides faster downlink speeds, which are more suitable for streaming and downloading content.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "ADSL offers equal uplink and downlink speeds, making it ideal for video conferencing and file uploads.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "ADSL provides faster downlink speeds, which are more suitable for typical home internet usage patterns.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "ADSL is designed to prioritize downlink speeds, which aligns with typical home internet usage patterns such as streaming, browsing, and downloading content. ADSL provides a fast downlink but slower uplink, making it ideal for residential users who consume more data than they upload.\n\nADSL does not offer equal uplink and downlink speeds. ADSL is asymmetrical, meaning its uplink speeds are slower than its downlink speeds. Equal uplink and downlink speeds are a feature of SDSL, not ADSL.\n\nSDSL does not prioritize downlink speeds. Instead, it provides equal uplink and downlink speeds, which are more useful for business applications or scenarios requiring significant data uploads.\n\nSDSL is generally more expensive and is better suited for business environments where symmetrical speeds are necessary. ADSL is more appropriate for home users due to its cost-effectiveness and alignment with typical usage patterns."
+  },
+  {
+    "id": "ict_05",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What type of connector is typically used to connect a cable modem to the service provider's network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "USB",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "F-type connector",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "RJ45",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "RJ11",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A cable modem connects to the service provider's network using a coaxial cable terminated with a threaded F-type connector.\n\nRJ11 connectors are used for telephone lines and DSL modems, not for cable modems. RJ11 in the context of DSL modems, not cable modems, makes this answer incorrect.\n\nRJ45 connectors are used to connect the cable modem to the local network router, not to the service provider's network.\n\nUSB is not a connector type for cable modems. It is not used for connecting to the service provider's network, making this answer incorrect."
+  },
+  {
+    "id": "ict_06",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST describes the role of a digital modem in an Internet connection?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It acts as a firewall to protect the local network from external threats.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "It establishes the physical connection to the WAN interface.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "It manages the routing of data packets between different networks.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It assigns IP addresses to devices on the local network.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A digital modem is responsible for creating the physical connection between the local network and the ISP's network, enabling access to the Internet. A modem is the device that connects the local network to the ISP's network for Internet access.\n\nAssigning IP addresses is the role of a DHCP server, which is often a function of a router, not the modem. The modem's primary function is to establish the physical connection to the WAN interface.\n\nFirewalls are separate devices or software that monitor and control incoming and outgoing network traffic. A modem does not perform this function.\n\nRouting is the responsibility of a router, not the modem. The modem's role is limited to establishing the physical connection to the ISP's network."
+  },
+  {
+    "id": "ict_07",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A small business is experiencing issues with its network. Employees report that they can access local resources, such as shared files and printers, but cannot access the Internet.\nUpon inspection, you find that the modem is functioning correctly and is connected to the ISP.\nBased on this information, what is the MOST likely issue, and how should it be resolved?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The router is not properly configured to forward data packets between the local network and external networks.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "The modem's physical connection to the ISP is faulty and needs to be re-established.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The switch is malfunctioning and needs to be replaced to restore Internet access.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The DSL splitter is incorrectly installed, causing interference between voice and data signals.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The router is responsible for forwarding data packets between the local network and external networks (e.g., the Internet). If local resources are accessible but external resources are not, it indicates that the router may not be configured correctly to handle Internet traffic or route packets to the ISP.\n\nThe switch is responsible for connecting devices within the local network. Since employees can access local resources, the switch is functioning correctly. The issue lies with the router, which manages external network communication.\n\nA DSL splitter is only relevant in DSL connections to separate voice and data signals. The scenario does not mention issues with voice communication or DSL-specific setups, so the problem is unrelated to the splitter.\n\nThe scenario explicitly states that the modem is functioning correctly and is connected to the ISP. The issue lies beyond the modem, specifically with the router's configuration."
+  },
+  {
+    "id": "ict_08",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A SOHO's connection to the internet is through an antenna that sends and receives a microwave signal to the ISP's antenna. There can be no obstacles on the direct path between the two antennae.\nWhich of the following internet connection types is this?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "WISP",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "DSL",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Satellite",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Fiber",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A wireless internet service provider (WISP) uses microwave or radio frequency signals between two antennae. The direct path between the antennae cannot be blocked.\n\nA fiber internet connection uses fiber cabling. Transmitted light pulses are carried by the fiber.\n\nDigital subscriber line (DSL) uses a modem that connects to copper telephone lines, allows the use of the internet and phone calls at the same time, and has average download speeds of 3 to 7 Mbps.\n\nSatellite internet connections are made through satellites orbiting the Earth in a geosynchronous orbit. Typically, a roof-mounted satellite dish is aimed at the target satellite, and a transceiver sends and receives data."
+  },
+  {
+    "id": "ict_09",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary function of a router in a network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Implementing the Internet Protocol (IP) to distinguish and forward data between networks",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Establishing the physical connection to the WAN interface",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Modulating and demodulating signals for communication over telephone lines",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Providing high-speed links between Internet Exchange Points (IXPs)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The primary function of a router is to implement the Internet Protocol (IP). This allows the router to distinguish between logical networks and forward data packets between them, ensuring proper communication across networks.\n\nEstablishing the physical connection to the WAN interface is the role of a modem, not a router. The modem handles the physical layer connection, while the router manages logical network communication.\n\nHigh-speed links between IXPs are part of the backbone of the Internet, typically managed by telecommunications companies and not by routers. Routers operate at the network level within smaller, localized networks.\n\nModulating and demodulating signals is the function of a modem, specifically in DSL or similar connections. Routers do not handle signal modulation; they focus on data packet routing and network management."
+  },
+  {
+    "id": "ict_10",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A small business is experiencing intermittent internet connectivity issues with their cable modem. Upon investigation, you find that the coaxial cable is securely connected, the RJ45 cable is properly attached to the router, and the modem's power light is on.\nHowever, the modem's connection light is blinking instead of staying solid.\nWhat is the MOST likely cause of the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The F-type connector on the coaxial cable is overtightened, causing signal interference.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The RJ45 cable is faulty and needs to be replaced.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The modem is incompatible with the router being used.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The cable modem termination system (CMTS) at the service provider's end is experiencing issues.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The CMTS forwards data traffic from the coaxial cable to the ISP's point of presence. A blinking connection light on the modem typically indicates that the modem is unable to establish a stable connection with the service provider's network, which could be due to issues with the CMTS. This is the most logical explanation based on the scenario.\n\nWhile it is advised not to overtighten the F-type connector, overtightening is unlikely to cause intermittent connectivity issues. The blinking connection light suggests a problem beyond the physical connection, making this answer incorrect.\n\nThe RJ45 cable connects the modem to the router, not to the service provider's network. Since the issue is with the modem's connection to the service provider, the RJ45 cable is not the likely cause of the problem.\n\nIf the modem were incompatible with the router, the issue would manifest as a failure to connect the local network to the modem, not as a blinking connection light. The problem described in the scenario points to the modem's connection with the service provider, not the router."
+  },
+  {
+    "id": "ict_11",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are configuring an ADSL connection. Which of the following will be part of the configuration?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Analog modem",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Filters or splitters",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "An RG6 cable",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "F-type connectors",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "To connect to the internet through an ADSL connection, you need to install an internal DSL card in a single computer or connect a DSL router to the phone line. You then use filters (splitters) on the line everywhere that an analog phone is used.\n\nAnalog modems are used for dial-up internet access.\n\nF-type connectors and RG-6 cables are used for cable internet access."
+  },
+  {
+    "id": "ict_12",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are an IT consultant tasked with recommending an internet connection type for a small business that requires the highest possible internet speeds and reliability for video conferencing, cloud-based applications, and large file transfers.\nThe business is located in an area where both Fiber to the Curb (FTTC) and Fiber to the Premises (FTTP) are available.\nWhich option should you recommend and why?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "FTTP, because it uses coaxial cables for the final connection, which are more reliable than fiber optic cables.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "FTTC, because it provides a direct fiber optic connection to the business premises, ensuring the highest speeds.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "FTTC, because it is more cost-effective and provides the same speeds as FTTP.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "FTTP, because it provides a direct fiber optic connection to the business premises, ensuring the highest speeds and reliability.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "FTTP (Fiber to the Premises) is the best choice for a business requiring the highest possible internet speeds and reliability because it delivers a direct fiber optic connection to the premises. This eliminates any potential bottlenecks caused by using other mediums, such as copper cables, for the final connection. FTTP is ideal for bandwidth-intensive activities like video conferencing and large file transfers.\n\nFTTC does not provide a direct fiber optic connection to the premises. Instead, it stops at a distribution point near the premises and uses another medium, such as copper cables, for the final connection, which can reduce speeds and reliability.\n\nWhile FTTC may be more cost-effective, it does not provide the same speeds and reliability as FTTP. The use of copper cables for the final connection in FTTC can result in slower speeds and potential signal degradation compared to FTTP's full fiber connection.\n\nFTTP does not use coaxial cables at all. It provides a full fiber optic connection directly to the premises, which is more reliable and faster than coaxial cables. Coaxial cables are typically used in cable internet connections, not FTTP."
+  },
+  {
+    "id": "ict_13",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are installing a satellite connection so that your home office can connect to the internet. Which of the following statements is true?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The satellite dish must be pointed in the correct direction to communicate properly.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "You must have at least one available phone line for data uploads.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The connection to your computer from the satellite modem uses an RJ11.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The connection between the satellite modem and dish uses a USB cable and connector.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "During installation, the satellite dish must be pointed in the correct direction to communicate properly. With a single-line satellite installation, the satellite connection is used for downloads, and a phone line with a modem is used for uploads.\n\nYou connect a satellite modem/router to the satellite dish using coaxial cable (RG-6) and an F-type connector.\n\nYou connect the modem/router to your computer using a USB or Ethernet connection.\n\nYou do not use a phone line to connect to a satellite dish."
+  },
+  {
+    "id": "ict_14",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A small business is experiencing slow Internet speeds during video conferences. They are using an ADSL connection provided by their ISP.\nAfter analyzing the setup, you notice that the business frequently uploads large files to cloud storage while hosting video calls\nBased on this information, what is the MOST likely cause of the slow Internet speeds?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The ISP is throttling the downlink bandwidth, which is affecting video call quality.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The ADSL connection is not compatible with video conferencing applications.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The DSL modem is not properly connected to the router, leading to network instability.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The ADSL connection has limited uplink bandwidth, which is causing congestion during uploads.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "ADSL (Asymmetrical Digital Subscriber Line) provides a fast downlink but a slower uplink. Since the business is uploading large files while hosting video calls, the limited uplink bandwidth is likely causing network congestion, which affects the quality of the video conferences.\n\nIf the modem were improperly connected, the Internet connection would likely not work at all, rather than just slowing down during specific activities. The issue here is related to bandwidth limitations, not hardware connectivity.\n\nADSL connections are compatible with video conferencing. The issue is not compatibility but the limited uplink bandwidth, which is insufficient for simultaneous uploads and video calls.\n\nThe issue described in the scenario is related to uplink bandwidth, not downlink bandwidth. Video calls and file uploads rely heavily on uplink speeds, which are limited in ADSL connections. There is no evidence in the scenario to suggest ISP throttling."
+  },
+  {
+    "id": "ict_15",
+    "topic": "Internet Connection Types",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "How does a firewall contribute to network security?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "By increasing the speed of data transmission across the network",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "By filtering network traffic based on predefined security rules",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "By physically connecting the local network to the ISP's network",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "By converting IP addresses into domain names for easier access",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A firewall contributes to network security by monitoring and filtering incoming and outgoing traffic based on a set of predefined security rules. This ensures that only authorized traffic is allowed, while unauthorized or malicious traffic is blocked.\n\nA modem establishes the physical connection to the ISP's network, while a firewall focuses on securing the network.\n\nFirewalls do not enhance the speed of data transmission. Their purpose is to secure the network by filtering traffic, which may slightly impact speed due to the processing of security rules.\n\nFirewalls do not handle the translation of IP addresses into domain names; they focus on traffic filtering and security."
   }
 ];
 

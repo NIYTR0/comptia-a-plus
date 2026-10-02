@@ -9413,6 +9413,456 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "LEO satellites orbit much closer to the Earth (500-2,000 km) than geostationary satellites, resulting in significantly lower latency. This low latency is critical for real-time applications such as live video streaming and communication, which are essential for the disaster response team's operations. This factor makes LEO satellite internet a suitable choice for the scenario.\n\nWhile LEO satellite systems do require hardware, such as a satellite dish or terminal, they often need advanced tracking systems to maintain a connection with the moving satellites in the constellation. This is more complex than the hardware required for geostationary systems, making this statement inaccurate.\n\nLike all satellite internet systems, LEO satellite connections can be affected by adverse weather conditions, such as heavy rain or storms, which can cause signal degradation. This statement is incorrect because weather can still impact LEO satellite internet performance.\n\nWhile LEO satellite systems can provide high bandwidth, the availability of unlimited bandwidth depends on the service provider and the specific plan chosen. Bandwidth limitations may still apply, and this statement does not accurately reflect the capabilities of LEO satellite systems in general."
+  },
+{
+    "id": "net_host_serv_01",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST describes the primary function of a Time Server in a networked environment?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "A Time Server is responsible for managing and storing large amounts of structured and unstructured data.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "A Time Server provides secure access to web applications and encrypts data transmitted over the network.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "A Time Server facilitates the transfer of files between a client and a server using encrypted protocols.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "A Time Server synchronizes the clocks of computers and devices within a network.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The primary function of a Time Server is to synchronize the time across all devices in a network, ensuring that all systems operate on the same time reference, which is crucial for time-sensitive operations and logging.\n\nBeing responsible for managing and storing large amounts of structured and unstructured data pertains to a Database Server, which is designed to store, organize, and manage data, allowing users to retrieve and manipulate it as needed.\n\nProviding secure access to web applications and encrypting data transmitted over the network is related to Web Servers using HTTPS, which secure web communications through encryption, ensuring data privacy and integrity.\n\nFacilitating the transfer of files between a client and a server using encrypted protocols is associated with File Transfer Protocols (FTP, SFTP), which are used for transferring files over a network, often with encryption for security."
+  },
+  {
+    "id": "net_host_serv_02",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician is configuring an email connection that will have a permanent connection to the mail server. What kind of email connection is the technician configuring?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "SMTP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "HTML",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "POP3",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "IMAP",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The Internet Message Access Protocol (IMAP) is a mail retrieval protocol that supports permanent connections to a server and connecting multiple clients to the same mailbox simultaneously.\n\nIn Simple Mail Transfer Protocol (SMTP), the SMTP server of the sender discovers the IP address of the recipient SMTP server by using the domain name part of the recipient's email address.\n\nHyperText Markup Language (HTML) web pages are plain text files with coded tags describing how to format the document.\n\nThe Post Office Protocol (POP) is an early example of a mailbox access protocol. POP is generally known as POP3 because the active version of the protocol is version 3."
+  },
+  {
+    "id": "net_host_serv_03",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following statements correctly describes the primary function of database servers?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Database servers are primarily used to facilitate file sharing and printing services across a network.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Database servers primarily serve as a platform for hosting web applications and static web pages.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Database servers are mainly used to store, organize, and manage large amounts of structured and unstructured data.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Database servers are designed to provide secure email communication and manage email storage for users.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Database servers are designed to handle large volumes of data, enabling efficient data retrieval, storage, and manipulation, which is essential for generating reports and making business decisions.\n\nWeb servers handle HTTP requests and serve web content, whereas database servers focus on data storage and management.\n\nProviding secure email communication and managing email storage for users pertains to mail servers, which handle email communication and storage. Database servers, on the other hand, focus on data management and storage.\n\nFile/print servers manage shared access to disk and print resources, while database servers manage data storage and retrieval."
+  },
+  {
+    "id": "net_host_serv_04",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following statements about Server Message Block (SMB) accurately describes its current security status and implementation in modern networks?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "SMB is only used for printer sharing on Windows networks and does not support file sharing functionalities.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "SMB2 is the latest version of the Server Message Block protocol and is primarily used for file sharing on UNIX-based systems.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "SMB3 is the current version of the Server Message Block protocol and is considered secure, while SMB1 has serious security vulnerabilities and is disabled by default on current Windows versions.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "SMB1 is the most secure version of the Server Message Block protocol and is enabled by default on all current Windows versions.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "SMB3 is the current version and is secure, whereas SMB1 has vulnerabilities and is disabled by default on modern Windows systems.\n\nSMB1 is not the most secure version; it has serious security vulnerabilities and is disabled by default on current Windows versions.\n\nSMB2 is not the latest version; SMB3 is. Additionally, SMB is primarily used for file and printer sharing on Windows networks, not specifically on UNIX-based systems.\n\nSMB is used for both file and printer sharing on Windows networks, not exclusively for printer sharing."
+  },
+  {
+    "id": "net_host_serv_05",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network administrator configures an authentication, authorization, and accounting (AAA) server.\nWhich component in the AAA server setup does not store authentication credentials but acts as a transit to forward data between devices?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RADIUS",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Supplicant",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "AAA",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "NAP",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The network access point (NAP) or network access server (NAS) are appliances, such as switches, access points, and VPN gateways. These do not store authentication credentials but simply act as a transit to forward this data between the AAA server and the supplicant.\n\nThe supplicant is a component of the authentication, authorization, and accounting server and is the device requesting access, such as a user's PC or laptop.\n\nRemote Authentication Dial-in User Service (RADIUS) is a protocol that manages remote and wireless authentication infrastructures and implements AAA.\n\nIn an authentication, authorization, and accounting (AAA) configuration, the AAA server is the authentication server positioned within the local network."
+  },
+  {
+    "id": "net_host_serv_06",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following best describes the primary function of Network Monitoring Servers?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To store, organize, and manage large amounts of structured and unstructured data",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "To provide shared access to disk and print resources",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To monitor and analyze network traffic to ensure optimal performance and security",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "To enable secure communication over the internet using encryption protocols",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Network monitoring servers are tasked with observing and analyzing network traffic to maintain network performance and security.\n\nProviding shared access to disk and print resources describes the function of File/Print Servers, which are responsible for allowing shared access to disk and print resources over a network. Network Monitoring Servers, on the other hand, focus on monitoring network traffic and performance.\n\nStoring, organizing, and managing large amounts of structured and unstructured data pertains to Database Servers, which are designed to handle the storage and management of data. Network Monitoring Servers do not primarily deal with data storage or management but rather with monitoring network activities.\n\nEnabling secure communication over the internet using encryption protocols. Incorrect is the function of servers that implement security protocols like HTTPS, which ensure secure communication over the internet. Network Monitoring Servers are not primarily focused on enabling secure communication but rather on monitoring network traffic and performance."
+  },
+  {
+    "id": "net_host_serv_07",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following statements BEST describes the primary security concern associated with Telnet?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Telnet transmits data, including passwords, in plaintext.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Telnet encrypts all data transmissions, ensuring secure communication between client and server.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Telnet uses a secure tunneling protocol to protect data integrity and confidentiality during transmission.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Telnet requires multi-factor authentication, providing an additional layer of security against unauthorized access.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Because Telnet transmits data in plaintext, it is vulnerable to eavesdropping and interception by malicious actors, which can lead to unauthorized access and data breaches.\n\nTelnet does not encrypt data transmissions. This is a common misconception. The lack of encryption is a significant security flaw, as it allows data to be intercepted in plaintext.\n\nTelnet does not use any secure tunneling protocol. This statement is false because Telnet lacks built-in security features to protect data integrity and confidentiality.\n\nTelnet does not inherently require multi-factor authentication. This statement is misleading, as Telnet's standard implementation does not include advanced authentication mechanisms, making it less secure compared to modern alternatives like SSH."
+  },
+  {
+    "id": "net_host_serv_08",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician securely connects to a remote server on port 3389. What protocol does the technician use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "LDAP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "SSH",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "RDP",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Telnet",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Remote Desktop Protocol (RDP) is Microsoft's protocol for operating remote graphical user interface (GUI) connections to a Windows machine. RDP uses port TCP/3389.\n\nThe Lightweight Directory Access Protocol (LDAP) is a TCP/IP protocol used to query and update an X.500 directory, and current directory products widely support it.\n\nSecure Shell (SSH) is the principal means of obtaining secure remote access to UNIX and Linux servers and most types of network appliances (switches, routers, and firewalls).\n\nTelnet is both a protocol and a terminal emulation software tool that transmits shell commands and output between a client and the remote host."
+  },
+  {
+    "id": "net_host_serv_09",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Your company has recently experienced issues with inconsistent timestamps on transaction logs across multiple servers, leading to difficulties in tracking and auditing activities.\nAs the network administrator, you need to resolve this issue to ensure all servers have synchronized time.\nWhich of the following actions should you take to address this problem?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Set up a File Transfer Protocol (FTP) server to regularly back up transaction logs for auditing purposes.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Install and configure a centralized Time Server to synchronize the clocks of all network devices.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Deploy a new Database Server to manage and store transaction logs more efficiently.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Implement HTTPS on all servers to secure data transmission and improve timestamp accuracy.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "By installing and configuring a centralized Time Server, you can ensure that all devices on the network have synchronized time, which will resolve the issue of inconsistent timestamps on transaction logs.\n\nWhile a Database Server can help manage and store data, it does not address the issue of time synchronization across servers, which is the root cause of the inconsistent timestamps.\n\nHTTPS is used to secure data transmission over the network but does not directly affect the synchronization of time across servers. It does not resolve the issue of inconsistent timestamps.\n\nWhile setting up an FTP server for backups can aid in data recovery and auditing, it does not address the core issue of time synchronization, which is necessary for consistent timestamps."
+  },
+  {
+    "id": "net_host_serv_10",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Your organization has been experiencing intermittent email delivery failures, and you have been tasked with analyzing the issue.\nUpon investigation, you discover that the mail server is frequently reaching its maximum capacity for concurrent connections.\nWhich of the following analyses would BEST help you determine the root cause of this problem?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Examine the web server's bandwidth usage to identify any potential network bottlenecks affecting email delivery.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Analyze the mail server's configuration settings to ensure they are optimized for handling the current volume of email traffic.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Review the database server's query performance to check for any delays in data retrieval impacting email processing.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Evaluate the file/print server's resource allocation to determine if it is affecting the mail server's performance.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Analyzing the mail server's configuration settings is crucial in understanding why it might be reaching its maximum capacity for concurrent connections. By ensuring that the server is configured to handle the expected volume of email traffic, you can identify if the issue is due to misconfiguration or if the server needs to be upgraded to accommodate higher demand.\n\nWhile network bottlenecks can affect email delivery, examining the web server's bandwidth usage is not directly related to the mail server's capacity issues. The focus should be on the mail server itself, as it is the component experiencing the problem.\n\nDatabase server performance is not directly related to the mail server's ability to handle concurrent connections. While slow data retrieval can affect applications, it is unlikely to be the root cause of the mail server's capacity issues.\n\nThe file/print server's resource allocation is not relevant to the mail server's capacity for handling email connections. The analysis should focus on the mail server's settings and performance, as it is the system directly involved in email delivery."
+  },
+  {
+    "id": "net_host_serv_11",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST evaluates the role of a mailbox server in a modern network environment?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "A mailbox server primarily manages the authentication and authorization of users attempting to access network resources.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "A mailbox server is used to host websites and web applications, providing HTTP and HTTPS access to users.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "A mailbox server primarily functions to store and manage email messages.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "A mailbox server is responsible for filtering spam and malicious emails before they reach the user's inbox, thereby protecting the network from potential threats.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Mailbox servers are integral to email systems, as they store and manage email messages, handle the delivery process, and provide access to users through various email clients. This aligns with the core functions of mailbox servers.\n\nWhile spam filtering is an important aspect of email security, it is typically handled by a separate component known as a mail filter or gateway, not the mailbox server itself. The mailbox server's primary role is not focused on filtering but on storing and managing emails.\n\nWeb servers are responsible for hosting websites and web applications, whereas mailbox servers are dedicated to managing email communications.\n\nPrimarily managing the authentication and authorization of users attempting to access network resources pertains to the role of directory and authentication servers, which handle user authentication and authorization. Mailbox servers do not primarily manage these functions; instead, they focus on email storage and management."
+  },
+  {
+    "id": "net_host_serv_12",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are a network administrator tasked with securing your company's website to ensure that all data exchanged between your clients and the server is encrypted.\nYou need to implement a protocol that will provide this security by encrypting the data and verifying the server's identity.\nWhich of the following actions should you take to achieve this goal?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Set up the website to use FTP for data transmission and ensure that it operates over port 21.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Install a digital certificate from a trusted Certificate Authority (CA) on the web server and configure the website to use HTTPS.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Enable NetBIOS over TCP/IP on the web server to allow secure data transmission.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Configure the website to use HTTP and ensure all data is transmitted over port 80.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "By installing a digital certificate and configuring the website to use HTTPS, you ensure that data is encrypted and the server's identity is verified, providing the necessary security for data exchange.\n\nHTTP does not encrypt data, leaving it vulnerable to interception. Port 80 is used for HTTP, which does not provide the security features required in the scenario.\n\nFTP, especially when operating over port 21, does not inherently provide encryption for data transmission. The scenario requires encrypted data exchange, which FTP does not fulfill without additional security measures like FTPS or SFTP.\n\nNetBIOS over TCP/IP is not related to securing web data transmission. It is an outdated protocol for network communication and does not provide the encryption and server identity verification required by the scenario."
+  },
+  {
+    "id": "net_host_serv_13",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following is a primary function of a mail server?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Providing remote terminal access to network resources",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Facilitating the sending and receiving of email messages",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Storing and managing large amounts of structured data",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Hosting websites and web applications",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Mail servers are specifically designed to handle the sending, receiving, and storage of email messages. They manage email traffic and ensure that emails are delivered to the correct recipients. This is the primary function of mail servers.\n\nHosting websites and web applications is the primary function of web servers, not mail servers. Web servers use HTTP or HTTPS to serve web pages and applications to clients. This function is unrelated to the operations of mail servers.\n\nStoring and managing large amounts of structured data is associated with database servers, which are used to store, organize, and manage data for easy retrieval and manipulation. Mail servers do not primarily focus on data storage in the same way database servers do.\n\nProviding remote terminal access to network resources is typically associated with remote terminal access servers, which allow users to access network resources from remote locations. Mail servers do not provide this type of access, as their main role is to handle email communications."
+  },
+  {
+    "id": "net_host_serv_14",
+    "topic": "Networked Host Services",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "A web developer plans out a new website, including uniform resource locators (URLs) for each page. What are parts of the URL that the web developer will need to consider?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "File server",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "FQDN",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Protocol",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "File path",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The developer will need to consider the fully qualified domain name (FQDN), which is not case-sensitive. The host location can also be an IP address; an IPv6 address must be in square brackets.\n\nThe developer will need to consider the protocol that describes the access method, which will likely be HyperText Transfer Protocol (HTTP) or HyperText Transfer Protocol Secure (HTTPS).\n\nThe developer will need to consider the file path, which specifies the directory and file name location of the resource (if required). The file path may or may not be case-sensitive.\n\nIn file server-based networks, a central machine provides dedicated file and print services to workstations. The benefits of server-based networks include ease of administration through centralization."
+  },
+  {
+    "id": "net_host_serv_15",
+    "topic": "Networked Host Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Your organization has recently deployed a Network Monitoring Server to address frequent network outages and potential security breaches.\nAfter a week of monitoring, you receive a report indicating a significant increase in network traffic during non-business hours, along with several failed login attempts from an unfamiliar IP address.\nAs the network analyst, how should you interpret these findings to enhance network security and performance?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Assume the network monitoring server is malfunctioning and schedule a maintenance check to resolve the issue.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Conclude that the increased traffic is due to legitimate after-hours work by employees, and no action is needed.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Determine that the failed login attempts are likely due to forgotten passwords and advise users to reset their credentials.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Analyze the report to identify potential unauthorized access attempts and recommend implementing stricter access controls.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Analyzing the report to identify potential unauthorized access attempts and recommending the implementation of stricter access controls and monitoring demonstrates an analytical approach by considering the possibility of unauthorized access based on the report's findings.\n\nConcluding that the increased traffic is due to legitimate after-hours work by employees and no action is needed overlooks the potential security threat posed by the unusual traffic patterns and failed login attempts. Analyzing the situation requires considering the possibility of unauthorized access rather than assuming all activity is legitimate.\n\nWhile forgotten passwords can cause failed login attempts, this explanation does not account for the unusual timing and unfamiliar IP address. A deeper analysis is needed to assess potential security risks.\n\nAssuming a malfunction without further investigation dismisses the potential security threat. Analyzing the data should focus on understanding the traffic patterns and addressing any security vulnerabilities."
   }
 ];
 

@@ -14878,6 +14878,306 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "Streaks and missing sections of text can be caused by a damaged or worn-out imaging drum. The drum is responsible for transferring the toner to the paper, and any damage or wear can result in incomplete or streaky prints. Analyzing the imaging process, the drum's condition is crucial for proper toner transfer.\n\nAn overheating fuser would typically cause issues like smudging or excessive melting of toner, not streaks or missing sections of text. The problem described is more related to the imaging process rather than the fusing process.\n\nMisaligned exit rollers would affect how the paper exits the printer, potentially causing jams or misfeeds, but they would not directly cause streaks or missing text in the printed output.\n\nWhile an improperly seated toner cartridge can cause toner leakage, it would more likely result in toner spills or uneven distribution rather than streaks or missing sections of text. The issue described is more indicative of a problem with the imaging drum."
+  },
+{
+    "id": "tpd_01",
+    "topic": "Troubleshoot Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A printer support technician at a corporate office receives a call from the administrative office that their printer is showing online, but nothing is printing out.\nWhen checking the print server, there are multiple documents queued for the printer.\nWhat type of error is this?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Print spooler issue",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Print quality issue",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Garbled print issue",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Printer connectivity issue",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "If the printer is online, but multiple jobs are queued, and a job cannot be deleted, this is a symptom of a print spooler issue. A restart of the print spooler service may be required.\n\nA print quality issue occurs when a job prints, but the output is smudged, faded, or arrives with unusual marks.\n\nWhen a printer prints multiple blank pages or pages with only a few characters on them, this is garbled printing. This commonly occurs because of a missing or incorrect print driver.\n\nA printer connectivity issue might arise either because the device cannot be located when trying to install it or because the OS reports that an installed device is offline or unavailable."
+  },
+  {
+    "id": "tpd_02",
+    "topic": "Troubleshoot Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A printer support technician at a corporate office receives a call from the administrative office that the office inkjet printer is online, but it is making a grinding noise while printing.\nWhat type of error is this?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Incorrect page orientation",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Print quality issue",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Carriage mechanism fault",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Paper jam",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A carriage mechanism holds the ink cartridges in an inkjet printer. Grinding noises during printing are a symptom of a carriage mechanism fault.\n\nA paper jam occurs when paper incorrectly feeds through the printer and gets lodged within.\n\nA print quality issue is when a job prints, but the printed media is smudged, faded, skewed, or has other defects.\n\nIncorrect orientation (portrait or landscape) will cause the output media to be printed incorrectly. A finishing tray may incorrectly staple, fold, or punch media if the pages are not printed in the correct orientation."
+  },
+  {
+    "id": "tpd_03",
+    "topic": "Troubleshoot Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following is the MOST likely symptom of a dirty drum or roller in a laser printer?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Lines or speckles repeated at regular intervals on the print job",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "A faint image on the print job",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Missing lines on the print job",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "A vertical black or white stripe on the print job",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A dirty drum or roller can create lines or speckles at regular intervals on the print job.\n\nA vertical black line or white stripe is often caused by a dirty corona wire.\n\nMissing lines on a print job, are often caused by the toner in the cartridge not being distributed evenly.\n\nA faint image on the print job (called ghosting) is often caused by the fluorescent lamp and rubber scraper not removing the remaining toner from the drum prior to starting a new print job."
+  },
+  {
+    "id": "tpd_04",
+    "topic": "Troubleshoot Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are a network administrator troubleshooting a network printer that is frequently experiencing paper jams.\nYou have checked the paper tray and confirmed that the paper is not curled, wrinkled, dusty, wet, torn, or folded. The paper stack does not exceed the limit, nor is it above the arrow on the edge guide.\nHowever, the printer still jams when multiple pages are being fed.\nWhat should you check next?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The printer's driver",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The feed rollers and the tray alignment guide",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "The printer's IP address",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The printer's memory",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Checking the feed rollers and the tray alignment guide is the correct answer. If multiple pages are being fed through the printer overlapping or in a stack, the media is failing to separate. This can be caused by problems with the feed rollers or the tray alignment guide.\n\nChecking the printer's IP address is incorrect. The IP address of the printer is related to network connectivity issues, not paper jams.\n\nChecking the printer's driver is incorrect. The printer driver is software that allows the printer to communicate with the computer. It does not have a direct impact on physical issues like paper jams.\n\nChecking the printer's memory is incorrect. While a printer's memory can affect its performance, it does not directly cause paper jams."
+  },
+  {
+    "id": "tpd_05",
+    "topic": "Troubleshoot Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are troubleshooting a network printer that intermittently shows as offline for multiple users in an office.\nAfter confirming that the printer is powered on and connected to the network, you observe that the issue occurs more frequently during peak office hours.\nWhich of the following analyses would best help you identify the root cause of the connectivity issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Check the printer's control panel for any error messages or alerts indicating hardware malfunctions.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Analyze the network traffic to determine if bandwidth congestion is affecting the printer's connectivity.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Review the printer's configuration settings to ensure it is set to the correct IP address.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Examine the physical location of the printer to assess if environmental factors are causing interference.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Analyzing network traffic during peak hours can help identify if bandwidth congestion is causing the printer to intermittently go offline. This analysis targets the timing of the issue and considers network load as a potential root cause.\n\nWhile checking for error messages is a useful troubleshooting step, it does not specifically analyze the timing and pattern of the connectivity issue related to peak office hours.\n\nVerifying the IP address is important for ensuring proper network configuration, but it does not analyze the intermittent nature of the issue that correlates with peak usage times.\n\nWhile environmental factors can affect wireless connectivity, this option does not specifically analyze the correlation between the issue and peak office hours, which suggests a network-related problem."
+  },
+  {
+    "id": "tpd_06",
+    "topic": "Troubleshoot Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following steps is essential to troubleshoot a printer that is reported as offline or unavailable?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Verify that all components and cartridges are correctly installed, service panels are closed, and at least one tray is loaded with paper.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Check for interference from other wireless devices.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Ensure the printer is connected to the correct Wi-Fi network.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Restart the router or access point.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Ensuring that all components are properly installed and that the printer is ready to print is crucial for diagnosing connectivity issues.\n\nEnsuring the printer is connected to the correct Wi-Fi network is specific to troubleshooting wireless printer connectivity issues, not general offline or unavailable status. It is important for wireless printers but not applicable to all printer types.\n\nChecking for interference from other wireless devices is relevant for addressing wireless connectivity problems, where interference might affect the printer's ability to connect to the network. It does not apply to all offline or unavailable printer issues.\n\nWhile restarting the router or access point can resolve network-related issues, it is not a primary step for troubleshooting a printer reported as offline or unavailable. This step is more applicable to network connectivity problems."
+  },
+  {
+    "id": "tpd_07",
+    "topic": "Troubleshoot Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user generates printouts consisting of several pages of seemingly random characters every time he prints to a network printer. The printer seems to work fine for all other users.\nWhat is the MOST likely cause of the problem?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The user is using an incorrect printer driver.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "The printer was shared with insufficient network privileges.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The user's network settings are incorrect.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The network cable to the printer is defective.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "In this case, the problem is limited to a single user, so target that user's configuration. Several pages of seemingly random characters is a classic symptom of the use of a PostScript printer driver on a non-PostScript printer. Switching to the correct driver will resolve the issue.\n\nInsufficient network privileges or incorrect network settings do not result in garbled printing. It may, however, prevent a user from printing a document.\n\nA defective network cable to a printer would result in all users having issues. In this scenario, only one user is impacted.\n\nThe user's network settings would have no impact on producing random characters on a page."
+  },
+  {
+    "id": "tpd_08",
+    "topic": "Troubleshoot Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When evaluating the effectiveness of a finisher unit's performance on a laser printer, which of the following issues would most likely indicate a configuration problem rather than a mechanical failure?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The finisher unit produces inconsistent hole punches due to worn-out components.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The printed pages are not aligned properly for booklet printing.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "The finisher unit does not activate due to a power supply issue.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The finisher unit fails to staple pages correctly due to a jammed mechanism.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Incorrect page orientation and settings can lead to issues with finishing tasks like booklet printing. This suggests a configuration problem, where settings such as paper size and orientation need to be adjusted rather than a mechanical failure.\n\nA jammed mechanism is indicative of a mechanical failure rather than a configuration issue, and there is no suggestion that configuration settings could cause a jam.\n\nA power supply issue is a hardware problem not related to configuration settings, and there is no indication that configuration would affect the power supply.\n\nWorn-out components causing inconsistent hole punches point to a mechanical failure, and configuration settings are unlikely to lead to wear and tear of components."
+  },
+  {
+    "id": "tpd_09",
+    "topic": "Troubleshoot Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You work for a company based in Phoenix, Arizona, which is a very hot and dry area.\nSeveral people in the research department have reported that even though their files are printing to the laser printer correctly, a much lighter copy of the same text also prints within 2 to 3 cm of the original text.\nWhich of the following would MOST likely fix this type of ghosting image?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Remove the toner container and gently shake it to remove clumps from the image toner.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Replace the imaging drum, as it is probably at end of life.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Vacuum the fuser assembly to clean off excessive ink toner.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Use a heavier-weight paper to avoid paper shift.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Ghost images within 2 to 3 cm of the original image are an indication that the ghosting is caused by the imaging drum. When a drum unit comes to the end of its usable life cycle, it may not discharge properly, leaving behind faint traces of the previous print job. An imaging drum can also become defective and discharge incorrectly between print runs, causing ghosting to occur. In either case, the best solution is to replace the imaging drum.\n\nUsing heavier-weight paper will not fix ghosting images. If the drum is bad, the ghosting will still be present regardless of the paper weight. Heavier-weight paper can actually cause ghosting to occur if the ghosting issue is the result of a faulty fuser unit.\n\nIf the printing were done in a high-humidity environment, it is possible that the toner could clump together inside the cartridge. When this happens, the toner powder is not distributed evenly when printing, which can lead to ghost images on the page. However, Arizona is a very dry environment, so this probably isn't the issue.\n\nVacuuming the fuser assembly would not solve a ghosting issue."
+  },
+  {
+    "id": "tpd_10",
+    "topic": "Troubleshoot Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When printing to a multifunction printer, the printer staples the pages sideways. What type of error is this?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Print quality issue",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Carriage mechanism fault",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Incorrect page orientation",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Paper jam",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Incorrect orientation (portrait or landscape) will cause the output media to print incorrectly. For example, a finishing tray may incorrectly staple, fold, or punch media if the user does not place the pages in the correct orientation.\n\nA paper jam occurs when paper incorrectly feeds through the printer and gets lodged within the printer.\n\nA print quality issue occurs when a job prints, but the printed media gets smudged, faded, skewed, or has other defects.\n\nA carriage mechanism holds the ink cartridges in an inkjet printer. Grinding noises during printing are a symptom of a carriage mechanism fault."
   }
 ];
 

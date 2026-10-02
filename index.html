@@ -15178,6 +15178,456 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "Incorrect orientation (portrait or landscape) will cause the output media to print incorrectly. For example, a finishing tray may incorrectly staple, fold, or punch media if the user does not place the pages in the correct orientation.\n\nA paper jam occurs when paper incorrectly feeds through the printer and gets lodged within the printer.\n\nA print quality issue occurs when a job prints, but the printed media gets smudged, faded, skewed, or has other defects.\n\nA carriage mechanism holds the ink cartridges in an inkjet printer. Grinding noises during printing are a symptom of a carriage mechanism fault."
+  },
+{
+    "id": "spd_01",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST describes the print server?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The software that allows the printer to communicate with the print device",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The service that captures print jobs from an application, holds them in a queue, and then sends each job to the print device",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The location on the hard disk that holds print jobs that are waiting to be processed",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The process that manages the flow of print requests for how and when documents are sent to the printer",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "A print server is the process that manages the flow of print requests for how and when documents are sent to the printer.\n\nThe print queue is the location on the hard disk that holds print jobs that are waiting to be processed.\n\nThe print driver is the software that allows the printer to communicate with the print device.\n\nThe print spooling service captures print jobs from an application, holds them in a queue, and then sends each job to the print device."
+  },
+  {
+    "id": "spd_02",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user sent a secured print to a server to mitigate the risk of someone intercepting confidential information from the output tray. Which of the following is NOT an option for the user to authenticate?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Password",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Pin",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Badge",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Kerberos ticket",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The user cannot use a Kerberos ticket for a secured print since users must present something when they physically walk up to the printer.\n\nBadging means the company had a technician fit the print device with a smart card reader. Employees must present their ID badge to the reader to start the print job.\n\nPin entry requires the user to input the correct code into the device control panel, the least secure of the three methods.\n\nPassword entry requires the user to input the correct password via the device control panel."
+  },
+  {
+    "id": "spd_03",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A customer approaches a printer repair specialist who is experiencing issues with the carriage belt. What type of printer is the customer using?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Laser printer",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Thermal printer",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Inkjet printer",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "3-D printer",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The carriage system on an inkjet printer uses a stepper motor, pulley, and belt (to move the print head) along with a guide shaft (to keep the print head stable) and sensors (to detect the position of the print head).\n\nA thermal printer does not use a carriage belt. Instead, it is a general term for any device that uses a heating element to create the image on paper.\n\n3-D printing has very different use cases from printing to paper. However, it is most widely used in manufacturing, especially to create proof-of-concept working models from designs.\n\nLaser printers are one of the most popular printer technologies for office applications since they are inexpensive, quiet, and fast, producing high-quality output."
+  },
+  {
+    "id": "spd_04",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user reports that their laser printer is producing faded prints.\n\nAfter verifying that the toner cartridge is not empty, what is the MOST appropriate next step to evaluate and resolve the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Replace the transfer roller to restore proper image transfer.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Replace the printer's fuser unit to ensure proper toner adhesion.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Clean the printer's feed rollers to improve toner distribution.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Check if the printer is set to a low-density (draft) print mode.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Faded prints can result from the printer being set to a low-density (draft) mode. Evaluating and adjusting the print settings ensures the printer is configured for normal or high-quality output, resolving the issue.\n\nWhile the fuser unit is responsible for fusing toner to the paper, it does not cause faded prints. Faded prints are more likely related to toner settings or cartridge issues.\n\nCleaning the feed rollers addresses paper feed issues, not toner distribution or faded prints. This action would not resolve the problem in this scenario.\n\nA damaged transfer roller can cause blank or incomplete prints, but it is not typically the cause of faded prints. This action would not address the issue described."
+  },
+  {
+    "id": "spd_05",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user is having trouble with their laser printer and notices that the light from the laser is not shining on this part of the printer. What part of the printer has a photosensitive surface?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Transfer roller",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Imaging drum",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Developer roller",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Toner",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "An imaging drum is in the charging stage of the laser printer. The imaging drum is a round rotating cylinder conditioned by the primary charge roller (PCR).\n\nThe toner is charged with a high negative charge and applies to the drum. The laser toner consists of a fine compound of dyestuff and wax or plastic particles.\n\nThe developer roller is very close to the photosensitive drum. The toner carries the same negative charge polarity as the drum.\n\nTransfer roller applies a positive charge to the underside of the paper. This causes the toner on the drum to be attracted to the paper."
+  },
+  {
+    "id": "spd_06",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is a key maintenance task for a thermal printer to ensure its optimal performance?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Clean the printhead with isopropyl alcohol.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Refill the ink cartridges frequently.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Regularly replace the toner cartridge.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Use compressed air to clean the interior.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Thermal printers do not use ink or toner cartridges; instead, they rely on heat to transfer images onto paper. Cleaning the printhead with isopropyl alcohol is a key maintenance task to remove any residue or debris that could affect print quality.\n\nThermal printers do not use toner cartridges; this task is relevant to laser printers. Thermal printers use heat-sensitive paper, so replacing toner is not applicable.\n\nThermal printers do not use ink cartridges. This maintenance task is associated with inkjet printers, which require ink to produce images.\n\nUsing compressed air can disperse debris and potentially damage the sensitive components of a thermal printer. It is not recommended for cleaning thermal printers."
+  },
+  {
+    "id": "spd_07",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user attempts to print a document with a hole punch option, but the printer does not punch any holes.\n\nWhat is the MOST likely reason for this issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The printer's rollers are dirty.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The document contains images instead of text.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The printer's paper tray is empty.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The hole punch feature is not selected in the printer settings.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "If the hole punch feature is not enabled in the printer settings, the printer will not perform the hole punch function. This is a common oversight when configuring print jobs.\n\nIf the paper tray were empty, the printer would not print at all, let alone attempt to punch holes.\n\nDirty rollers can cause paper feed issues but do not directly affect the hole punch functionality.\n\nThe content of the document (text or images) does not impact the hole punch feature, as this is a mechanical operation performed on the paper."
+  },
+  {
+    "id": "spd_08",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A marketing director purchased a printer for their office and is currently setting it up. Which of the following is the least of considerations for placement?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Network data port",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Air flow",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "No direct sunlight exposure",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Accessibility",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The print device must have a power outlet and potentially a network data port. However, if there is wireless, the printer only needs a power outlet.\n\nAs with a PC, ensure that the print device does not get exposed to direct sunlight.\n\nMake sure that there is space around it for air to flow. A well-ventilated area ensures the dispersal of fumes, such as ozone generated during printer operation.\n\nThe print device should be accessible to its users but take account of noise and foot traffic that might be disruptive to employees working at nearby desks."
+  },
+  {
+    "id": "spd_09",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Hannah has been working for your company for several years. Recently, she moved to a new department, which is located on a different floor.\n\nAfter the move, Hannah informs you that when she tries to print a Microsoft Word document (the same program she has always used), the printer on her new floor prints page after page of seemingly random characters.\n\nWhich of the following is the MOST likely cause of Hannah's print problems?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The wrong printer driver has been selected.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "The program used to create the document has a bug.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The hard drive on the print server is corrupt.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The cable connecting the printer to the network is failing.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "In most cases, the issue described in this question is the result of a bad or incorrect printer driver. When Hannah moved and created a connection to her new printer, she selected the wrong printer driver.\n\nA failing hard drive has been known to corrupt a printer driver, but since others are not having the same issue, the most likely cause of the problem is the driver on Hannah's computer.\n\nIf the cable was bad or failing, the print job would not make it to the printer, and others in the company would experience the same problem.\n\nSince Hannah used the same word process in her old department, it is unlikely that it would suddenly stop working because of a bug in the software."
+  },
+  {
+    "id": "spd_10",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A graphic design firm has been experiencing issues with its thermal printer, where the printed labels are coming out faint and uneven. Upon inspection, you notice a buildup of residue on the printhead.\n\nWhat should you do to resolve this issue and prevent it from recurring?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Clean the printhead with isopropyl alcohol and ensure regular cleaning is scheduled.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Adjust the printer's temperature settings to a higher level.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Use a domestic vacuum cleaner to remove the residue from the printhead.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Replace the thermal paper with a higher-quality brand.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The faint and uneven print is likely due to residue on the printhead, which can interfere with the heat transfer process. Cleaning the printhead with isopropyl alcohol will remove the residue, and scheduling regular cleanings will help prevent future issues.\n\nWhile using high-quality thermal paper is important, the issue described is due to residue on the printhead, not the paper quality. Replacing the paper alone will not resolve the problem.\n\nIncreasing the temperature settings may temporarily improve print quality but can also lead to faster wear of the printhead and does not address the underlying issue of residue buildup.\n\nUsing a domestic vacuum cleaner is not recommended as it can damage the printer's components and is not effective for cleaning the printhead. Isopropyl alcohol is the appropriate cleaning agent for this task."
+  },
+  {
+    "id": "spd_11",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are an IT support specialist tasked with setting up a new network printer in a small office. The office requires that the printer be accessible to all employees and that it can be managed remotely.\n\nThe office network uses DHCP for IP address allocation.\n\nWhich of the following steps should you take to ensure the printer is correctly connected and accessible over the network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Connect the printer to the network with an Ethernet cable and allow it to obtain an IP address automatically from DHCP.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Connect the printer to a computer via USB and share it over the network.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Connect the printer to the network using an Ethernet cable, manually configure a static IP address, and disable DHCP on the printer.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Connect the printer to a computer via USB and configure the computer to act as a print server.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Connecting the printer via Ethernet allows it to be part of the network, and using DHCP ensures it receives an IP address automatically, which simplifies network management. In addition, registering the IP address on the DNS server allows users to access the printer using a domain name, making it easier to connect and manage remotely.\n\nWhile connecting the printer to a computer via USB and sharing it over the network allows network access, it relies on the computer being on and connected to the network at all times, which is not ideal for a shared office printer. It also does not facilitate remote management directly through the network.\n\nManually configuring a static IP address can lead to IP conflicts if not managed properly. Disabling DHCP removes the flexibility of automatic IP address allocation, which can complicate network management.\n\nConnecting the printer to a computer via USB and configuring the computer to act as a print server unnecessarily complicates the setup by requiring a dedicated computer to act as a print server, which is not efficient for a networked environment where the printer should be directly accessible over the network."
+  },
+  {
+    "id": "spd_12",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "One of the employees in your company calls and complains that text printed on the laser printer smudges easily and is staining hands and clothes.\n\nWhich of the following printer components (if adjusted or replaced) would BEST fix the printer?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Toner hopper",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Laser",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "OPC drum",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Fuser unit",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "After the toner has been applied to the paper, the paper passes through two heated rollers known as the fuser, or fuser unit. The heat and pressure from the rollers fuse the toner particles into the fibers on the paper. If the toner on the finished printed paper is smudging, the most likely issue is that the fuser unit is malfunctioning in some way.\n\nSince the text is being printed, the toner hopper is dispensing toner and would not cause the issue.\n\nThe photoreceptor and the environmentally friendly version known as organic photoconductor drums (OPC drums) receive the charge from the corona wire. If these parts were not working, the text would not be transferred to the paper.\n\nIf the laser were not working, the image of the text would not be drawn on the photoreceptor drum, and the paper would come out blank."
+  },
+  {
+    "id": "spd_13",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the first step you should take to troubleshoot a frozen print queue in Windows?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Clear the print queue using the printer's control panel.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Restart the printer's firmware.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Stop and restart the Print Spooler service.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Replace the printer's USB or Ethernet cable.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Stopping and restarting the Print Spooler service is the most effective first step to resolve a frozen print queue in Windows. The Print Spooler manages print jobs sent to the printer, and restarting it clears any stuck jobs, restoring functionality.\n\nWhile restarting the printer's firmware can resolve some printer-related issues, it is not the first step for addressing a frozen print queue. The problem lies within the Windows Print Spooler service, not the printer's firmware.\n\nThe printer's control panel does not provide an option to clear the print queue managed by Windows. The queue must be cleared through the Print Spooler service or the computer's print settings.\n\nReplacing the printer's cable is unnecessary for a frozen print queue issue. The problem is software-related, not hardware-related, and restarting the Print Spooler service is the appropriate solution."
+  },
+  {
+    "id": "spd_14",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You have just received a new multifunction printer for your office. After unboxing it, you notice that the printer was delivered on a cold winter day and has been sitting in the delivery truck for several hours.\n\nWhat is the BEST course of action before powering on the printer?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Power on the printer immediately to ensure it is functioning properly after delivery.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Place the printer near a heater to warm it up quickly and then power it on.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Allow the printer to acclimate to room temperature for a few hours before powering it on.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Unbox the printer, connect it to the power outlet, and run a test print immediately to check for any issues.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "It is important to allow the printer to acclimate to the room temperature after unboxing, especially if it has been moved from a cold to a warm environment. This prevents condensation from forming inside the printer, which could damage its internal components when powered on.\n\nPowering on the printer immediately after it has been exposed to cold temperatures can lead to condensation inside the device, potentially causing electrical damage or malfunctions.\n\nPlacing the printer near a heater can cause uneven heating, which may damage the printer's components.\n\nRunning a test print immediately without allowing the printer to acclimate can lead to condensation-related issues."
+  },
+  {
+    "id": "spd_15",
+    "topic": "Supporting Print Devices",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following statements BEST describes a routine maintenance task necessary for keeping an inkjet printer in good working condition?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Clean the printhead and ensure the carriage system is free of obstructions.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Replace the fuser unit and rollers as part of the maintenance kit.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Regularly replace the toner cartridge to prevent print quality issues.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Use a compressed air canister to clean the interior of the printer.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Cleaning the printhead and ensuring the carriage system is free of obstructions are essential maintenance tasks for inkjet printers. These tasks help maintain print quality and prevent mechanical issues.\n\nInkjet printers use ink cartridges, not toner cartridges. Toner cartridges are specific to laser printers, and replacing them is not relevant to inkjet printer maintenance.\n\nUsing compressed air is not recommended for cleaning inkjet printers. It can disperse ink particles and cause damage. Instead, cleaning should be done with a soft cloth or per the manufacturer's instructions.\n\nFuser units and rollers are components of laser printers, not inkjet printers. Inkjet printers do not have these components, so this maintenance task is not applicable."
   }
 ];
 

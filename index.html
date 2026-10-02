@@ -12294,7 +12294,7 @@ const DEFAULT_QUESTIONS = [
     "topic": "Summarizing Virtualization and Cloud Concepts",
     "type": "single",
     "requiredSelections": 1,
-    "question": "You are reviewing the security setup of a client-side virtualization environment at a law firm. During your analysis, you notice the following issues:\n- The hypervisor is not updated regularly.\n- Guest OSs are configured with unrestricted network access.\n- Snapshots of VMs are stored on a shared drive accessible to all employees.\nWhich of the following actions would most effectively address the ROOT cause of potential security vulnerabilities in this environment?",
+    "question": "You are reviewing the security setup of a client-side virtualization environment at a law firm. During your analysis, you notice the following issues:\nThe hypervisor is not updated regularly.\nGuest OSs are configured with unrestricted network access.\nSnapshots of VMs are stored on a shared drive accessible to all employees.\nWhich of the following actions would most effectively address the ROOT cause of potential security vulnerabilities in this environment?",
     "options": [
       {
         "id": "opt_a",
@@ -12347,7 +12347,7 @@ const DEFAULT_QUESTIONS = [
         "isCorrect": true
       }
     ],
-    "explanation": "Host workstations require central processing units (CPUs) with unique instruction sets to improve virtualization performance while also providing virtualization support.\n\nGuest and host operating systems require sufficient system memory, for example, Windows requires adequate memory on the host, and additional guest operating systems will also need a separate allocation to operate.\n\nMass storage will require the management of hard disk space in virtualization. Each guest OS will require a substantial amount of storage space, while the host hypervisor will also require its storage to share as guest OSs grow dynamically.\n\nA sandbox would provide an isolated environment to analyze malware while protecting the network from the adverse effects of an infection."
+    "explanation": "Host workstations require central processing units (CPUs) with unique instruction sets to improve virtualization performance while also providing virtualization support.\n\nGuest and host operating systems require sufficient system memory, for example, Windows 10 requires at least 2 GB of memory on the host. Additional guest operating systems will also need a separate allocation to operate.\n\nMass storage will require the management of hard disk space in virtualization. Each guest OS will require a substantial amount of storage space, while the host hypervisor will also require its storage to share as guest OSs grow dynamically.\n\nA sandbox would provide an isolated environment to analyze malware while protecting the network from the adverse effects of an infection."
   },
   {
     "id": "svacc_06",
@@ -12377,8 +12377,128 @@ const DEFAULT_QUESTIONS = [
         "isCorrect": false
       }
     ],
-    "explanation": "\"Five Nines\" availability ensures minimal downtime, equating to only 5 minutes and 15 seconds of annual downtime. This level of availability is critical for organizations like the law firm in the scenario where even a few minutes of downtime can have severe consequences. High availability is a key characteristic of cloud computing that directly addresses the firm's needs.\n\nWhile scalability, rapid elasticity, and shared resource pooling are important features of cloud computing, they pertain to resource capacity and cost efficiency rather than the specific metric of minimizing system downtime and maximizing availability."
+    "explanation": "\"Five Nines\" availability ensures minimal downtime, equating to only 5 minutes and 15 seconds of annual downtime. This level of availability is critical for organizations like the law firm in the scenario where even a few minutes of downtime can have severe consequences. High availability is a key characteristic of cloud computing that directly addresses the firm's needs.\n\nWhile scalability is an important feature of cloud computing, it primarily addresses the ability to handle increased demand by adding more resources (horizontal scaling). It does not directly ensure minimal downtime or high availability, which is the firm's primary concern in this scenario.\n\nRapid elasticity allows cloud systems to adjust resources in real time based on demand, which is beneficial for cost savings and performance during fluctuating workloads. However, it does not specifically guarantee minimal downtime or high availability, which is the firm's critical requirement.\n\nShared resource pooling allows cloud providers to allocate resources efficiently across multiple customers, reducing costs. However, this feature is unrelated to ensuring high availability or minimizing downtime, making it an incorrect choice for the firm's needs."
   },
+  {
+    "id": "svacc_07",
+    "topic": "Summarizing Virtualization and Cloud Concepts",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "A cyber architect reviews the differences between resource and security requirements associated with virtualization. What should the architect consider regarding resource requirements? (Select all that apply.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The amount of available disk space.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "The amount of memory required by the host/hypervisor.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "The ability to monitor exploits and vulnerabilities.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The ability to create a virtual network environment.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Each guest operating system (OS) requires sufficient system memory over and above what the host OS/hypervisor requires.\n\nEach guest OS also takes up a substantial amount of disk space. The virtual machine's (VM's) \"hard disk\" is stored as an image file on the host.\n\nA hypervisor will create a virtual network environment through which all the VMs can communicate and a network shared by the host and by VMs on the same host and other hosts.\n\nThe ability to monitor exploits and vulnerabilities does not fall under resource requirements. Monitoring is an important security consideration, though."
+  },
+  {
+    "id": "svacc_08",
+    "topic": "Summarizing Virtualization and Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What does the term cloud mean when referring to cloud computing?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It is the name of an operating system that anyone can use to design, build, and provide cloud services.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "It refers to the virtual hardware on which cloud computing is built.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It is a metaphor for a data storage service with an ever-growing capacity, like storm clouds.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It is a metaphor for the internet based on the basic cloud drawing used to represent a telephone network.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The term cloud is a metaphor for the internet based on the basic cloud drawing used to represent a telephone network. It is now used to describe the internet infrastructure in computer network diagrams.\n\nVirtual environments are part of the Infrastructure as a Server (IaaS) cloud model.\n\nData storage is provided as part of some cloud service models (such as SaaS or PaaS), but it is not a metaphor for cloud computing.\n\nCloud is not the name of an operating system used to provide cloud services."
+  },
+  {
+    "id": "svacc_09",
+    "topic": "Summarizing Virtualization and Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "As the network engineer for a large financial institution, you have been given the responsibility to provide a new financial desktop to the financial advisors in all company branch offices.\nThe requirements for the software desktop include:\nIt must be a virtualization solution.\nIt must be hosted in the cloud by a third party.\nIt must run on a tablet.\nWhich of the following virtualization types BEST meets your desktop software requirements?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "VDI",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Type 2 hypervisor",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Type 1 hypervisor",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Container virtualization",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A VDI (virtualization desktop infrastructure) is designed to be the end user's main computer system, which can be accessed from something like a tablet or thin client. In addition, a VDI can be hosted by a cloud service provider.\n\nA hypervisor is a virtualization component that allows virtual machines to interact with hardware on the host machine. Type 1 runs directly on the host machine's hardware to manage the guest VM(s). Type 2 runs on an operating system to manage the guest VM(s). These virtualization types do not determine whether a virtualized software desktop must run on a desktop or be hosted in the cloud.\n\nContainer virtualization is focused on providing a virtual environment for a single application. In this scenario, you need to have multiple application tools running on a single desktop."
+  },
+  {
+    "id": "svacc_10",
+    "topic": "Summarizing Virtualization and Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which type of cloud model provides a scaffold for a business to develop, deploy, and run applications without having to run and maintain the underlying foundation?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "PaaS",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "IaaS",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "DaaS",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "SaaS",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Platform as a service (PaaS) provides resources somewhere between SaaS and IaaS and deploys unconfigured servers, storage network infrastructure, and multitier web/database platforms on top.\n\nDesktop as a service (DaaS) provisions a virtual desktop infrastructure (VDI) as a cloud service that would deploy the applications and run them to use on a thin computer client.\n\nInfrastructure as a service (IaaS) would only provide the VMs, network, and other components without the software.\n\nSoftware as a service (SaaS) provisions (runs) software applications rather than purchasing software licenses and would have the web servers/databases unconfigured."
+  }
 {
     "id": "mdap_01",
     "topic": "Mobile Devices and Peripherals",

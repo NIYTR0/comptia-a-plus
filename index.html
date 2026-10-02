@@ -10468,6 +10468,461 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "This issue is known as latency, which is the time it takes for a signal to reach the recipient. Processing delays at intermediate systems, such as routers, can cause latency to be worse.\n\nVoice over Internet Protocol (VoIP) is a generic name for protocols that carry voice traffic over data networks.\n\nQuality of service (QoS) means that switches, access points, and routers are all configured to identify VoIP data and prioritize it over bursty data.\n\nJitter is the amount of variation in delay over time, and network technicians can measure it by sampling the elapsed time between packets arriving. Jitter is typically caused by network congestion."
+  },
+{
+    "id": "snserv_01",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A host configured with a private address cannot access the internet directly; therefore, a router uses a Network Address Translation (NAT) to convert the private and public addresses through what?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Proxy server",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Web server",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Spam gateway",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Mail server",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A proxy server fulfills requests for internet resources and configures a private address to a public address so it can access the internet directly.\n\nA web server provides client access using HTTP or HTTPS but will not convert a private address to a public address.\n\nA mail server enables a person to compose a message and send it to another anywhere in the world via the internet but will not convert a private address to a public one.\n\nSpam gateways use protocols to verify the authenticity of mail servers and a network administrator configures them to identify spoofed, misleading, malicious, or unwanted messages. Spam gateways do not have the ability to change a private address to a public address."
+  },
+  {
+    "id": "snserv_02",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A company asked a network engineer to provide a solution that will allow a hosted application to be highly available if one or more servers are offline. They have plenty of resources to provide a cluster of servers that can run the application. Still, the company is looking for direction on making the application seamlessly available to customers. What solution would the engineer implement for this request?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Spam gateway",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Load balancer",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Proxy server",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Web server",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A load balancer can distribute client requests across server nodes in a farm or pool. The company can use a load balancer in any situation where multiple servers provide the same function.\n\nA proxy server takes a full HTTP request from a client, checks it, then forwards it to the destination server on the internet. This activity would not be the solution for the given request.\n\nA web server provides client access using HTTP or its secure version (HTTPS). This is likely the type of servers in the mentioned cluster hosting the application.\n\nSpam gateways verify the authenticity of mail servers and have filters that can identify spoofed, misleading, malicious, or otherwise unwanted messages."
+  },
+  {
+    "id": "snserv_03",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following proxy server roles stores frequently accesses data so that a user's request never has to leave the network for retrieval?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "VPN",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Firewall",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Caching",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Sharing Internet Connections",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Caching allows frequently accessed data to be stored on the local proxy server so that a user's request never has to leave the network for retrieval.\n\nA VPN allows users to connect to the internet anonymously. All the data is encrypted, and not even the ISP can see the contents of the traffic.\n\nThe Sharing Internet Connections role allows all devices to be funneled through one connection, controlling the flow of network traffic. This is a good solution for wireless device connections over Wi-Fi.\n\nA firewall is a security system on a network that acts as a barrier between the network and the rest of the internet. A firewall is configured to block unwanted access and traffic that could cause security issues."
+  },
+  {
+    "id": "snserv_04",
+    "topic": "Supporting Network Services",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "Which of the following functions are performed by proxy servers? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Store client files.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Cache web pages.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Block unwanted packets from entering your private network.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Block employees from accessing certain websites.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "Filter unwanted email.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A proxy, or proxy server, stands between client computers and web servers. You can use a proxy server to prevent access to specific websites or to cache (save) frequently used web pages.\n\nWhen a proxy receives a request from the client, the proxy checks to verify that the client is allowed access to the website. If they are, the proxy then checks its cache to see if the requested page is there. If the page is already cached, the proxy server fulfills the request by displaying the requested page from the cache rather than retrieving it from the internet. Receiving a web page from a local proxy server is much faster than downloading the page from the internet."
+  },
+  {
+    "id": "snserv_05",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following is a primary function of a mail server?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Providing remote terminal access to network resources",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Facilitating the sending and receiving of email messages",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Storing and managing large amounts of structured data",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Hosting websites and web applications",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Mail servers are specifically designed to handle the sending, receiving, and storage of email messages. They manage email traffic and ensure that emails are delivered to the correct recipients. This is the primary function of mail servers.\n\nHosting websites and web applications is the primary function of web servers, not mail servers. Web servers use HTTP or HTTPS to serve web pages and applications to clients. This function is unrelated to the operations of mail servers.\n\nStoring and managing large amounts of structured data is associated with database servers, which are used to store, organize, and manage data for easy retrieval and manipulation. Mail servers do not primarily focus on data storage in the same way database servers do.\n\nProviding remote terminal access to network resources is typically associated with remote terminal access servers, which allow users to access network resources from remote locations. Mail servers do not provide this type of access, as their main role is to handle email communications."
+  },
+  {
+    "id": "snserv_06",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "To enable printer sharing via Windows, what should the print device connect to on the Windows PC?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To the print server via the Ethernet or on a Wi-Fi link, Bluetooth, USB, or other share service",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "To the file share server via the internet on a Wi-Fi link",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To the proxy server via the Ethernet on a DSL",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "To the web server via the internet on Wi-Fi or other share service",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Any print device can connect to a Windows print server over USB, Bluetooth, Ethernet, or Wi-Fi and must keep the Windows PC on to facilitate printing.\n\nA proxy server fulfills requests for internet resources and configures or converts a private address to a public address so a client can access the internet directly.\n\nA file share server is a server disk configured to allow clients to access resources over the enterprise network for authorized users.\n\nA web server provides client access using HTTP or HTTPS and would not play a part in printing."
+  },
+  {
+    "id": "snserv_07",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary function of a load balancer in a network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To block unauthorized access to a network by using a firewall",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "To detect and prevent malicious traffic patterns using an intrusion detection system",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To distribute client requests across server nodes in a farm or pool",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "To filter out spam messages before they reach the user's inbox",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The primary function of a load balancer is to distribute client requests across multiple server nodes in a farm or pool. This helps in providing high availability and scalability for services.\n\nBlocking unauthorized access is the primary function of a firewall, not a load balancer. Firewalls are used to allow or block traffic based on network access control lists.\n\nDetecting and preventing malicious traffic patterns is the function of an intrusion detection system (IDS) or intrusion prevention system (IPS), not a load balancer.\n\nFiltering out spam messages is the function of a spam gateway, not a load balancer. Spam gateways are used to verify the authenticity of mail servers and filter unwanted messages."
+  },
+  {
+    "id": "snserv_08",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user reports slow network speeds while transferring files to a shared server. You verify that the cabling and switch port are functioning correctly.\nUpon further investigation, you notice that the user's network adapter and the switch port are set to different duplex modes.\nWhat should you do to resolve the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Replace the user's network cable with a shielded one",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Set both the network adapter and switch port to auto-negotiate",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Disable the user's network adapter and re-enable it",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Update the firmware on the switch",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Mismatched duplex settings can cause slow network speeds due to improper communication between the devices. Setting both the network adapter and switch port to auto-negotiate ensures they can agree on the appropriate duplex mode and speed.\n\nShielded cables are used to reduce interference, but interference is not indicated as the issue here. The problem is related to mismatched duplex settings, not the physical cabling.\n\nWhile updating firmware can resolve certain network issues, it is not relevant to resolving mismatched duplex settings.\n\nDisabling and re-enabling the network adapter might temporarily reset the connection but will not resolve the underlying duplex mismatch issue."
+  },
+  {
+    "id": "snserv_09",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician troubleshoots a computer on the wired network that is experiencing slow network speeds. Which of the following would NOT be a possible cause for the technician to troubleshoot?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Improperly terminated patch cords",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "External interference on the cable",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Improper speed/duplex configuration",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Another radio source broadcasting at the same frequency",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Another radio source broadcasting at the same frequency would cause interference and result in slow speeds for wireless devices, but this would not be relevant to a wired network.\n\nImproperly terminated patch cords can cause slow network speeds on a wired network. The technician should substitute the patch cord with a known good cable or verify patch cords using a cable tester.\n\nAn improper speed/duplex configuration on the switch interface and network interface card (NIC) can cause slow network speeds on a wired network. This should usually be set to auto-negotiate.\n\nExternal interference on the structured cabling can cause slow network speeds on a wired network. A cable tester called a \"certifier\" can report detailed information about cable interference."
+  },
+  {
+    "id": "snserv_10",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Your company has recently experienced issues with inconsistent timestamps on transaction logs across multiple servers, leading to difficulties in tracking and auditing activities.\nAs the network administrator, you need to resolve this issue to ensure all servers have synchronized time.\nWhich of the following actions should you take to address this problem?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Set up a File Transfer Protocol (FTP) server to regularly back up transaction logs for auditing purposes.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Install and configure a centralized Time Server to synchronize the clocks of all network devices.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Deploy a new Database Server to manage and store transaction logs more efficiently.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Implement HTTPS on all servers to secure data transmission and improve timestamp accuracy.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "By installing and configuring a centralized Time Server, you can ensure that all devices on the network have synchronized time, which will resolve the issue of inconsistent timestamps on transaction logs.\n\nWhile a Database Server can help manage and store data, it does not address the issue of time synchronization across servers, which is the root cause of the inconsistent timestamps.\n\nHTTPS is used to secure data transmission over the network but does not directly affect the synchronization of time across servers. It does not resolve the issue of inconsistent timestamps.\n\nWhile setting up an FTP server for backups can aid in data recovery and auditing, it does not address the core issue of time synchronization, which is necessary for consistent timestamps."
+  },
+  {
+    "id": "snserv_11",
+    "topic": "Supporting Network Services",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "Vulnerability issues do not just affect PC operating systems and applications in enterprise networks. Any device or network appliance can be vulnerable to exploits from within and outside the network. With the rise of more personalized devices, the risks to embedded systems have become more evident. Which devices are considered a new and growing problem regarding these proposed risks? (Select all that apply.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Mobile devices",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "New motherboard, router, adapter, or other internal devices",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Any unpatched device",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Internet of Things (IoT)",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Many IoT devices are for home automation systems used over Wi-Fi. Unfortunately, most standards that regulate frequencies, bands, networks, or other wireless technology may not cover them, and the IOTs could have security flaws.\n\nEvery establishment should have similar security concerns toward monitoring vulnerabilities and only allowing mobile devices on networks with authorization.\n\nEach establishment should monitor vulnerabilities on unpatched devices and apply patches or install a hardened configuration to those devices with access to enterprise networks to reduce security concerns.\n\nAny code running on a network appliance or device can also be vulnerable to exploits. However, installing new or updated hardware for internal systems will most likely have updated security measures already in place."
+  },
+  {
+    "id": "snserv_12",
+    "topic": "Supporting Network Services",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "A network technician is troubleshooting an issue where a wireless device only receives an intermittent signal. What could be a possible cause of this? (Select three.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "There is an electromagnetic source nearby.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "There is Wi-Fi analyzer software running.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Another radio source is broadcasting at the same frequency.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Something is blocking the signal.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "If a device is within the supported range but the signal is intermittent, there is likely to be interference from another radio source broadcasting at the same frequency.\n\nInterference from a powerful electromagnetic source, such as a motor or a microwave oven, can cause an intermittent wireless signal.\n\nRadio waves do not pass easily through metal or dense objects. Construction materials, such as wire mesh, foil-backed plasterboard, concrete, and mirrors, can block or degrade signals.\n\nWi-Fi analyzer software identifies the signal strength of nearby networks on each channel. It shows the signal strength with values close to zero representing a stronger signal."
+  },
+  {
+    "id": "snserv_13",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST describes the role of HyperText Markup Language (HTML) in web applications?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "HTML is used to encrypt data between a client and a server to ensure secure communication.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "HTML provides the structure and formatting for web pages.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "HTML is a protocol used to transfer data between web servers and clients over the internet.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "HTML is a software suite that allows Windows clients to access Linux hosts as though they were Windows servers.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "HTML is a markup language used to create the structure of web pages. It uses coded tags to describe how text and multimedia content should be displayed by web browsers.\n\nHTML is not used for encryption. Encryption for secure communication is typically handled by protocols like HTTPS, which uses SSL/TLS.\n\nHTML is not a protocol. The protocol used for transferring data between web servers and clients is HTTP or HTTPS.\n\nHTML is not a software suite for accessing servers. The software suite that allows Windows clients to access Linux hosts is Samba, which is unrelated to HTML."
+  },
+  {
+    "id": "snserv_14",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A company is experiencing poor VoIP call quality, including jitter and delays. You analyze the network and find that the issue occurs during peak usage times when multiple devices are streaming videos and downloading large files.\nThe company uses a SOHO router without advanced traffic management features.\nWhat is the MOST likely cause of the VoIP issues?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The SOHO router lacks Quality of Service (QoS) configuration to prioritize VoIP traffic.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "The Internet Service Provider (ISP) is throttling VoIP traffic during peak hours.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The VoIP phones are outdated and cannot handle modern network traffic.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The VoIP application is not compatible with the SOHO router.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The lack of QoS on the SOHO router is the most likely cause of the VoIP issues. Without QoS, the router cannot prioritize VoIP traffic over other types of data, such as video streaming or file downloads. This results in jitter and delays during peak usage times, as VoIP packets are delayed or dropped due to network congestion.\n\nVoIP applications are generally compatible with most routers, including SOHO models. The issue here is not compatibility but the router's inability to prioritize VoIP traffic during periods of high network usage.\n\nThe age of the VoIP phones is not the issue in this scenario. The problem lies in the network's inability to prioritize VoIP traffic, which is unrelated to the phones themselves.\n\nWhile ISP throttling could theoretically cause issues, there is no evidence in this scenario to suggest that the ISP is specifically targeting VoIP traffic. The described problem is more likely due to the lack of QoS on the SOHO router."
+  },
+  {
+    "id": "snserv_15",
+    "topic": "Supporting Network Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user on a Windows computer receives a limited connectivity message. They call the helpdesk to see how their issue can be resolved. What should the user check first?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Check the DHCP lease.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Check patch cords.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Check for network congestion.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Check that the network is the problem and not the host.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "In Windows, a limited connectivity message specifically means that the host can establish a physical connection to the network but has not received a lease for an IP configuration from a DHCP server.\n\nThe first step in resolving a no or intermittent connectivity issue is to check that the patch cords are properly terminated and connected to the network ports.\n\nIf a user reports slow speed, establish that there is a link speed problem by checking the nominal link speed and using a utility to measure transfer rate independent of specific apps or network services.\n\nJitter is typically caused by network congestion affecting packet processing on routers and switches."
   }
 ];
 

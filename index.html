@@ -8053,6 +8053,306 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "IPv4 forwarding is a critical function that allows a router to forward packets between different subnets. If IPv4 forwarding is disabled, the router will not route traffic between the 192.168.1.0/24 and 192.168.2.0/24 subnets, even if the IP addresses and subnet configurations are correct. Enabling IPv4 forwarding will resolve the issue by allowing the router to forward packets between the subnets.\n\nWhile an incorrect default gateway can cause communication issues, the scenario specifies that the router is correctly configured with the appropriate IP addresses for each subnet. The issue lies with the router's inability to forward packets, not with the devices' default gateway settings.\n\nMisconfigured subnet masks can cause communication issues within or between subnets. However, the scenario specifies that the subnets are correctly defined as 192.168.1.0/24 and 192.168.2.0/24. The problem is not related to subnet mask configuration but to the router's disabled IPv4 forwarding feature.\n\nNAT is used to translate private IP addresses to public IP addresses for internet access. In this scenario, the issue is related to communication between two private subnets within the same network. NAT is not required for this type of communication, so its configuration is irrelevant to the problem described."
+  },
+{
+    "id": "net_comms_01",
+    "topic": "Network Communications",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following scenarios best demonstrates the appropriate use of the User Datagram Protocol (UDP)?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "A secure online banking transaction requiring encryption and acknowledgment of data delivery.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "A file transfer process where missing packets would result in corrupted files.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "A video streaming service that prioritizes speed over guaranteed delivery of every data packet.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "A remote server login session requiring authentication and reliable data transmission.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "UDP is a connectionless protocol that prioritizes speed over reliability. It is suitable for applications like video streaming, where occasional missing or out-of-order packets manifest as minor glitches rather than critical errors. This makes UDP ideal for time-sensitive data transmission, where speed is more important than ensuring every packet is delivered.\n\nOnline banking requires a reliable, connection-oriented protocol like TCP. Online banking transactions cannot tolerate missing or corrupted packets, as they could compromise data integrity and security. UDP is not suitable for such applications.\n\nFile transfers require all data packets to be delivered accurately and in order. Missing packets would corrupt the file, making TCP the appropriate protocol for this scenario. UDP does not guarantee delivery or sequencing, so it is not suitable here.\n\nRemote server login sessions, such as those using Secure Shell (SSH), require reliable data transmission and encryption to ensure secure communication. TCP is used in such cases because it provides acknowledgment and sequencing, which UDP lacks."
+  },
+  {
+    "id": "net_comms_02",
+    "topic": "Network Communications",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A company has built a video streaming service that supplies training videos. Quickly transmitting video data to customers is more important than guaranteed delivery.\nWhich of the following Transport layer IP suite protocols is MOST likely used for this service?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Internet Control Message Protocol (ICMP)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "File Transfer Protocol (FTP)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Transport Layer Protocol (TCP)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "User Datagram Protocol (UDP)",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "User Datagram Protocol (UDP) is a Transport layer protocol that uses a simple connectionless communication model with a minimal protocol mechanism. This makes it suitable for streaming video or sound. Guaranteed data delivery is not as important as fast transmissions.\n\nTransport Layer Protocol (TCP) is a Transport layer protocol that provides reliable, ordered, and error-checked data delivery. Guaranteed data delivery is more important than fast transmissions.\n\nInternet Control Message Protocol (ICMP) is an Internet layer protocol used by network devices, including routers, to send error messages and operational information. For example, ICMP may state that a service is unavailable or a host can't be reached.\n\nFile Transfer Protocol (FTP) is an Application layer protocol used to transfer computer files between hosts."
+  },
+  {
+    "id": "net_comms_03",
+    "topic": "Network Communications",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An IT administrator is troubleshooting a file transfer issue between a client and a server.\nUsing a protocol analyzer, the administrator observes that the client sends a SYN packet to the server, and the server responds with a SYN/ACK packet, but the client does not send the final ACK packet.\nBased on this observation, what is the MOST likely cause of the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The server is using UDP instead of TCP, which does not require a three-way handshake.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The client's application is using an outdated version of the protocol, which does not support the three-way handshake.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The client's TCP connection is being blocked by a firewall, preventing the completion of the three-way handshake.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "The server's port number is incorrectly configured, causing the client to fail to respond.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The three-way handshake (SYN, SYN/ACK, ACK) is a fundamental part of establishing a TCP connection. If the client does not send the final ACK packet, it is likely that something is blocking the connection, such as a firewall or security rule. TCP requires this handshake to establish a reliable connection, and any interruption in this process will prevent the connection from being established.\n\nThe scenario explicitly describes the SYN and SYN/ACK packets, which are part of the TCP handshake process. UDP does not use a three-way handshake, so the presence of SYN and SYN/ACK packets confirms that TCP is being used.\n\nThe server has already responded with a SYN/ACK packet, indicating that the port configuration is correct and the server is listening for connections. The issue lies with the client's failure to send the final ACK packet, not the server's port configuration.\n\nThe three-way handshake is a fundamental feature of TCP and has been part of the protocol since its inception. There is no \"outdated version\" of TCP that lacks this feature. The issue is more likely related to network interference, such as a firewall blocking the connection."
+  },
+  {
+    "id": "net_comms_04",
+    "topic": "Network Communications",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A user configures an email client application and decides to use a TCP/IP suite protocol that stores all messages on the email server so that they can be synchronized across a laptop, a smartphone, and a web email client. In addition, this protocol stores the email messages on the email server until the user explicitly deletes them.\nWhich of the following TCP/IP port numbers will the client application typically access while using this protocol to contact the email server?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "110",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "143",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "80",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "21",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The TCP/IP suite protocol that stores email messages on a server so they can be synchronized across multiple devices is Internet Message Access Protocol (IMAP). IMAP typically uses port 143.\n\nFTP uses port 21.\n\nHTTP uses port 80.\n\nPOP3 uses port 110."
+  },
+  {
+    "id": "net_comms_05",
+    "topic": "Network Communications",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following best describes the primary reason why Transmission Control Protocol (TCP) is considered a \"connection-oriented\" protocol?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It establishes a connection using a three-way handshake and ensures reliable data delivery.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "It prioritizes speed over reliability, making it suitable for time-sensitive applications like video streaming.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It uses encryption to secure data transmissions and prevent unauthorized access.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It assigns random port numbers to ensure that multiple applications can communicate simultaneously.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "TCP is a \"connection-oriented\" protocol due to its ability to establish a connection using a three-way handshake (SYN, SYN/ACK, ACK). It ensures reliable data delivery by assigning sequence numbers, allowing acknowledgments (ACK), and retransmitting missing or damaged packets. These features make TCP reliable for applications that cannot tolerate missing or corrupted data.\n\nEncryption is not a defining feature of TCP itself. While some application protocols that use TCP (e.g., HTTPS, SSH) implement encryption, TCP's primary role is to ensure reliable data delivery, not to secure the data. Encryption is an additional layer provided by specific application protocols.\n\nTCP prioritizes reliability over speed. It ensures that all data packets are delivered in the correct order and retransmits missing packets, which introduces overhead and delays. Time-sensitive applications like video streaming typically use UDP, which sacrifices reliability for speed.\n\nWhile TCP does assign random source port numbers for client communication, this is not the primary reason TCP is considered \"connection-oriented.\" The random port assignment is a feature of the Transport layer but does not define the connection-oriented nature of TCP."
+  },
+  {
+    "id": "net_comms_06",
+    "topic": "Network Communications",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You've just installed the DNS service on a Windows server. Which port must be opened on the server's firewall to allow clients to access the service?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "123",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "143",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "110",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "53",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The DNS service runs on port 53 by default.\n\nPOP3 uses port 110.\n\nIMAP uses port 143.\n\nNTP uses port 123."
+  },
+  {
+    "id": "net_comms_07",
+    "topic": "Network Communications",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which layer of the TCP/IP protocol stack is responsible for assigning port numbers to network applications?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Application Layer",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Link Layer",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Internet Layer",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Transport Layer",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The Transport layer is responsible for assigning port numbers to network applications. This layer ensures that data is sent and received by the correct application by using port numbers, which range from 0 to 65535. For example, HTTP uses port 80, and email services like SMTP use port 25.\n\nThe Link layer is responsible for moving frames of data between hosts using MAC addresses. It does not deal with port numbers or application-level communication. This layer operates at a lower level than the Transport layer and is concerned with physical and data link communication.\n\nThe Internet layer is responsible for addressing and routing data packets across networks using IP addresses. It does not assign port numbers, as its primary function is to ensure packets are delivered to the correct host, not the correct application.\n\nThe Application layer is where network applications operate, such as web browsers or email clients. While applications use port numbers to communicate, the actual assignment and management of port numbers are handled by the Transport layer, not the Application layer."
+  },
+  {
+    "id": "net_comms_08",
+    "topic": "Network Communications",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Why does the Transport layer use port numbers in network communication?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To ensure data is routed to the correct network",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "To encrypt data for secure transmission",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To distinguish between applications communicating on the same device",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "To identify the physical address of the destination device",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The Transport layer uses port numbers to identify and distinguish between multiple applications running on the same device. For example, a device might be running a web browser (using port 80 for HTTP) and an email client (using port 25 for SMTP) simultaneously. Port numbers ensure that data is delivered to the correct application.\n\nIdentifying the physical address (e.g., MAC address) is the responsibility of the Link layer, not the Transport layer. The Transport layer focuses on managing communication between applications, not physical devices.\n\nRouting data to the correct network is the responsibility of the Internet layer, which uses IP addresses for this purpose. The Transport layer works at a higher level, focusing on application-specific communication.\n\nEncryption is not a function of the Transport layer. While some protocols that operate at the Transport layer (e.g., HTTPS) use encryption, the encryption itself is handled by the application layer or security protocols, not by the Transport layer."
+  },
+  {
+    "id": "net_comms_09",
+    "topic": "Network Communications",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network administrator is troubleshooting an issue where a client device cannot access a web server. The administrator uses a packet analyzer and observes that the client is sending packets to the server on port 80, but the server is not responding.\nWhich of the following is the MOST likely cause of the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The Transport layer protocol being used is UDP instead of TCP.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The client device has an incorrect IP address.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The server's MAC address is not configured correctly.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The server is using a different port for HTTP communication.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "If the client is sending packets to port 80 (the default port for HTTP) but the server is not responding, it is possible that the server is configured to use a different port for HTTP communication. For example, the server might be using port 8080 instead of port 80.\n\nIf the client had an incorrect IP address, it would not be able to send packets to the server at all. The scenario specifies that packets are being sent to the server, so the IP address is not the issue.\n\nHTTP communication requires the use of TCP, not UDP. If UDP were being used, the client would not be able to establish a connection with the server in the first place. The issue described in the scenario is related to the port number, not the protocol.\n\nMAC addresses are used at the Link layer for local network communication. If there were an issue with the server's MAC address, the client would not be able to send packets to the server at all. The scenario specifies that packets are being sent, so the MAC address is not the problem."
+  },
+  {
+    "id": "net_comms_10",
+    "topic": "Network Communications",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network administrator troubleshoots a video conferencing application that occasionally experiences minor glitches, such as dropped video frames or slight audio delays.\nAfter analyzing the network traffic, the administrator observes that the application uses a connectionless protocol with minimal overhead.\nBased on this information, which conclusion can the administrator make about the protocol being used and its suitability for the application?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The application uses TCP, which is unsuitable because it prioritizes reliability over speed.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The application uses SSH, which is unsuitable because it is designed for secure remote access, not real-time communication.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The application uses HTTPS, which is unsuitable because it is designed for secure web browsing, not video conferencing.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The application uses UDP, which is suitable because it prioritizes speed and can tolerate minor data loss.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "UDP is a connectionless protocol with minimal overhead, making it ideal for time-sensitive applications like video conferencing. While it does not guarantee the delivery or sequencing of packets, it allows for faster communication, and minor glitches (e.g., dropped frames) are acceptable in this context. The administrator's observation of a connectionless protocol aligns with UDP's characteristics, confirming its suitability for the application.\n\nTCP is a connection-oriented protocol that ensures reliable delivery of data through acknowledgments and retransmissions. This adds overhead and latency, making it unsuitable for real-time applications like video conferencing. The administrator's observation of a connectionless protocol rules out TCP.\n\nHTTPS is an application-layer protocol used for secure communication over the web. It relies on TCP for reliable data delivery and is not designed for real-time communication. The administrator's observation of minimal overhead and a connectionless protocol does not align with HTTPS.\n\nSSH is a protocol used for secure remote access to servers and devices. It relies on TCP for reliable and encrypted communication, making it unsuitable for video conferencing. The administrator's observation of a connectionless protocol rules out SSH as a possibility."
   }
 ];
 

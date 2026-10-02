@@ -7568,6 +7568,491 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "A firewall contributes to network security by monitoring and filtering incoming and outgoing traffic based on a set of predefined security rules. This ensures that only authorized traffic is allowed, while unauthorized or malicious traffic is blocked.\n\nA modem establishes the physical connection to the ISP's network, while a firewall focuses on securing the network.\n\nFirewalls do not enhance the speed of data transmission. Their purpose is to secure the network by filtering traffic, which may slightly impact speed due to the processing of security rules.\n\nFirewalls do not handle the translation of IP addresses into domain names; they focus on traffic filtering and security."
+  },
+{
+    "id": "tcpip_01",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which layer of the TCP/IP model is responsible for putting frames onto the physical network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Internet Layer",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Transport Layer",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Link or Network Interface Layer",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Application Layer",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The Link or Network Interface Layer is responsible for putting frames onto the physical network. This layer handles communication on a local network segment and uses technologies like Ethernet or Wi-Fi. It also identifies node interfaces using MAC addresses.\n\nThe Internet Layer is responsible for packet addressing and routing within a network of networks. It does not deal with frames or physical network communication but instead focuses on forwarding data between different networks using IP addresses.\n\nThe Transport Layer manages how hosts handle multiple connections for different application protocols. It ensures reliable or unreliable data delivery using protocols like TCP and UDP, but it does not deal with frames or physical network communication.\n\nThe Application Layer contains protocols that perform high-level functions, such as web browsing or email. It operates at a much higher level than the Link Layer and does not interact with the physical network or frames."
+  },
+  {
+    "id": "tcpip_02",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary function of the Link or Network Interface layer in the TCP/IP model?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "To put frames onto the physical network.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "To provide packet addressing and routing within a network of networks.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "To perform high-level functions like web and email services.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "To manage multiple connections for different application layer protocols.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The Link or Network Interface layer is responsible for placing frames onto the physical network. It operates at the local network segment level and handles the encapsulation of data into frames for transmission over Ethernet, Wi-Fi, or other local networking media.\n\nThe Internet layer is responsible for addressing and routing packets between different networks, which is beyond the scope of the Link layer's local network operations.\n\nThe Transport layer ensures that multiple connections for different application protocols can operate simultaneously. It is unrelated to the Link layer's role in handling frames on the physical network.\n\nThe Application layer deals with high-level protocols and services such as HTTP for web browsing and SMTP for email. The Link layer does not handle these types of functions."
+  },
+  {
+    "id": "tcpip_03",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "While setting up a home office, a technician disables the DHCP service on the office router but does not want to rely on link-local addressing.\nWhich of the following IP addressing methods should they use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "APIPA",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Static",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Dynamic",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Alternate",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Without DHCP, many network hosts assign their own non-routable link-local IP address. To avoid link-local addresses when DHCP addressing is unavailable, you can assign static addresses to all devices that communicate on the local network.\n\nDynamic addressing automatically assigns IP addresses using DHCP.\n\nAutomatic Private IP Addressing (APIPA) is Microsoft's name for auto-configuring link-local addresses.\n\nAlternate IP addressing is a way to assign a second IP address to a host."
+  },
+  {
+    "id": "tcpip_04",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are troubleshooting a network issue where a computer on your local network cannot communicate with a server on a different network. You suspect the issue lies at the Internet Layer of the TCP/IP model.\nAfter running a packet capture, you notice that the computer is sending packets, but they are not reaching the server.\nWhich of the following is the MOST likely cause of the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The MAC address of the server is incorrectly configured.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The application protocol used by the server is not supported by the client.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The router responsible for forwarding packets to the server is misconfigured.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "The computer's IP address is not assigned to the correct subnet mask.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The Internet Layer is responsible for packet addressing and routing between networks. If the router, which acts as an intermediate system for forwarding packets, is misconfigured, the packets will not reach their intended destination. This aligns with the Internet Layer's function, making this the correct answer.\n\nThe MAC address operates at the Link Layer, not the Internet Layer. While MAC addresses are used for local communication within the same network segment, they are not relevant for routing packets between different networks. Therefore, this is not the correct answer.\n\nApplication protocols operate at the Application Layer, which is above the Internet Layer. While mismatched application protocols can cause communication issues, they do not prevent packets from being routed between networks. Therefore, this is not the correct answer.\n\nWhile an incorrect subnet mask can cause local communication issues, it does not directly impact the Internet Layer's ability to route packets between networks. This issue would more likely manifest at the Link Layer or during local network configuration. Hence, this is not the correct answer."
+  },
+  {
+    "id": "tcpip_05",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A company is experiencing issues with its file transfer application. Files are often incomplete or corrupted during transmission, and users report delays when trying to resend the files.\nAfter analyzing the situation, you suspect the issue is related to the Transport Layer protocol being used.\nWhich protocol is MOST likely causing these issues, and why?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Internet Protocol (IP), because it cannot handle large file transfers",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Transmission Control Protocol (TCP), because it introduces delays due to retransmissions",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "User Datagram Protocol (UDP), because it does not guarantee reliable delivery",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Address Resolution Protocol (ARP), because it fails to resolve MAC addresses correctly",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "UDP is the correct answer because it is a connectionless, unreliable protocol that does not guarantee the delivery or order of packets. This lack of reliability can lead to incomplete or corrupted files during transmission, as UDP does not retransmit lost packets. While UDP is faster, it is not suitable for applications like file transfers that require data integrity and reliability.\n\nTCP is incorrect because, while it may introduce delays due to its retransmission mechanism, it ensures reliable delivery of data. The issue described in the scenario—corrupted or incomplete files—is not consistent with the behavior of TCP, which is designed to prevent such problems.\n\nIP is incorrect because it operates at the Internet Layer, not the Transport Layer. IP is responsible for addressing and routing packets but does not handle the reliability of data transmission. The issue described in the scenario is related to the Transport Layer, not the Internet Layer.\n\nARP is incorrect because it operates at the Internet Layer and is used to resolve IP addresses to MAC addresses on a local network. It does not affect the reliability of file transfers or the choice of Transport Layer protocol. The described issue is unrelated to ARP's functionality."
+  },
+  {
+    "id": "tcpip_06",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following describes the part of the IPv6 address that identifies the subnet?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The IPv6 address interface ID",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The IPv6 address network ID",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "The first quartet in the IPv6 address prefix",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The last quartet in the IPv6 address interface ID",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The IPv6 address network ID identifies the subnet.\n\nFor example, in the address FEC0:1319:7700:F631:446A:5511:CC40:25AB, the first 64 bits (FEC0:1319:7700:F631) represent the network ID, and the prefix length identifies the subnet."
+  },
+  {
+    "id": "tcpip_07",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST describes an IP address class?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The class is the version of the IP addressing standard that the address uses.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "The class refers to the range of IP addresses that a DHCP server has been authorized to assign.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The class defines the type of device that the address is assigned to (server, printer, workstation, etc.).",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The class defines the IP address's default network address portion.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The address class defines the IP address's default network address portion. For example, a Class A address uses the first octet as the network address and the remaining octets as the available host addresses."
+  },
+  {
+    "id": "tcpip_08",
+    "topic": "TCP/IP Concepts",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "Which of the following are not valid IPv4 addresses? (Select three.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "45.22.156.256",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "132.64.32.8",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "122.0.0.0",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "116.0.0.116",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "145.8.260.7",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_f",
+        "text": "257.0.122.55",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_g",
+        "text": "1.55.254.3",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "IP addresses have a value between 0 and 255 within each octet. In this list, 45.22.156.256, 145.8.260.7, and 257.0.122.55 are not valid IP addresses."
+  },
+  {
+    "id": "tcpip_09",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Your Windows workstation has Automatic Private IP Addressing (APIPA) implemented with default settings. Which of the following TCP/IP addresses could you automatically assign to the system should your DHCP server go down or become inaccessible?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "172.16.1.26",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "192.168.1.22",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "169.254.1.26",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "169.198.1.23",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "168.254.10.25",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_f",
+        "text": "10.0.0.65",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "In the event that a DHCP server is not available, Windows workstations can use APIPA to automatically provide themselves with an IP address. The default address range used by APIPA is 169.254.0.1 to 169.254.255.254. Of the options presented, only 169.254.1.26 falls within this range."
+  },
+  {
+    "id": "tcpip_10",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An application developer wants to ensure packets arrive at the destination in the correct order and none are lost when an application communicates across the network.\nWhich protocol will the application developer use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "TCP",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "UDP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "IP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "DNS",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The Transmission Control Protocol (TCP) can identify and recover from lost or out-of-order packets. Failing to receive a packet or incorrectly processing it can cause serious data errors.\n\nThe User Datagram Protocol (UDP) is faster than TCP and comes with less of a transmission overhead because it does not need to send extra information to establish reliable connections.\n\nThe Internet Protocol (IP) provides packet addressing and routing within a network of networks. For data to travel from one IP network to another, an intermediate system must forward it.\n\nThe Domain Name System (DNS) is a service that maps fully qualified domain name labels to IP addresses on most TCP/IP networks, including the internet."
+  },
+  {
+    "id": "tcpip_11",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST describes the function of the Application Layer in the TCP/IP model?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It is responsible for addressing hosts and routing packets between networks.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "It manages multiple connections for different application layer protocols simultaneously.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It ensures reliable, connection-oriented forwarding of packets between hosts.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It contains protocols that perform high-level functions, such as configuring and managing network hosts.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The Application Layer is responsible for high-level functions in the TCP/IP model. It includes protocols that allow users to interact with network services, such as web browsing, email, and file transfers.\n\nThe Internet Layer handles addressing and routing, ensuring data packets are sent to the correct destination across networks.\n\nManaging multiple connections for different application layer protocols simultaneously is the role of the Transport Layer, which manages multiple connections using protocols like TCP and UDP. It ensures that data from different applications is transmitted correctly and efficiently.\n\nEnsuring reliable, connection-oriented forwarding of packets between hosts is a function of the Transmission Control Protocol (TCP) at the Transport Layer, not the Application Layer. TCP ensures reliable communication by recovering lost or out-of-order packets."
+  },
+  {
+    "id": "tcpip_12",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following components of an IPv4 address will be unique for each network device?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Network ID",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Host ID",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Network protocol",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Subnet mask",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The IPv4 address is split into two components. The host ID is a unique value that will be different for each network device.\n\nThe network ID defines the network address. Every network device will have the same network ID.\n\nThe subnet mask defines which octets belong to the network ID and which octets belong to the host ID.\n\nThe network protocol defines how data is formatted and how network hosts will communicate. It is not a part of the IPv4 address."
+  },
+  {
+    "id": "tcpip_13",
+    "topic": "TCP/IP Concepts",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "Which of the following IP addresses belong to the 114.0.0.0 Class A network? Assume that the network is indicated by the default Class A portion of the IP address. (Select three.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "114.0.0.15",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "115.88.0.55",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "114.122.66.12",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "115.0.0.66",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_e",
+        "text": "115.77.89.4",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_f",
+        "text": "114.58.12.0",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "With a Class A network, the first octet indicates the network address. All hosts on the network must have the same value in the first octet (114)."
+  },
+  {
+    "id": "tcpip_14",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are setting up a SOHO router for a small office. The office has multiple devices that need internet access, and you want to ensure that each device receives an IP address automatically without manual configuration.\nAdditionally, you need to allow remote workers to securely access the office network.\nWhich of the following configurations should you implement?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Disable DHCP and assign static IP addresses to all devices manually.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Enable port forwarding for all devices on the network.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Configure the router to use only public IP addresses for all devices.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Enable DHCP on the router and configure a VPN for remote access.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Enabling DHCP allows the router to automatically assign private IP addresses to devices on the local network, simplifying the setup process. Configuring a VPN (Virtual Private Network) ensures that remote workers can securely access the office network over the internet, meeting both requirements of the scenario.\n\nManually assigning static IP addresses to all devices is time-consuming and prone to errors. It also does not address the need for secure remote access, as no VPN or similar solution is mentioned in this option.\n\nPort forwarding is used to direct specific types of traffic to a particular device on the network, such as hosting a server. It does not automate IP address assignment or provide secure remote access for workers.\n\nAssigning public IP addresses to all devices is not practical or secure in a SOHO environment. Public IPs are limited in availability and expose devices directly to the internet, increasing the risk of unauthorized access. This option also does not address the need for secure remote access."
+  },
+  {
+    "id": "tcpip_15",
+    "topic": "TCP/IP Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network administrator is troubleshooting a connectivity issue in a corporate network. Devices in one subnet (192.168.1.0/24) cannot communicate with devices in another subnet (192.168.2.0/24). Both subnets are connected to a router, and the router has been configured with the correct IP addresses for each subnet.\nUpon further investigation, the administrator discovers that IPv4 forwarding is disabled on the router.\nWhat conclusion can the administrator draw from this information to resolve the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The router cannot route packets between the two subnets because IPv4 forwarding is disabled.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "The subnet masks for both subnets are misconfigured, preventing communication.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The router's NAT (Network Address Translation) configuration is incorrect.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The devices in the 192.168.1.0/24 subnet are using an incorrect default gateway.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "IPv4 forwarding is a critical function that allows a router to forward packets between different subnets. If IPv4 forwarding is disabled, the router will not route traffic between the 192.168.1.0/24 and 192.168.2.0/24 subnets, even if the IP addresses and subnet configurations are correct. Enabling IPv4 forwarding will resolve the issue by allowing the router to forward packets between the subnets.\n\nWhile an incorrect default gateway can cause communication issues, the scenario specifies that the router is correctly configured with the appropriate IP addresses for each subnet. The issue lies with the router's inability to forward packets, not with the devices' default gateway settings.\n\nMisconfigured subnet masks can cause communication issues within or between subnets. However, the scenario specifies that the subnets are correctly defined as 192.168.1.0/24 and 192.168.2.0/24. The problem is not related to subnet mask configuration but to the router's disabled IPv4 forwarding feature.\n\nNAT is used to translate private IP addresses to public IP addresses for internet access. In this scenario, the issue is related to communication between two private subnets within the same network. NAT is not required for this type of communication, so its configuration is irrelevant to the problem described."
   }
 ];
 

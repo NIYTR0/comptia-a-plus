@@ -9863,6 +9863,311 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "Analyzing the report to identify potential unauthorized access attempts and recommending the implementation of stricter access controls and monitoring demonstrates an analytical approach by considering the possibility of unauthorized access based on the report's findings.\n\nConcluding that the increased traffic is due to legitimate after-hours work by employees and no action is needed overlooks the potential security threat posed by the unusual traffic patterns and failed login attempts. Analyzing the situation requires considering the possibility of unauthorized access rather than assuming all activity is legitimate.\n\nWhile forgotten passwords can cause failed login attempts, this explanation does not account for the unusual timing and unfamiliar IP address. A deeper analysis is needed to assess potential security risks.\n\nAssuming a malfunction without further investigation dismisses the potential security threat. Analyzing the data should focus on understanding the traffic patterns and addressing any security vulnerabilities."
+  },
+{
+    "id": "iaea_01",
+    "topic": "Internet and Embedded Appliances",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A company has recently experienced performance issues with its web application during peak usage times. The application is hosted on multiple servers, but users report slow response times and occasional timeouts.\nAs a network administrator, you are tasked with resolving these issues.\nWhich solution would BEST address the company's performance problems?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Set up a spam gateway to filter out unwanted email traffic.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Implement a load balancer to distribute incoming requests evenly across all servers.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Deploy an intrusion detection system to monitor and alert on suspicious activities.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Install a firewall to block unnecessary traffic and reduce server load.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Implementing a load balancer will distribute incoming client requests evenly across all available servers. This helps to manage the load more effectively, preventing any single server from becoming overwhelmed and improving overall application performance during peak usage times.\n\nWhile a firewall can block unnecessary traffic, it does not address the distribution of legitimate client requests across multiple servers. The primary issue is related to load distribution, which is best handled by a load balancer.\n\nAn intrusion detection system (IDS) focuses on monitoring and alerting for suspicious activities, not on improving performance or distributing client requests. The performance issue is not related to security threats but to load management.\n\nA spam gateway is designed to filter email traffic, which is unrelated to the performance issues of a web application. The problem lies in managing web application requests, not email traffic."
+  },
+  {
+    "id": "iaea_02",
+    "topic": "Internet and Embedded Appliances",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A local dentist has contracted with you to implement a network in her new office. Because of security concerns related to patient privacy laws, she has asked that the new network meet the following criteria and be cost-effective:\nNo one from the internet should be able to access her internal network.\nEmail messages should be scanned for spam, phishing attacks, and malware before they reach users' workstations.\nEmployees' access to non-work-related websites, especially sites that contain inappropriate content, should be blocked.\nA system should be put in place to detect and prevent external attacks on her network.\nWhich of the following would BEST meet your client's criteria?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Implement an intrusion prevention system (IPS).",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Implement a firewall.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Implement a content filter.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Implement an all-in-one UTM security appliance.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "Implement an email security appliance.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The network criteria specified by your client require several different network devices to be implemented, including a firewall, an email scanner, a content filter, and an intrusion prevention system. The most cost-effective way to best meet your client's criteria would be an all-in-one UTM security appliance.\n\nWhile you could purchase each device separately, the cost of doing so would probably be quite high. Because you are working with a small business, an all-in-one security appliance that includes all of these functions in a single device would be more cost-effective and easier for you to manage."
+  },
+  {
+    "id": "iaea_03",
+    "topic": "Internet and Embedded Appliances",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Your organization uses a legacy system that is crucial for processing customer transactions.\nRecently, an audit revealed that this system poses significant security vulnerabilities. You need to analyze the situation and decide on a strategic approach to address these vulnerabilities while ensuring business continuity.\nWhich of the following actions would BEST balance security and operational needs?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Immediately shut down the legacy system to prevent any potential security breaches.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Conduct a risk assessment to identify specific vulnerabilities and develop a targeted mitigation plan.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Ignore the audit findings, as the system has been operating without issues for years.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Outsource the management of the legacy system to a third-party vendor specializing in legacy systems.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Conducting a risk assessment allows you to analyze the specific vulnerabilities of the legacy system and develop a targeted mitigation plan. This approach balances security needs with operational requirements by addressing vulnerabilities without disrupting business continuity.\n\nShutting down the legacy system immediately could disrupt business operations and is not a balanced approach. While it addresses security concerns, it fails to consider the operational impact and continuity of customer transactions.\n\nIgnoring the audit findings is not a responsible approach. The security risks associated with legacy systems, and failing to address these vulnerabilities could lead to exploitation and potential breaches.\n\nWhile outsourcing might provide some expertise in managing legacy systems, it does not directly address the specific vulnerabilities identified in the audit. A targeted mitigation plan based on a risk assessment would be more effective in balancing security and operational needs."
+  },
+  {
+    "id": "iaea_04",
+    "topic": "Internet and Embedded Appliances",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is a key characteristic of a legacy system?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "A legacy system is designed to integrate seamlessly with new technologies.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "A legacy system is no longer directly supported by its vendor.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "A legacy system is always supported by its vendor with regular updates.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "A legacy system is typically used for modern applications and services.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A legacy system is one that is no longer directly supported by its vendor. This lack of support is a defining characteristic of legacy systems and poses security risks.\n\nA legacy system is defined by the fact that it is no longer directly supported by its vendor. This means that regular updates and support are not provided, which is a significant risk factor for such systems.\n\nLegacy systems are generally used for older applications and services that are too complex or costly to migrate to modern platforms. They are not typically associated with modern applications.\n\nLegacy systems often do not integrate well with new technologies. They are typically retained because they perform specific functions that are difficult to replace, not because they work well with modern systems."
+  },
+  {
+    "id": "iaea_05",
+    "topic": "Internet and Embedded Appliances",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are setting up a smart home system that includes smart lightbulbs, a smart thermostat, and a video doorbell. You want to control all these devices remotely using your smartphone.\nWhich component is essential for integrating these devices into a cohesive Internet of Things (IoT) network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "A powerful router to provide high-speed internet to each device",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "A hub/control system to facilitate communication and control of the devices",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "A high-capacity data storage server to save all device settings and logs",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "A backup power supply to ensure devices remain operational during power outages",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A hub/control system is essential for integrating IoT devices into a cohesive network. It facilitates communication between devices and allows you to control them remotely using your smartphone.\n\nWhile data storage can be useful for logging and settings, it is not essential for integrating and controlling IoT devices. The primary need is for communication and control, not storage.\n\nAlthough a router is important for internet connectivity, the key component for integrating and controlling IoT devices is a hub/control system, not just internet access.\n\nWhile a backup power supply can be beneficial for maintaining operation during outages, it is not essential for the integration and control of IoT devices in a network. The focus is on communication and control."
+  },
+  {
+    "id": "iaea_06",
+    "topic": "Internet and Embedded Appliances",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An energy company is upgrading its systems across multiple sites. The company would like to control the systems with software that communicates with the current programmable logic controllers (PLCs) and new RTUs.\nWhat kind of system is the company upgrading to?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "SCADA",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "ICS",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Embedded system",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "OT",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The company is upgrading to a supervisory control and data acquisition (SCADA) system, which will take the place of a control server in large-scale, multiple-site ICSs.\n\nAn embedded system network is known as an operational technology (OT) network, to distinguish it from an IT network.\n\nAn embedded system is an electronic device that performs a specific, dedicated function. Embedded systems might typically have operated within a closed network.\n\nAn industrial control system (ICS) provides mechanisms for workflow and process automation. An ICS controls machinery used in critical infrastructures, such as power and water suppliers."
+  },
+  {
+    "id": "iaea_07",
+    "topic": "Internet and Embedded Appliances",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "As a network administrator for your company, you want to set up a network device that manages traffic leaving and entering your network from the outside.\nWhich of the following proxy server configurations would BEST meet your requirements?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Non-transparent proxy",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Content filter",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Transparent proxy",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "VPN",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "In this scenario, the use of transparent proxies are optimal as they allow automatic configuration to intercept traffic, can be done without the users' awareness of the proxy, and monitor and control overall traffic. A proxy server can operate as a transparent service and the client requires no special configuration.\n\nA proxy server could operate as a non-transparent service but the client must be configured with the IP address and service port (often 8080 by convention) of the proxy server.\n\nA content filter is a role of a proxy server that is designed to block traffic by regulating incoming and outgoing connection requests. This prevents users from accessing websites they should not have access to.\n\nA VPN allows users to connect to the internet anonymously. All data is encrypted, and not even the ISP can see the contents of the traffic."
+  },
+  {
+    "id": "iaea_08",
+    "topic": "Internet and Embedded Appliances",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "How do embedded systems within a Supervisory Control and Data Acquisition (SCADA) system typically communicate with field devices?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Through direct physical connections using USB cables",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "By utilizing WAN communications such as cellular or satellite links",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Through wireless communication using Wi-Fi technology",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Via local area network (LAN) connections using Ethernet cables",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "SCADA systems typically use WAN communications, such as cellular or satellite, to link the SCADA server to field devices. This allows for communication over large distances, which is typical for SCADA systems managing multiple-site industrial control systems.\n\nSCADA systems typically manage large-scale operations where direct physical connections like USB cables are impractical due to distance and scale.\n\nSCADA systems often require communication over long distances, which LAN connections using Ethernet cables are not suited for. WAN communications are more appropriate for such scenarios.\n\nWi-Fi technology is generally used for shorter-range communication and is not typically employed for the long-distance communication required by SCADA systems, which instead use WAN communications like cellular or satellite links."
+  },
+  {
+    "id": "iaea_09",
+    "topic": "Internet and Embedded Appliances",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Company employees are accessing the same resources on the internet many times a day. As the network administrator, you configure a solution that forwards traffic to and from the internet and also caches content to improve performance and reduce bandwidth consumption.\nWhat solution are you implementing?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "UTM",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Proxy server",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Load balancer",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "NAT",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A proxy server takes a whole HTTP request from a client, checks it, and then forwards it to and from the destination server on the internet. It also caches content to improve performance.\n\nIn a port-based or overloaded network address translation (NAT), a NAT device translates between the private IP addresses used on the LAN and the public IP address on the router's WAN interface.\n\nA unified threat management (UTM) appliance enforces a variety of security policies and controls, combining the work of multiple security functions.\n\nA load balancer distributes client requests across server nodes in a farm or pool and can deploy in any situation where multiple servers are providing the same function."
+  },
+  {
+    "id": "iaea_10",
+    "topic": "Internet and Embedded Appliances",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A security technician is installing a doorbell/video entry system for a customer so that the customer can see and communicate with people who come to their home when they aren't there.\nWhat kind of device is the doorbell/video entry system?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Hub and control system",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Zigbee",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "OT",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Smart device",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The doorbell/video entry system is a smart device, which is a device or appliance that users can configure and monitor over an IoT network.\n\nZigbee is a wireless technology. While the control system is typically joined to the Wi-Fi network, smart devices may use other wireless technologies, such as Z-Wave or Zigbee, to exchange data via the hub.\n\nA hub and control system are each required by IoT devices. The hub facilitates wireless networking while the control system operates the device.\n\nAn embedded system network is known as an operational technology (OT) network, to distinguish it from an IT network."
   }
 ];
 

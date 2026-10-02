@@ -12013,6 +12013,191 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "For virtualization to work on Rachel's PC, she must ensure that virtualization support is enabled in the BIOS settings. Some CPUs will have virtualization support turned on by default, and others will not.\n\nMost modern CPUs support virtualization and do not require the BIOS to be flashed.\n\nAdding an additional hard disk may be advantageous in storing or running virtual machines, but additional hard disks are not a requirement.\n\nAlthough additional memory will increase the performance of a computer using virtualization, this memory may not be required, depending on the amount currently installed."
+  },
+{
+    "id": "ccon_01",
+    "topic": "Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A law firm is transitioning to a cloud-based infrastructure to ensure minimal downtime for its critical legal applications.\nThe firm has strict requirements for maintaining service availability, as even a few minutes of downtime could result in significant financial and reputational losses.\nWhich of the following cloud features would BEST meet the firm's need for high availability?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Five Nines (99.999%) availability",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Scalability through horizontal scaling",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Rapid Elasticity for handling demand changes",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Shared resource pooling for cost efficiency",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Five Nines\" availability ensures minimal downtime, equating to only 5 minutes and 15 seconds of annual downtime. This level of availability is critical for organizations like the law firm in the scenario where even a few minutes of downtime can have severe consequences. High availability is a key characteristic of cloud computing that directly addresses the firm's needs.\n\nWhile scalability is an important feature of cloud computing, it primarily addresses the ability to handle increased demand by adding more resources (horizontal scaling). It does not directly ensure minimal downtime or high availability, which is the firm's primary concern in this scenario.\n\nRapid elasticity allows cloud systems to adjust resources in real time based on demand, which is beneficial for cost savings and performance during fluctuating workloads. However, it does not specifically guarantee minimal downtime or high availability, which is the firm's critical requirement.\n\nShared resource pooling allows cloud providers to allocate resources efficiently across multiple customers, reducing costs. However, this feature is unrelated to ensuring high availability or minimizing downtime, making it an incorrect choice for the firm's needs."
+  },
+  {
+    "id": "ccon_02",
+    "topic": "Cloud Concepts",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "Google Cloud, Amazon Web Services, and Microsoft Azure are some of the most widely used cloud storage solutions for enterprises. Which of the following factors prompt companies to take advantage of cloud storage? (Select two.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Need for a platform to develop applications",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Need for a storage provider to manage access control",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Need for software to manage enterprise applications",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Growing demand for storage",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "Need to bring costs down",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Some of the most widely used cloud storage solutions for enterprises are Google Cloud, Amazon Web Services, and Microsoft Azure. Because of the growing demand for storage and the desire to bring costs down, many companies take advantage of cloud storage.\n\nThe need for a storage provider to manage access control is not a deciding factor in taking advantage of cloud services. Most companies want to manage access control to their own data.\n\nPlatform as a Service (PaaS) and Software as a Service (SaaS) are cloud service models that companies decide to use once they are prompted to take advantage of cloud storage. They do so in order to develop and manage enterprise applications."
+  },
+  {
+    "id": "ccon_03",
+    "topic": "Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "For security reasons, an organization needs to ensure that its information is isolated and managed only by its employees. What cloud model should this organization adopt?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Community",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Public",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Hybrid",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Private",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Private cloud infrastructure is completely private and owned by the organization. This type of delivery method is more appropriate for organizations that require strict access control in their operations.\n\nPublic (or multitenant) is a service offered over the internet by cloud service providers (CSPs) who can offer subscriptions or pay-as-you-go financing or even provide lower-tier services free of charge.\n\nCommunity is where several organizations share the costs of either a hosted private or fully private cloud.\n\nHybrid is a cloud computing solution that implements some sort of hybrid public/private/community. A hybrid deployment may provide some functions via a public cloud but keep sensitive data on-premises."
+  },
+  {
+    "id": "ccon_04",
+    "topic": "Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network technician configures a foundational cloud setup that will allow the developers to start all application development using a standardized server and database setup.\nWhat type of cloud service model is the technician configuring?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "SaaS",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "PaaS",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "DaaS",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "IaaS",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Platform as a service (PaaS) would deploy servers and storage network infrastructure (as per IaaS) but also provide a multi-tier web application/database platform on top.\n\nSoftware as a service (SaaS) provisions software licenses for a given number of seats so that a business can access software hosted on a supplier's servers on a pay-as-you-go arrangement.\n\nInfrastructure as a service (IaaS) is a means of provisioning IT resources, such as servers, load balancers, and storage area network (SAN) components, quickly.\n\nProvisioning virtual desktop infrastructure (VDI) as a cloud service is known as desktop as a service (DaaS)."
+  },
+  {
+    "id": "ccon_05",
+    "topic": "Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A global e-commerce company is experiencing delays in file access for its employees located in different regions. The company uses a cloud file storage solution but has noticed that employees in regions far from the primary datacenter experience slower access times.\nAfter analyzing the situation, the IT team identifies that the current solution does not utilize replication or Content Delivery Networks (CDNs).\nWhich action should the company take to resolve the issue?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Switch to an on-premises file storage solution for all employees",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Restrict file access to employees located near the primary datacenter",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Implement file replication across multiple datacenters and use CDNs",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Increase the storage capacity of the primary datacenter",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The scenario highlights the need to improve file access speeds for employees in different regions. File replication across multiple datacenters ensures that files are stored closer to the users, reducing latency. Additionally, using Content Delivery Networks (CDNs) further optimizes file delivery by caching files in geographically distributed locations, ensuring faster access for remote employees. This approach directly addresses the root cause of the issue.\n\nSwitching to an on-premises solution would not solve the problem of global accessibility. On-premises storage is typically centralized, which would still result in delays for employees located far from the storage location. Additionally, it would lack the scalability and flexibility of cloud-based solutions.\n\nIncreasing the storage capacity of the primary datacenter does not address the issue of slow access times for employees in distant regions. The problem lies in the geographical distance and lack of replication, not in the storage capacity itself.\n\nRestricting file access would not only fail to solve the problem but would also hinder the company's operations by limiting access for remote employees. The goal is to improve access for all employees, not to exclude certain regions from accessing files."
+  },
+  {
+    "id": "ccon_06",
+    "topic": "Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A mid-sized e-commerce company is experiencing rapid growth and needs to expand its IT infrastructure to handle increased website traffic during seasonal sales.\nThe company has a limited budget and prefers a solution that minimizes upfront costs while allowing it to scale resources as needed. Security is important, but they are willing to accept some shared infrastructure risks to save costs.\nWhich cloud deployment model would BEST meet their needs?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Hybrid Cloud",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Community Cloud",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Public Cloud",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Private Cloud",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The public cloud is the best fit for this scenario because it offers a cost-effective, scalable solution with minimal upfront investment. The company can use a pay-as-you-go model to scale resources during seasonal sales without the need to purchase and maintain physical infrastructure. While there are shared infrastructure risks, the company has already indicated that it is willing to accept these risks to save costs.\n\nA private cloud is not suitable for this scenario because it requires significant upfront investment and ongoing maintenance costs. While it offers enhanced security and control, these features are not the company's primary concern. The limited budget and need for scalability make the private cloud a less viable option.\n\nA community cloud is designed for organizations with shared concerns, such as standardization or compliance, which are not relevant to the e-commerce company's needs. Additionally, the shared cost model may not align with the company's preference for minimizing upfront expenses and scaling resources dynamically.\n\nWhile a hybrid cloud could provide a mix of public and private cloud benefits, it is more complex and costly to implement and manage. The company does not require the level of customization or control that a hybrid cloud offers and its primary focus is on scalability."
   }
 ];
 

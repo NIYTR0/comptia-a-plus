@@ -12198,6 +12198,186 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "The public cloud is the best fit for this scenario because it offers a cost-effective, scalable solution with minimal upfront investment. The company can use a pay-as-you-go model to scale resources during seasonal sales without the need to purchase and maintain physical infrastructure. While there are shared infrastructure risks, the company has already indicated that it is willing to accept these risks to save costs.\n\nA private cloud is not suitable for this scenario because it requires significant upfront investment and ongoing maintenance costs. While it offers enhanced security and control, these features are not the company's primary concern. The limited budget and need for scalability make the private cloud a less viable option.\n\nA community cloud is designed for organizations with shared concerns, such as standardization or compliance, which are not relevant to the e-commerce company's needs. Additionally, the shared cost model may not align with the company's preference for minimizing upfront expenses and scaling resources dynamically.\n\nWhile a hybrid cloud could provide a mix of public and private cloud benefits, it is more complex and costly to implement and manage. The company does not require the level of customization or control that a hybrid cloud offers and its primary focus is on scalability."
+  },
+{
+    "id": "svacc_01",
+    "topic": "Summarizing Virtualization and Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following cloud computing solutions delivers software applications to a client either over the internet or on a local area network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "DaaS",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "IaaS",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "PaaS",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "SaaS",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Software as a Service (SaaS) delivers software applications to a client either over the internet or on a local area network.\n\nInfrastructure as a Service (IaaS) delivers infrastructure to a client, such as processing, storage, networks, and virtualized environments. The client deploys and runs software without purchasing servers, data center space, or network equipment.\n\nPlatform as a Service (PaaS) delivers everything a developer needs to build an application on the existing cloud infrastructure. The deployment comes without the cost and complexity of buying and managing the underlying hardware and software layers.\n\nDesktop as a Service (DaaS) is a cloud computing solution that delivers virtual desktops to end-users over the internet, allowing them to access their desktop environment and applications from any device, anywhere."
+  },
+  {
+    "id": "svacc_02",
+    "topic": "Summarizing Virtualization and Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "While creating a virtual machine, you decide to set it up to use an external network.\nWhat else do you need to do to enable the external network configuration?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Make sure that you are using a Type 1 hypervisor.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Configure the virtual machine to use Remote Desktop Protocol (RDP).",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Set the RAM on the virtual machine to match the host.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Select a NIC using the virtual switch manager.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "To enable an external network configuration for a virtual machine, you must connect the virtual machine to the host's physical network adapter (NIC). This is done using the virtual switch manager within the hypervisor software. The virtual switch manager allows you to create a virtual switch and associate it with the physical NIC of the host system. By selecting the appropriate NIC, the virtual machine can access the external network, enabling communication with other devices and systems outside the host machine. This step is essential for external network connectivity.\n\nSetting the RAM on the virtual machine to match the host system is unrelated to enabling external network configuration. This step pertains to resource allocation and ensures that the virtual machine has enough memory to operate efficiently. While proper RAM allocation is important for the performance of the virtual machine, it does not affect its ability to connect to an external network.\n\nConfiguring the virtual machine to use Remote Desktop Protocol (RDP) is a step that allows remote access to the virtual machine. While RDP is useful for managing and accessing the virtual machine from another device, it is not a requirement for setting up external network connectivity. RDP configuration is a separate process that involves enabling the RDP service within the guest operating system and ensuring network settings allow RDP traffic.\n\nUsing a Type 1 hypervisor (bare-metal hypervisor) is not a requirement for enabling external network configuration. Both Type 1 and Type 2 hypervisors can support external network connectivity as long as the virtual switch manager is used to associate the virtual machine with the host's physical NIC. The choice of hypervisor type depends on the deployment environment and performance requirements, but it does not directly impact the ability to configure an external network for the virtual machine."
+  },
+  {
+    "id": "svacc_03",
+    "topic": "Summarizing Virtualization and Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST describes the Platform as a Service (PaaS) cloud computing service model?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "PaaS delivers software applications to the client either over the internet or on a local area network.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "PaaS delivers everything a developer needs to build an application on the existing cloud infrastructure.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "PaaS stores and provides data from a centralized location without the need for local collection and storage.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "PaaS delivers infrastructure to the client, such as processing, storage, networks, and virtualized environments.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Platform as a Service (PaaS) delivers everything a developer needs to build an application on the existing cloud infrastructure. The deployment comes without the cost and complexity of buying and managing the underlying hardware and software layers.\n\nInfrastructure as a Service (IaaS) delivers infrastructure to the client, such as processing, storage, networks, and virtualized environments. The client deploys and runs software without purchasing servers, data center space, or network equipment.\n\nSoftware as a Service (SaaS) delivers software applications to the client either over the internet or on a local area network.\n\nData as a Service (DaaS) stores and provides data from a centralized location without the need for local collection and storage."
+  },
+  {
+    "id": "svacc_04",
+    "topic": "Summarizing Virtualization and Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "You are reviewing the security setup of a client-side virtualization environment at a law firm. During your analysis, you notice the following issues:\n- The hypervisor is not updated regularly.\n- Guest OSs are configured with unrestricted network access.\n- Snapshots of VMs are stored on a shared drive accessible to all employees.\nWhich of the following actions would most effectively address the ROOT cause of potential security vulnerabilities in this environment?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Regularly update the hypervisor and host OS to patch known vulnerabilities.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Limit the number of guest OSs running simultaneously to reduce resource strain.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Disable network access for all guest OSs to prevent external threats.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Implement access controls to restrict who can access VM snapshots on the shared drive.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "The root cause of many security vulnerabilities in virtualization environments is unpatched software. Regularly updating the hypervisor and host OS ensures that known vulnerabilities are addressed, reducing the risk of exploitation. This action directly mitigates the risk of attackers compromising the system through outdated software.\n\nWhile restricting access to VM snapshots is an important security measure, it addresses only one specific issue (unauthorized access to snapshots). It does not address the broader vulnerabilities caused by an outdated hypervisor or unrestricted network access for guest OSs.\n\nDisabling network access for all guest OSs is an overly restrictive measure that may hinder legitimate use cases, such as software testing that requires network connectivity. A better approach would be to configure network access restrictions based on necessity rather than disabling it entirely.\n\nLimiting the number of guest OSs addresses performance concerns, not security vulnerabilities. While resource management is important, it does not resolve the root cause of the security issues identified in the scenario."
+  },
+  {
+    "id": "svacc_05",
+    "topic": "Summarizing Virtualization and Cloud Concepts",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "An upcoming project will require a system administrator to deploy a client-side virtualization workstation. What resource requirements must the system administrator identify for the hypervisor and of each guest before installation? (Select all that apply.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "CPU",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Sandbox",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "System memory",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Mass Storage",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Host workstations require central processing units (CPUs) with unique instruction sets to improve virtualization performance while also providing virtualization support.\n\nGuest and host operating systems require sufficient system memory, for example, Windows requires adequate memory on the host, and additional guest operating systems will also need a separate allocation to operate.\n\nMass storage will require the management of hard disk space in virtualization. Each guest OS will require a substantial amount of storage space, while the host hypervisor will also require its storage to share as guest OSs grow dynamically.\n\nA sandbox would provide an isolated environment to analyze malware while protecting the network from the adverse effects of an infection."
+  },
+  {
+    "id": "svacc_06",
+    "topic": "Summarizing Virtualization and Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A law firm is transitioning to a cloud-based infrastructure to ensure minimal downtime for its critical legal applications.\nThe firm has strict requirements for maintaining service availability, as even a few minutes of downtime could result in significant financial and reputational losses.\nWhich of the following cloud features would BEST meet the firm's need for high availability?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Five Nines (99.999%) availability",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Scalability through horizontal scaling",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Rapid Elasticity for handling demand changes",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Shared resource pooling for cost efficiency",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Five Nines\" availability ensures minimal downtime, equating to only 5 minutes and 15 seconds of annual downtime. This level of availability is critical for organizations like the law firm in the scenario where even a few minutes of downtime can have severe consequences. High availability is a key characteristic of cloud computing that directly addresses the firm's needs.\n\nWhile scalability, rapid elasticity, and shared resource pooling are important features of cloud computing, they pertain to resource capacity and cost efficiency rather than the specific metric of minimizing system downtime and maximizing availability."
   }
 ];
 

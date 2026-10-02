@@ -12197,7 +12197,127 @@ const DEFAULT_QUESTIONS = [
         "isCorrect": false
       }
     ],
-    "explanation": "The public cloud is the best fit for this scenario because it offers a cost-effective, scalable solution with minimal upfront investment. The company can use a pay-as-you-go model to scale resources during seasonal sales without the need to purchase and maintain physical infrastructure. While there are shared infrastructure risks, the company has already indicated that it is willing to accept these risks to save costs.\n\nA private cloud is not suitable for this scenario because it requires significant upfront investment and ongoing maintenance costs. While it offers enhanced security and control, these features are not the company's primary concern. The limited budget and need for scalability make the private cloud a less viable option.\n\nA community cloud is designed for organizations with shared concerns, such as standardization or compliance, which are not relevant to the e-commerce company's needs. Additionally, the shared cost model may not align with the company's preference for minimizing upfront expenses and scaling resources dynamically.\n\nWhile a hybrid cloud could provide a mix of public and private cloud benefits, it is more complex and costly to implement and manage. The company does not require the level of customization or control that a hybrid cloud offers and its primary focus is on scalability."
+    "explanation": "The public cloud is the best fit for this scenario because it offers a cost-effective, scalable solution with minimal upfront investment. The company can use a pay-as-you-go model to scale resources during seasonal sales without the need to purchase and maintain physical infrastructure. While there are shared infrastructure risks, the company has already indicated that it is willing to accept these risks to save costs.\n\nA private cloud is not suitable for this scenario because it requires significant upfront investment and ongoing maintenance costs. While it offers enhanced security and control, these features are not the company's primary concern. The limited budget and need for scalability make the private cloud a less viable option.\n\nA community cloud is designed for organizations with shared concerns, such as standardization or compliance, which are not relevant to the e-commerce company's needs. Additionally, the shared cost model may not align with the company's preference for minimizing upfront expenses and scaling resources dynamically.\n\nWhile a hybrid cloud could provide a mix of public and private cloud benefits, it is more complex and costly to implement and manage. The company does not require the level of customization or control that a hybrid cloud offers and its primary focus is on scalability and cost-effectiveness, which are better addressed by the public cloud."
+  },
+  {
+    "id": "ccon_07",
+    "topic": "Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A cloud administrator configures a cloud instance to increase its resources during times of high utilization and decrease its resources when peak utilization times end.\nWhat cloud characteristic does this represent?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "HA",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Metered utilization",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Scalability",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Rapid elasticity",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Rapid elasticity refers to the system's ability to handle changes in demand in real time. A system with high elasticity will not experience a loss of service or performance if demand suddenly increases.\n\nHigh availability (HA) means that the service experiences very little downtime. Downtime can occur as a result of scheduled maintenance and unexpected outages.\n\nScalability means that the costs involved in supplying the service to more users are linear. Technicians can achieve scalability by adding nodes or by adding resources to each node.\n\nThe per-use billing for resources consumed by the cloud is metered utilization. The metering measurement is based on the type of resources, such as storage, processing, bandwidth, or active users."
+  },
+  {
+    "id": "ccon_08",
+    "topic": "Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following BEST describes a community cloud implementation?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Designed to be shared by several organizations",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Designed to be accessed by the general public",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Designed to be used by a single organization",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Designed to be a combination of public and private cloud resources",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A community cloud is designed to be shared by several organizations that have common concerns, such as security, compliance, or mission requirements. It may be managed by the organizations or a third party and may exist on-premises or off-premises.\n\nA public cloud is designed to be accessed by the general public or a large industry group, owned by an organization selling cloud services.\n\nA private cloud is designed to be used by a single organization, providing greater control and security.\n\nA hybrid cloud is a combination of two or more distinct cloud infrastructures (private, community, or public) that remain unique entities but are bound together by standardized technology."
+  },
+  {
+    "id": "ccon_09",
+    "topic": "Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An enterprise is planning to migrate its legacy database infrastructure to the cloud. The IT leadership wants a solution that minimizes infrastructure management overhead while providing full control over the database engine, schema, and application data, without managing the underlying operating system patches.\nWhich cloud service model best fits these requirements?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Infrastructure as a Service (IaaS)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Platform as a Service (PaaS)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Software as a Service (SaaS)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Desktop as a Service (DaaS)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Platform as a Service (PaaS) provides a managed environment—such as a database platform or application development framework—where the cloud provider handles operating system updates, hardware provisioning, and patching, while the customer retains control over the data and application deployment.\n\nInfrastructure as a Service (IaaS) would require the enterprise to manage the underlying virtual machine operating system, including patches and updates.\n\nSoftware as a Service (SaaS) delivers fully functional software applications over the internet, giving the user little to no control over the underlying database structure or schema.\n\nDesktop as a Service (DaaS) provides virtual desktop infrastructure to end users and is unrelated to database hosting management."
+  },
+  {
+    "id": "ccon_10",
+    "topic": "Cloud Concepts",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A financial institution requires a cloud deployment strategy that keeps highly sensitive customer financial records on an internal, dedicated private cloud environment while allowing non-sensitive customer-facing web applications to leverage public cloud resources for seasonal traffic spikes.\nWhich cloud deployment model describes this architecture?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Public Cloud",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Private Cloud",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Community Cloud",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Hybrid Cloud",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "A hybrid cloud combines multiple distinct cloud deployment models (such as private and public clouds) bound together by standardized technology, allowing data and applications to be shared between them according to security and operational needs.\n\nA public cloud relies entirely on shared third-party infrastructure accessible over the internet, which does not meet the strict internal storage requirements for sensitive financial records.\n\nA private cloud is restricted solely to a single organization, lacking the integrated public cloud bursting capability described in the scenario.\n\nA community cloud is shared among multiple organizations with common goals or compliance needs, rather than integrating internal private infrastructure with external public resources for a single enterprise."
   },
 {
     "id": "svacc_01",

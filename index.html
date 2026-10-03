@@ -16768,6 +16768,426 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "Enabling USB support for input devices in the UEFI firmware ensures that the USB keyboard functions during the boot process, allowing the employee to access the UEFI setup program. This is a targeted solution to the problem.\n\nConnecting the keyboard to a PS/2 port is not a viable solution for systems that lack PS/2 ports, and it does not address the root cause of the issue.\n\nDisabling Secure Boot is unrelated to USB permissions and does not resolve the issue with the keyboard.\n\nUpdating the UEFI firmware may be beneficial for other reasons but is not guaranteed to resolve the specific issue with USB permissions for input devices."
+  },
+{
+    "id": "wkp_01",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A system administrator is configuring a firewall rule to allow secure administrative remote shell access to a Linux server. Which of the following ports should be opened?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "TCP 20/21",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "TCP 22",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "TCP 23",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "TCP 3389",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "TCP 22 is used for Secure Shell (SSH), providing encrypted remote administrative access.\n\nTCP 20/21 is used for File Transfer Protocol (FTP).\n\nTCP 23 is used for unencrypted Telnet communication.\n\nTCP 3389 is used for Remote Desktop Protocol (RDP)."
+  },
+  {
+    "id": "wkp_02",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An email server needs to send mail messages to another mail server over the internet. Which well-known port is utilized by this protocol?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "TCP 25",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "TCP 110",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "TCP 143",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "TCP 443",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "TCP 25 is used for Simple Mail Transfer Protocol (SMTP) to transmit outgoing email.\n\nTCP 110 is used for Post Office Protocol version 3 (POP3) to retrieve email.\n\nTCP 143 is used for Internet Message Access Protocol (IMAP) to access mailboxes.\n\nTCP 443 is used for secure web traffic (HTTPS)."
+  },
+  {
+    "id": "wkp_03",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary service associated with port numbers 20 and 21?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Secure Shell (SSH)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "File Transfer Protocol (FTP)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Dynamic Host Configuration Protocol (DHCP)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Domain Name System (DNS)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Ports 20 and 21 are used by File Transfer Protocol (FTP) for data transfer and control commands respectively.\n\nSecure Shell (SSH) operates on port 22.\n\nDynamic Host Configuration Protocol (DHCP) operates on ports 67 and 68.\n\nDomain Name System (DNS) operates on port 53."
+  },
+  {
+    "id": "wkp_04",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which port does a client computer query to resolve hostnames into IP addresses?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Port 53",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Port 80",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Port 389",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Port 445",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Port 53 is used for Domain Name System (DNS) name resolution.\n\nPort 80 is used for unencrypted web traffic (HTTP).\n\nPort 389 is used for Lightweight Directory Access Protocol (LDAP).\n\nPort 445 is used for Server Message Block (SMB) file sharing."
+  },
+  {
+    "id": "wkp_05",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Ports 67 and 68 are assigned to which core network service responsible for dynamic IP address allocation?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "HTTP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "DHCP",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "LDAP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "SMTP",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Ports 67 and 68 are used by Dynamic Host Configuration Protocol (DHCP) servers and clients.\n\nHTTP uses port 80 for web traffic.\n\nLDAP uses port 389 for directory services.\n\nSMTP uses port 25 for email transmission."
+  },
+  {
+    "id": "wkp_06",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A web browser is communicating with a web server over an unencrypted connection. Which port is the server listening on by default?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Port 80",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Port 110",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Port 143",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Port 443",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Port 80 is the standard port for unencrypted Hypertext Transfer Protocol (HTTP) web traffic.\n\nPort 110 is used for POP3 email retrieval.\n\nPort 143 is used for IMAP email access.\n\nPort 443 is used for secure HTTPS web traffic."
+  },
+  {
+    "id": "wkp_07",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following ports is used by POP3 to allow a local email client to download messages from a mail server?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "TCP 23",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "TCP 25",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "TCP 110",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "TCP 389",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "TCP 110 is utilized by Post Office Protocol version 3 (POP3) for retrieving mail.\n\nTCP 23 is used for unencrypted Telnet terminal sessions.\n\nTCP 25 is used for SMTP outbound email transmission.\n\nTCP 389 is used for LDAP directory queries."
+  },
+  {
+    "id": "wkp_08",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Ports 137 through 139 are traditionally used for which legacy Windows networking suite?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "NetBIOS",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "LDAP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "RDP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "HTTPS",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Ports 137-139 are assigned to NetBIOS (Network Basic Input/Output System) services for name resolution, datagrams, and session services.\n\nLDAP operates on port 389.\n\nRDP operates on port 3389.\n\nHTTPS operates on port 443."
+  },
+  {
+    "id": "wkp_09",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An email client is configured to synchronize messages and keep them stored on the mail server using IMAP. Which port does this protocol use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Port 21",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Port 53",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Port 143",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Port 445",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Port 143 is assigned to Internet Message Access Protocol (IMAP) for email retrieval and folder synchronization.\n\nPort 21 is used for FTP control connections.\n\nPort 53 is used for DNS name resolution.\n\nPort 445 is used for SMB file and printer sharing."
+  },
+  {
+    "id": "wkp_10",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following ports is used by Lightweight Directory Access Protocol (LDAP) for querying directory services?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "TCP/UDP 389",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "TCP/UDP 67/68",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "TCP 137-139",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "TCP 445",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "TCP/UDP 389 is the standard port for Lightweight Directory Access Protocol (LDAP).\n\nTCP/UDP 67/68 are used by DHCP.\n\nTCP 137-139 are used by NetBIOS.\n\nPort 445 is used for SMB."
+  },
+  {
+    "id": "wkp_11",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the designated port number for secure web traffic encrypted via TLS/SSL (HTTPS)?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Port 80",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Port 110",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Port 389",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Port 443",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Port 443 is used for secure web browsing over HTTPS.\n\nPort 80 is used for unencrypted HTTP traffic.\n\nPort 110 is used for POP3 email retrieval.\n\nPort 389 is used for LDAP directory services."
+  },
+  {
+    "id": "wkp_12",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network administrator needs to troubleshoot a Windows file sharing issue. Which port must be accessible across the firewall for SMB traffic directly over TCP?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "TCP 22",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "TCP 80",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "TCP 445",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "TCP 3389",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "TCP 445 is used by Server Message Block (SMB) for direct Microsoft networking file and printer sharing.\n\nTCP 22 is used for SSH.\n\nTCP 80 is used for HTTP web traffic.\n\nTCP 3389 is used for RDP."
+  },
+  {
+    "id": "wkp_13",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which port is used by Remote Desktop Protocol (RDP) to manage Windows systems graphically over a network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "TCP 23",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "TCP 389",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "TCP 445",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "TCP 3389",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "TCP 3389 is assigned to Remote Desktop Protocol (RDP).\n\nTCP 23 is used for unencrypted Telnet sessions.\n\nTCP 389 is used for LDAP directory services.\n\nPort 445 is used for SMB file sharing."
+  },
+  {
+    "id": "wkp_14",
+    "topic": "Well Known Ports",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An unencrypted legacy protocol used for setting up remote command-line terminal sessions on network devices operates on which port?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Port 22",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Port 23",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "Port 25",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Port 80",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Port 23 is used for Telnet, an unencrypted text-based remote communication protocol.\n\nPort 22 is used for secure SSH connections.\n\nPort 25 is used for SMTP email transmission.\n\nPort 80 is used for unencrypted HTTP traffic."
   }
 ];
 

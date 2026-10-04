@@ -17608,6 +17608,486 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "5G brought massive IoT device density, network slicing, and ultra-low latency capabilities alongside high-speed broadband.\n\n2G focused on digital voice and SMS.\n\n3G established basic mobile broadband.\n\n4G established all-IP mobile internet but lacked native low-latency/slicing features of 5G."
+  },
+{
+    "id": "term_putty_01",
+    "topic": "Terminal Emulation Software",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An IT technician needs to connect to a headless Linux server via SSH and also requires the ability to configure an out-of-band console serial connection. Which of the following tools provides support for both SSH network sessions and direct serial console connections in a single utility?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "PuTTY",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Wireshark",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Nmap",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Remote Desktop Connection (mstsc)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "PuTTY is a popular open-source terminal emulator and serial console client that natively supports SSH, Telnet, Rlogin, and direct Serial connections.\n\nWireshark is a packet analyzer and network protocol inspector, not a terminal emulator.\n\nNmap is a network security scanner used for discovery and port auditing.\n\nRemote Desktop Connection (mstsc) is used for graphical Windows RDP sessions, not command-line SSH or serial console management."
+  },
+  {
+    "id": "term_putty_02",
+    "topic": "Terminal Emulation Software",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A Windows administrator is looking for a lightweight, standalone utility to quickly log into a remote network switch's Command Line Interface using Telnet or SSH without installing heavy enterprise management suites. Which of the following software applications should the administrator use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "PuTTY",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Microsoft Word",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Internet Information Services (IIS)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Windows Media Player",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "PuTTY is a lightweight, portable terminal emulator widely utilized by administrators for quick SSH and Telnet connections to network hardware.\n\nMicrosoft Word is a document creation word processor.\n\nIIS is a web server role for hosting websites and web apps.\n\nWindows Media Player is an application for playing audio and video media files."
+  },
+  {
+    "id": "pots_01",
+    "topic": "Communication Systems",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A facilities technician is installing an emergency elevator voice backup line that must remain operational and powered even during a complete regional commercial power failure without relying on local uninterruptible power supplies. Which legacy network infrastructure is legally and functionally mandated for this purpose?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Plain Old Telephone System (POTS)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Voice over IP (VoIP) broadband trunking",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Digital Subscriber Line (DSL) internet feed",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Integrated Services Digital Network (ISDN) primary rate interface",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Plain Old Telephone System (POTS) lines use analog circuit switching and derive their electrical power directly from the central telephone office (CO) copper pairs, allowing them to function during extended power outages.\n\nVoice over IP (VoIP) requires active local power for routers, switches, and internet gateways, making it fail during power loss unless backed up by heavy UPS or generator systems.\n\nDigital Subscriber Line (DSL) requires active local modem/router power and shares copper pairs designed for high-speed data rather than guaranteed life-safety line power.\n\nISDN PRI is a legacy digital trunking standard that also requires powered terminating equipment (NT1) on-premise, making it less reliable during a pure local power failure compared to traditional lifeline analog POTS circuits."
+  },
+  {
+    "id": "pots_02",
+    "topic": "Communication Systems",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A small business is moving its primary office communications to the cloud. However, their legacy burglar alarm system and older fax machines still require traditional analog loop-start signaling and dedicated copper pairs to transmit signals to the monitoring station. What legacy technology must be retained or emulated for these devices to work?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Plain Old Telephone System (POTS)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Session Initiation Protocol (SIP) trunking",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Cellular 5G Fixed Wireless Access (FWA)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Asynchronous Transfer Mode (ATM) backbone routing",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Plain Old Telephone System (POTS) provides traditional analog voice-band transmission and loop-start signaling that legacy analog devices like fax machines and older dial-up security/alarm panels rely on.\n\nSession Initiation Protocol (SIP) trunking is used for modern IP-based telephony and often struggles with the audio compression or timing protocols required by analog fax machines and older security alarms.\n\nCellular 5G FWA provides broadband internet access, not native analog loop-start telephone interfaces without specialized analog telephone adapters (ATAs).\n\nAsynchronous Transfer Mode (ATM) is an obsolete high-speed cell-based network transport layer, not a customer-premises analog voice service."
+  },
+  {
+    "id": "AAA_01",
+    "topic": "Authentication and Access Control",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An enterprise network administrator needs to centralize user authentication for incoming VPN connections and network switches. The solution must utilize UDP for communication, encrypt only the password portion of the authentication packet, and separate authentication from accounting. Which protocol fits this requirement?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RADIUS (Remote Authentication Dial-In User Service)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "TACACS+",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Kerberos",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "LDAP (Lightweight Directory Access Protocol)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "RADIUS (Remote Authentication Dial-In User Service) is an industry-standard protocol that uses UDP (ports 1812/1813 or 1645/1646), encrypts only the password field during transmission, and decouples authentication from accounting.\n\nTACACS+ uses TCP, encrypts the entire payload, and combines AAA (Authentication, Authorization, and Accounting) services more granularly.\n\nKerberos is a ticket-based authentication protocol designed for domain environments (like Active Directory) rather than acting as a generic AAA proxy for remote network access devices.\n\nLDAP is a directory service access protocol used to query and modify database directories, not a comprehensive AAA accounting/remote-access proxy protocol like RADIUS."
+  },
+  {
+    "id": "AAA_02",
+    "topic": "Authentication and Access Control",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network security engineer is configuring 802.1X port-based network access control on a corporate switch infrastructure. The switch needs to pass client credentials securely to an external centralized authentication server. Which protocol is natively paired with 802.1X as the backend authentication framework to process these requests?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "RADIUS (Remote Authentication Dial-In User Service)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "SNMPv3 (Simple Network Management Protocol version 3)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "HTTP/HTTPS web browsing",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "DNS (Domain Name System)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "RADIUS is the standard backend protocol used with 802.1X to authenticate clients attempting to connect to a wired or wireless network port.\n\nSNMPv3 is used for network device monitoring and management, not client access control authentication.\n\nHTTP/HTTPS are web traffic protocols.\n\nDNS resolves hostnames to IP addresses and plays no role in AAA network port access control."
+  },
+  {
+    "id": "AAA_03",
+    "topic": "Authentication and Access Control",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network security architect is hardening administrative access to a cluster of core routers and switches. The requirement is to implement a robust AAA (Authentication, Authorization, and Accounting) service that operates over TCP port 49 and encrypts the entire packet payload during transmission, not just the password. Which protocol meets these specifications?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "TACACS+ (Terminal Access Controller Access-Control System Plus)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "RADIUS (Remote Authentication Dial-In User Service)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "LDAP (Lightweight Directory Access Protocol)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Kerberos",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "TACACS+ (Terminal Access Controller Access-Control System Plus) is a proprietary Cisco-developed AAA protocol that operates over TCP port 49 and encrypts the entire packet payload for enhanced security.\n\nRADIUS uses UDP (ports 1812/1813) and only encrypts the password field in the access-request packet, leaving the rest of the payload unencrypted.\n\nLDAP is a directory service protocol used for querying user databases rather than providing a complete AAA device administration framework.\n\nKerberos is a ticket-based authentication protocol primarily used in domain environments like Active Directory, not as a specialized network device command-authorization proxy using TCP 49."
+  },
+  {
+    "id": "AAA_04",
+    "topic": "Authentication and Access Control",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An administrator needs to configure granular command-line authorization on corporate routers so that junior engineers can log in via SSH but are restricted from executing destructive configuration commands like 'reload' or 'clear'. Which protocol should be implemented to handle this advanced AAA service over TCP port 49?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "TACACS+ (Terminal Access Controller Access-Control System Plus)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "RADIUS (Remote Authentication Dial-In User Service)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "SNMPv3 (Simple Network Management Protocol version 3)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "PAP (Password Authentication Protocol)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "TACACS+ provides separated, highly granular AAA services over TCP 49, allowing administrators to enforce precise command-by-command authorization rules on network devices.\n\nRADIUS couples authentication and authorization together and traditionally lacks fine-grained command-line authorization features for network equipment CLI shells.\n\nSNMPv3 is used for monitoring and managing network device performance counters, not AAA shell authorization.\n\nPAP is a weak, legacy, unencrypted authentication protocol that only handles basic username/password validation without accounting or command authorization capabilities."
+  },
+{
+    "id": "time_mon_01",
+    "topic": "Time and Network Monitoring Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A system administrator is configuring firewall rules to allow accurate time synchronization across domain controllers and network equipment using the standard Network Time Protocol (NTP). Which transport protocol and port number must be permitted through the firewall?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "UDP Port 123",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "TCP Port 161",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "TCP Port 514",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "UDP Port 4460",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Standard Network Time Protocol (NTP) operates over UDP port 123 to synchronize clocks across computer networks efficiently.\n\nTCP Port 161 is used for SNMP queries and polling.\n\nTCP Port 514 is used for secure Syslog (or UDP 514 for standard Syslog).\n\nUDP Port 4460 is reserved for Network Time Security (NTS), the secure cryptographic extension of NTP, not standard baseline NTP."
+  },
+  {
+    "id": "time_mon_02",
+    "topic": "Time and Network Monitoring Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An auditor reviewing network security finds that an organization is implementing Network Time Security (NTS) to protect time synchronization packets from tampering and spoofing. Which secure port does NTS utilize?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Port 4460",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Port 123",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Port 162",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Port 49",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Network Time Security (NTS) uses port 4460 to provide cryptographic security and authentication for NTP synchronization traffic.\n\nPort 123 is used for standard, unencrypted NTP.\n\nPort 162 is used for SNMP TRAP messages.\n\nPort 49 is used for TACACS+ administrative authentication."
+  },
+  {
+    "id": "time_mon_03",
+    "topic": "Time and Network Monitoring Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "In an NTP hierarchy, an accurate time server is directly attached to an authoritative hardware reference clock such as an atomic clock or a GPS receiver. What stratum level is assigned to this primary time server?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Stratum 1",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Stratum 0",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Stratum 2",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Stratum 16",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Stratum 1 time servers are directly connected to authoritative reference clocks (like GPS or atomic clocks). (Note: Stratum 0 refers to the physical reference hardware itself, not the network server).\n\nStratum 2 servers synchronize their time from Stratum 1 servers over the network.\n\nStratum 16 indicates an unsynchronized or unreachable time state."
+  },
+  {
+    "id": "time_mon_04",
+    "topic": "Time and Network Monitoring Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A secondary time server in a corporate network obtains its time synchronization data by querying a primary Stratum 1 time server across the local area network. What stratum level does this secondary server occupy?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Stratum 2",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Stratum 1",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Stratum 0",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Stratum 3",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A server that syncs directly with a Stratum 1 server is designated as a Stratum 2 time server.\n\nStratum 1 servers connect directly to hardware reference clocks.\n\nStratum 0 refers to physical atomic/GPS reference devices themselves.\n\nStratum 3 servers sync from Stratum 2 servers."
+  },
+  {
+    "id": "time_mon_05",
+    "topic": "Time and Network Monitoring Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network monitoring system (NMS) periodically polls routers and switches to gather interface performance data and utilization statistics using Simple Network Management Protocol (SNMP). Which default port is used for these polling requests?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Port 161",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Port 162",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Port 123",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Port 514",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "SNMP agents listen for polling requests and management commands from a network management station on UDP port 161.\n\nPort 162 is used by SNMP agents to proactively send asynchronous TRAP notifications back to the management station.\n\nPort 123 is used for NTP time services.\n\nPort 514 is used for Syslog logging traffic."
+  },
+  {
+    "id": "time_mon_06",
+    "topic": "Time and Network Monitoring Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network router experiences a critical interface failure and needs to proactively alert the central Network Management Server (NMS) without waiting for a scheduled poll. Which SNMP component and port are utilized for this asynchronous alert?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "TRAP message sent to Port 162",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "GetRequest query sent to Port 161",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Syslog alert sent to Port 123",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "NTS heartbeat sent to Port 4460",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "SNMP TRAP messages are sent asynchronously by managed devices to port 162 on the management server to report critical events or state changes.\n\nGetRequest queries are initiated by the manager toward port 161 to poll device statistics.\n\nPort 123 handles NTP time synchronization.\n\nPort 4460 is used for secure NTS traffic."
+  },
+  {
+    "id": "time_mon_07",
+    "topic": "Time and Network Monitoring Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An administrator is configuring a secure network monitoring platform. Which version of SNMP introduced mandatory packet encryption, message integrity validation, and robust user-based authentication, replacing insecure community strings?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "SNMPv3",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "SNMPv1",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "SNMPv2c",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Syslog v2",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "SNMPv3 provides secure cryptographic authentication, message integrity checking, and privacy (encryption), eliminating the clear-text community strings used in earlier versions.\n\nSNMPv1 and SNMPv2c transmit community strings in cleartext, making them highly vulnerable to sniffing.\n\nSyslog is a logging protocol, not an SNMP management version."
+  },
+  {
+    "id": "time_mon_08",
+    "topic": "Time and Network Monitoring Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A systems engineer needs to aggregate system event messages, security logs, and audit trails from various firewalls and Linux servers into a centralized logging collector. Which protocol and default port should be configured?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Syslog; Port 514",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "SNMP; Port 161",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "NTP; Port 123",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "TACACS+; Port 49",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Syslog is the standard protocol used to send system logs and event notifications to a centralized collector over port 514 (UDP or TCP).\n\nPort 161 is used for SNMP device performance monitoring and polling.\n\nPort 123 is used for NTP time synchronization.\n\nPort 49 is used for TACACS+ authentication and AAA accounting."
   }
 ];
 

@@ -17188,6 +17188,426 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "Port 23 is used for Telnet, an unencrypted text-based remote communication protocol.\n\nPort 22 is used for secure SSH connections.\n\nPort 25 is used for SMTP email transmission.\n\nPort 80 is used for unencrypted HTTP traffic."
+  },
+{
+    "id": "wi-fi_01",
+    "topic": "Wi-Fi Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which wireless standard, also known as Wi-Fi 1, operates exclusively on the 2.4 GHz frequency band and supports a maximum theoretical speed of up to 11 Mbps?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "802.11b",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "802.11a",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "802.11g",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "802.11n",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "802.11b is Wi-Fi 1, operating on the 2.4 GHz band up to 11 Mbps.\n\n802.11a is Wi-Fi 2, operating on the 5 GHz band up to 54 Mbps.\n\n802.11g is Wi-Fi 3, operating on the 2.4 GHz band up to 54 Mbps.\n\n802.11n is Wi-Fi 4, operating on dual bands up to 600 Mbps."
+  },
+  {
+    "id": "wi-fi_02",
+    "topic": "Wi-Fi Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An older corporate network utilizes 802.11a (Wi-Fi 2). Which frequency band and maximum data rate does this standard use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "2.4 GHz; up to 11 Mbps",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "5 GHz; up to 54 Mbps",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "2.4 GHz; up to 54 Mbps",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "2.4 and 5 GHz; up to 600 Mbps",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "802.11a (Wi-Fi 2) operates on the 5 GHz band with speeds up to 54 Mbps.\n\n2.4 GHz up to 11 Mbps describes 802.11b (Wi-Fi 1).\n\n2.4 GHz up to 54 Mbps describes 802.11g (Wi-Fi 3).\n\nDual-band up to 600 Mbps describes 802.11n (Wi-Fi 4)."
+  },
+  {
+    "id": "wi-fi_03",
+    "topic": "Wi-Fi Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following standards represents Wi-Fi 3, operates on the 2.4 GHz band, and matches the 54 Mbps speed of 802.11a while maintaining backwards compatibility with 802.11b?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "802.11b",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "802.11g",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "802.11n",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "802.11ac",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "802.11g is Wi-Fi 3, running on 2.4 GHz up to 54 Mbps.\n\n802.11b is Wi-Fi 1 at 11 Mbps on 2.4 GHz.\n\n802.11n is Wi-Fi 4 supporting dual bands up to 600 Mbps.\n\n802.11ac is Wi-Fi 5 operating exclusively on 5 GHz."
+  },
+  {
+    "id": "wi-fi_04",
+    "topic": "Wi-Fi Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What are the core capabilities introduced by 802.11n (Wi-Fi 4)?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Single 2.4 GHz band with speeds up to 54 Mbps",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Single 5 GHz band with speeds up to 1.3 Gbps",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Dual-band (2.4 and 5 GHz) operation with MIMO, up to 600 Mbps",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Tri-band operation including the 6 GHz spectrum",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "802.11n (Wi-Fi 4) introduced MIMO and dual-band (2.4/5 GHz) support reaching up to 600 Mbps.\n\n2.4 GHz at 54 Mbps describes 802.11g.\n\nSingle 5 GHz up to 1.3 Gbps describes 802.11ac.\n\nTri-band including 6 GHz describes Wi-Fi 6E and Wi-Fi 7."
+  },
+  {
+    "id": "wi-fi_05",
+    "topic": "Wi-Fi Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which wireless standard operates exclusively in the 5 GHz frequency band and uses beamforming and wide channels to achieve speeds starting around 1.3 Gbps?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "802.11n (Wi-Fi 4)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "802.11ac (Wi-Fi 5)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "802.11ax (Wi-Fi 6)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "802.11b (Wi-Fi 1)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "802.11ac (Wi-Fi 5) operates strictly on the 5 GHz band with multi-gigabit speeds.\n\n802.11n is dual-band up to 600 Mbps.\n\n802.11ax operates across 2.4, 5, and 6 GHz bands.\n\n802.11b is a legacy 2.4 GHz standard up to 11 Mbps."
+  },
+  {
+    "id": "wi-fi_06",
+    "topic": "Wi-Fi Standards",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "A network engineer is reviewing specs for Wi-Fi 6 (802.11ax). Which frequency bands are natively supported by this standard? (Select all that apply.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "2.4 GHz",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "900 MHz",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "5 GHz",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "13.56 MHz",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Wi-Fi 6 (802.11ax) utilizes both the 2.4 GHz and 5 GHz frequency bands (while Wi-Fi 6E expands this into the 6 GHz band).\n\n900 MHz is used by legacy industrial equipment or older cellular setups.\n\n13.56 MHz is used exclusively for NFC tags and readers."
+  },
+  {
+    "id": "wi-fi_07",
+    "topic": "Wi-Fi Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which Wi-Fi generation designation corresponds to the 802.11be standard, which introduces multi-link operation and extremely high throughput across 2.4, 5, and 6 GHz bands?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Wi-Fi 4",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "Wi-Fi 5",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Wi-Fi 6",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Wi-Fi 7",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "Wi-Fi 7 is officially designated by the IEEE 802.11be standard.\n\nWi-Fi 4 is 802.11n.\n\nWi-Fi 5 is 802.11ac.\n\nWi-Fi 6 is 802.11ax."
+  },
+  {
+    "id": "wi-fi_08",
+    "topic": "Wi-Fi Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary differentiator of Wi-Fi 6E compared to standard Wi-Fi 6?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Addition of support for the 6 GHz frequency band",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Exclusive operation on the legacy 2.4 GHz band",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Reduction of max speeds down to 54 Mbps",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Removal of 5 GHz compatibility",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Wi-Fi 6E extends the 802.11ax (Wi-Fi 6) standard into the newly opened 6 GHz spectrum for less congestion and higher throughput.\n\nExclusive 2.4 GHz operation describes old 802.11b/g standards.\n\nSpeeds dropping to 54 Mbps describes 802.11a/g.\n\n5 GHz compatibility remains fully intact in Wi-Fi 6E."
+  },
+  {
+    "id": "cellular_01",
+    "topic": "Cellular Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which first-generation (1G) cellular technology characteristic best describes its core infrastructure?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Analog voice transmission",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Digital packet-switched data",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "All-IP broadband mobile internet",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "SMS text messaging support",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "1G was entirely analog and designed strictly for voice calls.\n\nDigital packet-switched data began emerging with 2G and 3G standards.\n\nAll-IP broadband is a 4G LTE and 5G feature.\n\nSMS text messaging was introduced with digital 2G networks."
+  },
+  {
+    "id": "cellular_02",
+    "topic": "Cellular Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What key technological breakthrough did second-generation (2G) cellular networks introduce over 1G?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Transition from analog to digital signals, enabling SMS and basic data",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Gigabit-speed mobile video streaming",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Full migration to Voice over LTE (VoLTE)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Millimeter-wave frequency pooling",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "2G shifted cellular networks to digital transmission, paving the way for SMS text messaging and slow circuit-switched data.\n\nGigabit streaming requires 4G/5G infrastructure.\n\nVoLTE is a 4G LTE technology.\n\nMillimeter-wave is utilized in modern high-band 5G networks."
+  },
+  {
+    "id": "cellular_03",
+    "topic": "Cellular Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which cellular generation first provided true mobile broadband capabilities with packet-switched data speeds suitable for web browsing and media streaming on mobile devices?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "1G",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "2G",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "3G",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "4G",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "3G introduced true mobile broadband services via packet-switched data protocols like EV-DO and UMTS/HSPA.\n\n1G was analog voice only.\n\n2G provided digital voice and basic SMS text.\n\n4G advanced broadband much further into high-speed all-IP networking."
+  },
+  {
+    "id": "cellular_04",
+    "topic": "Cellular Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What does the 'LTE' designation stand for in 4G LTE cellular deployments, and what is its primary architectural feature?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Long Term Evolution; an all-IP packet-switched network architecture",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Local Telephony Exchange; a system for routing analog landline signals",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Limited Terminal Equipment; a standard for restricted feature phones",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Link Transmission Encryption; a security protocol for 2G data packets",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "LTE stands for Long Term Evolution, representing the transition to an all-IP packet-switched architecture for high-speed 4G data and voice.\n\nLocal Telephony Exchange is a distractor term.\n\nLimited Terminal Equipment is fictitious.\n\nLink Transmission Encryption does not describe 4G LTE nomenclature."
+  },
+  {
+    "id": "cellular_05",
+    "topic": "Cellular Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Carrier marketing terms like '5G UC' (Ultra Capacity) or similar high-speed indicators typically refer to which tier of 5G deployment?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Mid-band and high-band (mmWave) 5G offering high throughput",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Legacy 1G analog voice channels",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Low-frequency 2G backup roaming networks",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Hardwired ethernet bridging protocols",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "High-capacity 5G tags (like Ultra Capacity) indicate mid-band or high-band millimeter-wave (mmWave) infrastructure delivering multi-gigabit speeds.\n\n1G is analog voice.\n\n2G is low-frequency digital voice/SMS.\n\nEthernet bridging is a wired networking concept, not cellular."
+  },
+  {
+    "id": "cellular_06",
+    "topic": "Cellular Standards",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following cellular generations introduced massive device density support, network slicing, and ultra-low latency alongside multi-gigabit wireless speeds?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "2G",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_b",
+        "text": "3G",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "4G",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "5G",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "5G brought massive IoT device density, network slicing, and ultra-low latency capabilities alongside high-speed broadband.\n\n2G focused on digital voice and SMS.\n\n3G established basic mobile broadband.\n\n4G established all-IP mobile internet but lacked native low-latency/slicing features of 5G."
   }
 ];
 

@@ -18088,6 +18088,611 @@ const DEFAULT_QUESTIONS = [
       }
     ],
     "explanation": "Syslog is the standard protocol used to send system logs and event notifications to a centralized collector over port 514 (UDP or TCP).\n\nPort 161 is used for SNMP device performance monitoring and polling.\n\nPort 123 is used for NTP time synchronization.\n\nPort 49 is used for TACACS+ authentication and AAA accounting."
+  },
+{
+    "id": "xtras_01",
+    "topic": "File and Print Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A firewall administrator is configuring rules to allow Windows-compatible file and printer sharing traffic across the local network. Which default TCP port should be opened for the Server Message Block (SMB) service?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Port 445",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Port 80",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Port 443",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Port 514",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Server Message Block (SMB) operates on port 445 to provide Windows-compatible file and printer sharing services on a local network.\n\nPort 80 is used for HTTP web traffic.\nPort 443 is used for HTTPS web traffic.\nPort 514 is used for Syslog logging."
+  },
+  {
+    "id": "xtras_02",
+    "topic": "File and Print Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary function of the Server Message Block (SMB) protocol on a local network?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Providing Windows-compatible file and printer sharing services",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Synchronizing system clocks across network hardware",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Querying relational and non-relational database tables",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Enforcing TACACS+ command authorization rules",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "SMB is specifically designed to facilitate file and printer sharing in Windows environments."
+  },
+  {
+    "id": "xtras_03",
+    "topic": "File and Print Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An administrator is setting up a Linux file server so that Windows clients can seamlessly access shared directories and printers. Which software package acts as the Linux/Unix equivalent of SMB?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Samba",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "NetBIOS",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "PuTTY",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "NTP",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Samba is the open-source software suite that provides SMB file and print services on Linux and Unix systems, enabling integration with Windows networks."
+  },
+  {
+    "id": "xtras_04",
+    "topic": "File and Print Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A network engineer troubleshooting legacy workstation compatibility issues notices traffic utilizing ports 137 through 139. Which legacy protocol is responsible for this traffic?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "NetBIOS",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "SMB",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "FTP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "SNMP",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "NetBIOS uses ports 137, 138, and 139 to support networking features of legacy Windows versions."
+  },
+  {
+    "id": "xtras_05",
+    "topic": "File and Print Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "What is the primary purpose of NetBIOS running across ports 137-139 in network environments?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Supporting networking features of legacy Windows versions",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Enforcing Transport Layer Security for secure web browsing",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Providing atomic clock time synchronization",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Managing database index structures",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "NetBIOS is designed to support older networking features and name resolution for legacy Windows systems."
+  },
+  {
+    "id": "xtras_06",
+    "topic": "File and Print Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "An IT technician needs to transfer files between two distinct systems across a network. Which protocol utilizes ports 20 and 21 for this operation?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "FTP",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "SMB",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "HTTP",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "NTP",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "FTP (File Transfer Protocol) uses port 20 for data transfer and port 21 for control commands to transfer files between systems."
+  },
+  {
+    "id": "xtras_07",
+    "topic": "File and Print Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "When configuring firewall rules for File Transfer Protocol (FTP), which two ports must typically be opened for control and data streams?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Ports 20 and 21",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Ports 137 and 139",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Ports 161 and 162",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Ports 80 and 443",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "FTP uses port 20 for data connections and port 21 for control/command sessions."
+  },
+  {
+    "id": "xtras_08",
+    "topic": "Database Servers",
+    "type": "multiple",
+    "requiredSelections": 3,
+    "question": "A developer is designing a backend architecture using traditional structured relational databases. Which of the following database platforms are classified as *relational* databases? (Select all that apply.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "MySQL",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Oracle",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_c",
+        "text": "MongoDB",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "MariaDB",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_e",
+        "text": "CouchDB",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "MySQL, Oracle, and MariaDB are relational database management systems that store data in structured tables. MongoDB and CouchDB are non-relational (NoSQL) databases."
+  },
+  {
+    "id": "xtras_09",
+    "topic": "Database Servers",
+    "type": "multiple",
+    "requiredSelections": 2,
+    "question": "An application architect is looking for a non-relational database management system that is slightly less organized and handles unstructured document data efficiently. Which of the following options should be selected? (Select all that apply.)",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "MongoDB",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "MySQL",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "CouchDB",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_d",
+        "text": "Oracle",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "MongoDB and CouchDB are prominent examples of non-relational databases. MySQL and Oracle are relational databases."
+  },
+  {
+    "id": "xtras_10",
+    "topic": "Database Servers",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "How do relational databases differ from non-relational databases according to database structural definitions?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Relational databases use structured tables, while non-relational databases are slightly less organized document stores.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Relational databases operate exclusively on port 445, while non-relational databases use port 80.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Relational databases require NTP time synchronization, whereas non-relational databases do not.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Relational databases are managed by Samba, while non-relational databases are managed by NetBIOS.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Relational databases (like Oracle, MySQL, MariaDB) maintain strict relational tables, whereas non-relational databases (like MongoDB, CouchDB) are somewhat less rigid/organized in their data storage format."
+  },
+  {
+    "id": "xtras_11",
+    "topic": "Web Servers",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which core server type serves as the backbone of every website by hosting web pages and serving them to clients?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Web server",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Print server",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Syslog server",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "NetBIOS server",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Web servers form the backbone of every website by hosting and delivering web pages over HTTP and HTTPS."
+  },
+  {
+    "id": "xtras_12",
+    "topic": "Web Servers",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A web developer is configuring an unencrypted web server to host standard informational pages. Which default port should be assigned for HTTP traffic?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Port 80",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Port 443",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Port 445",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Port 123",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "HTTP operates on port 80 for unencrypted web communication.\nPort 443 is used for HTTPS.\nPort 445 is used for SMB.\nPort 123 is used for NTP."
+  },
+  {
+    "id": "xtras_13",
+    "topic": "Web Servers",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A security administrator is setting up a secure e-commerce website. What does the 'S' stand for in HTTPS, and which default port does it use?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Secure; Port 443",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Session; Port 80",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Standard; Port 445",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Storage; Port 21",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "In HTTPS, 'S' stands for secure, and the protocol communicates over port 443 using TLS certificates."
+  },
+  {
+    "id": "xtras_14",
+    "topic": "Web Servers",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Given the URL `https://store.comptia.org/bundles/aplus.html`, how are the components `https://`, `store.comptia.org`, and `/bundles/aplus.html` correctly classified?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Protocol, FQDN, and file path",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "FQDN, protocol, and port number",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "File path, protocol, and certificate authority",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Protocol, file path, and FQDN",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A URL consists of a protocol (`https://`), an FQDN (`store.comptia.org`), and a file path (`/bundles/aplus.html`)."
+  },
+  {
+    "id": "xtras_15",
+    "topic": "Web Security",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which underlying security protocol provides encryption, data integrity, and authentication for HTTPS web traffic?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Transport Layer Security (TLS)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Server Message Block (SMB)",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "NetBIOS Name Service",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Simple Network Management Protocol (SNMP)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "HTTPS achieves security through Transport Layer Security (TLS) certificates."
+  },
+  {
+    "id": "xtras_16",
+    "topic": "Web Security",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Who issues and signs digital certificates used to establish secure trust for HTTPS websites?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "Certificate Authority (CA)",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "Network Time Protocol (NTP) server",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "Samba daemon",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "Database administrator",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Digital certificates are issued and validated by a Certificate Authority (CA)."
+  },
+  {
+    "id": "xtras_17",
+    "topic": "Web Security",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "A web user wants to inspect the digital certificate details of a secure website directly within their web browser. Which visual browser indicator should the user click on or inspect?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The lock icon",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "The HTTP port 80 badge",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "The Samba folder icon",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "The NetBIOS status button",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "In web browsers, users can click the lock icon in the address bar to view and verify the website's TLS certificate."
+  },
+  {
+    "id": "xtras_18",
+    "topic": "Web Security and Time Services",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Why is accurate time synchronization via NTP critically important for HTTPS website certificate validation?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "It ensures the system's clock falls correctly within the Certificate Authority's designated validity period.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "It matches the FQDN to the correct TCP port 80 address.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It allows Samba to authenticate Windows user accounts.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It increases the data throughput of relational database tables.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Accurate NTP time synchronization ensures that the client system clock falls within the valid date range specified on the website's TLS certificate."
+  },
+  {
+    "id": "xtras_19",
+    "topic": "Web Security",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "How does a hierarchical Certificate Authority (CA) structure protect trust if a subordinate CA is compromised?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "The root CA delegates trust, ensuring that if a subordinate CA is compromised, the root and other unaffected subordinates remain secure.",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "It automatically converts all HTTP port 80 traffic into non-relational database queries.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "It shifts all file sharing functions from SMB to NetBIOS.",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "It blocks all NTP time synchronization packets across the network.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "A root CA delegates trust to subordinate CAs in a hierarchy so that a breach in one subordinate does not compromise the root CA or other unaffected subordinate CAs."
+  },
+  {
+    "id": "xtras_20",
+    "topic": "Web Servers and Protocols",
+    "type": "single",
+    "requiredSelections": 1,
+    "question": "Which of the following correctly pairs a web protocol with its standard default network port?",
+    "options": [
+      {
+        "id": "opt_a",
+        "text": "HTTPS; Port 443",
+        "isCorrect": true
+      },
+      {
+        "id": "opt_b",
+        "text": "HTTP; Port 445",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_c",
+        "text": "SMB; Port 80",
+        "isCorrect": false
+      },
+      {
+        "id": "opt_d",
+        "text": "FTP; Port 443",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "HTTPS uses port 443. HTTP uses port 80, SMB uses port 445, and FTP uses ports 20/21."
   }
 ];
 
